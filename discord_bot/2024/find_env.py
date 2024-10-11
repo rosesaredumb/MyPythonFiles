@@ -1,7 +1,7 @@
 import os
 import json
 
-def retrieve_keys(item):
+def retrieve_keysz(item):
     with open('./discord_bot/2024/cc.json') as config_file:
         config = json.load(config_file)
 
@@ -14,6 +14,6 @@ def retrieve_keys(item):
     
     return TOKEN
 
-print(retrieve_keys("DISCORD_TOKEN"))
+
 
 

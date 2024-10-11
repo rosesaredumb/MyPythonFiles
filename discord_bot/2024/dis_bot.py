@@ -20,7 +20,6 @@ async def on_ready():
         print(e)
 
 
-
 @bot.tree.command(name="ping")
 async def ping(interaction: discord.Interaction):
     before = bot.latency
@@ -46,7 +45,6 @@ async def serverinfo(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed)
 
 
-#token = os.getenv('DISCORD_TOKEN')
 if TOKEN is None:
     raise ValueError("DISCORD_TOKEN environment variable is not set")
 bot.run(TOKEN)

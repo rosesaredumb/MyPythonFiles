@@ -1,6 +1,7 @@
 import os
 import json
 
+
 def retrieve_keys(item):
     """
     Retrieve the specified key from environment variables or a config file.
@@ -32,6 +33,3 @@ def retrieve_keys(item):
         print(f"Warning: '{item}' not found in environment variables or config file.")
     
     return TOKEN
-
-# Example usage
-print(retrieve_keys("DISCORD_TOKEN"))
