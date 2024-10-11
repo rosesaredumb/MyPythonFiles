@@ -2,7 +2,7 @@ import os
 import json
 import discord
 from discord.ext import commands
-from env2 import retrieve_keys
+from settings import retrieve_keys
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
