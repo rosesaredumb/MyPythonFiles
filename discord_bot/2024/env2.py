@@ -13,7 +13,7 @@ def retrieve_keys(item):
     """
     # Try to load the config file
     try:
-        with open('config.json') as config_file:
+        with open('./discord_bot/2024/config.json') as config_file:
             config = json.load(config_file)
     except FileNotFoundError:
         print("Config file not found. Please ensure 'config.json' exists.")
@@ -24,15 +24,14 @@ def retrieve_keys(item):
 
     if "REPLIT_DB_URL" in os.environ:
         print("This script is running in Replit!")
-        token = os.getenv(item)
+        TOKEN = os.getenv(item)
     else:
         print("This script is NOT running in Replit.")
-        token = config.get(item)
-
-    if token is None:
+        TOKEN = config.get(item)
+    if TOKEN is None:
         print(f"Warning: '{item}' not found in environment variables or config file.")
     
-    return token
+    return TOKEN
 
 # Example usage
 print(retrieve_keys("DISCORD_TOKEN"))

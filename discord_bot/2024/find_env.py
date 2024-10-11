@@ -2,7 +2,7 @@ import os
 import json
 
 def retrieve_keys(item):
-    with open('cc.json') as config_file:
+    with open('./discord_bot/2024/cc.json') as config_file:
         config = json.load(config_file)
 
     if "REPLIT_DB_URL" in os.environ:
