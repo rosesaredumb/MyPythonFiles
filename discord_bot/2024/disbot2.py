@@ -1,9 +1,4 @@
-import json
-import os
-import discord
-from discord.ext import commands
-from settings import retrieve_keys
-import asyncio
+from settings import *
 
 TOKEN = retrieve_keys("DISCORD_TOKEN")
 
