@@ -120,13 +120,8 @@ class mindmap(commands.Cog):
 
         found_keys = "\n".join([f"{i+1}: {path}" for i, (path, value) in enumerate(duplicate_keys)])
         await interaction.response.send_message(f"`{found_keys}`")
-
-    @app_commands.command(name="test")
-    async def test(self, interaction: discord.Interaction):
-        embed = self.create_embed(description="hi")
-        await interaction.response.send_message(embed=embed)
     
 
-# Setup the cog
+
 async def setup(bot):
     await bot.add_cog(mindmap(bot))

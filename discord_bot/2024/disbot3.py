@@ -9,8 +9,14 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 # Event when the bot is ready
 async def load_extensions():
     for filename in os.listdir('./discord_bot/2024/cogs'):
-        if filename.endswith('.py'):
-            await bot.load_extension(f'cogs.{filename[:-3]}')
+        if filename.endswith('.py') and filename != "__init__.py":
+            cog_name = f"cogs.{filename[:-3]}"
+            try:
+                await bot.load_extension(cog_name)
+                print(f"Loaded {cog_name}")
+            except Exception as e:
+                print(f"Failed to load {cog_name}: {e}")
+
 
 @bot.event
 async def on_ready():
