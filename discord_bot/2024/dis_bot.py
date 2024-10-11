@@ -2,14 +2,13 @@ import os
 import json
 import discord
 from discord.ext import commands
+from env2 import retrieve_keys
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 
-with open('config.json') as config_file:
-    config = json.load(config_file)
-TOKEN = config.get('DISCORD_TOKEN')
+TOKEN = retrieve_keys("DISCORD_TOKEN")
 
 @bot.event
 async def on_ready():
