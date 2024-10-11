@@ -1,5 +1,4 @@
-from settings import asyncio, commands, discord, json, os
-from discord import app_commands
+from settings import asyncio, commands, discord, json, os, app_commands
 
 class mindmap(commands.Cog):
     def __init__(self, bot):
@@ -43,6 +42,10 @@ class mindmap(commands.Cog):
                     self.find_keys(value, target_key, current_path, results)
 
         return results
+
+    def create_embed(self, title: str = "", description: str = "", color: discord.Color = discord.Color.blue(),) -> discord.Embed:
+        embed = discord.Embed(title=title, description=f"```{description}\n```", color=color)
+        return embed
 
     async def update_key_value(self, data, path_to_update, new_value, interaction):
         current = data
@@ -115,8 +118,14 @@ class mindmap(commands.Cog):
         # Find duplicate keys in the JSON
         duplicate_keys = self.find_keys(json_data, target_key)
 
-        found_keys = "\n".join([f"{i+1}: Path: {path}, Current Value: {value}" for i, (path, value) in enumerate(duplicate_keys)])
-        await interaction.response.send_message(found_keys)
+        found_keys = "\n".join([f"{i+1}: {path}" for i, (path, value) in enumerate(duplicate_keys)])
+        await interaction.response.send_message(f"`{found_keys}`")
+
+    @app_commands.command(name="test")
+    async def test(self, interaction: discord.Interaction):
+        embed = self.create_embed(description="hi")
+        await interaction.response.send_message(embed=embed)
+    
 
 # Setup the cog
 async def setup(bot):
