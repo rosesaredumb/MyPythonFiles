@@ -47,7 +47,7 @@ async def serverinfo(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed)
 
 
-token = os.getenv('DISCORD_TOKEN')
-if token is None:
+#token = os.getenv('DISCORD_TOKEN')
+if TOKEN is None:
     raise ValueError("DISCORD_TOKEN environment variable is not set")
-bot.run(token)
+bot.run(TOKEN)
