@@ -1,6 +1,6 @@
 from settings import discord, commands, os, retrieve_keys
 
-TOKEN = retrieve_keys("DISCORD_TOKEN")
+TOKEN = str(retrieve_keys("DISCORD_TOKEN"))
 intents = discord.Intents.all()
 
 # Initialize the bot
