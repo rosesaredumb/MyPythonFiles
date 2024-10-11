@@ -8,3 +8,4 @@ if is_running_in_replit():
 else:
     print("This script is NOT running in Replit.")
 
+print("hi")
