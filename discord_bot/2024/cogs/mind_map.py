@@ -1,6 +1,7 @@
-from settings import *
+from settings import asyncio, commands, discord, json, os
+from discord import app_commands
 
-class JSONUpdater(commands.Cog):
+class mindmap(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.file_path = './mindmap/data.json'
@@ -24,7 +25,7 @@ class JSONUpdater(commands.Cog):
         with open(self.file_path, 'w') as file:
             json.dump(data, file, indent=4)
 
-    def find_duplicate_keys(self, data, target_key, parent_path="", results=None):
+    def find_keys(self, data, target_key, parent_path="", results=None):
         """
         Recursive function to find all identical keys in the JSON and their paths.
         """
@@ -39,7 +40,7 @@ class JSONUpdater(commands.Cog):
                     results.append((current_path, value))
 
                 if isinstance(value, dict):
-                    self.find_duplicate_keys(value, target_key, current_path, results)
+                    self.find_keys(value, target_key, current_path, results)
 
         return results
 
@@ -71,7 +72,7 @@ class JSONUpdater(commands.Cog):
                 await interaction.followup.send("Timeout! No response received.", ephemeral=True)
 
     # Slash command to start the process
-    @commands.command(name="update_key", description="Find and update a key in the JSON file")
+    @app_commands.command(name="update_key", description="Find and update a key in the JSON file")
     async def update_key(self, interaction: discord.Interaction, target_key: str, new_value: str):
         """
         Slash command to find and update a key in the JSON file.
@@ -81,7 +82,7 @@ class JSONUpdater(commands.Cog):
         json_data = self.read_json()
 
         # Find duplicate keys in the JSON
-        duplicate_keys = self.find_duplicate_keys(json_data, target_key)
+        duplicate_keys = self.find_keys(json_data, target_key)
 
         if len(duplicate_keys) > 1:
             found_keys = "\n".join([f"{i+1}: Path: {path}, Current Value: {value}" for i, (path, value) in enumerate(duplicate_keys)])
@@ -107,6 +108,16 @@ class JSONUpdater(commands.Cog):
         # Write updated data to the JSON file
         self.write_json(json_data)
 
+    @app_commands.command(name="skey")
+    async def skey(self, interaction: discord.Interaction, target_key: str):
+        json_data = self.read_json()
+
+        # Find duplicate keys in the JSON
+        duplicate_keys = self.find_keys(json_data, target_key)
+
+        found_keys = "\n".join([f"{i+1}: Path: {path}, Current Value: {value}" for i, (path, value) in enumerate(duplicate_keys)])
+        await interaction.response.send_message(found_keys)
+
 # Setup the cog
 async def setup(bot):
-    await bot.add_cog(JSONUpdater(bot))
+    await bot.add_cog(mindmap(bot))
