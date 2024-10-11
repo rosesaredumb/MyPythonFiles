@@ -12,7 +12,6 @@ def retrieve_keys(item):
     Returns:
         str: The value of the key, or None if not found.
     """
-    # Try to load the config file
     try:
         with open('./discord_bot/2024/config.json') as config_file:
             config = json.load(config_file)
