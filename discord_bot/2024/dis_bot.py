@@ -1,4 +1,4 @@
-from settings import *
+from settings import discord, commands, retrieve_keys
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)

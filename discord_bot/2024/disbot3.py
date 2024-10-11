@@ -1,4 +1,4 @@
-from settings import *
+from settings import discord, commands, os, retrieve_keys
 
 TOKEN = retrieve_keys("DISCORD_TOKEN")
 intents = discord.Intents.default()

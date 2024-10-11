@@ -1,8 +1,8 @@
-import os
-import json
+import asyncio
 import discord
 from discord.ext import commands
-import asyncio
+import json
+import os
 
 
 def retrieve_keys(item):
