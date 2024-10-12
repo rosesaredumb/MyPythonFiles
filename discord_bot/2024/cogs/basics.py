@@ -1,5 +1,6 @@
 from logging import basicConfig
 from settings import asyncio, commands, discord, json, os, app_commands
+from functools import partial
 
 class basics(commands.Cog):
     def __init__(self, bot):
@@ -15,7 +16,8 @@ class basics(commands.Cog):
         embed = self.create_embed(title=title, description=f"```\n{description}\n```")
         await interaction.response.send_message(embed=embed)
 
-    @app_commands.command(name="test")
+       
+    @app_commands.command(name="test", description="k")
     async def test(self, interaction: discord.Interaction):
         await self.send_embed_response(interaction, description="hi")
     

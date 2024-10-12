@@ -43,9 +43,13 @@ class mindmap(commands.Cog):
 
         return results
 
-    def create_embed(self, title: str = "", description: str = "", color: discord.Color = discord.Color.blue(),) -> discord.Embed:
-        embed = discord.Embed(title=title, description=f"```{description}\n```", color=color)
-        return embed
+    def create_embed(self, title: str = "", description: str = "", color: discord.Color = discord.Color.blue()) -> discord.Embed:
+        return discord.Embed(title=title, description=description, color=color)
+
+    # Helper function to send an embed response
+    async def send_embed_response(self, interaction: discord.Interaction, title: str = "", description: str = ""):
+        embed = self.create_embed(title=title, description=f"```\n{description}\n```")
+        await interaction.response.send_message(embed=embed)
 
     async def update_key_value(self, data, path_to_update, new_value, interaction):
         current = data
@@ -119,7 +123,7 @@ class mindmap(commands.Cog):
         duplicate_keys = self.find_keys(json_data, target_key)
 
         found_keys = "\n".join([f"{i+1}: {path}" for i, (path, value) in enumerate(duplicate_keys)])
-        await interaction.response.send_message(f"`{found_keys}`")
+        await self.send_embed_response(interaction, description=f"`{found_keys}`")
     
 
 
