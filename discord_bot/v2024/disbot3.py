@@ -4,10 +4,8 @@ from settings import discord, commands, os, traceback, logging, retrieve_keys, c
 TOKEN = str(retrieve_keys("DISCORD_TOKEN"))
 intents = discord.Intents.all()
 
-# Initialize the bot
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# Event when the bot is ready
 async def load_extensions():
     for filename in os.listdir(cogs_path):
         if filename.endswith('.py') and filename != "__init__.py":
