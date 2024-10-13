@@ -1,4 +1,4 @@
-from settings import discord, commands, os, traceback, logging, retrieve_keys
+from settings import discord, commands, os, traceback, logging, retrieve_keys, cogs_path
 
 
 TOKEN = str(retrieve_keys("DISCORD_TOKEN"))
@@ -9,7 +9,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Event when the bot is ready
 async def load_extensions():
-    for filename in os.listdir('./discord_bot/2024/cogs'):
+    for filename in os.listdir(cogs_path):
         if filename.endswith('.py') and filename != "__init__.py":
             cog_name = f"cogs.{filename[:-3]}"
             try:

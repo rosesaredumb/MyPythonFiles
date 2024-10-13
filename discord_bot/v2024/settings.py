@@ -17,6 +17,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 mindmap_json_path = "./mindmap/data.json"
+discord_config_path = './discord_bot/v2024/config.json'
+cogs_path = './discord_bot/v2024/cogs'
 
 def read_json(file_path):
     with open(file_path, 'r') as file:
@@ -52,7 +54,7 @@ def retrieve_keys(item):
     else:
         print("This script is NOT running in Replit.")
         try:
-            with open('./discord_bot/2024/config.json') as config_file:
+            with open(discord_config_path) as config_file:
                 config = json.load(config_file)
         except FileNotFoundError:
             print("Config file not found. Please ensure 'config.json' exists.")

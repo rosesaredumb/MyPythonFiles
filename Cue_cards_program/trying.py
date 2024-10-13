@@ -1,4 +1,4 @@
-from mymods import os
+from my_modules import os
 from trial import Trial_class
 
 main_path = "./Cue Cards"
