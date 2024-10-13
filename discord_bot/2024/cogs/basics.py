@@ -1,5 +1,5 @@
 from logging import basicConfig
-from settings import asyncio, commands, discord, json, os, app_commands
+from settings import asyncio, commands, discord, json, os, app_commands, send_embed_response
 from functools import partial
 
 class basics(commands.Cog):
@@ -7,24 +7,11 @@ class basics(commands.Cog):
         self.bot = bot
         self.file_path = './mindmap/data.json'
 
-
-    async def send_embed_response(self, interaction: discord.Interaction, title: str = "", description: str = "", color: discord.Color = discord.Color.blue()):
-        """
-        Create and send an embed response.
-
-        Args:
-            interaction (discord.Interaction): The interaction to respond to.
-            title (str): The title of the embed.
-            description (str): The description of the embed.
-            color (discord.Color): The color of the embed.
-        """
-        embed = discord.Embed(title=title, description=f"```\n{description}\n```", color=color)
-        await interaction.response.send_message(embed=embed)
        
     @app_commands.command(name="test", description="k")
     async def test(self, interaction: discord.Interaction):
         """Testing command"""
-        await self.send_embed_response(interaction, description="hi")
+        await send_embed_response(interaction, description="hi")
 
     @app_commands.command(name="add", description="Add two numbers.")
     @app_commands.describe(a="The first number.", b="The second number.")

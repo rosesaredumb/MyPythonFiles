@@ -1,27 +1,14 @@
-from settings import asyncio, commands, discord, json, os, app_commands
+from settings import asyncio, discord, commands, app_commands
+from settings import send_embed_response, read_json, write_json, ensure_json_file
+from settings import mindmap_json_path
 
-class mindmap(commands.Cog):
+
+class mindmap(commands.GroupCog, 
+              group_name = "mmap", 
+              group_description = "ff"):
     def __init__(self, bot):
         self.bot = bot
-        self.file_path = './mindmap/data.json'
-        self.ensure_json_file()
-
-    def ensure_json_file(self):
-        """Ensure the JSON file exists or create it."""
-        if not os.path.exists(self.file_path):
-            with open(self.file_path, 'w') as f:
-                json.dump({"seed": {}}, f)
-                print(f"{self.file_path} created!")
-        else:
-            print(f"{self.file_path} already exists.")
-
-    def read_json(self):
-        with open(self.file_path, 'r') as file:
-            return json.load(file)
-
-    def write_json(self, data):
-        with open(self.file_path, 'w') as file:
-            json.dump(data, file, indent=4)
+        ensure_json_file(mindmap_json_path)
 
     def find_keys(self, data, target_key, parent_path="", results=None):
         """
@@ -41,13 +28,6 @@ class mindmap(commands.Cog):
                     self.find_keys(value, target_key, current_path, results)
 
         return results
-
-    def create_embed(self, title: str = "", description: str = "", color: discord.Color = discord.Color.blue()) -> discord.Embed:
-        return discord.Embed(title=title, description=description, color=color)
-
-    async def send_embed_response(self, interaction: discord.Interaction, title: str = "", description: str = ""):
-        embed = self.create_embed(title=title, description=f"```\n{description}\n```")
-        await interaction.response.send_message(embed=embed)
 
     async def update_key_value(self, data, path_to_update, new_value, interaction):
         current = data
@@ -76,23 +56,15 @@ class mindmap(commands.Cog):
             except asyncio.TimeoutError:
                 await interaction.followup.send("Timeout! No response received.", ephemeral=True)
 
-    @app_commands.command(
-            name = "mmap",
-            description = "Mindmap commands."
-            )
-    async def mmap_group(self, interaction: discord.Interaction):
-        """Group for mindmap commands. Use subcommands for specific actions."""
-        await send_embed_response(interaction, "")
-        
+    #@app_commands.command(name=)
 
-
-    @app_commands.command(name="update_key", description="Find and update a key in the JSON file")
-    async def update_key(self, interaction: discord.Interaction, target_key: str, new_value: str):
-        """
-        Slash command to find and update a key in the JSON file.
-        Usage: /update_key target_rkey new_value
-        """
-        json_data = self.read_json()
+    @app_commands.command(name="update", 
+                          description="Find and update a key in the JSON file")
+    async def update(self, 
+                     interaction: discord.Interaction, 
+                     target_key: str, 
+                     new_value: str):
+        json_data = read_json(mindmap_json_path)
         duplicate_keys = self.find_keys(json_data, target_key)
 
         if len(duplicate_keys) > 1:
@@ -116,19 +88,19 @@ class mindmap(commands.Cog):
         else:
             await interaction.response.send_message(f"No occurrences of the key '{target_key}' were found.", ephemeral=True)
 
-        self.write_json(json_data)
+        write_json(json_data, mindmap_json_path)
 
-    @app_commands.command(name="skey")
-    async def skey(self, interaction: discord.Interaction, target_key: str):
-        json_data = self.read_json()
-
-        # Find duplicate keys in the JSON
+    @app_commands.command(name = "show", 
+                          description = "shows the item path")
+    async def show(self, 
+                   interaction: discord.Interaction, 
+                   target_key: str):
+        json_data = read_json(mindmap_json_path)
         duplicate_keys = self.find_keys(json_data, target_key)
 
         found_keys = "\n".join([f"{i+1}: {path}" for i, (path, value) in enumerate(duplicate_keys)])
-        await self.send_embed_response(interaction, description=f"`{found_keys}`")
+        await send_embed_response(interaction, description=f"{found_keys}")
     
-
 
 async def setup(bot):
     await bot.add_cog(mindmap(bot))

@@ -6,6 +6,24 @@ import json
 import os
 
 
+mindmap_json_path = "./mindmap/data.json"
+
+def read_json(file_path):
+    with open(file_path, 'r') as file:
+        return json.load(file)
+
+def write_json(data, file_path):
+    with open(file_path, 'w') as file:
+        json.dump(data, file, indent=4)
+
+def ensure_json_file(file_path):
+    """Ensure the JSON file exists or create it."""
+    if not os.path.exists(file_path):
+        with open(file_path, 'w') as f:
+            json.dump({"seed": {}}, f)
+            print(f"{file_path} created!")
+    else:
+        print(f"{file_path} already exists.")
 
 def retrieve_keys(item):
     """
@@ -34,3 +52,17 @@ def retrieve_keys(item):
             return None
         TOKEN = config.get(item)
     return TOKEN
+
+
+async def send_embed_response(interaction: discord.Interaction, title: str = "", description: str = "", color: discord.Color = discord.Color.blue()):
+    """
+    Create and send an embed response.
+
+    Args:
+        interaction (discord.Interaction): The interaction to respond to.
+        title (str): The title of the embed.
+        description (str): The description of the embed.
+        color (discord.Color): The color of the embed.
+    """
+    embed = discord.Embed(title=title, description=f"```\n{description}\n```", color=color)
+    await interaction.response.send_message(embed=embed)
