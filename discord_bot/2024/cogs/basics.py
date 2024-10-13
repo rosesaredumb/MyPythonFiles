@@ -17,7 +17,7 @@ class basics(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
        
-    @app_commands.command(name="test", description="k")
+    @app_commands.command(name="test", description="k", help="testing command")
     async def test(self, interaction: discord.Interaction):
         await self.send_embed_response(interaction, description="hi")
     
