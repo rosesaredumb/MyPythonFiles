@@ -19,9 +19,7 @@ class basics(commands.Cog):
        
     @app_commands.command(name="test", description="k")
     async def test(self, interaction: discord.Interaction):
-        """
-        Testing command
-        """
+        """Testing command"""
         await self.send_embed_response(interaction, description="hi")
     
 
