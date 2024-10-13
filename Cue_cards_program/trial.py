@@ -1,9 +1,4 @@
-import os
-import re
-from typing import Literal
-
-from PIL import Image, ImageDraw, ImageFont
-
+from settings import Literal, os, re, Image, ImageDraw, ImageFont
 
 class Trial_class:
 

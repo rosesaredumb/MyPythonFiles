@@ -1,7 +1,5 @@
-import discord
-from discord.ext import commands
-import os
-from settings import retrieve_keys
+from settings import retrieve_keys, discord, commands
+
 TOKEN = retrieve_keys("DISCORD_TOKEN")
 
 

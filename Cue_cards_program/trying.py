@@ -1,5 +1,4 @@
-import os
-
+from settings import os
 from trial import Trial_class
 
 main_path = "./Cue Cards"

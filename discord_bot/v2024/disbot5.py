@@ -1,7 +1,4 @@
-import discord
-from discord.ext import commands
-from functools import partial
-from settings import retrieve_keys
+from settings import retrieve_keys, commands, partial, discord
 
 class MyBot(commands.Bot):
     def __init__(self):

@@ -1,11 +1,4 @@
-import os
-import subprocess
-import time
-import timeit
-from typing import Literal
-
-from PIL import Image, ImageDraw, ImageFont
-
+from settings import Literal, Image, ImageDraw, ImageFont
 from trial import Trial_class
 
 prog = Trial_class()

@@ -1,6 +1,5 @@
-from settings import discord, commands, os, retrieve_keys
-import traceback
-import logging
+from settings import discord, commands, os, traceback, logging, retrieve_keys
+
 
 TOKEN = str(retrieve_keys("DISCORD_TOKEN"))
 intents = discord.Intents.all()

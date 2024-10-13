@@ -1,6 +1,4 @@
-import subprocess
-import time
-import timeit
+from settings import subprocess, time, timeit
 
 x = 1  #int(input("which script number?"))
 
