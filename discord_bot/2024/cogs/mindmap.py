@@ -15,7 +15,6 @@ class mindmap(commands.Cog):
         else:
             print(f"{self.file_path} already exists.")
 
-    # Helper functions for JSON handling
     def read_json(self):
         with open(self.file_path, 'r') as file:
             return json.load(file)
@@ -46,7 +45,6 @@ class mindmap(commands.Cog):
     def create_embed(self, title: str = "", description: str = "", color: discord.Color = discord.Color.blue()) -> discord.Embed:
         return discord.Embed(title=title, description=description, color=color)
 
-    # Helper function to send an embed response
     async def send_embed_response(self, interaction: discord.Interaction, title: str = "", description: str = ""):
         embed = self.create_embed(title=title, description=f"```\n{description}\n```")
         await interaction.response.send_message(embed=embed)
@@ -78,17 +76,23 @@ class mindmap(commands.Cog):
             except asyncio.TimeoutError:
                 await interaction.followup.send("Timeout! No response received.", ephemeral=True)
 
-    # Slash command to start the process
+    @app_commands.command(
+            name = "mmap",
+            description = "Mindmap commands."
+            )
+    async def mmap_group(self, interaction: discord.Interaction):
+        """Group for mindmap commands. Use subcommands for specific actions."""
+        await send_embed_response(interaction, "")
+        
+
+
     @app_commands.command(name="update_key", description="Find and update a key in the JSON file")
     async def update_key(self, interaction: discord.Interaction, target_key: str, new_value: str):
         """
         Slash command to find and update a key in the JSON file.
         Usage: /update_key target_rkey new_value
         """
-        # Read the JSON file
         json_data = self.read_json()
-
-        # Find duplicate keys in the JSON
         duplicate_keys = self.find_keys(json_data, target_key)
 
         if len(duplicate_keys) > 1:
@@ -112,7 +116,6 @@ class mindmap(commands.Cog):
         else:
             await interaction.response.send_message(f"No occurrences of the key '{target_key}' were found.", ephemeral=True)
 
-        # Write updated data to the JSON file
         self.write_json(json_data)
 
     @app_commands.command(name="skey")
