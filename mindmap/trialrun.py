@@ -1,4 +1,4 @@
-from settings import json, os
+from mymods import json, os
 
 def read_json(file_path):
     with open(file_path, 'r') as file:

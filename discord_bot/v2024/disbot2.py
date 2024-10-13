@@ -1,4 +1,4 @@
-from settings import *
+from mymods import *
 
 TOKEN = retrieve_keys("DISCORD_TOKEN")
 

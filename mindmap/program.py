@@ -1,4 +1,4 @@
-from settings import json, os
+from mymods import json, os
 
 def find_keys(data, target_key, parent_path="", results=None):
     """

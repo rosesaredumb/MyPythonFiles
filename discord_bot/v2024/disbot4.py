@@ -1,11 +1,9 @@
-from settings import retrieve_keys, discord, commands
+from mymods import retrieve_keys, discord, commands
 
 TOKEN = retrieve_keys("DISCORD_TOKEN")
 
-
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents, application_id=1290060881740169236)
-
 
 
 async def main():

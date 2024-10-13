@@ -1,4 +1,4 @@
-from settings import Literal, Image, ImageDraw, ImageFont, time, timeit, os, subprocess
+from mymods import Literal, Image, ImageDraw, ImageFont, time, timeit, os, subprocess
 from trial import Trial_class
 
 prog = Trial_class()

@@ -1,6 +1,5 @@
 from logging import basicConfig
-from settings import asyncio, commands, discord, json, os, app_commands, send_embed_response
-from functools import partial
+from settings import commands, discord, app_commands, send_embed_response
 
 class basics(commands.Cog):
     def __init__(self, bot):

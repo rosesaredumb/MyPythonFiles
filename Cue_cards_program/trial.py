@@ -1,4 +1,4 @@
-from settings import Literal, os, re, Image, ImageDraw, ImageFont
+from mymods import Literal, os, re, Image, ImageDraw, ImageFont
 
 class Trial_class:
 

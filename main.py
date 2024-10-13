@@ -1,9 +1,9 @@
-from settings import subprocess, time, timeit
+from mymods import subprocess, time, timeit
 
 x = 1  #int(input("which script number?"))
 
 var_scripts = {
-    "1": "./discord_bot/2024/disbot3.py",
+    "1": "./discord_bot/v2024/disbot3.py",
     "2": "trying.py",
 }
 
