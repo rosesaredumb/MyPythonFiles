@@ -60,6 +60,8 @@ class mindmap(commands.GroupCog,
 
     @app_commands.command(name="update", 
                           description="Find and update a key in the JSON file")
+    @app_commands.describe(target_key = "The item you want to choose.", 
+                           new_value = "The new value to create for that item.") 
     async def update(self, 
                      interaction: discord.Interaction, 
                      target_key: str, 
@@ -86,9 +88,10 @@ class mindmap(commands.GroupCog,
         elif len(duplicate_keys) == 1:
             await self.update_key_value(json_data, duplicate_keys[0][0], new_value, interaction)
         else:
-            await interaction.response.send_message(f"No occurrences of the key '{target_key}' were found.", ephemeral=True)
+            await send_embed_response(interaction, description=f"No occurrences of the key '{target_key}' were found.", ephemeral=True)
 
         write_json(json_data, mindmap_json_path)
+
 
     @app_commands.command(name = "show", 
                           description = "shows the item path")
