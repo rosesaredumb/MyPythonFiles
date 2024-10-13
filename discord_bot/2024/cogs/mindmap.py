@@ -83,7 +83,7 @@ class mindmap(commands.Cog):
     async def update_key(self, interaction: discord.Interaction, target_key: str, new_value: str):
         """
         Slash command to find and update a key in the JSON file.
-        Usage: /update_key target_key new_value
+        Usage: /update_key target_rkey new_value
         """
         # Read the JSON file
         json_data = self.read_json()

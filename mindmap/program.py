@@ -1,7 +1,7 @@
 import json
 import os
 
-def find_duplicate_keys(data, target_key, parent_path="", results=None):
+def find_keys(data, target_key, parent_path="", results=None):
     """
     Recursive function to find all identical keys in the JSON and their paths.
     """
@@ -18,9 +18,23 @@ def find_duplicate_keys(data, target_key, parent_path="", results=None):
 
             # Recursively check nested dictionaries
             if isinstance(value, dict):
-                find_duplicate_keys(value, target_key, current_path, results)
+                find_keys(value, target_key, current_path, results)
 
     return results
+
+
+def get_paths(d, path=""):
+    paths = []  # List to store all the paths
+    for key, value in d.items():
+        # Build the new path by appending the current key
+        new_path = f"{path}.{key}" if path else key
+        if isinstance(value, dict) and value:
+            # If the value is a non-empty dictionary, recurse deeper and extend paths
+            paths.extend(get_paths(value, new_path))
+        else:
+            # If it's a final (empty) value, append the path to the list
+            paths.append(new_path)
+    return paths
 
 def get_yes_no_input(prompt):
     while True:
@@ -74,7 +88,7 @@ json_data = read_json(file_path)
 target_key, new_value = input("Type the key and the new value in format: key, new value: ").split(", ", 1)
 
 
-duplicate_keys = find_duplicate_keys(json_data, target_key)
+duplicate_keys = find_keys(json_data, target_key)
 
 if len(duplicate_keys) > 1:
     print(f"Found {len(duplicate_keys)} occurrences of the key '{target_key}':")
@@ -85,8 +99,9 @@ if len(duplicate_keys) > 1:
 elif len(duplicate_keys) == 1:
     update_key_value(json_data, duplicate_keys[0][0], new_value)
 elif len(duplicate_keys) < 1:
-    print("yuh")
+    print("topic doesnt exist")
 
 
 write_json(file_path, json_data)
 print(json.dumps(json_data, indent=4))
+
