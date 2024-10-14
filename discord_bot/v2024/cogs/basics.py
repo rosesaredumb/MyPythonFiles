@@ -1,9 +1,10 @@
-from settings import commands, discord, app_commands
+from settings import commands, discord, app_commands, ast
 from settings import send_embed_response, get_imgur_album_images, get_imgur_album_name, retrieve_keys
 
 
 x = {}
-imgur_album_IDs = list(retrieve_keys("imgur album_IDs"))
+imgur_album_IDs = ast.literal_eval(retrieve_keys("imgur album_IDs"))
+print(imgur_album_IDs)
 for j in imgur_album_IDs:
     x[j] = get_imgur_album_name(j)
 

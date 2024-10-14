@@ -18,12 +18,11 @@ if not os.path.exists(file_path):
 else:
     print(f"{file_path} already exists.")
 
-# Read the JSON file
 json_data = read_json(file_path)
 def get_paths(d, path=""):
-    paths = []  # List to store all the paths
+    paths = []  
     for key, value in d.items():
-        # Build the new path by appending the current key
+
         new_path = f"{path}.{key}" if path else key
         if isinstance(value, dict) and value:
             # If the value is a non-empty dictionary, recurse deeper and extend paths
