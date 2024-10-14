@@ -57,7 +57,7 @@ def retrieve_keys(item):
         print("This script is NOT running in Replit.")
         try:
             # Open and load the JSON file
-            with open("./config.json") as config_file:
+            with open(discord_config_path) as config_file:
                 config = json.load(config_file)
         except FileNotFoundError:
             print("Config file not found. Please ensure 'config.json' exists.")
