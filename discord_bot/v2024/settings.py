@@ -16,7 +16,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 
-mindmap_json_path = "./mindmap/data.json"
+mindmap_json_path = "./discord_bot/v2024/cogs/data.json"
 discord_config_path = './discord_bot/v2024/config.json'
 cogs_path = './discord_bot/v2024/cogs'
 
