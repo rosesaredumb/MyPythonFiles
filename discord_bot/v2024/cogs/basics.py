@@ -31,6 +31,29 @@ class basics(commands.Cog):
         await interaction.response.send_message(f"You chose the color: {color_choice}")
 
     
+    @app_commands.command(name="avatar", description="Get the enlarged avatar of a user.")
+    async def avatar_command(self, interaction: discord.Interaction, user: discord.User = None):
+        """
+        Command to fetch and display the enlarged avatar of a specified user.
+
+        Args:
+            interaction (discord.Interaction): The interaction to respond to.
+            user (discord.User, optional): The user whose avatar to fetch. Defaults to the command invoker.
+        """
+        # If no user is specified, use the command invoker
+        if user is None:
+            user = interaction.user
+
+        # Get the user's avatar URL (with the largest size)
+        avatar_url = user.display_avatar.url
+
+        # Create an embed with the avatar
+        embed = discord.Embed(title=f"{user.name}'s Avatar", color=discord.Color.blue())
+        embed.set_image(url=avatar_url)
+
+        # Send the embed response
+        await interaction.response.send_message(embed=embed)
+    
 
 async def setup(bot):
     await bot.add_cog(basics(bot))

@@ -1,10 +1,9 @@
 from settings import commands, os, traceback, logging, retrieve_keys, cogs_path, discord
 
-print(retrieve_keys("discord rose_bot token"))
-TOKEN = str(retrieve_keys("discord rose_bot token"))
-intents = discord.Intents.all()
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+TOKEN = retrieve_keys("discord rose_bot token")
+
+bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
 async def load_extensions():
     for filename in os.listdir(cogs_path):
@@ -27,9 +26,25 @@ async def on_ready():
         await load_extensions()
     except Exception as e:
         print(e)
-    synced = await bot.tree.sync()  # Sync slash commands
-    print(f"synced {len(synced)} command(s) : {", ".join([command.name for command in synced])}")
+    synced = await bot.tree.sync()
+
+    # Prepare to list commands and subcommands
+    command_list = []
+
+    for command in synced:
+        # Add main command
+        command_list.append(command.name)
+
+        # Check if the command is a group (i.e., has subcommands)
+        if isinstance(command, discord.app_commands.Group):
+            for subcommand in command.commands:
+                # Add subcommand (formatted as maincommand subcommand)
+                command_list.append(f"{command.name} {subcommand.name}")
+
+    # Print synced commands and subcommands
+    print(f"synced {len(synced)} command(s)\n" + "\n".join(command_list))
     print("Slash commands synced.")
+
 
 #@bot.event
 #async def on_command_error(ctx, error):
