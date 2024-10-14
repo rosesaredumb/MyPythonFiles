@@ -27,10 +27,10 @@ async def on_ready():
     except Exception as e:
         print(e)
     synced = await bot.tree.sync()
-
+    print(synced)
     # Prepare to list commands and subcommands
     command_list = []
-
+    
     for command in synced:
         # Add main command
         command_list.append(command.name)
