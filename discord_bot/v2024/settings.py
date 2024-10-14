@@ -87,7 +87,7 @@ async def send_embed_response(interaction: discord.Interaction,
                               description: str = "", 
                               color: discord.Color = discord.Color.blue(), 
                               type = "message", 
-                              ephemeral: bool = True):
+                              ephemeral: bool = False):
     """
     Create and send an embed response.
 
