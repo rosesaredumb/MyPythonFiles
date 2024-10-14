@@ -1,6 +1,13 @@
 {
     "seed": {
-        "ophthal": {},
-        "surgery": {}
+        "ophthal": {
+            "org": {}
+        },
+        "surgery": {
+            "hi": {
+                "org": {}
+            },
+            "lol": {}
+        }
     }
 }
