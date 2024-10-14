@@ -1,5 +1,15 @@
 from logging import basicConfig
-from settings import commands, discord, app_commands, send_embed_response, get_imgur_album_images
+from settings import get_imgur_album_name
+from settings import commands, discord, app_commands, send_embed_response, get_imgur_album_images, imgur_album_IDs
+
+
+x = {}
+for j in imgur_album_IDs:
+    x[j] = get_imgur_album_name(j)
+
+
+image_choices = [app_commands.Choice(name=value, value=key) for key, value in x.items()]
+
 
 class basics(commands.Cog):
     def __init__(self, bot):
@@ -53,7 +63,8 @@ class basics(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
     @app_commands.command(name="images", description="shows images from imgur album")
-    async def images_command(self, interaction: discord.Interaction, album_id: str = "d9OwJIB"):
+    @app_commands.choices(album_id = image_choices)
+    async def images_command(self, interaction: discord.Interaction, album_id: str):
         """
         Command to fetch and display images from an Imgur album.
 
@@ -61,12 +72,12 @@ class basics(commands.Cog):
             interaction (discord.Interaction): The interaction to respond to.
             album_id (str): The ID of the Imgur album.
         """
-        
+            
         imgur_images = get_imgur_album_images(album_id)
             
         embeds = []
         for img_url in imgur_images:
-            embed = discord.Embed(title="Imgur Album Image", color=discord.Color.blue())
+            embed = discord.Embed(title=f"{get_imgur_album_name(album_id)}", color=discord.Color.blue())
             embed.set_image(url=img_url)
             embeds.append(embed)
 

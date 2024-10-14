@@ -6,6 +6,7 @@ from discord_bot.v2024.settings import retrieve_keys
 
 ALBUM_ID = "d9OwJIB"  # The album ID you want to fetch
 token = str(retrieve_keys("imgur_client_ID"))
+album_IDs = ["d9OwJIB", "3vYdMJL", "JXDIAKY"]
 
 def get_imgur_album_images(album_id):
     # Imgur API endpoint to get album images
@@ -31,8 +32,31 @@ def get_imgur_album_images(album_id):
         return []
 
 # Fetch images from the album
-album_images = get_imgur_album_images(ALBUM_ID)
+def get_imgur_album_name(album_id):
+    url = f"https://api.imgur.com/3/album/{album_id}"
+    headers = {"Authorization": f"Client-ID {token}"}
 
+    # Make the request to Imgur API
+    response = requests.get(url, headers=headers)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        data = response.json()
+        album_title = data['data']['title']
+        return album_title
+    else:
+        return f"Error: Unable to retrieve album info (Status code: {response.status_code})"
+
+# Example usage
+album_id = "YOUR_ALBUM_ID"  # Replace with the actual album ID
+album_name = get_imgur_album_name(ALBUM_ID)
+
+if album_name:
+    print(f"Album Name: {album_name}")
+
+x = {}
+for i in album_IDs:
+    x[i] = get_imgur_album_name(i)
+
+print(x)
 # Print the image URLs
-for img_url in album_images:
-    print(img_url)

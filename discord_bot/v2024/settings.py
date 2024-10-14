@@ -21,15 +21,15 @@ mindmap_json_path = "./discord_bot/v2024/cogs/data.json"
 discord_config_path = './discord_bot/v2024/config.json'
 cogs_path = './discord_bot/v2024/cogs'
 
+imgur_album_IDs = ["d9OwJIB", "3vYdMJL", "JXDIAKY"]
 
 def get_imgur_album_images(album_id):
     # Imgur API endpoint to get album images
     url = f"https://api.imgur.com/3/album/{album_id}/images"
-    token = str(retrieve_keys("imgur client_ID"))
-    print(token)
+    
     # Imgur requires the client ID to be sent as a header
     headers = {
-        "Authorization": f"Client-ID {token}"
+        "Authorization": f"Client-ID {str(retrieve_keys("imgur client_ID"))}"
     }
 
     # Make the request to Imgur API
@@ -45,6 +45,22 @@ def get_imgur_album_images(album_id):
     else:
         print(f"Failed to fetch album. Status code: {response.status_code}")
         return []
+
+
+def get_imgur_album_name(album_id):
+    url = f"https://api.imgur.com/3/album/{album_id}"
+    headers = {"Authorization": f"Client-ID {str(retrieve_keys("imgur client_ID"))}"}
+
+    # Make the request to Imgur API
+    response = requests.get(url, headers=headers)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        data = response.json()
+        album_title = data['data']['title']
+        return album_title
+    else:
+        return f"Error: Unable to retrieve album info (Status code: {response.status_code})"
 
 
 
