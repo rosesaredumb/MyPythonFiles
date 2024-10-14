@@ -1,7 +1,7 @@
 from settings import commands, os, traceback, logging, retrieve_keys, cogs_path, discord, app_commands
 
 
-TOKEN = retrieve_keys("discord rose_bot token")
+TOKEN = str(retrieve_keys("discord rose_bot token"))
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
@@ -27,7 +27,7 @@ async def on_ready():
     except Exception as e:
         print(e)
     synced = await bot.tree.sync()
-    print(f"Synced {len(synced)} command(s)")
+    print(f"Synced {len(synced)}  command(s)")
 
     for command in bot.tree.walk_commands():
         if isinstance(command, app_commands.Group):

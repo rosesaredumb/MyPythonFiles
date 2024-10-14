@@ -1,10 +1,11 @@
 from mymods import subprocess, time, timeit
 
-x = 1  #int(input("which script number?"))
+x = int(input("which script number?"))
 
 var_scripts = {
     "1": "./discord_bot/v2024/disbot3.py",
     "2": "trying.py",
+    "3": "imgur_trial.py"
 }
 
 print(f"About to run {var_scripts[f'{x}']}")

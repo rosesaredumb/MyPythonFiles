@@ -1,5 +1,5 @@
 from logging import basicConfig
-from settings import commands, discord, app_commands, send_embed_response
+from settings import commands, discord, app_commands, send_embed_response, get_imgur_album_images
 
 class basics(commands.Cog):
     def __init__(self, bot):
@@ -32,7 +32,7 @@ class basics(commands.Cog):
 
     
     @app_commands.command(name="avatar", description="Get the enlarged avatar of a user.")
-    async def avatar_command(self, interaction: discord.Interaction, user: discord.User = None):
+    async def avatar_command(self, interaction: discord.Interaction, user: discord.User):
         """
         Command to fetch and display the enlarged avatar of a specified user.
 
@@ -41,18 +41,40 @@ class basics(commands.Cog):
             user (discord.User, optional): The user whose avatar to fetch. Defaults to the command invoker.
         """
         # If no user is specified, use the command invoker
-        if user is None:
-            user = interaction.user
+        user = user or interaction.user
 
         # Get the user's avatar URL (with the largest size)
         avatar_url = user.display_avatar.url
-
         # Create an embed with the avatar
         embed = discord.Embed(title=f"{user.name}'s Avatar", color=discord.Color.blue())
         embed.set_image(url=avatar_url)
 
         # Send the embed response
         await interaction.response.send_message(embed=embed)
+
+    @app_commands.command(name="images", description="shows images from imgur album")
+    async def images_command(self, interaction: discord.Interaction, album_id: str = "d9OwJIB"):
+        """
+        Command to fetch and display images from an Imgur album.
+
+        Args:
+            interaction (discord.Interaction): The interaction to respond to.
+            album_id (str): The ID of the Imgur album.
+        """
+        
+        imgur_images = get_imgur_album_images(album_id)
+            
+        embeds = []
+        for img_url in imgur_images:
+            embed = discord.Embed(title="Imgur Album Image", color=discord.Color.blue())
+            embed.set_image(url=img_url)
+            embeds.append(embed)
+
+        # Send embeds in batches if necessary
+        await interaction.response.send_message(embeds=embeds[:10])  # Discord allows max 10 embeds per message
+        if len(embeds) > 10:
+            for batch_start in range(10, len(embeds), 10):
+                await interaction.followup.send(embeds=embeds[batch_start:batch_start + 10])
     
 
 async def setup(bot):
