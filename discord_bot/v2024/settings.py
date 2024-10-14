@@ -93,13 +93,6 @@ def retrieve_keys(item):
     Returns:
         str: The value of the key, or None if not found.
     """   
-    frame = inspect.currentframe()
-    caller_frame = frame.f_back
-
-    # Get the filename and line number where the caller is located
-    caller_filename = caller_frame.f_code.co_filename
-    caller_function = caller_frame.f_code.co_name
-    caller_line = caller_frame.f_lineno
     args = item.split()
     if "REPLIT_DB_URL" in os.environ:
         x = "_".join(args)
@@ -111,7 +104,6 @@ def retrieve_keys(item):
             with open(discord_config_path) as config_file:
                 config = json.load(config_file)
             print("This script is NOT running in Replit.")
-            print(f"{caller_filename} - {caller_function} - {caller_line}")
         except FileNotFoundError:
             print("Config file not found. Please ensure 'config.json' exists.")
             return None
@@ -119,7 +111,6 @@ def retrieve_keys(item):
             print("Error decoding JSON. Please check your config file.")
             return None
 
-        # Navigate through the nested dictionary using the provided arguments
         value = config
 
         try:

@@ -3,8 +3,7 @@ from settings import send_embed_response, get_imgur_album_images, get_imgur_albu
 
 
 x = {}
-imgur_album_IDs = ast.literal_eval(retrieve_keys("imgur album_IDs"))
-print(imgur_album_IDs)
+imgur_album_IDs = ast.literal_eval(str(retrieve_keys("imgur album_IDs")))
 for j in imgur_album_IDs:
     x[j] = get_imgur_album_name(j)
 
@@ -72,8 +71,7 @@ class basics(commands.Cog):
         Args:
             interaction (discord.Interaction): The interaction to respond to.
             album_id (str): The ID of the Imgur album.
-        """
-            
+        """ 
         imgur_images = get_imgur_album_images(album_id)
             
         embeds = []
@@ -83,7 +81,7 @@ class basics(commands.Cog):
             embeds.append(embed)
 
         # Send embeds in batches if necessary
-        await interaction.response.send_message(embeds=embeds[:10])  # Discord allows max 10 embeds per message
+        await interaction.response.send_message(embeds=embeds[:10])
         if len(embeds) > 10:
             for batch_start in range(10, len(embeds), 10):
                 await interaction.followup.send(embeds=embeds[batch_start:batch_start + 10])

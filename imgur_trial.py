@@ -5,7 +5,7 @@ from discord_bot.v2024.settings import retrieve_keys
 # Replace this with your actual Imgur Client ID
 
 ALBUM_ID = "d9OwJIB"  # The album ID you want to fetch
-token = str(retrieve_keys("imgur_client_ID"))
+token = str(retrieve_keys("imgur client_ID"))
 album_IDs = ["d9OwJIB", "3vYdMJL", "JXDIAKY"]
 
 def get_imgur_album_images(album_id):

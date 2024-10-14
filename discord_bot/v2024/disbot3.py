@@ -1,6 +1,6 @@
 from settings import commands, os, traceback, logging, retrieve_keys, cogs_path, discord, app_commands
 
-
+print(retrieve_keys("imgur client_ID"))
 TOKEN = str(retrieve_keys("discord rose_bot token"))
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())

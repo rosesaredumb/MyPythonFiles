@@ -1,6 +1,6 @@
 from mymods import subprocess, time, timeit
 
-x = int(input("which script number?"))
+x =1    #int(input("which script number?"))
 
 var_scripts = {
     "1": "./discord_bot/v2024/disbot3.py",
