@@ -52,7 +52,6 @@ def retrieve_keys(item):
         x = "_".join(args)
         print("This script is running in Replit!")
         TOKEN = os.environ[x]
-        return TOKEN
     else:
         print("This script is NOT running in Replit.")
         try:
@@ -73,13 +72,13 @@ def retrieve_keys(item):
             for arg in args:
                 value = value[arg]  # Access the next level using the current key
             TOKEN = value
-            return TOKEN
         except KeyError:
             print(f"Key {' -> '.join(args)} not found in the config.")
             return None
         except TypeError:
             print("Invalid path provided. Check the keys and their hierarchy.")
             return None
+    return str(TOKEN)
 
 
 async def send_embed_response(interaction: discord.Interaction, 
