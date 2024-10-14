@@ -1,7 +1,7 @@
 from settings import discord, commands, os, traceback, logging, retrieve_keys, cogs_path
 
 
-TOKEN = str(retrieve_keys("DISCORD_TOKEN"))
+TOKEN = str(retrieve_keys("discord rose_bot token"))
 intents = discord.Intents.all()
 
 bot = commands.Bot(command_prefix="!", intents=intents)

@@ -40,21 +40,24 @@ def ensure_json_file(file_path):
 def retrieve_keys(item):
     """
     Retrieve the specified key from environment variables or a config file.
-    
+
     Parameters:
         item (str): The name of the key to retrieve.
-    
+
     Returns:
         str: The value of the key, or None if not found.
     """   
-
+    args = item.split()
     if "REPLIT_DB_URL" in os.environ:
+        x = "_".join(args)
         print("This script is running in Replit!")
-        TOKEN = os.getenv(item)
+        TOKEN = os.environ[x]
+        return TOKEN
     else:
         print("This script is NOT running in Replit.")
         try:
-            with open(discord_config_path) as config_file:
+            # Open and load the JSON file
+            with open("./config.json") as config_file:
                 config = json.load(config_file)
         except FileNotFoundError:
             print("Config file not found. Please ensure 'config.json' exists.")
@@ -62,8 +65,21 @@ def retrieve_keys(item):
         except json.JSONDecodeError:
             print("Error decoding JSON. Please check your config file.")
             return None
-        TOKEN = config.get(item)
-    return TOKEN
+
+        # Navigate through the nested dictionary using the provided arguments
+        value = config
+
+        try:
+            for arg in args:
+                value = value[arg]  # Access the next level using the current key
+            TOKEN = value
+            return TOKEN
+        except KeyError:
+            print(f"Key {' -> '.join(args)} not found in the config.")
+            return None
+        except TypeError:
+            print("Invalid path provided. Check the keys and their hierarchy.")
+            return None
 
 
 async def send_embed_response(interaction: discord.Interaction, title: str = "", description: str = "", color: discord.Color = discord.Color.blue()):
