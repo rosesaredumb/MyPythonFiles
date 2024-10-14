@@ -1,9 +1,9 @@
-from logging import basicConfig
-from settings import get_imgur_album_name
-from settings import commands, discord, app_commands, send_embed_response, get_imgur_album_images, imgur_album_IDs
+from settings import commands, discord, app_commands
+from settings import send_embed_response, get_imgur_album_images, get_imgur_album_name, retrieve_keys
 
 
 x = {}
+imgur_album_IDs = list(retrieve_keys("imgur album_IDs"))
 for j in imgur_album_IDs:
     x[j] = get_imgur_album_name(j)
 

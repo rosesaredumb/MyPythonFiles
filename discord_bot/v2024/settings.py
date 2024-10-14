@@ -1,3 +1,4 @@
+import ast
 import asyncio
 import discord
 from discord import app_commands
@@ -21,7 +22,6 @@ mindmap_json_path = "./discord_bot/v2024/cogs/data.json"
 discord_config_path = './discord_bot/v2024/config.json'
 cogs_path = './discord_bot/v2024/cogs'
 
-imgur_album_IDs = ["d9OwJIB", "3vYdMJL", "JXDIAKY"]
 
 def get_imgur_album_images(album_id):
     # Imgur API endpoint to get album images
@@ -100,7 +100,6 @@ def retrieve_keys(item):
     else:
         print("This script is NOT running in Replit.")
         try:
-            # Open and load the JSON file
             with open(discord_config_path) as config_file:
                 config = json.load(config_file)
         except FileNotFoundError:
@@ -148,3 +147,4 @@ async def send_embed_response(interaction: discord.Interaction,
         await interaction.response.send_message(embed=embed, ephemeral=ephemeral)
     elif type == "followup":
         await interaction.followup.send(embed=embed, ephemeral=ephemeral)
+
