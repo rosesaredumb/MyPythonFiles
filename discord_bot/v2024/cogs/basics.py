@@ -9,7 +9,7 @@ for j in imgur_album_IDs:
 
 
 image_choices = [app_commands.Choice(name=value, value=key) for key, value in x.items()]
-
+print(image_choices)
 
 class basics(commands.Cog):
     def __init__(self, bot):
