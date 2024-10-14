@@ -1,4 +1,5 @@
-from settings import discord, commands, os, traceback, logging, retrieve_keys, cogs_path
+from settings import commands, os, traceback, logging, retrieve_keys, cogs_path, discord
+
 
 
 TOKEN = str(retrieve_keys("discord rose_bot token"))
