@@ -1,4 +1,4 @@
-from settings import commands, os, traceback, logging, retrieve_keys, cogs_path, discord
+from settings import commands, os, traceback, logging, retrieve_keys, cogs_path, discord, app_commands
 
 
 TOKEN = retrieve_keys("discord rose_bot token")
@@ -27,23 +27,19 @@ async def on_ready():
     except Exception as e:
         print(e)
     synced = await bot.tree.sync()
-    print(synced)
-    # Prepare to list commands and subcommands
-    command_list = []
-    
-    for command in synced:
-        # Add main command
-        command_list.append(command.name)
+    print(f"Synced {len(synced)} command(s)")
 
-        # Check if the command is a group (i.e., has subcommands)
-        if isinstance(command, discord.app_commands.Group):
+    for command in bot.tree.walk_commands():
+        if isinstance(command, app_commands.Group):
+            print(f"Group Command: {command.name}")
+
+            # Loop through subcommands within the group
             for subcommand in command.commands:
-                # Add subcommand (formatted as maincommand subcommand)
-                command_list.append(f"{command.name} {subcommand.name}")
-
-    # Print synced commands and subcommands
-    print(f"synced {len(synced)} command(s)\n" + "\n".join(command_list))
-    print("Slash commands synced.")
+                print(f"  Subcommand: {subcommand.name}")
+        elif command.parent is None:
+            print(f"Command: {command.name}")
+            
+    
 
 
 #@bot.event
