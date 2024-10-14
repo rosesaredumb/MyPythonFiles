@@ -36,9 +36,9 @@ class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
 
         if new_value not in x:
             current[keys[-1]][new_value] = {}
-            await interaction.followup.send(f"Added {new_value} to {path_to_update}", ephemeral=True)
+            await send_embed_response(interaction, description=f"Added {new_value} to {path_to_update}", type="followup")
         else:
-            await interaction.followup.send("That item already exists. Do you want to replace it? (yes/no)", ephemeral=True)
+            await send_embed_response(interaction, description="That item already exists. Do you want to replace it? (yes/no)")
 
             def check(m):
                 return m.author == interaction.user and m.channel == interaction.channel
@@ -47,11 +47,11 @@ class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
                 response = await self.bot.wait_for('message', check=check, timeout=60.0)
                 if response.content.lower() in ['yes', 'y']:
                     current[keys[-1]][new_value] = {}
-                    await interaction.followup.send("Replaced.", ephemeral=True)
+                    await send_embed_response(interaction, description="Replaced.", type="followup")
                 else:
-                    await interaction.followup.send("You chose not to continue.", ephemeral=True)
+                    await send_embed_response(interaction, description="You chose not to continue.", type="followup")
             except asyncio.TimeoutError:
-                await interaction.followup.send("Timeout! No response received.", ephemeral=True)
+                await send_embed_response(interaction, description="Timeout! No response received.", type="followup")
 
     @app_commands.command(name="update", description="Find and update a key in the JSON file")
     @app_commands.describe(target_key="The item you want to choose.", new_value="The new value to create for that item.")
@@ -62,7 +62,7 @@ class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
 
         if len(duplicate_keys) > 1:
             found_keys = "\n".join([f"{i+1}: Path: {path}, Current Value: {value}" for i, (path, value) in enumerate(duplicate_keys)])
-            await interaction.followup.send(f"Found {len(duplicate_keys)} occurrences of the key '{target_key}':\n{found_keys}\nPlease choose one to update.", ephemeral=True)
+            await send_embed_response(interaction, description=f"Found {len(duplicate_keys)} occurrences of the key '{target_key}':\n{found_keys}\nPlease choose one to update.", type="followup")
 
             def check(m):
                 return m.author == interaction.user and m.channel == interaction.channel and m.content.isdigit()
@@ -73,13 +73,13 @@ class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
                 if 0 <= choice < len(duplicate_keys):
                     await self.update_key_value(json_data, duplicate_keys[choice][0], new_value, interaction)
                 else:
-                    await interaction.followup.send("Invalid choice.", ephemeral=True)
+                    await send_embed_response(interaction, description="Invalid choice.", type="followup")
             except asyncio.TimeoutError:
-                await interaction.followup.send("Timeout! No response received.", ephemeral=True)
+                await send_embed_response(interaction, description="Timeout! No response received.", type="followup")
         elif len(duplicate_keys) == 1:
             await self.update_key_value(json_data, duplicate_keys[0][0], new_value, interaction)
         else:
-            await send_embed_response(interaction, description=f"No occurrences of the key '{target_key}' were found.", ephemeral=True)
+            await send_embed_response(interaction, description=f"No occurrences of the key '{target_key}' were found.")
 
         write_json(json_data, mindmap_json_path)
 

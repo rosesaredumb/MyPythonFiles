@@ -82,7 +82,12 @@ def retrieve_keys(item):
             return None
 
 
-async def send_embed_response(interaction: discord.Interaction, title: str = "", description: str = "", color: discord.Color = discord.Color.blue()):
+async def send_embed_response(interaction: discord.Interaction, 
+                              title: str = "", 
+                              description: str = "", 
+                              color: discord.Color = discord.Color.blue(), 
+                              type = "message", 
+                              ephemeral: bool = True):
     """
     Create and send an embed response.
 
@@ -91,6 +96,11 @@ async def send_embed_response(interaction: discord.Interaction, title: str = "",
         title (str): The title of the embed.
         description (str): The description of the embed.
         color (discord.Color): The color of the embed.
+        type (str): The type of response ('message' or 'followup').
+        ephemeral (bool): Whether the message should be ephemeral (default is True).
     """
     embed = discord.Embed(title=title, description=f"```\n{description}\n```", color=color)
-    await interaction.response.send_message(embed=embed)
+    if type == "message":
+        await interaction.response.send_message(embed=embed, ephemeral=ephemeral)
+    elif type == "followup":
+        await interaction.followup.send(embed=embed, ephemeral=ephemeral)
