@@ -1,7 +1,8 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-from __init__ import send_embed_response, get_imgur_album_images, get_imgur_album_name, retrieve_keys
+import ast
+from settings import send_embed_response, get_imgur_album_images, get_imgur_album_name, retrieve_keys
 
 
 x = {}
