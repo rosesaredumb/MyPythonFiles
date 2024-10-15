@@ -1,6 +1,6 @@
-from settings import asyncio, discord, commands, app_commands
-from settings import send_embed_response, read_json, write_json, ensure_json_file
-from settings import mindmap_json_path
+from discord_bot.v2024.settings import asyncio, discord, commands, app_commands
+from discord_bot.v2024.settings import send_embed_response, read_json, write_json, ensure_json_file
+from discord_bot.v2024.settings import mindmap_json_path
 
 
 class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):

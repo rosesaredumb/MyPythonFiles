@@ -1,11 +1,15 @@
-from settings import commands, discord, app_commands, ast
-from settings import send_embed_response, get_imgur_album_images, get_imgur_album_name, retrieve_keys
+import discord
+from discord import app_commands
+from discord.ext import commands
+from __init__ import send_embed_response, get_imgur_album_images, get_imgur_album_name, retrieve_keys
 
 
 x = {}
 imgur_album_IDs = ast.literal_eval(str(retrieve_keys("imgur album_IDs")))
+print(imgur_album_IDs)
 for j in imgur_album_IDs:
     x[j] = get_imgur_album_name(j)
+print(x)
 
 
 image_choices = [app_commands.Choice(name=value, value=key) for key, value in x.items()]

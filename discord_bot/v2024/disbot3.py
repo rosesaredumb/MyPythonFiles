@@ -1,4 +1,4 @@
-from settings import commands, os, traceback, logging, retrieve_keys, cogs_path, discord, app_commands
+from discord_bot.v2024.settings import commands, os, traceback, logging, retrieve_keys, cogs_path, discord, app_commands
 
 print(retrieve_keys("imgur client_ID"))
 TOKEN = str(retrieve_keys("discord rose_bot token"))
@@ -7,7 +7,7 @@ bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
 async def load_extensions():
     for filename in os.listdir(cogs_path):
-        if filename.endswith('.py') and filename != "__init__.py":
+        if filename.endswith('.py') and filename != "__init__.py" and filename != "settings.py":
             cog_name = f"cogs.{filename[:-3]}"
             try:
                 await bot.load_extension(cog_name)
