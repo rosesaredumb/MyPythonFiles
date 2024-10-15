@@ -1,26 +1,20 @@
-import discord
-from discord import app_commands
-from discord.ext import commands
-import ast
-from settings import send_embed_response, get_imgur_album_images, get_imgur_album_name, retrieve_keys
+from cogs.settings import discord, commands, app_commands, ast
+from cogs.settings import send_embed_response, retrieve_keys, imgur_functions
 
 
+imgur_instance = imgur_functions()
 x = {}
 imgur_album_IDs = ast.literal_eval(str(retrieve_keys("imgur album_IDs")))
-print(imgur_album_IDs)
 for j in imgur_album_IDs:
-    x[j] = get_imgur_album_name(j)
-print(x)
-
+    x[j] = imgur_instance.get_imgur_album_name(j)
 
 image_choices = [app_commands.Choice(name=value, value=key) for key, value in x.items()]
-print(image_choices)
+
 
 class basics(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.file_path = './mindmap/data.json'
-
+        
        
     @app_commands.command(name="test", description="k")
     async def test(self, interaction: discord.Interaction):
@@ -77,11 +71,11 @@ class basics(commands.Cog):
             interaction (discord.Interaction): The interaction to respond to.
             album_id (str): The ID of the Imgur album.
         """ 
-        imgur_images = get_imgur_album_images(album_id)
-            
+        imgur_images = imgur_functions.get_imgur_album_images(self, album_id)
+        name = imgur_functions.get_imgur_album_name(self, album_id)
         embeds = []
         for img_url in imgur_images:
-            embed = discord.Embed(title=f"{get_imgur_album_name(album_id)}", color=discord.Color.blue())
+            embed = discord.Embed(title=name, color=discord.Color.blue())
             embed.set_image(url=img_url)
             embeds.append(embed)
 

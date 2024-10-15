@@ -1,6 +1,6 @@
 import requests
 
-from discord_bot.v2024.settings import retrieve_keys
+from discord_bot.v2024.settingsmain import retrieve_keys
 
 # Replace this with your actual Imgur Client ID
 

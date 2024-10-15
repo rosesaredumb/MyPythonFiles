@@ -1,7 +1,5 @@
-from settings import commands, os, traceback, logging, retrieve_keys, cogs_path, discord, app_commands
-
-print(retrieve_keys("imgur client_ID"))
-TOKEN = str(retrieve_keys("discord rose_bot token"))
+from settingsmain import commands, os, traceback, logging, discord, app_commands
+from settingsmain import retrieve_keys, cogs_path
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
@@ -15,7 +13,7 @@ async def load_extensions():
                 print(f"Loaded {cog_name}")
             except Exception as e:
                 tb_str = ''.join(traceback.format_exception(type(e), e, e.__traceback__))
-                #logging.error(f'Failed to load cog {cog_name}: {tb_str}')
+                logging.error(f'Failed to load cog {cog_name}: {tb_str}')
                 print(f"Failed to load {cog_name}: {e}")
 
 
@@ -51,7 +49,7 @@ async def on_ready():
 #    # Optionally, you can send a message to the user
 #    await ctx.send(f'An error occurred: {str(error)}')
 
-# Run the bot
 if __name__ == "__main__":
     #bot.loop.run_until_complete(load_extensions())
+    TOKEN = str(retrieve_keys("discord rose_bot token"))
     bot.run(TOKEN)

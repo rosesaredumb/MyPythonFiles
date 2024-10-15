@@ -1,12 +1,12 @@
-from settings import asyncio, discord, commands, app_commands
-from settings import send_embed_response, read_json, write_json, ensure_json_file
-from settings import mindmap_json_path
+from cogs.settings import asyncio, discord, commands, app_commands
+from cogs.settings import send_embed_response, json_funcs
+from cogs.settings import mindmap_json_path
 
 
 class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
     def __init__(self, bot):
         self.bot = bot
-        ensure_json_file(mindmap_json_path)
+        json_funcs.ensure_json_file(self, mindmap_json_path)
 
     def find_keys(self, data, target_key, parent_path="", results=None):
         """ Recursive function to find all identical keys in the JSON and their paths. """
@@ -57,7 +57,7 @@ class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
     @app_commands.describe(target_key="The item you want to choose.", new_value="The new value to create for that item.")
     async def update(self, interaction: discord.Interaction, target_key: str, new_value: str):
         await interaction.response.defer(ephemeral=True)  # Acknowledge the interaction first
-        json_data = read_json(mindmap_json_path)
+        json_data = json_funcs.read_json(self, mindmap_json_path)
         duplicate_keys = self.find_keys(json_data, target_key)
 
         if len(duplicate_keys) > 1:
@@ -81,16 +81,16 @@ class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
         else:
             await send_embed_response(interaction, description=f"No occurrences of the key '{target_key}' were found.")
 
-        write_json(json_data, mindmap_json_path)
+        json_funcs.write_json(self, json_data, mindmap_json_path)
 
     @app_commands.command(name="show", description="Shows the item path")
     async def show(self, interaction: discord.Interaction, target_key: str):
         await interaction.response.defer(ephemeral=True)  # Acknowledge the interaction first
-        json_data = read_json(mindmap_json_path)
+        json_data = json_funcs.read_json(self, mindmap_json_path)
         duplicate_keys = self.find_keys(json_data, target_key)
 
         found_keys = "\n".join([f"{i+1}: {path}" for i, (path, value) in enumerate(duplicate_keys)])
-        await send_embed_response(interaction, description=f"{found_keys}")
+        await send_embed_response(interaction, description=f"{found_keys}", type="followup")
 
 
 async def setup(bot):

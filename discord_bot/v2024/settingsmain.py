@@ -23,66 +23,6 @@ mindmap_json_path = "./discord_bot/v2024/cogs/data.json"
 discord_config_path = './discord_bot/v2024/config.json'
 cogs_path = './discord_bot/v2024/cogs'
 
-
-def get_imgur_album_images(album_id):
-    # Imgur API endpoint to get album images
-    url = f"https://api.imgur.com/3/album/{album_id}/images"
-    
-    # Imgur requires the client ID to be sent as a header
-    headers = {
-        "Authorization": f"Client-ID {str(retrieve_keys("imgur client_ID"))}"
-    }
-
-    # Make the request to Imgur API
-    response = requests.get(url, headers=headers)
-
-    if response.status_code == 200:
-        data = response.json()
-        images = data["data"]
-
-        # Extract the links to each image
-        image_links = [image["link"] for image in images]
-        return image_links
-    else:
-        print(f"Failed to fetch album. Status code: {response.status_code}")
-        return []
-
-
-def get_imgur_album_name(album_id):
-    url = f"https://api.imgur.com/3/album/{album_id}"
-    headers = {"Authorization": f"Client-ID {str(retrieve_keys("imgur client_ID"))}"}
-
-    # Make the request to Imgur API
-    response = requests.get(url, headers=headers)
-
-    # Check if the request was successful
-    if response.status_code == 200:
-        data = response.json()
-        album_title = data['data']['title']
-        return album_title
-    else:
-        return f"Error: Unable to retrieve album info (Status code: {response.status_code})"
-
-
-
-
-def read_json(file_path):
-    with open(file_path, 'r') as file:
-        return json.load(file)
-
-def write_json(data, file_path):
-    with open(file_path, 'w') as file:
-        json.dump(data, file, indent=4)
-
-def ensure_json_file(file_path):
-    """Ensure the JSON file exists or create it."""
-    if not os.path.exists(file_path):
-        with open(file_path, 'w') as f:
-            json.dump({"seed": {}}, f)
-            print(f"{file_path} created!")
-    else:
-        print(f"{file_path} already exists.")
-
 def retrieve_keys(item):
     """
     Retrieve the specified key from environment variables or a config file.
