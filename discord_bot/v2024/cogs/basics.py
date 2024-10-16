@@ -11,8 +11,8 @@ image_choices = [app_commands.Choice(name=value, value=key) for key, value in x.
 
 
 
-title_names = imgur_instance.get_imgur_album_images_with_descriptions()[1]
-title_choices = [app_commands.Choice(name=item, value=item) for item in title_names]
+title_names = imgur_instance.get_imgur_album_images_with_descriptions()[0]
+title_choices = [app_commands.Choice(name=f"{key} - ({len(value)})", value=key) for key, value in title_names.items()]
 
 
 class basics(commands.Cog):
