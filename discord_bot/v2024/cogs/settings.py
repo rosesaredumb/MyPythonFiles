@@ -82,7 +82,7 @@ class imgur_functions:
             images = data["data"]
 
             # Extract the links and descriptions of each image
-            image_data = {"None":[]}
+            image_data = {}
             for image in images:
                 if image["description"]:
                     if image["description"] not in image_data:
@@ -92,7 +92,11 @@ class imgur_functions:
                         image_data[image["description"]].append(image["link"])
 
                 else:
-                    image_data["None"].append(image["link"])
+                    if "None" not in image_data:
+                        image_data["None"] = [image["link"]]
+
+                    elif "None" in image_data:
+                        image_data["None"].append(image["link"])
             
             titles = list(image_data.keys())
 
