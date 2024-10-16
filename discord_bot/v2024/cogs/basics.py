@@ -1,4 +1,4 @@
-from cogs.settings import discord, commands, app_commands, ast
+from cogs.settings import discord, commands, app_commands, ast, asyncio
 from cogs.settings import send_embed_response, retrieve_keys, imgur_functions
 
 
@@ -101,11 +101,36 @@ class basics(commands.Cog):
             interaction (discord.Interaction): The interaction to respond to.
             album_id (str): The ID of the Imgur album.
         """ 
-        await interaction.response.defer(ephemeral=True)
+        qp_data = imgur_functions.get_imgur_album_images_with_descriptions(self)[0]
         qp = imgur_functions.get_imgur_album_images_with_descriptions(self)[1]
         print(qp)
         found_keys = "\n".join([f"{i+1}: {key} -" for i, key in enumerate(qp)])
-        await send_embed_response(interaction, description=f"{found_keys}", type="followup")
+        await send_embed_response(interaction, description=f"{found_keys}")
+
+        def check(m):
+                return m.author == interaction.user and m.channel == interaction.channel and m.content.isdigit()
+
+        try:
+            choice_msg = await self.bot.wait_for('message', check=check, timeout=60.0)
+            choice = int(choice_msg.content) - 1
+            if 0 <= choice < len(qp):
+                topic = qp[choice]
+                url_list = qp_data[topic]
+                embeds = []
+                num = 1
+                for img_url in url_list:
+                    embed = discord.Embed(title=f"{topic} ({num})", color=discord.Color.blue())
+                    embed.set_image(url=img_url)
+                    embeds.append(embed)
+                    num += 1
+                # Send embeds in batches if necessary
+                await interaction.followup.send(embeds=embeds[:10])
+                if len(embeds) > 10:
+                    for batch_start in range(10, len(embeds), 10):
+                        await interaction.followup.send(embeds=embeds[batch_start:batch_start + 10])
+        except asyncio.TimeoutError:
+                await send_embed_response(interaction, description="Timeout! No response received.", type="followup")
+        
         #whole_data = imgur_instance.get_imgur_album_images_with_descriptions()[0]
 #
 #
