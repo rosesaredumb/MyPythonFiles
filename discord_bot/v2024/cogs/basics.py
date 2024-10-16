@@ -1,24 +1,20 @@
 from cogs.settings import discord, commands, app_commands, ast, asyncio
 from cogs.settings import send_embed_response, retrieve_keys, imgur_functions
+import typing
 
-
-imgur_instance = imgur_functions()
-x = {}
-imgur_album_IDs = ast.literal_eval(str(retrieve_keys("imgur album_IDs")))
-for j in imgur_album_IDs:
-    x[j] = imgur_instance.get_imgur_album_name(j)
-image_choices = [app_commands.Choice(name=value, value=key) for key, value in x.items()]
-
-
-
-title_names = imgur_instance.get_imgur_album_images_with_descriptions()[0]
-title_choices = [app_commands.Choice(name=f"{key} - ({len(value)})", value=key) for key, value in title_names.items()]
 
 
 class basics(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        
+    
+    async def images_autocomplete(self, interaction: discord.Interaction, current: str) -> typing.List[app_commands.Choice[str]]:
+        data = []
+        xx = imgur_functions.get_imgur_album_images_with_descriptions(self)[1]
+        for title_name in xx:
+            if current.lower() in title_name.lower():
+                data.append(app_commands.Choice(name=title_name, value=title_name))
+        return data
        
     @app_commands.command(name="test", description="k")
     async def test(self, interaction: discord.Interaction):
@@ -66,9 +62,11 @@ class basics(commands.Cog):
         # Send the embed response
         await interaction.response.send_message(embed=embed)
 
+    
+
     @app_commands.command(name="images", description="shows images from imgur album")
-    @app_commands.choices(album_id = image_choices)
-    async def images_command(self, interaction: discord.Interaction, album_id: str):
+    @app_commands.autocomplete(image_choice = images_autocomplete)
+    async def images_command(self, interaction: discord.Interaction, image_choice: str):
         """
         Command to fetch and display images from an Imgur album.
 
@@ -76,16 +74,15 @@ class basics(commands.Cog):
             interaction (discord.Interaction): The interaction to respond to.
             album_id (str): The ID of the Imgur album.
         """ 
-        imgur_images = imgur_functions.get_imgur_album_images(self, album_id)
-        name = imgur_functions.get_imgur_album_name(self, album_id)
+        whole_data = imgur_functions.get_imgur_album_images_with_descriptions(self)[0]
+        url_list = whole_data[image_choice]
         embeds = []
         num = 1
-        for img_url in imgur_images:
-            embed = discord.Embed(title=f"{name} ({num})", color=discord.Color.blue())
+        for img_url in url_list:
+            embed = discord.Embed(title=f"{image_choice} ({num})", color=discord.Color.blue())
             embed.set_image(url=img_url)
             embeds.append(embed)
             num += 1
-
         # Send embeds in batches if necessary
         await interaction.response.send_message(embeds=embeds[:10])
         if len(embeds) > 10:
@@ -103,8 +100,8 @@ class basics(commands.Cog):
         """ 
         qp_data = imgur_functions.get_imgur_album_images_with_descriptions(self)[0]
         qp = imgur_functions.get_imgur_album_images_with_descriptions(self)[1]
-        print(qp)
-        found_keys = "\n".join([f"{i+1}: {key} -" for i, key in enumerate(qp)])
+
+        found_keys = "\n".join([f"{i+1}: {key}" for i, key in enumerate(qp)])
         await send_embed_response(interaction, description=f"{found_keys}")
 
         def check(m):

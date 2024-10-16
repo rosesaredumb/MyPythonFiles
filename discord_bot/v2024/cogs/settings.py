@@ -139,14 +139,12 @@ def retrieve_keys(item):
     args = item.split()
     if "REPLIT_DB_URL" in os.environ:
         x = "_".join(args)
-        print("This script is running in Replit!")
         TOKEN = os.environ[x]
     else:
         
         try:
             with open(discord_config_path) as config_file:
                 config = json.load(config_file)
-            print("This script is NOT running in Replit.")
         except FileNotFoundError:
             print("Config file not found. Please ensure 'config.json' exists.")
             return None
