@@ -21,6 +21,7 @@ mindmap_json_path = "./discord_bot/v2024/cogs/data.json"
 discord_config_path = './discord_bot/v2024/config.json'
 cogs_path = './discord_bot/v2024/cogs'
 
+main_ID = "ZXvh34o"
 class imgur_functions:
     def __init__(self):
         pass
@@ -63,6 +64,42 @@ class imgur_functions:
             return album_title
         else:
             return f"Error: Unable to retrieve album info (Status code: {response.status_code})"
+
+    def get_imgur_album_images_with_descriptions(self):
+        # Imgur API endpoint to get album images
+        url = f"https://api.imgur.com/3/album/{main_ID}/images"
+        id = '2ea349879154d4a'
+        # Imgur requires the client ID to be sent as a header
+        headers = {
+            "Authorization": f"Client-ID {str(retrieve_keys('imgur client_ID'))}"
+        }
+
+        # Make the request to Imgur API
+        response = requests.get(url, headers=headers)
+
+        if response.status_code == 200:
+            data = response.json()
+            images = data["data"]
+
+            # Extract the links and descriptions of each image
+            image_data = {"None":[]}
+            for image in images:
+                if image["description"]:
+                    if image["description"] not in image_data:
+                        image_data[image["description"]] = [image["link"]]
+
+                    elif image["description"] in image_data:
+                        image_data[image["description"]].append(image["link"])
+
+                else:
+                    image_data["None"].append(image["link"])
+            
+            titles = list(image_data.keys())
+
+            return image_data, titles
+        else:
+            print(f"Failed to fetch album. Status code: {response.status_code}")
+            return []
 
 class json_funcs:
     def __init__(self):

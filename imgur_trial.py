@@ -4,7 +4,7 @@ from discord_bot.v2024.settingsmain import retrieve_keys
 
 # Replace this with your actual Imgur Client ID
 
-ALBUM_ID = "d9OwJIB"  # The album ID you want to fetch
+ALBUM_ID = "ZXvh34o"  # The album ID you want to fetch
 token = str(retrieve_keys("imgur client_ID"))
 album_IDs = ["d9OwJIB", "3vYdMJL", "JXDIAKY"]
 
@@ -26,7 +26,8 @@ def get_imgur_album_images(album_id):
 
         # Extract the links to each image
         image_links = [image["link"] for image in images]
-        return image_links
+        desc = [image["description"] if image["description"] else "No description" for image in images]
+        return desc
     else:
         print(f"Failed to fetch album. Status code: {response.status_code}")
         return []
@@ -48,7 +49,7 @@ def get_imgur_album_name(album_id):
         return f"Error: Unable to retrieve album info (Status code: {response.status_code})"
 
 # Example usage
-album_id = "YOUR_ALBUM_ID"  # Replace with the actual album ID
+album_id = "ZXvh34o"  # Replace with the actual album ID
 album_name = get_imgur_album_name(ALBUM_ID)
 
 if album_name:
@@ -57,6 +58,8 @@ if album_name:
 x = {}
 for i in album_IDs:
     x[i] = get_imgur_album_name(i)
+
+print(get_imgur_album_images(album_id))
 
 print(x)
 # Print the image URLs

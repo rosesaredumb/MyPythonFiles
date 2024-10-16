@@ -7,8 +7,12 @@ x = {}
 imgur_album_IDs = ast.literal_eval(str(retrieve_keys("imgur album_IDs")))
 for j in imgur_album_IDs:
     x[j] = imgur_instance.get_imgur_album_name(j)
-
 image_choices = [app_commands.Choice(name=value, value=key) for key, value in x.items()]
+
+
+
+title_names = imgur_instance.get_imgur_album_images_with_descriptions()[1]
+title_choices = [app_commands.Choice(name=item, value=item) for item in title_names]
 
 
 class basics(commands.Cog):
@@ -74,10 +78,12 @@ class basics(commands.Cog):
         imgur_images = imgur_functions.get_imgur_album_images(self, album_id)
         name = imgur_functions.get_imgur_album_name(self, album_id)
         embeds = []
+        num = 1
         for img_url in imgur_images:
-            embed = discord.Embed(title=name, color=discord.Color.blue())
+            embed = discord.Embed(title=f"{name} ({num})", color=discord.Color.blue())
             embed.set_image(url=img_url)
             embeds.append(embed)
+            num += 1
 
         # Send embeds in batches if necessary
         await interaction.response.send_message(embeds=embeds[:10])
@@ -85,6 +91,34 @@ class basics(commands.Cog):
             for batch_start in range(10, len(embeds), 10):
                 await interaction.followup.send(embeds=embeds[batch_start:batch_start + 10])
     
+    @app_commands.command(name="title", description="shows images from imgur album")
+    @app_commands.choices(album_id = title_choices)
+    async def title_command(self, interaction: discord.Interaction, album_id: str):
+        """
+        Command to fetch and display images from an Imgur album.
+
+        Args:
+            interaction (discord.Interaction): The interaction to respond to.
+            album_id (str): The ID of the Imgur album.
+        """ 
+        whole_data = imgur_instance.get_imgur_album_images_with_descriptions()[0]
+
+
+        url_list = whole_data[album_id]
+        name = album_id
+        embeds = []
+        num = 1
+        for img_url in url_list:
+            embed = discord.Embed(title=f"{name} ({num})", color=discord.Color.blue())
+            embed.set_image(url=img_url)
+            embeds.append(embed)
+            num += 1
+
+        # Send embeds in batches if necessary
+        await interaction.response.send_message(embeds=embeds[:10])
+        if len(embeds) > 10:
+            for batch_start in range(10, len(embeds), 10):
+                await interaction.followup.send(embeds=embeds[batch_start:batch_start + 10])
 
 async def setup(bot):
     await bot.add_cog(basics(bot))
