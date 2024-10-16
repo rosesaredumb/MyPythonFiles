@@ -23,7 +23,8 @@ class basics(commands.Cog):
     @app_commands.command(name="test", description="k")
     async def test(self, interaction: discord.Interaction):
         """Testing command"""
-        await send_embed_response(interaction, description="hi")
+        x = imgur_functions.get_imgur_album_images_with_descriptions(self)[1]
+        await send_embed_response(interaction, description=x)
 
     @app_commands.command(name="add", description="Add two numbers.")
     @app_commands.describe(a="The first number.", b="The second number.")
@@ -92,8 +93,7 @@ class basics(commands.Cog):
                 await interaction.followup.send(embeds=embeds[batch_start:batch_start + 10])
     
     @app_commands.command(name="title", description="shows images from imgur album")
-    @app_commands.choices(album_id = title_choices)
-    async def title_command(self, interaction: discord.Interaction, album_id: str):
+    async def title_command(self, interaction: discord.Interaction):
         """
         Command to fetch and display images from an Imgur album.
 
@@ -101,24 +101,29 @@ class basics(commands.Cog):
             interaction (discord.Interaction): The interaction to respond to.
             album_id (str): The ID of the Imgur album.
         """ 
-        whole_data = imgur_instance.get_imgur_album_images_with_descriptions()[0]
-
-
-        url_list = whole_data[album_id]
-        name = album_id
-        embeds = []
-        num = 1
-        for img_url in url_list:
-            embed = discord.Embed(title=f"{name} ({num})", color=discord.Color.blue())
-            embed.set_image(url=img_url)
-            embeds.append(embed)
-            num += 1
-
-        # Send embeds in batches if necessary
-        await interaction.response.send_message(embeds=embeds[:10])
-        if len(embeds) > 10:
-            for batch_start in range(10, len(embeds), 10):
-                await interaction.followup.send(embeds=embeds[batch_start:batch_start + 10])
+        await interaction.response.defer(ephemeral=True)
+        qp = imgur_functions.get_imgur_album_images_with_descriptions(self)[1]
+        print(qp)
+        found_keys = "\n".join([f"{i+1}: {key} -" for i, key in enumerate(qp)])
+        await send_embed_response(interaction, description=f"{found_keys}", type="followup")
+        #whole_data = imgur_instance.get_imgur_album_images_with_descriptions()[0]
+#
+#
+        #url_list = whole_data[album_id]
+        #name = album_id
+        #embeds = []
+        #num = 1
+        #for img_url in url_list:
+        #    embed = discord.Embed(title=f"{name} ({num})", color=discord.Color.blue())
+        #    embed.set_image(url=img_url)
+        #    embeds.append(embed)
+        #    num += 1
+#
+        ## Send embeds in batches if necessary
+        #await interaction.response.send_message(embeds=embeds[:10])
+        #if len(embeds) > 10:
+        #    for batch_start in range(10, len(embeds), 10):
+        #        await interaction.followup.send(embeds=embeds[batch_start:batch_start + 10])
 
 async def setup(bot):
     await bot.add_cog(basics(bot))
