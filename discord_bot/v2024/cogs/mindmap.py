@@ -24,6 +24,19 @@ class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
                     self.find_keys(value, target_key, current_path, results)
 
         return results
+    
+    def get_paths(self, d, path=""):
+        paths = []  # List to store all the paths
+        for key, value in d.items():
+            # Build the new path by appending the current key
+            new_path = f"{path}.{key}" if path else key
+            if isinstance(value, dict) and value:
+                # If the value is a non-empty dictionary, recurse deeper and extend paths
+                paths.extend(self.get_paths(value, new_path))
+            else:
+                # If it's a final (empty) value, append the path to the list
+                paths.append(new_path)
+        return paths
 
     async def update_key_value(self, data, path_to_update, new_value, interaction):
         current = data
@@ -91,6 +104,13 @@ class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
 
         found_keys = "\n".join([f"{i+1}: {path}" for i, (path, value) in enumerate(duplicate_keys)])
         await send_embed_response(interaction, description=f"{found_keys}", type="followup")
+
+    @app_commands.command(name="all", description="Shows all paths")
+    async def all_command(self, interaction: discord.Interaction):
+        json_data = json_funcs.read_json(self, mindmap_json_path)
+        x = self.get_paths(json_data)
+        found_keys = "\n".join([f"{i+1}: {path}" for i, path in enumerate(x)])
+        await send_embed_response(interaction, description=found_keys)
 
 
 async def setup(bot):
