@@ -14,5 +14,5 @@ import traceback
 from typing import Literal
 from PIL import Image, ImageDraw, ImageFont
 
-mindmap_db_json_path = "./database/mindmap_db.json"
+mindmap_db_json_path = "database/mindmap_db.json"
 
