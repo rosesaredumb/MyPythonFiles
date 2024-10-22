@@ -1,4 +1,4 @@
-import requests
+from globals import requests
 
 from discord_bot.v2024.mymodules import retrieve_keys
 

@@ -1,7 +1,4 @@
-import json
-import os
-from datetime import datetime
-import pytz
+from globals import datetime, json, os, pytz
 from globals import tasks_db_json_path
 
 class Task:

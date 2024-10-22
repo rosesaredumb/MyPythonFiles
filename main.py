@@ -1,13 +1,13 @@
 from globals import subprocess, time, timeit
 
 #mylist = ["cue_cards", "mindmap", "tasks"]
-x = 4    #int(input("which script number?"))
+x = 2    #int(input("which script number?"))
 
 var_scripts = {
     "1": "./discord_bot/v2024/disbot3.py",
-    "2": "./mindmap/program.py",
-    "3": "imgur_trial.py",
-    "4": "./tasks/program.py"
+    "2": "./mindmap.py",
+    "3": "./imgur.py",
+    "4": "./tasks.py"
 }
 
 print(f"About to run {var_scripts[f'{x}']}")

@@ -1,5 +1,5 @@
-from settings import json, os
-from settings import mindmap_db_json_path
+from globals import json, os
+from globals import mindmap_db_json_path
 
 def find_keys(data, target_key, parent_path="", results=None):
     """
