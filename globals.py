@@ -1,6 +1,8 @@
 import asyncio
 from datetime import datetime
-
+import discord
+from discord import app_commands
+from discord.ext import commands
 from functools import partial
 import json
 import logging
