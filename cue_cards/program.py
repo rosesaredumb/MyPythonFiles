@@ -55,8 +55,8 @@ if os.path.exists(file_path):
     os.remove(file_path)
 
 final.save(filename)
-print("Saved!")
-file_size = round((os.path.getsize(file_path) / (1024**2)), 2)
-print(
-    f"File size: {file_size} MB\nFile dimensions: {final.width} x {final.height}"
-)
+#print("Saved!")
+#file_size = round((os.path.getsize(file_path) / (1024**2)), 2)
+#print(
+#    f"File size: {file_size} MB\nFile dimensions: {final.width} x {final.height}"
+#)
