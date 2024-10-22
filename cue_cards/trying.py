@@ -1,4 +1,4 @@
-from my_modules import os
+from cue_cards.settings import os
 from trial import Trial_class
 
 main_path = "./Cue Cards"

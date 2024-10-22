@@ -1,4 +1,4 @@
-from my_modules import Literal, os, re, Image, ImageDraw, ImageFont
+from cue_cards.settings import Literal, os, re, Image, ImageDraw, ImageFont
 
 class Trial_class:
 

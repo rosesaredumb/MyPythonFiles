@@ -1,4 +1,4 @@
-from my_modules import Literal, Image, ImageDraw, ImageFont, time, timeit, os, subprocess
+from cue_cards.settings import Literal, Image, ImageDraw, ImageFont, time, timeit, os, subprocess
 from trial import Trial_class
 
 prog = Trial_class()

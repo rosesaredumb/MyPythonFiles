@@ -1,4 +1,5 @@
-from my_mods import json, os
+from settings import json, os
+from settings import mindmap_db_json_path
 
 def find_keys(data, target_key, parent_path="", results=None):
     """
@@ -106,6 +107,6 @@ def update_item(file_path):
 
 
 if __name__ == "__main__":
-    file_path = './mindmap/data.json'
+    file_path = mindmap_db_json_path
     json_data = read_json(file_path)
     print(get_paths(json_data))
