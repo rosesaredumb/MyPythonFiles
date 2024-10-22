@@ -31,14 +31,13 @@ class JsonEditor:
         with open(self.file_path, 'w') as file:
             json.dump(data, file, indent=4)
 
-    def find_keys(self, target_key, parent_path="", results=None):
+    def find_keys(self, data, target_key, parent_path="", results=None):
         """
         Recursive function to find all identical keys in the JSON and their paths.
         """
         if results is None:
             results = []
-        
-        data = self.data
+
         if isinstance(data, dict):
             for key, value in data.items():
                 current_path = f"{parent_path}.{key}" if parent_path else key
@@ -47,7 +46,8 @@ class JsonEditor:
                     results.append((current_path, value))
 
                 if isinstance(value, dict):
-                    self.find_keys(target_key, current_path, results)
+                    # Pass the specific value (subset of data) in the recursive call
+                    self.find_keys(value, target_key, current_path, results)
 
         return results
 
@@ -60,6 +60,7 @@ class JsonEditor:
         for key, value in d.items():
             new_path = f"{path}.{key}" if path else key
             if isinstance(value, dict) and value:
+                # Pass the specific value (subset of data) in the recursive call
                 paths.extend(self.get_paths(value, new_path))
             else:
                 paths.append(new_path)
@@ -98,7 +99,7 @@ class JsonEditor:
     def update_item(self):
         """Update an item in the JSON data."""
         target_key, new_value = input("Type the key and the new value in format: key, new value: ").split(", ", 1)
-        duplicate_keys = self.find_keys(target_key)
+        duplicate_keys = self.find_keys(self.data, target_key)
 
         if len(duplicate_keys) > 1:
             print(f"Found {len(duplicate_keys)} occurrences of the key '{target_key}':")
@@ -114,8 +115,27 @@ class JsonEditor:
         self.write_json(self.data)
         print(json.dumps(self.data, indent=4))
 
+def main():
+    editor = JsonEditor()
+
+    while True:
+        print("\nOptions:")
+        print("1. Update a specific key with a new value")
+        print("2. Get all the paths of keys in the JSON data")
+        print("3. Exit")
+
+        choice = input("Choose an option: ")
+
+        if choice == '1':
+            editor.update_item()
+        elif choice == '2':
+            print(editor.get_paths())
+        elif choice == '3':
+            print("Exiting mindmap app.")
+            break
+        else:
+            print("Invalid choice! Please try again.")
+                      
 
 if __name__ == "__main__":
-    editor = JsonEditor()
-    print(editor.get_paths())
-    #editor.update_item()
+    main()
