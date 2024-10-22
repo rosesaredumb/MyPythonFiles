@@ -118,4 +118,4 @@ class JsonEditor:
 if __name__ == "__main__":
     editor = JsonEditor()
     print(editor.get_paths())
-    editor.update_item()
+    #editor.update_item()
