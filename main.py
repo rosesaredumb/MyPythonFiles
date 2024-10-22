@@ -1,18 +1,20 @@
-from mymods import subprocess, time, timeit
+from globals import subprocess, time, timeit
 
+#mylist = ["cue_cards", "mindmap", "tasks"]
 x = 4    #int(input("which script number?"))
 
 var_scripts = {
     "1": "./discord_bot/v2024/disbot3.py",
     "2": "./mindmap/program.py",
     "3": "imgur_trial.py",
-    "4": "tasks.py"
+    "4": "./tasks/program.py"
 }
 
 print(f"About to run {var_scripts[f'{x}']}")
 
 start_time = time.time()
 y = subprocess.run(["python3", str(var_scripts[f"{x}"])])
+#y = subprocess.run(["python3", str(f'./{x}/program.py')])
 end_time = time.time()
 
 execution_time = round((end_time - start_time), 2)
