@@ -1,5 +1,5 @@
-from settingsmain import commands, os, traceback, logging, discord, app_commands
-from settingsmain import retrieve_keys, cogs_path
+from discord_bot.v2024.mymodules import commands, os, traceback, logging, discord, app_commands
+from discord_bot.v2024.mymodules import retrieve_keys, cogs_path
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 

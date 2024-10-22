@@ -1,8 +1,8 @@
 import json
 import os
 from datetime import datetime
-import pytz  # For handling timezones
-
+import pytz
+from globals import tasks_db_json_path
 
 class Task:
     def __init__(self, description, category, priority=1, completed=False, created_at=None):
@@ -42,7 +42,7 @@ class Task:
 
 
 class TaskManager:
-    def __init__(self, filename="tasks.json"):
+    def __init__(self, filename=tasks_db_json_path):
         self.tasks = []
         self.filename = filename
         self.total_tasks_added = 0
@@ -160,21 +160,29 @@ class TaskManager:
         print("All completed tasks removed!")
 
     def save_tasks(self):
+        """Saves tasks along with the total number of tasks added and completed to the JSON file."""
         with open(self.filename, 'w') as f:
-            tasks_as_dict = [task.to_dict() for task in self.tasks]
-            json.dump(tasks_as_dict, f, indent=4)
+            data = {
+                "tasks": [task.to_dict() for task in self.tasks],
+                "total_tasks_added": self.total_tasks_added,
+                "total_tasks_completed": self.total_tasks_completed
+            }
+            json.dump(data, f, indent=4)
         print(f"Tasks saved to {self.filename}")
 
     def load_tasks(self):
+        """Loads tasks and stats (total_tasks_added and total_tasks_completed) from the JSON file."""
         if os.path.exists(self.filename):
             with open(self.filename, 'r') as f:
-                tasks_as_dict = json.load(f)
+                data = json.load(f)
+                tasks_as_dict = data.get("tasks", [])
                 self.tasks = [Task.from_dict(task) for task in tasks_as_dict]
-                self.total_tasks_added = len(self.tasks)
-                self.total_tasks_completed = sum(task.completed for task in self.tasks)
+                self.total_tasks_added = data.get("total_tasks_added", 0)
+                self.total_tasks_completed = data.get("total_tasks_completed", 0)
             print(f"Tasks loaded from {self.filename}")
         else:
             print("No existing tasks found, starting fresh.")
+
 
 def main():
     manager = TaskManager()
@@ -224,6 +232,7 @@ def main():
             break
         else:
             print("Invalid choice! Please try again.")
+
 
 if __name__ == "__main__":
     main()

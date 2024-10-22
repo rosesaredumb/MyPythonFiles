@@ -1,5 +1,5 @@
-from cogs.settings import discord, commands, app_commands, ast, asyncio
-from cogs.settings import send_embed_response, retrieve_keys, imgur_functions
+from discord_bot.v2024.cogs.mymodules import discord, commands, app_commands, ast, asyncio
+from discord_bot.v2024.cogs.mymodules import send_embed_response, retrieve_keys, imgur_functions
 import typing
 
 

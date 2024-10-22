@@ -1,6 +1,6 @@
-from cogs.settings import asyncio, discord, commands, app_commands
-from cogs.settings import send_embed_response, json_funcs
-from cogs.settings import mindmap_json_path
+from discord_bot.v2024.cogs.mymodules import asyncio, discord, commands, app_commands
+from discord_bot.v2024.cogs.mymodules import send_embed_response, json_funcs
+from discord_bot.v2024.cogs.mymodules import mindmap_json_path
 
 
 class Mindmap(commands.GroupCog, group_name="mmap", group_description="ff"):
