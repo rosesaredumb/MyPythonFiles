@@ -13,13 +13,17 @@ class MyTasks:
                            }
         self.json_helper.ensure_json_file(self.filepath, self.json_format)
 
+    
     def add_task(self):
+        data = self.json_helper.read_json(self.filepath)
+
+        #description
         task_description = ""
         while not task_description.strip():  # Loop until non-empty input is provided
             task_description = str(input("Enter task description: "))
-        data = self.json_helper.read_json(self.filepath)
+        print(f"--Description set as: {task_description}")
 
-        
+        #category
         categories_list = self.view_categories()
         chosen_category = None
         if len(categories_list) > 0:
@@ -28,7 +32,7 @@ class MyTasks:
                 print(f"{idx} - {category}")
             
             # Prompt the user to enter a number
-            choice = input("Enter a number to choose the category: ")
+            choice = input("Type a number to choose the category or\nType '0' to create a new category or\nEnter to keep task ungrouped: ")
             if choice:
                 try:
                     choice = int(choice)
@@ -44,7 +48,7 @@ class MyTasks:
                             print(f"Category: {chosen_category} created!")
                             return chosen_category
                         else:
-                            print("Category already exists!")
+                            print(f"Category: {chosen_category} already exists!")
                             return chosen_category
                     elif choice > len(categories_list):
                         print("Invalid choice! Please try again.")
@@ -54,7 +58,7 @@ class MyTasks:
                     print("Please enter a valid number.")
 
         else:
-            choice = input("no existing categories. Enter a 0 to make the category or click enter: ")
+            choice = input("No existing categories. Type '0' to make a new category or click Enter to keep task ungrouped: ")
             if choice:
                 try:
                     choice = int(choice)
@@ -67,14 +71,54 @@ class MyTasks:
                         return None
                 except ValueError: 
                     print("Please enter a valid number.")
-            
+            else:
+                chosen_category = None
+        print(f"--Category set as: {chosen_category}")
+
+        #priority
+        priority_input = input("Enter task priority (1-5) or press Enter for default (1): ")
+        priority = 1
+        if priority_input:
+            try:
+                priority_input = int(priority_input)
+                if 1 <= priority_input <= 5:
+                    priority = priority_input
+                else:   
+                    print("Invalid priority! Please enter a number between 1 and 5.")
+                    
+            except ValueError:
+                print("Invalid input! Using default priority (1).")
+        print(f"--Priority set as: {priority}")
+
+        created_date = datetime.now(pytz.timezone(time_zone)).strftime(time_format)
+
+        due_date_input = input("Enter due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
+        due_date = None
+        if due_date_input.strip() == "":
+            due_date = None
+        try:
+            if " - " in due_date_input:
+                due_date = datetime.strptime(due_date_input, "%d/%m/%Y - %H:%M")
+            else:
+                due_date = datetime.strptime(due_date_input, "%d/%m/%Y")  # Default time to 00:00
+                due_date = due_date.replace(hour=0, minute=0)
+            due_date = due_date.strftime("%d/%m/%Y - %H:%M")
+            print(due_date)
+            #return due_date
+        except ValueError:
+            print("Invalid due date format! Skipping due date.")
+
+        
         data["tasks"].append({
             "description": task_description, 
             "status": False,
-            "category": chosen_category
+            "priority": priority,
+            "category": chosen_category,
+            "created_date": created_date,
+            "due_date": due_date
         })
         self.json_helper.write_json(data, self.filepath)
-        print("done")
+        print(data["tasks"])
             
     
         
