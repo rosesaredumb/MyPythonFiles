@@ -21,6 +21,8 @@ import pytz
 tasks_db_json_path = "./database/tasks_db.json"
 mindmap_db_json_path = "./database/mindmap_db.json"
 config_json_path = './config.json'
+time_format = "%d/%m/%Y - %H:%M"
+time_zone = 'Asia/Calcutta'
 
 
 def retrieve_key(item: str) -> str:
@@ -61,4 +63,4 @@ def retrieve_key(item: str) -> str:
             raise KeyError(f"Key '{formatted_key}' not found in config.")  
         return token
 
-print(type(retrieve_key("discord rosesaredumb token")))
+#print(type(retrieve_key("discord rosesaredumb token")))
