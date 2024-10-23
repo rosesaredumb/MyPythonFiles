@@ -64,3 +64,25 @@ def retrieve_key(item: str) -> str:
         return token
 
 #print(type(retrieve_key("discord rosesaredumb token")))
+class json_funcs:
+    def __init__(self):
+        pass
+
+    def read_json(self, file_path):
+        with open(file_path, 'r') as file:
+            return json.load(file)
+
+    def write_json(self, data, file_path):
+        with open(file_path, 'w') as file:
+            json.dump(data, file, indent=4)
+
+    def ensure_json_file(self, file_path):
+        """Ensure the JSON file exists or create it."""
+        if not os.path.exists(file_path):
+            with open(file_path, 'w') as f:
+                json.dump({"tasks":[],
+                          "tasks_completed": 0,
+                          }, f)
+                print(f"{file_path} created!")
+        else:
+            print(f"{file_path} already exists.")
