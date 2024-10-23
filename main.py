@@ -8,7 +8,7 @@ var_scripts = {
     "1": "./discord_bot/v2024/disbot3.py",
     "2": "./mindmap.py",
     "3": "./imgur.py",
-    "4": "./tasks2.py",
+    "4": "./tasks3.py",
     "5": "./cuecards.py",
     "6": "./globals.py",
     "7": "./troal.py",

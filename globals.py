@@ -76,13 +76,11 @@ class json_funcs:
         with open(file_path, 'w') as file:
             json.dump(data, file, indent=4)
 
-    def ensure_json_file(self, file_path):
+    def ensure_json_file(self, file_path, dict_format):
         """Ensure the JSON file exists or create it."""
         if not os.path.exists(file_path):
             with open(file_path, 'w') as f:
-                json.dump({"tasks":[],
-                          "tasks_completed": 0,
-                          }, f)
+                json.dump(dict_format, f)
                 print(f"{file_path} created!")
         else:
             print(f"{file_path} already exists.")
