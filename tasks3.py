@@ -90,8 +90,11 @@ class MyTasks:
                 print("Invalid input! Using default priority (1).")
         print(f"--Priority set as: {priority}")
 
+        #created date
         created_date = datetime.now(pytz.timezone(time_zone)).strftime(time_format)
 
+
+        #due date
         due_date_input = input("Enter due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
         due_date = None
         if due_date_input.strip() == "":
@@ -103,10 +106,9 @@ class MyTasks:
                 due_date = datetime.strptime(due_date_input, "%d/%m/%Y")  # Default time to 00:00
                 due_date = due_date.replace(hour=0, minute=0)
             due_date = due_date.strftime("%d/%m/%Y - %H:%M")
-            print(due_date)
-            #return due_date
         except ValueError:
             print("Invalid due date format! Skipping due date.")
+        print(f"--Due date set as: {due_date}")
 
         
         data["tasks"].append({
