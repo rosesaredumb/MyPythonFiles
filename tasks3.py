@@ -53,7 +53,7 @@ class MyTasks:
             self.data = self.json_format
 
         self.TASK_FORMAT = (
-            "{idx}. {description}\n"
+            "{idx} {description}\n"
             "   -Priority: {priority} | Category: {category}\n"
             "   -Created: {created_date} | Due: {due_date}\n"
         )
@@ -166,7 +166,15 @@ class MyTasks:
             })
             self.data["total_no_of_tasks_added"] += 1
             self.json_helper.write_json(self.data, self.filepath)
-            print(f"Task added successfully!\n\n--Task: {task_description}\n--Category: {chosen_category or '>ungrouped<'}\n--Priority: {priority}\n--Created: {created_date}\n--Due: {due_date or '>no due date<'}\n")
+            formatted_task = self.TASK_FORMAT.format(
+                idx= "--",
+                description=task_description,
+                priority=priority,
+                category=chosen_category or '>ungrouped<',
+                created_date=created_date,
+                due_date=due_date or '>no due date<'
+            )
+            print(f"Task added successfully!\n\n{formatted_task}")
         else:
             print("Error: Unable to add task. Data is unavailable.")
 
@@ -191,7 +199,15 @@ class MyTasks:
             if len(self.data["tasks"]) > 0:
                 print("Tasks:")
                 for idx, task in enumerate(self.data["tasks"], 1):
-                    print(f"{idx}. {task['description']}\n   -Priority: {task['priority']} | Category: {task['category'] or ">ungrouped<"}\n   -Created: {task['created_date']} | Due: {task['due_date'] or ">no due date<"}")
+                    formatted_task = self.TASK_FORMAT.format(
+                        idx=f"{idx}.",
+                        description=task['description'],
+                        priority=task['priority'],
+                        category=task['category'] or '>ungrouped<',
+                        created_date=task['created_date'],
+                        due_date=task['due_date'] or '>no due date<'
+                    )
+                    print(formatted_task)
             else:
                 print("No tasks found.")
         else:
@@ -203,7 +219,7 @@ class MyTasks:
                 print("Tasks:")
                 for idx, task in enumerate([t for t in self.data["tasks"] if not t["status"]], 1):
                     formatted_task = self.TASK_FORMAT.format(
-                        idx=idx,
+                        idx=f"{idx}.",
                         description=task['description'],
                         priority=task['priority'],
                         category=task['category'] or '>ungrouped<',
@@ -211,7 +227,7 @@ class MyTasks:
                         due_date=task['due_date'] or '>no due date<'
                     )
                     print(formatted_task)
-                task_index = input("Enter the number of the task you want to mark as completed: ")
+                task_index = input(">Enter the number of the task you want to mark as completed: ")
                 try:
                     task_index = int(task_index)
                     if 1 <= task_index <= len(self.data["tasks"]):
@@ -232,7 +248,7 @@ class MyTasks:
                 if pending_tasks:
                     for idx, task in enumerate(pending_tasks, 1):
                         formatted_task = self.TASK_FORMAT.format(
-                            idx=idx,
+                            idx=f"{idx}.",
                             description=task['description'],
                             priority=task['priority'],
                             category=task['category'] or '>ungrouped<',
@@ -259,8 +275,9 @@ def main():
         print("1. Add Task")
         print("2. View All Tasks")
         print("3. Mark Task as Completed")
-        print("4. Quit\n")
-        print("5. View Pending Tasks")
+        print("4. View Pending Tasks")
+        print("5. Quit\n")
+        
 
         choice = input("Choose an option: ")
         manager.clear_console()
@@ -272,10 +289,11 @@ def main():
         elif choice == '3':
             manager.mark_task_as_completed()
         elif choice == '4':
+            manager.view_pending_tasks()  
+        elif choice == '5':
             print("Exiting task manager.")
             break
-        elif choice == '5':
-            manager.view_pending_tasks()
+        
         else:
             print("Invalid choice! Please try again.")
 
