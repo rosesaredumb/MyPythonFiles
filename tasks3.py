@@ -1,27 +1,65 @@
 from globals import datetime, json, os, pytz
-from globals import tasks_db_json_path, time_format, time_zone, json_funcs
+from globals import tasks_db_json_path, time_format, time_zone
+from json_functions import json_funcs
 
 
 class MyTasks:
     def __init__(self):
-        self.json_helper = json_funcs()
-        self.filepath = tasks_db_json_path
+        try:
+            self.json_helper = json_funcs()
+        except Exception as e:
+            print(f"Error initializing json_funcs: {e}")
+            return  # You could raise an exception or set it to None, based on your design
+
+        try:
+            self.filepath = tasks_db_json_path
+            if not self.filepath:
+                raise ValueError("Invalid file path for tasks_db_json_path.")
+        except ValueError as ve:
+            print(f"Error with tasks_db_json_path: {ve}")
+            return
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+            return
+
         self.json_format = {
-                            "tasks":[],
-                            "total_no_of_tasks_added": 0,
-                            "total_no_of_tasks_completed": 0
-                           }
-        self.json_helper.ensure_json_file(self.filepath, self.json_format)
+            "tasks": [],
+            "total_no_of_tasks_added": 0,
+            "total_no_of_tasks_completed": 0
+        }
+        try:
+            # Ensure the file exists and has the correct format
+            if self.json_helper and self.filepath:
+                self.json_helper.ensure_json_file(self.filepath, self.json_format)
+            else:
+                raise FileNotFoundError("Error in creating or finding the task database file.")
+        except FileNotFoundError as fnf_error:
+            print(f"File error: {fnf_error}")
+        except json.JSONDecodeError as json_error:
+            print(f"Error decoding JSON file: {json_error}")
+        except Exception as e:
+            print(f"An unexpected error occurred while ensuring the JSON file: {e}")
+
+        # Read the data from the JSON file during initialization
+        try:
+            self.data = self.json_helper.read_json(self.filepath)
+            if self.data is None:
+                # If read_json returns None, fall back to the default json_format
+                print("Warning: Read operation returned None, using default format.")
+                self.data = self.json_format
+        except Exception as e:
+            print(f"Error reading JSON file: {e}")
+            # Fall back to the default json_format in case of any read error
+            self.data = self.json_format
 
     
     def add_task(self):
-        data = self.json_helper.read_json(self.filepath)
 
         #description
         task_description = ""
         while not task_description.strip():  # Loop until non-empty input is provided
             task_description = str(input("Enter task description: "))
-        print(f"--Description set as: {task_description}")
+        print(f"--Description set as: {task_description}\n")
 
         #category
         categories_list = self.view_categories()
@@ -32,7 +70,7 @@ class MyTasks:
                 print(f"{idx} - {category}")
             
             # Prompt the user to enter a number
-            choice = input("Type a number to choose the category or\nType '0' to create a new category or\nEnter to keep task ungrouped: ")
+            choice = input(">Type a number to choose the category or\n>Type '0' to create a new category or\n>Enter to keep task ungrouped: ")
             if choice:
                 try:
                     choice = int(choice)
@@ -73,7 +111,7 @@ class MyTasks:
                     print("Please enter a valid number.")
             else:
                 chosen_category = None
-        print(f"--Category set as: {chosen_category}")
+        print(f"--Category set as: {chosen_category}\n")
 
         #priority
         priority_input = input("Enter task priority (1-5) or press Enter for default (1): ")
@@ -88,7 +126,7 @@ class MyTasks:
                     
             except ValueError:
                 print("Invalid input! Using default priority (1).")
-        print(f"--Priority set as: {priority}")
+        print(f"--Priority set as: {priority}\n")
 
         #created date
         created_date = datetime.now(pytz.timezone(time_zone)).strftime(time_format)
@@ -108,36 +146,70 @@ class MyTasks:
             due_date = due_date.strftime("%d/%m/%Y - %H:%M")
         except ValueError:
             print("Invalid due date format! Skipping due date.")
-        print(f"--Due date set as: {due_date}")
+        print(f"--Due date set as: {due_date}\n")
 
-        
-        data["tasks"].append({
-            "description": task_description, 
-            "status": False,
-            "priority": priority,
-            "category": chosen_category,
-            "created_date": created_date,
-            "due_date": due_date
-        })
-        self.json_helper.write_json(data, self.filepath)
-        print(data["tasks"])
-            
-    
-        
-
-
-    def view_categories(self):
-        data = self.json_helper.read_json(self.filepath)
-        
-        if len(data["tasks"]) > 0:
-            categories_list = list({task["category"] for task in data["tasks"] if task["category"]})
-            # Convert the set to a list (to remove duplicates) and print the result
-            print("Categories:", categories_list)
-            return categories_list
+        if self.data is not None:
+            self.data["tasks"].append({
+                "description": task_description,
+                "status": False,
+                "priority": priority,
+                "category": chosen_category,
+                "created_date": created_date,
+                "due_date": due_date
+            })
+            self.json_helper.write_json(self.data, self.filepath)
+            #print(self.data["tasks"])
         else:
-            return []
-        
-        
+            print("Error: Unable to add task. Data is unavailable.")
 
-x = MyTasks()
-x.add_task()
+        
+        
+    def view_categories(self):
+        if self.data is not None:    
+            if len(self.data["tasks"]) > 0:
+                categories_list = list({task["category"] for task in self.data["tasks"] if task["category"]})
+                # Convert the set to a list (to remove duplicates) and print the result
+                #print("Categories:", categories_list)
+                return categories_list
+            else:
+                return []
+        else:
+            print("error in viewing categories")
+            return []
+
+
+    def view_tasks(self):
+        if self.data is not None:
+            if len(self.data["tasks"]) > 0:
+                print("Tasks:")
+                for idx, task in enumerate(self.data["tasks"], 1):
+                    print(f"{idx}. {task['description']}\n   -Priority: {task['priority']} | Category: {task['category'] or "ungrouped"}\n   -Created: {task['created_date']} | Due: {task['due_date'] or "None"}")
+            else:
+                print("No tasks found.")
+        else:
+            print("error in viewing tasks")
+
+def main():
+    manager = MyTasks()
+
+    while True:
+        print("\nOptions:")
+        print("1. Add Task")
+        print("2. View All Tasks")
+        print("3. Quit\n")
+
+        choice = input("Choose an option: ")
+
+        if choice == '1':
+            manager.add_task()
+        elif choice == '2':
+            manager.view_tasks()
+        elif choice == '3':
+            print("Exiting task manager.")
+            break
+        else:
+            print("Invalid choice! Please try again.")
+
+
+if __name__ == "__main__":
+    main()
