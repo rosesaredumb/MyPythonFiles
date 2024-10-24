@@ -77,17 +77,14 @@ class MyTasks:
                     if 1 <= choice <= len(categories_list):
                         chosen_category = categories_list[choice - 1]
                         print(f"You selected: {chosen_category}")
-                        return chosen_category
+                        
                     elif choice == 0:
                         chosen_category = ""
                         while not chosen_category.strip():
                             chosen_category = str(input("Enter name of the category you want to create: ")).lower()
-                        if chosen_category not in categories_list:
-                            print(f"Category: {chosen_category} created!")
-                            return chosen_category
-                        else:
+                        if chosen_category in categories_list:
                             print(f"Category: {chosen_category} already exists!")
-                            return chosen_category
+                            return
                     elif choice > len(categories_list):
                         print("Invalid choice! Please try again.")
                         return None
@@ -111,7 +108,7 @@ class MyTasks:
                     print("Please enter a valid number.")
             else:
                 chosen_category = None
-        print(f"--Category set as: {chosen_category}\n")
+        print(f"--Category set as: {chosen_category or ">ungrouped<"}\n")
 
         #priority
         priority_input = input("Enter task priority (1-5) or press Enter for default (1): ")
@@ -137,16 +134,17 @@ class MyTasks:
         due_date = None
         if due_date_input.strip() == "":
             due_date = None
-        try:
-            if " - " in due_date_input:
-                due_date = datetime.strptime(due_date_input, "%d/%m/%Y - %H:%M")
-            else:
-                due_date = datetime.strptime(due_date_input, "%d/%m/%Y")  # Default time to 00:00
-                due_date = due_date.replace(hour=0, minute=0)
-            due_date = due_date.strftime("%d/%m/%Y - %H:%M")
-        except ValueError:
-            print("Invalid due date format! Skipping due date.")
-        print(f"--Due date set as: {due_date}\n")
+        else:
+            try:
+                if " - " in due_date_input:
+                    due_date = datetime.strptime(due_date_input, "%d/%m/%Y - %H:%M")
+                else:
+                    due_date = datetime.strptime(due_date_input, "%d/%m/%Y")  # Default time to 00:00
+                    due_date = due_date.replace(hour=0, minute=0)
+                due_date = due_date.strftime("%d/%m/%Y - %H:%M")
+            except ValueError:
+                print("Invalid due date format! Skipping due date.")
+        print(f"--Due date set as: {due_date or ">no due date<"}\n")
 
         if self.data is not None:
             self.data["tasks"].append({
@@ -158,7 +156,7 @@ class MyTasks:
                 "due_date": due_date
             })
             self.json_helper.write_json(self.data, self.filepath)
-            #print(self.data["tasks"])
+            print(f"Task added successfully!\n\n--Task: {task_description}\n--Category: {chosen_category or '>ungrouped<'}\n--Priority: {priority}\n--Created: {created_date}\n--Due: {due_date or '>no due date<'}\n")
         else:
             print("Error: Unable to add task. Data is unavailable.")
 
@@ -183,7 +181,7 @@ class MyTasks:
             if len(self.data["tasks"]) > 0:
                 print("Tasks:")
                 for idx, task in enumerate(self.data["tasks"], 1):
-                    print(f"{idx}. {task['description']}\n   -Priority: {task['priority']} | Category: {task['category'] or "ungrouped"}\n   -Created: {task['created_date']} | Due: {task['due_date'] or "None"}")
+                    print(f"{idx}. {task['description']}\n   -Priority: {task['priority']} | Category: {task['category'] or ">ungrouped<"}\n   -Created: {task['created_date']} | Due: {task['due_date'] or ">no due date<"}")
             else:
                 print("No tasks found.")
         else:
