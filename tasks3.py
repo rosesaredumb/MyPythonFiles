@@ -52,6 +52,14 @@ class MyTasks:
             # Fall back to the default json_format in case of any read error
             self.data = self.json_format
 
+        self.TASK_FORMAT = (
+            "{idx}. {description}\n"
+            "   -Priority: {priority} | Category: {category}\n"
+            "   -Created: {created_date} | Due: {due_date}\n"
+        )
+        
+
+
     
     def add_task(self):
 
@@ -76,15 +84,16 @@ class MyTasks:
                     choice = int(choice)
                     if 1 <= choice <= len(categories_list):
                         chosen_category = categories_list[choice - 1]
-                        print(f"You selected: {chosen_category}")
+                        print(f"--You selected category: {chosen_category}!\n")
                         
                     elif choice == 0:
                         chosen_category = ""
                         while not chosen_category.strip():
                             chosen_category = str(input("Enter name of the category you want to create: ")).lower()
                         if chosen_category in categories_list:
-                            print(f"Category: {chosen_category} already exists!")
+                            print(f"--Category: {chosen_category} already exists!\n")
                             return
+                        print(f"--Category: {chosen_category} created!\n")
                     elif choice > len(categories_list):
                         print("Invalid choice! Please try again.")
                         return None
@@ -93,7 +102,7 @@ class MyTasks:
                     print("Please enter a valid number.")
 
         else:
-            choice = input("No existing categories. Type '0' to make a new category or click Enter to keep task ungrouped: ")
+            choice = input(">No existing categories. Type '0' to make a new category or click Enter to keep task ungrouped: ")
             if choice:
                 try:
                     choice = int(choice)
@@ -111,7 +120,7 @@ class MyTasks:
         print(f"--Category set as: {chosen_category or ">ungrouped<"}\n")
 
         #priority
-        priority_input = input("Enter task priority (1-5) or press Enter for default (1): ")
+        priority_input = input(">Enter task priority (1-5) or press Enter for default (1): ")
         priority = 1
         if priority_input:
             try:
@@ -130,7 +139,7 @@ class MyTasks:
 
 
         #due date
-        due_date_input = input("Enter due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
+        due_date_input = input(">Type due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
         due_date = None
         if due_date_input.strip() == "":
             due_date = None
@@ -143,7 +152,7 @@ class MyTasks:
                     due_date = due_date.replace(hour=0, minute=0)
                 due_date = due_date.strftime("%d/%m/%Y - %H:%M")
             except ValueError:
-                print("Invalid due date format! Skipping due date.")
+                print("Invalid due date format! Skipping due date.\n")
         print(f"--Due date set as: {due_date or ">no due date<"}\n")
 
         if self.data is not None:
@@ -155,6 +164,7 @@ class MyTasks:
                 "created_date": created_date,
                 "due_date": due_date
             })
+            self.data["total_no_of_tasks_added"] += 1
             self.json_helper.write_json(self.data, self.filepath)
             print(f"Task added successfully!\n\n--Task: {task_description}\n--Category: {chosen_category or '>ungrouped<'}\n--Priority: {priority}\n--Created: {created_date}\n--Due: {due_date or '>no due date<'}\n")
         else:
@@ -187,6 +197,60 @@ class MyTasks:
         else:
             print("error in viewing tasks")
 
+    def mark_task_as_completed(self):
+        if self.data is not None:
+            if len(self.data["tasks"]) > 0:
+                print("Tasks:")
+                for idx, task in enumerate([t for t in self.data["tasks"] if not t["status"]], 1):
+                    formatted_task = self.TASK_FORMAT.format(
+                        idx=idx,
+                        description=task['description'],
+                        priority=task['priority'],
+                        category=task['category'] or '>ungrouped<',
+                        created_date=task['created_date'],
+                        due_date=task['due_date'] or '>no due date<'
+                    )
+                    print(formatted_task)
+                task_index = input("Enter the number of the task you want to mark as completed: ")
+                try:
+                    task_index = int(task_index)
+                    if 1 <= task_index <= len(self.data["tasks"]):
+                        task = self.data["tasks"][task_index - 1]
+                        task["status"] = True
+                        self.data["total_no_of_tasks_completed"] += 1
+                        self.json_helper.write_json(self.data, self.filepath)
+                        print(f"Task marked as completed: {task['description']}\n")
+                    else:
+                        print("Invalid task number. Please try again.")
+                except ValueError:
+                    print("Invalid input. Please enter a valid task number.")
+                    
+    def view_pending_tasks(self):
+        if self.data is not None:
+            if len(self.data["tasks"]) > 0:
+                pending_tasks = [t for t in self.data["tasks"] if not t["status"]]
+                if pending_tasks:
+                    for idx, task in enumerate(pending_tasks, 1):
+                        formatted_task = self.TASK_FORMAT.format(
+                            idx=idx,
+                            description=task['description'],
+                            priority=task['priority'],
+                            category=task['category'] or '>ungrouped<',
+                            created_date=task['created_date'],
+                            due_date=task['due_date'] or '>no due date<'
+                        )
+                        print(formatted_task)
+                else:
+                    print("No pending tasks.")
+    
+    def clear_console(self):
+        # For Windows
+        if os.name == 'nt':
+            os.system('cls')
+        # For Mac and Linux (name is 'posix')
+        else:
+            os.system('clear')
+
 def main():
     manager = MyTasks()
 
@@ -194,17 +258,24 @@ def main():
         print("\nOptions:")
         print("1. Add Task")
         print("2. View All Tasks")
-        print("3. Quit\n")
+        print("3. Mark Task as Completed")
+        print("4. Quit\n")
+        print("5. View Pending Tasks")
 
         choice = input("Choose an option: ")
-
-        if choice == '1':
+        manager.clear_console()
+        
+        if choice == '1':  
             manager.add_task()
         elif choice == '2':
             manager.view_tasks()
         elif choice == '3':
+            manager.mark_task_as_completed()
+        elif choice == '4':
             print("Exiting task manager.")
             break
+        elif choice == '5':
+            manager.view_pending_tasks()
         else:
             print("Invalid choice! Please try again.")
 
