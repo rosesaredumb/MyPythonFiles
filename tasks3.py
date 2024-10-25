@@ -1,5 +1,5 @@
 from globals import datetime, json, os, pytz
-from globals import tasks_db_json_path, time_format, time_zone
+from globals import tasks_db_json_path, time_format, time_zone, clear_console
 from json_functions import json_funcs
 
 
@@ -259,13 +259,7 @@ class MyTasks:
                 else:
                     print("No pending tasks.")
     
-    def clear_console(self):
-        # For Windows
-        if os.name == 'nt':
-            os.system('cls')
-        # For Mac and Linux (name is 'posix')
-        else:
-            os.system('clear')
+    
 
 def main():
     manager = MyTasks()
@@ -280,7 +274,7 @@ def main():
         
 
         choice = input("Choose an option: ")
-        manager.clear_console()
+        clear_console()
         
         if choice == '1':  
             manager.add_task()
