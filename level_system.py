@@ -74,3 +74,22 @@ def load_from_file(filename=player_progress_db_json_path):
     except json.JSONDecodeError:
         print("Error decoding the save file.")
         return None
+
+
+def calculate_and_print_xp_for_levels(max_level):
+    base_xp = 50
+    base_multiplier = 1.2
+    xp_needed = []
+
+    current_xp = base_xp
+    for level in range(1, max_level + 1):
+        xp_needed.append(current_xp)
+        current_xp = int(current_xp * (base_multiplier + (level * 0.05)))
+
+    # Print results for every 10 levels
+    for level in range(1, max_level + 1):
+        if level % 10 == 0:  # Check if the level is a multiple of 10
+            print(f"Level {level}: {xp_needed[level - 1]} XP")
+
+# Example usage
+calculate_and_print_xp_for_levels(50)
