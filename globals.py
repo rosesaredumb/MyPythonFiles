@@ -72,3 +72,11 @@ def clear_console():
     # For Mac and Linux (name is 'posix')
     else:
         os.system('clear')
+
+def celsius_fahrenheit_converter(unit:str, value:int):
+    if unit.lower() == "f":
+        converted_val = f"{(value * 9/5) + 32} F"
+        return converted_val
+    elif unit.lower() == "c":
+        converted_val = f"{(value - 32) * 5/9} C"
+        return converted_val

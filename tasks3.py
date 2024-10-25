@@ -3,17 +3,19 @@ from globals import datetime, json, os, pytz
 from globals import tasks_db_json_path, time_format, time_zone, clear_console
 from json_functions import json_funcs
 from level_system import get_or_create_player
+from typing import Literal
 
 class MyTasks:
     def __init__(self):
         self.player = get_or_create_player()
         self.xp_for_adding_task = 200
+        self.input_bulletin = ">>"
+        self.response_bulletin = "--"
         try:
             self.json_helper = json_funcs()
         except Exception as e:
             print(f"Error initializing json_funcs: {e}")
             return  # You could raise an exception or set it to None, based on your design
-
         try:
             self.filepath = tasks_db_json_path
             if not self.filepath:
@@ -24,7 +26,6 @@ class MyTasks:
         except Exception as e:
             print(f"Unexpected error: {e}")
             return
-
         self.json_format = {
             "tasks": [],
             "total_no_of_tasks_added": 0,
@@ -42,7 +43,6 @@ class MyTasks:
             print(f"Error decoding JSON file: {json_error}")
         except Exception as e:
             print(f"An unexpected error occurred while ensuring the JSON file: {e}")
-
         # Read the data from the JSON file during initialization
         try:
             self.data = self.json_helper.read_json(self.filepath)
@@ -56,135 +56,7 @@ class MyTasks:
             self.data = self.json_format
 
 
-    
-    def add_task(self):
-
-        #description
-        task_description = ""
-        while not task_description.strip():  # Loop until non-empty input is provided
-            task_description = str(input("Enter task description: "))
-        print(f"--Description set as: {task_description}\n")
-
-        #category
-        categories_list = self.view_categories()
-        chosen_category = None
-        if len(categories_list) > 0:
-            print("Choose a category:")
-            for idx, category in enumerate(categories_list, 1):
-                print(f"{idx} - {category}")
-            
-            # Prompt the user to enter a number
-            choice = input(">Type a number to choose the category or\n>Type '0' to create a new category or\n>Enter to keep task ungrouped: ")
-            if choice:
-                try:
-                    choice = int(choice)
-                    if 1 <= choice <= len(categories_list):
-                        chosen_category = categories_list[choice - 1]
-                        print(f"--You selected category: {chosen_category}!\n")
-                        
-                    elif choice == 0:
-                        chosen_category = ""
-                        while not chosen_category.strip():
-                            chosen_category = str(input("Enter name of the category you want to create: ")).lower()
-                        if chosen_category in categories_list:
-                            print(f"--Category: {chosen_category} already exists!\n")
-                            return
-                        print(f"--Category: {chosen_category} created!\n")
-                    elif choice > len(categories_list):
-                        print("Invalid choice! Please try again.")
-                        return None
-        
-                except ValueError: 
-                    print("Please enter a valid number.")
-
-        else:
-            choice = input(">No existing categories. Type '0' to make a new category or click Enter to keep task ungrouped: ")
-            if choice:
-                try:
-                    choice = int(choice)
-                    if choice == 0:
-                        chosen_category = ""
-                        while not chosen_category.strip():
-                            chosen_category = str(input("Enter name of the category you want to create: ")).lower()
-                    else:
-                        print("Invalid choice! Please try again.")
-                        return None
-                except ValueError: 
-                    print("Please enter a valid number.")
-            else:
-                chosen_category = None
-        print(f"--Category set as: {chosen_category or ">ungrouped<"}\n")
-
-        #priority
-        priority_input = input(">Enter task priority (1-5) or press Enter for default (1): ")
-        priority = 1
-        if priority_input:
-            try:
-                priority_input = int(priority_input)
-                if 1 <= priority_input <= 5:
-                    priority = priority_input
-                else:   
-                    print("Invalid priority! Please enter a number between 1 and 5.")
-                    
-            except ValueError:
-                print("Invalid input! Using default priority (1).")
-        print(f"--Priority set as: {priority}\n")
-
-        #created date
-        created_date = datetime.now(pytz.timezone(time_zone)).strftime(time_format)
-
-
-        #due date
-        due_date_input = input(">Type due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
-        due_date = None
-        if due_date_input.strip() == "":
-            due_date = None
-        else:
-            try:
-                if " - " in due_date_input:
-                    due_date = datetime.strptime(due_date_input, "%d/%m/%Y - %H:%M")
-                else:
-                    due_date = datetime.strptime(due_date_input, "%d/%m/%Y")  # Default time to 00:00
-                    due_date = due_date.replace(hour=0, minute=0)
-                due_date = due_date.strftime("%d/%m/%Y - %H:%M")
-            except ValueError:
-                print("Invalid due date format! Skipping due date.\n")
-        print(f"--Due date set as: {due_date or ">no due date<"}\n")
-
-        if self.data is not None:
-            self.data["tasks"].append({
-                "description": task_description,
-                "status": False,
-                "priority": priority,
-                "category": chosen_category,
-                "created_date": created_date,
-                "due_date": due_date
-            })
-            self.data["total_no_of_tasks_added"] += 1
-            self.json_helper.write_json(self.data, self.filepath)
-            print("Task added successfully!\n")
-        else:
-            print("Error: Unable to add task. Data is unavailable.")
-        self.player.gain_xp(self.xp_for_adding_task)
-
-        
-        
-    def view_categories(self):
-        if self.data is not None:    
-            if len(self.data["tasks"]) > 0:
-                categories_list = list({task["category"] for task in self.data["tasks"] if task["category"]})
-                # Convert the set to a list (to remove duplicates) and print the result
-                #print("Categories:", categories_list)
-                return categories_list
-            else:
-                return []
-        else:
-            print("error in viewing categories")
-            return []
-        
-
-
-    def task_print_format(self, idx, task, status=False, bulletin="--", date_difference=False):
+    def task_print_format(self, idx, task, status=False, bulletin="-->", date_difference=False):
         x = (
             f"{idx}. {task["description"]}\n"
             f"{bulletin}Priority: {task["priority"]}\n"
@@ -198,9 +70,143 @@ class MyTasks:
             y = self.get_date_difference(task)
             if y is not None:
                 x += f"{bulletin}Time left: {y}\n"
-            
         print(x)
+
+    def mprint(self, sentence: str, type: Literal[1, 2] = 1):
+        if type not in {1, 2}:
+            raise ValueError("Type must be '1' or '2'")
+        if type == 1:
+            x = input(f"{self.input_bulletin}{sentence}")
+            return x
+        elif type == 2:
+            print(f"{self.response_bulletin}{sentence}")
+
     
+    def add_task(self):
+
+        #description
+        task_description = ""
+        while not task_description.strip():  # Loop until non-empty input is provided
+            task_description = str(self.mprint("Type task description: "))
+        self.mprint(f"Description: {task_description} - set!\n", 2)
+
+        #category
+        categories_list = self.view_categories()
+        chosen_category = None
+        if len(categories_list) > 0:
+            print("Choose a category:")
+            for idx, category in enumerate(categories_list, 1):
+                print(f"{idx} - {category}") 
+            # Prompt the user to enter a number
+            sent = (f"{self.input_bulletin}Type a number to choose the category or\n"
+                           f"{self.input_bulletin}Type '0' to create a new category or\n"
+                           f"{self.input_bulletin}Press Enter to keep task ungrouped: ")
+            choice = self.mprint(sent)
+            if choice:
+                try:
+                    choice = int(choice)
+                    if 1 <= choice <= len(categories_list):
+                        chosen_category = categories_list[choice - 1]
+                        self.mprint(f"Category: {chosen_category} - selected!\n", 2)
+                        
+                    elif choice == 0:
+                        chosen_category = ""
+                        while not chosen_category.strip():
+                            chosen_category = str(self.mprint("Type the name of the category you want to create: ")).lower()
+                        if chosen_category in categories_list:
+                            self.mprint(f"Category: {chosen_category} - already exists!\n", 2)
+                            return
+                        self.mprint(f"Category: {chosen_category} - created!\n", 2)
+                    elif choice > len(categories_list):
+                        print("Invalid choice! Please try again.")
+                        return None
+                except ValueError: 
+                    print("Please enter a valid number.")
+        else:
+            choice = self.mprint("No existing categories. Type '0' to make a new category or press Enter to keep task ungrouped: ")
+            if choice:
+                try:
+                    choice = int(choice)
+                    if choice == 0:
+                        chosen_category = ""
+                        while not chosen_category.strip():
+                            chosen_category = str(self.mprint("Type the name of the category you want to create: ")).lower()
+                    else:
+                        print("Invalid choice! Please try again.")
+                        return None
+                except ValueError: 
+                    print("Please enter a valid number.")
+            else:
+                chosen_category = None
+        self.mprint(f"Category set as: {chosen_category or ">ungrouped<"}\n", 2)
+
+        #priority
+        priority_input = self.mprint("Type task priority (1-5) or press Enter for default (1): ")
+        priority = 1
+        if priority_input:
+            try:
+                priority_input = int(priority_input)
+                if 1 <= priority_input <= 5:
+                    priority = priority_input
+                else:   
+                    print("Invalid priority! Please type a number between 1 and 5.")
+                    
+            except ValueError:
+                print("Invalid input! Using default priority (1).")
+        self.mprint(f"Priority set as: {priority}\n", 2)
+
+        #created date
+        created_date = datetime.now(pytz.timezone(time_zone)).strftime(time_format)
+
+
+        #due date
+        due_date_input = str(self.mprint("Type due date (dd/mm/yyyy - hh:mm) or press Enter to skip: "))
+        due_date = None
+        if due_date_input.strip() == "":
+            due_date = None
+        else:
+            try:
+                if " - " in due_date_input:
+                    due_date = datetime.strptime(due_date_input, "%d/%m/%Y - %H:%M")
+                else:
+                    due_date = datetime.strptime(due_date_input, "%d/%m/%Y")  # Default time to 00:00
+                    due_date = due_date.replace(hour=0, minute=0)
+                due_date = due_date.strftime("%d/%m/%Y - %H:%M")
+            except ValueError:
+                print("Invalid due date format! Skipping due date.\n")
+        print(f"{self.response_bulletin}Due date set as: {due_date or ">no due date<"}\n")
+
+        if self.data is not None:
+            self.data["tasks"].append({
+                "description": task_description,
+                "status": False,
+                "priority": priority,
+                "category": chosen_category,
+                "created_date": created_date,
+                "due_date": due_date
+            })
+            self.data["total_no_of_tasks_added"] += 1
+            self.json_helper.write_json(self.data, self.filepath)
+            print(f"{self.response_bulletin}Task added successfully!\n")
+        else:
+            print("Error: Unable to add task. Data is unavailable.")
+        self.player.gain_xp(self.xp_for_adding_task)
+
+              
+    def view_categories(self):
+        if self.data is not None:    
+            if len(self.data["tasks"]) > 0:
+                categories_list = list({task["category"] for task in self.data["tasks"] if task["category"]})
+                # Convert the set to a list (to remove duplicates) and print the result
+                #print("Categories:", categories_list)
+                return categories_list
+            else:
+                return []
+        else:
+            print("error in viewing categories")
+            return []
+        
+ 
     def view_tasks(self):
         if self.data is not None:
             if len(self.data["tasks"]) > 0:
@@ -351,7 +357,6 @@ def main():
         print("9. view tasks by due date")
         print("10. Quit\n")
         
-
         choice = input("Choose an option: ")
         clear_console()
         
