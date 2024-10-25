@@ -1,5 +1,6 @@
 from globals import json, player_progress_db_json_path, os
 from json_functions import json_funcs
+import matplotlib.pyplot as plt
 
 class Player:
     def __init__(self, name):
@@ -34,7 +35,7 @@ class Player:
     def xp_needed_for_next_level(self):
         # Calculate how much more XP is required to reach the next level
         xp_needed = self.xp_to_next_level - self.xp
-        print(f"{self.name} needs {xp_needed} more XP to reach the next level.")
+        print(f"{self.name} needs {xp_needed} more XP to reach the next level | Current level: {self.level}")
         return xp_needed
 
     def save_to_file(self):
@@ -76,6 +77,13 @@ def load_from_file(filename=player_progress_db_json_path):
         return None
 
 
+def get_or_create_player():
+    player = load_from_file()
+    if player is None:
+        player = Player("Steeve")
+        print("New player -Steeve- created!")  # Create a new player if loading fails
+    return player
+
 def calculate_and_print_xp_for_levels(max_level):
     base_xp = 50
     base_multiplier = 1.2
@@ -92,4 +100,86 @@ def calculate_and_print_xp_for_levels(max_level):
             print(f"Level {level}: {xp_needed[level - 1]} XP")
 
 # Example usage
-calculate_and_print_xp_for_levels(50)
+#calculate_and_print_xp_for_levels(50)
+
+def calculate_and_plot_xp_graph(max_level):
+    # Initialize base parameters
+    base_xp = 50
+    base_multiplier = 1.2
+    xp_needed = []
+
+    # Calculate XP for each level up to max_level
+    current_xp = base_xp
+    for level in range(1, max_level + 1):
+        xp_needed.append(current_xp)
+        current_xp = int(current_xp * (base_multiplier + (level * 0.05)))
+
+    # Prepare data for plotting
+    levels = list(range(1, max_level + 1))
+
+    # Plot the XP requirements
+    plt.figure(figsize=(10, 5))
+    plt.plot(levels, xp_needed, marker='o')
+
+    # Annotate every 10th level
+    for level in range(10, max_level + 1, 10):
+        plt.annotate(f"{xp_needed[level-1]} XP", 
+                     xy=(level, xp_needed[level-1]), 
+                     textcoords="offset points", 
+                     xytext=(0,10), 
+                     ha='center')
+
+    # Set titles and labels
+    plt.title('XP Required to Level Up')
+    plt.xlabel('Level')
+    plt.ylabel('XP Required')
+    plt.xticks(levels)
+    plt.grid()
+    plt.show()
+
+#calculate_and_plot_xp_graph(50)
+
+def calculate_and_plot_xp_graph2(max_level, save_as_image=False, filename="xp_graph.png", dpi=300):
+    # Initialize base parameters
+    base_xp = 50
+    base_multiplier = 1.2
+    xp_needed = []
+
+    # Calculate XP for each level up to max_level
+    current_xp = base_xp
+    for level in range(1, max_level + 1):
+        xp_needed.append(current_xp)
+        current_xp = int(current_xp * (base_multiplier + (level * 0.05)))
+
+    # Prepare data for plotting
+    levels = list(range(1, max_level + 1))
+
+    # Plot the XP requirements
+    plt.figure(figsize=(10, 5))
+    plt.plot(levels, xp_needed, marker='o')
+
+    # Annotate every 10th level
+    for level in range(10, max_level + 1, 10):
+        plt.annotate(f"{xp_needed[level-1]} XP", 
+                     xy=(level, xp_needed[level-1]), 
+                     textcoords="offset points", 
+                     xytext=(0,10), 
+                     ha='center')
+
+    # Set titles and labels
+    plt.title('XP Required to Level Up')
+    plt.xlabel('Level')
+    plt.ylabel('XP Required')
+    plt.xticks(levels)
+    plt.grid()
+
+    # Show or save the plot
+    if save_as_image:
+        plt.savefig(filename, dpi=dpi)  # Save as high-resolution image
+        print(f"Graph saved as '{filename}' with {dpi} dpi.")
+    else:
+        print("h")
+        plt.show()
+
+# Example usage: Save as a high-resolution image
+#calculate_and_plot_xp_graph2(50, save_as_image=True, filename="xp_graph_high_res.png", dpi=300)
