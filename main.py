@@ -2,7 +2,7 @@
 import subprocess
 
 #mylist = ["cue_cards", "mindmap", "tasks"]
-x = 8   #int(input("which script number?"))
+x = 4  #int(input("which script number?"))
 
 var_scripts = {
     "1": "./discord_bot/v2024/disbot3.py",

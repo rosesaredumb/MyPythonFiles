@@ -177,6 +177,7 @@ class MyTasks:
         else:
             print("error in viewing categories")
             return []
+        
 
 
     def task_print_format(self, idx, task, status=False, bulletin="--"):
@@ -202,6 +203,19 @@ class MyTasks:
                 print("No tasks found.")
         else:
             print("error in viewing tasks")
+
+    def view_all_ungrouped_tasks(self):
+        if self.data is not None:
+            if len(self.data["tasks"]) > 0:
+                print("All Ungrouped Tasks:")
+                for idx, task in enumerate(self.data["tasks"], 1):
+                    if task["category"] is None:
+                        self.task_print_format(idx, task, status=True)
+            else:
+                print("No ungrouped tasks found.")
+        else:
+            print("error in viewing all ungrouped tasks")
+            
 
     def mark_task_as_completed(self):
         if self.data is not None:
@@ -232,6 +246,32 @@ class MyTasks:
                         self.task_print_format(idx, task)
                 else:
                     print("No pending tasks.")
+
+    def view_tasks_by_category(self):
+        if self.data is not None:
+            if len(self.data["tasks"]) > 0:
+                categories_list = self.view_categories()
+                if len(categories_list) > 0:
+                    print("Tasks by Category:")
+                    for category in categories_list:
+                        print(f"Category: {category}")
+                        for idx, task in enumerate(self.data["tasks"], 1):
+                            if task["category"] == category:
+                                self.task_print_format(idx, task)
+                else:
+                    print("No categories found.")
+            else:
+                print("No tasks found.")
+
+    def view_tasks_by_priority(self):
+        if self.data is not None:
+            if len(self.data["tasks"]) > 0:
+                sorted_tasks = sorted(self.data["tasks"], key=lambda x: x["priority"], reverse=True)
+                print("Tasks by Priority:")
+                for idx, task in enumerate(sorted_tasks, 1):
+                    self.task_print_format(idx, task)
+            else:
+                print("No tasks found.")
     
     
 
@@ -244,7 +284,11 @@ def main():
         print("2. View All Tasks")
         print("3. Mark Task as Completed")
         print("4. View Pending Tasks")
-        print("5. Quit\n")
+        print("5. view all ungrouped tasks")
+        print("6. view all categories")
+        print("7. view tasks by category")
+        print("8. view tasks by priority")
+        print("9. Quit\n")
         
 
         choice = input("Choose an option: ")
@@ -257,8 +301,19 @@ def main():
         elif choice == '3':
             manager.mark_task_as_completed()
         elif choice == '4':
-            manager.view_pending_tasks()  
+            manager.view_pending_tasks()
         elif choice == '5':
+            manager.view_all_ungrouped_tasks()
+        elif choice == "6":
+            if len(manager.view_categories()) > 0:
+                print("Categories:")
+                for idx, category in enumerate(manager.view_categories(), 1):
+                    print(f"{idx}. {category}")
+        elif choice == "7":
+            manager.view_tasks_by_category()
+        elif choice == "8":
+            manager.view_tasks_by_priority()
+        elif choice == '9':
             print("Exiting task manager.")
             break
         
