@@ -1,3 +1,4 @@
+from datetime import timedelta
 from globals import datetime, json, os, pytz
 from globals import tasks_db_json_path, time_format, time_zone, clear_console
 from json_functions import json_funcs
@@ -180,7 +181,7 @@ class MyTasks:
         
 
 
-    def task_print_format(self, idx, task, status=False, bulletin="--"):
+    def task_print_format(self, idx, task, status=False, bulletin="--", date_difference=False):
         x = (
             f"{idx}. {task["description"]}\n"
             f"{bulletin}Priority: {task["priority"]}\n"
@@ -190,7 +191,11 @@ class MyTasks:
         )
         if status is True:
             x += f"{bulletin}Status: {"completed" if task["status"] else "pending"}\n"
-        
+        if date_difference is True:
+            y = self.get_date_difference(task)
+            if y is not None:
+                x += f"{bulletin}Time left: {y}\n"
+            
         print(x)
     
     def view_tasks(self):
@@ -198,7 +203,7 @@ class MyTasks:
             if len(self.data["tasks"]) > 0:
                 print("Tasks:")
                 for idx, task in enumerate(self.data["tasks"], 1):
-                    self.task_print_format(idx, task, status=True)
+                    self.task_print_format(idx, task, status=True, date_difference=True)
             else:
                 print("No tasks found.")
         else:
@@ -257,16 +262,32 @@ class MyTasks:
                 categories_list = self.view_categories()
                 if len(categories_list) > 0:
                     print("Tasks by Category:")
-                    for category in categories_list:
-                        print(f"Category: {category}")
-                        tasks_in_category = [task for task in self.data["tasks"] if task["category"] == category]
-                        if tasks_in_category:
-                            for idx, task in enumerate(tasks_in_category, 1):
-                                self.task_print_format(idx, task)
+                    for idx, category in enumerate(categories_list, 1):
+                        print(f"{idx}. {category}")
+                    try:
+                        selection = int(input(">Enter the number of the category to view tasks: "))
+                        if 1 <= selection <= len(categories_list):
+                            selected_category = categories_list[selection - 1]
+                            
+                            tasks_in_category = [task for task in self.data["tasks"] if task["category"] == selected_category]
+                            if tasks_in_category:
+                                print(f"\nTasks in Category: {selected_category} | Total: {len(tasks_in_category)}")
+                                for idx, task in enumerate(tasks_in_category, 1):
+                                    self.task_print_format(idx, task)
+                            else:
+                                print("  No tasks in this category.")
+                        else:
+                            print("Invalid selection. Please choose a valid category number.")
+
+                    except ValueError:
+                        print("Invalid input. Please enter a valid number.")
                 else:
                     print("No categories found.")
             else:
                 print("No tasks found.")
+        else:
+            print("Error: Task data not available.")
+            
 
     def view_tasks_by_priority(self):
         if self.data is not None:
@@ -277,7 +298,38 @@ class MyTasks:
                     self.task_print_format(idx, task)
             else:
                 print("No tasks found.")
+
     
+    def calculate_and_display_due_difference(self):
+        if self.data is not None:
+            for task in self.data["tasks"]:
+                created_date = datetime.strptime(task["created_date"], time_format)
+    
+                if task["due_date"]:
+                    due_date = datetime.strptime(task["due_date"], time_format)
+                    difference = due_date - created_date
+    
+                    days = difference.days
+                    hours, remainder = divmod(difference.seconds, 3600)
+                    minutes = remainder // 60
+    
+                    print(f"Task: {task['description']} - Due in {days} days, {hours} hours, {minutes} minutes")
+                else:
+                    print(f"Task: {task['description']} - No due date set")
+
+
+    def get_date_difference(self, task):
+        created_date = datetime.strptime(task["created_date"], time_format)
+        if task["due_date"]:
+            due_date = datetime.strptime(task["due_date"], time_format)
+            difference = due_date - created_date
+            days = difference.days
+            hours, remainder = divmod(difference.seconds, 3600)
+            minutes = remainder // 60
+            return f"Due in {days} days, {hours} hours, {minutes} minutes"
+        else:
+            return None
+
     
 
 def main():
@@ -293,7 +345,8 @@ def main():
         print("6. view all categories")
         print("7. view tasks by category")
         print("8. view tasks by priority")
-        print("9. Quit\n")
+        print("9. view tasks by due date")
+        print("10. Quit\n")
         
 
         choice = input("Choose an option: ")
@@ -318,7 +371,9 @@ def main():
             manager.view_tasks_by_category()
         elif choice == "8":
             manager.view_tasks_by_priority()
-        elif choice == '9':
+        elif choice == "9":
+            manager.calculate_and_display_due_difference()
+        elif choice == '10':
             print("Exiting task manager.")
             break
         
