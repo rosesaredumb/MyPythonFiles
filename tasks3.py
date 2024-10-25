@@ -9,8 +9,9 @@ class MyTasks:
     def __init__(self):
         self.player = get_or_create_player()
         self.xp_for_adding_task = 200
-        self.input_bulletin = ">>"
+        self.input_bulletin = ">>>"
         self.response_bulletin = "--"
+        self.error_bulletin = "!!"
         try:
             self.json_helper = json_funcs()
         except Exception as e:
@@ -72,18 +73,21 @@ class MyTasks:
                 x += f"{bulletin}Time left: {y}\n"
         print(x)
 
-    def mprint(self, sentence: str, type: Literal[1, 2] = 1):
-        if type not in {1, 2}:
+    def mprint(self, sentence: str, type: Literal[1, 2, 3] = 1) -> str:
+        if type not in {1, 2, 3}:
             raise ValueError("Type must be '1' or '2'")
         if type == 1:
-            x = input(f"{self.input_bulletin}{sentence}")
+            x = str(input(f"{self.input_bulletin}{sentence}"))
             return x
         elif type == 2:
             print(f"{self.response_bulletin}{sentence}")
-
+            return ''
+        elif type == 3:
+            print(f"{self.error_bulletin}{sentence}")
+            return ''
+            
     
     def add_task(self):
-
         #description
         task_description = ""
         while not task_description.strip():  # Loop until non-empty input is provided
@@ -98,7 +102,7 @@ class MyTasks:
             for idx, category in enumerate(categories_list, 1):
                 print(f"{idx} - {category}") 
             # Prompt the user to enter a number
-            sent = (f"{self.input_bulletin}Type a number to choose the category or\n"
+            sent = ("Type a number to choose the category or\n"
                            f"{self.input_bulletin}Type '0' to create a new category or\n"
                            f"{self.input_bulletin}Press Enter to keep task ungrouped: ")
             choice = self.mprint(sent)
@@ -118,10 +122,10 @@ class MyTasks:
                             return
                         self.mprint(f"Category: {chosen_category} - created!\n", 2)
                     elif choice > len(categories_list):
-                        print("Invalid choice! Please try again.")
+                        self.mprint("Invalid choice! Please try again.", 3)
                         return None
                 except ValueError: 
-                    print("Please enter a valid number.")
+                    self.mprint("Please enter a valid number.", 3)
         else:
             choice = self.mprint("No existing categories. Type '0' to make a new category or press Enter to keep task ungrouped: ")
             if choice:
@@ -138,7 +142,7 @@ class MyTasks:
                     print("Please enter a valid number.")
             else:
                 chosen_category = None
-        self.mprint(f"Category set as: {chosen_category or ">ungrouped<"}\n", 2)
+        self.mprint(f"Category: {chosen_category or ">ungrouped<"} - set\n", 2)
 
         #priority
         priority_input = self.mprint("Type task priority (1-5) or press Enter for default (1): ")
@@ -153,14 +157,14 @@ class MyTasks:
                     
             except ValueError:
                 print("Invalid input! Using default priority (1).")
-        self.mprint(f"Priority set as: {priority}\n", 2)
+        self.mprint(f"Priority: {priority} - set\n", 2)
 
         #created date
         created_date = datetime.now(pytz.timezone(time_zone)).strftime(time_format)
 
 
         #due date
-        due_date_input = str(self.mprint("Type due date (dd/mm/yyyy - hh:mm) or press Enter to skip: "))
+        due_date_input = self.mprint("Type due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
         due_date = None
         if due_date_input.strip() == "":
             due_date = None
@@ -173,8 +177,8 @@ class MyTasks:
                     due_date = due_date.replace(hour=0, minute=0)
                 due_date = due_date.strftime("%d/%m/%Y - %H:%M")
             except ValueError:
-                print("Invalid due date format! Skipping due date.\n")
-        print(f"{self.response_bulletin}Due date set as: {due_date or ">no due date<"}\n")
+                self.mprint("Invalid due date format! Skipping due date.\n", 3)
+        self.mprint(f"Due date: {due_date or ">no due date<"} - set\n", 2)
 
         if self.data is not None:
             self.data["tasks"].append({
@@ -187,10 +191,11 @@ class MyTasks:
             })
             self.data["total_no_of_tasks_added"] += 1
             self.json_helper.write_json(self.data, self.filepath)
-            print(f"{self.response_bulletin}Task added successfully!\n")
+            self.mprint("Task added successfully!\n", 2)
+            self.player.gain_xp(self.xp_for_adding_task)
         else:
             print("Error: Unable to add task. Data is unavailable.")
-        self.player.gain_xp(self.xp_for_adding_task)
+        
 
               
     def view_categories(self):
@@ -241,7 +246,7 @@ class MyTasks:
                 print("Tasks:")
                 for idx, task in enumerate([t for t in self.data["tasks"] if not t["status"]], 1):
                     self.task_print_format(idx, task)
-                task_index = input(">Enter the number of the task you want to mark as completed: ")
+                task_index = self.mprint("Type the number of the task you want to mark as completed: ")
                 try:
                     task_index = int(task_index)
                     if 1 <= task_index <= len(self.data["tasks"]):
@@ -249,7 +254,7 @@ class MyTasks:
                         task["status"] = True
                         self.data["total_no_of_tasks_completed"] += 1
                         self.json_helper.write_json(self.data, self.filepath)
-                        print(f"Task marked as completed: {task['description']}\n")
+                        self.mprint(f"Task marked as completed: {task['description']}\n",2)
                     else:
                         print("Invalid task number. Please try again.")
                 except ValueError:
@@ -274,13 +279,13 @@ class MyTasks:
                     for idx, category in enumerate(categories_list, 1):
                         print(f"{idx}. {category}")
                     try:
-                        selection = int(input(">Enter the number of the category to view tasks: "))
+                        selection = int(self.mprint("Enter the number of the category to view tasks: "))
                         if 1 <= selection <= len(categories_list):
                             selected_category = categories_list[selection - 1]
                             
                             tasks_in_category = [task for task in self.data["tasks"] if task["category"] == selected_category]
                             if tasks_in_category:
-                                print(f"\nTasks in Category: {selected_category} | Total: {len(tasks_in_category)}")
+                                self.mprint(f"\nTasks in Category: {selected_category} | Total: {len(tasks_in_category)}",2)
                                 for idx, task in enumerate(tasks_in_category, 1):
                                     self.task_print_format(idx, task)
                             else:
