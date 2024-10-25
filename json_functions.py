@@ -26,7 +26,7 @@ class json_funcs:
         try:
             with open(file_path, 'w') as file:
                 json.dump(data, file, indent=4)
-                print(f"Data successfully written to '{file_path}'.")
+                #print(f"Data successfully written to '{file_path}'.")
         except FileNotFoundError:
             print(f"Error: File '{file_path}' not found.")
         except TypeError as e:

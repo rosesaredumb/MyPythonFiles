@@ -1,6 +1,6 @@
 {
     "name": "Hero",
-    "level": 9,
-    "xp": 285,
-    "xp_to_next_level": 1070
+    "level": 3,
+    "xp": 5,
+    "xp_to_next_level": 87
 }
