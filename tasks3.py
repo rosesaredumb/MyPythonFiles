@@ -52,13 +52,6 @@ class MyTasks:
             # Fall back to the default json_format in case of any read error
             self.data = self.json_format
 
-        self.TASK_FORMAT = (
-            "{idx} {description}\n"
-            "   -Priority: {priority} | Category: {category}\n"
-            "   -Created: {created_date} | Due: {due_date}\n"
-        )
-        
-
 
     
     def add_task(self):
@@ -166,15 +159,7 @@ class MyTasks:
             })
             self.data["total_no_of_tasks_added"] += 1
             self.json_helper.write_json(self.data, self.filepath)
-            formatted_task = self.TASK_FORMAT.format(
-                idx= "--",
-                description=task_description,
-                priority=priority,
-                category=chosen_category or '>ungrouped<',
-                created_date=created_date,
-                due_date=due_date or '>no due date<'
-            )
-            print(f"Task added successfully!\n\n{formatted_task}")
+            print("Task added successfully!\n")
         else:
             print("Error: Unable to add task. Data is unavailable.")
 
@@ -194,20 +179,25 @@ class MyTasks:
             return []
 
 
+    def task_print_format(self, idx, task, status=False, bulletin="--"):
+        x = (
+            f"{idx}. {task["description"]}\n"
+            f"{bulletin}Priority: {task["priority"]}\n"
+            f"{bulletin}Category: {task["category"] or ">ungrouped<"}\n"
+            f"{bulletin}Created: {task["created_date"]}\n"
+            f"{bulletin}Due: {task["due_date"] or '>no due date<'}\n"
+        )
+        if status is True:
+            x += f"{bulletin}Status: {"completed" if task["status"] else "pending"}\n"
+        
+        print(x)
+    
     def view_tasks(self):
         if self.data is not None:
             if len(self.data["tasks"]) > 0:
                 print("Tasks:")
                 for idx, task in enumerate(self.data["tasks"], 1):
-                    formatted_task = self.TASK_FORMAT.format(
-                        idx=f"{idx}.",
-                        description=task['description'],
-                        priority=task['priority'],
-                        category=task['category'] or '>ungrouped<',
-                        created_date=task['created_date'],
-                        due_date=task['due_date'] or '>no due date<'
-                    )
-                    print(formatted_task)
+                    self.task_print_format(idx, task, status=True)
             else:
                 print("No tasks found.")
         else:
@@ -218,15 +208,7 @@ class MyTasks:
             if len(self.data["tasks"]) > 0:
                 print("Tasks:")
                 for idx, task in enumerate([t for t in self.data["tasks"] if not t["status"]], 1):
-                    formatted_task = self.TASK_FORMAT.format(
-                        idx=f"{idx}.",
-                        description=task['description'],
-                        priority=task['priority'],
-                        category=task['category'] or '>ungrouped<',
-                        created_date=task['created_date'],
-                        due_date=task['due_date'] or '>no due date<'
-                    )
-                    print(formatted_task)
+                    self.task_print_format(idx, task)
                 task_index = input(">Enter the number of the task you want to mark as completed: ")
                 try:
                     task_index = int(task_index)
@@ -247,15 +229,7 @@ class MyTasks:
                 pending_tasks = [t for t in self.data["tasks"] if not t["status"]]
                 if pending_tasks:
                     for idx, task in enumerate(pending_tasks, 1):
-                        formatted_task = self.TASK_FORMAT.format(
-                            idx=f"{idx}.",
-                            description=task['description'],
-                            priority=task['priority'],
-                            category=task['category'] or '>ungrouped<',
-                            created_date=task['created_date'],
-                            due_date=task['due_date'] or '>no due date<'
-                        )
-                        print(formatted_task)
+                        self.task_print_format(idx, task)
                 else:
                     print("No pending tasks.")
     
