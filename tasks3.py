@@ -2,10 +2,12 @@ from datetime import timedelta
 from globals import datetime, json, os, pytz
 from globals import tasks_db_json_path, time_format, time_zone, clear_console
 from json_functions import json_funcs
-
+from level_system import get_or_create_player
 
 class MyTasks:
     def __init__(self):
+        self.player = get_or_create_player()
+        self.xp_for_adding_task = 200
         try:
             self.json_helper = json_funcs()
         except Exception as e:
@@ -163,6 +165,7 @@ class MyTasks:
             print("Task added successfully!\n")
         else:
             print("Error: Unable to add task. Data is unavailable.")
+        self.player.gain_xp(self.xp_for_adding_task)
 
         
         
