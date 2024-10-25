@@ -88,7 +88,7 @@ def calculate_and_print_xp_for_levels(max_level):
 
     # Print results for every 10 levels
     for level in range(1, max_level + 1):
-        if level % 10 == 0:  # Check if the level is a multiple of 10
+        if level % 5 == 0:  # Check if the level is a multiple of 10
             print(f"Level {level}: {xp_needed[level - 1]} XP")
 
 # Example usage
