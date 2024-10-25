@@ -20,6 +20,7 @@ import pytz
 
 tasks_db_json_path = "./database/tasks_db.json"
 mindmap_db_json_path = "./database/mindmap_db.json"
+player_progress_db_json_path = "./database/player_progress_db.json"
 config_json_path = './config.json'
 time_format = "%d/%m/%Y - %H:%M"
 time_zone = 'Asia/Calcutta'
