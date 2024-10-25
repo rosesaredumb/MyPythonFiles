@@ -208,13 +208,17 @@ class MyTasks:
         if self.data is not None:
             if len(self.data["tasks"]) > 0:
                 print("All Ungrouped Tasks:")
-                for idx, task in enumerate(self.data["tasks"], 1):
-                    if task["category"] is None:
-                        self.task_print_format(idx, task, status=True)
+                # Filter ungrouped tasks and enumerate only those
+                ungrouped_tasks = [task for task in self.data["tasks"] if task["category"] is None]
+                if ungrouped_tasks:
+                    for idx, task in enumerate(ungrouped_tasks, 1):
+                        self.task_print_format(idx, task)
+                else:
+                    print("No ungrouped tasks found.")
             else:
-                print("No ungrouped tasks found.")
+                print("No tasks found.")
         else:
-            print("error in viewing all ungrouped tasks")
+            print("Error in viewing all ungrouped tasks")
             
 
     def mark_task_as_completed(self):
@@ -255,8 +259,9 @@ class MyTasks:
                     print("Tasks by Category:")
                     for category in categories_list:
                         print(f"Category: {category}")
-                        for idx, task in enumerate(self.data["tasks"], 1):
-                            if task["category"] == category:
+                        tasks_in_category = [task for task in self.data["tasks"] if task["category"] == category]
+                        if tasks_in_category:
+                            for idx, task in enumerate(tasks_in_category, 1):
                                 self.task_print_format(idx, task)
                 else:
                     print("No categories found.")
