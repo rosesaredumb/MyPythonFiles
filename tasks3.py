@@ -55,7 +55,7 @@ class MyTasks:
             print(f"Error reading JSON file: {e}")
             # Fall back to the default json_format in case of any read error
             self.data = self.json_format
-
+        self.incomplete_tasks = [task for task in self.data["tasks"] if not task.get("status", False)]
 
     def task_print_format(self, idx, task, status=False, bulletin="-->", date_difference=False):
         x = (
@@ -219,8 +219,7 @@ class MyTasks:
             self.mprint("Task added successfully!\n", 2)
             self.player.gain_xp(self.xp_for_adding_task)
         else:
-            print("Error: Unable to add task. Data is unavailable.")
-        
+            print("Error: Unable to add task. Data is unavailable.")   
 
               
     def view_categories(self):
@@ -267,41 +266,39 @@ class MyTasks:
 
     def mark_task_as_completed(self):
         if self.data is not None:
-            # Filter out completed tasks
-            incomplete_tasks = [t for t in self.data["tasks"] if not t.get("status", False)]
-
-            if incomplete_tasks:
+            # Use the preloaded self.incomplete_tasks list directly
+            if self.incomplete_tasks:
                 print("Tasks:")
                 # Display only incomplete tasks with updated index
-                for idx, task in enumerate(incomplete_tasks, 1):
+                for idx, task in enumerate(self.incomplete_tasks, 1):
                     self.task_print_format(idx, task)
-
                 # Prompt for task number input
                 task_index = self.mprint("Type the number of the task you want to mark as completed: ")
                 try:
                     task_index = int(task_index)
-                    if 1 <= task_index <= len(incomplete_tasks):
-                        # Get the correct task from the original list
-                        task = incomplete_tasks[task_index - 1]
+                    if 1 <= task_index <= len(self.incomplete_tasks):
+                        # Get the task from self.incomplete_tasks
+                        task = self.incomplete_tasks[task_index - 1]
                         task["status"] = True
                         self.data["total_no_of_tasks_completed"] += 1
-
                         # Save updated data to JSON
                         self.json_helper.write_json(self.data, self.filepath)
                         self.mprint(f"Task marked as completed: {task['description']}\n", 2)
+                        # Update the self.incomplete_tasks list after marking the task as completed
+                        self.incomplete_tasks = [t for t in self.data["tasks"] if not t.get("status", False)]
                     else:
                         print("Invalid task number. Please try again.")
                 except ValueError:
                     print("Invalid input. Please enter a valid task number.")
             else:
                 print("All tasks are already completed.")
-                    
+
+    
     def view_pending_tasks(self):
         if self.data is not None:
             if len(self.data["tasks"]) > 0:
-                pending_tasks = [t for t in self.data["tasks"] if not t["status"]]
-                if pending_tasks:
-                    for idx, task in enumerate(pending_tasks, 1):
+                if self.incomplete_tasks:
+                    for idx, task in enumerate(self.incomplete_tasks, 1):
                         self.task_print_format(idx, task)
                 else:
                     print("No pending tasks.")
@@ -342,11 +339,9 @@ class MyTasks:
     def view_tasks_by_priority(self):
         if self.data is not None:
             # Filter to include only incomplete tasks
-            incomplete_tasks = [task for task in self.data["tasks"] if not task.get("status", False)]
-
-            if incomplete_tasks:
+            if self.incomplete_tasks:
                 # Sort incomplete tasks by priority
-                sorted_tasks = sorted(incomplete_tasks, key=lambda x: x["priority"], reverse=True)
+                sorted_tasks = sorted(self.incomplete_tasks, key=lambda x: x["priority"], reverse=True)
                 print("Tasks by Priority:")
                 for idx, task in enumerate(sorted_tasks, 1):
                     self.task_print_format(idx, task)
@@ -359,7 +354,7 @@ class MyTasks:
             tasks_with_differences = []
             # Define the format for parsing dates
             # Calculate the time difference for each task
-            for task in self.data["tasks"]:
+            for task in self.incomplete_tasks:
                 created_date = datetime.strptime(task["created_date"], time_format)
                 if task["due_date"]:
                     if task.get("status") is True:
