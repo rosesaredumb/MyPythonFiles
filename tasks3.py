@@ -161,23 +161,46 @@ class MyTasks:
 
         #created date
         created_date = datetime.now(pytz.timezone(time_zone)).strftime(time_format)
-
-
+        created_date_main = datetime.strptime(created_date, time_format)
+        
         #due date
-        due_date_input = self.mprint("Type due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
         due_date = None
-        if due_date_input.strip() != "":
-            date_parts = [int(part) for part in re.split(r"[-/\\' ;]", due_date_input)]
-            while len(date_parts) < 5:
-                date_parts.append(0)
-            try:
-                # Unpack the list into day, month, year, hour, and minute
-                day, month, year, hour, minute = date_parts
-                date_obj = datetime(year, month, day, hour, minute)
-                # Format the datetime object as "dd/mm/yyyy - hh:mm"
-                due_date = date_obj.strftime("%d/%m/%Y - %H:%M")
-            except ValueError:
-                self.mprint("Invalid due date format! Skipping due date.\n", 3)
+        while due_date is None:
+            due_date_input = self.mprint("Type due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
+
+            # Check if input is provided
+            if due_date_input.strip():
+                date_parts = [int(part) for part in re.split(r"[-/\\' ;]", due_date_input)]
+                while len(date_parts) < 5:
+                    date_parts.append(0)
+
+                # Ensure the year has exactly 4 digits
+                year_str = str(date_parts[2])
+                if len(year_str) == 2:
+                    date_parts[2] = int("20" + year_str)  # Convert to 20XX format
+                elif len(year_str) == 1:
+                    date_parts[2] = int("200" + year_str)  # Convert to 200X format
+                elif len(year_str) == 3:
+                    self.mprint("Year format is invalid. Please provide a 4-digit year.")
+                    continue  # Prompt again if the year format is invalid
+
+                try:
+                    # Unpack the list into day, month, year, hour, and minute
+                    day, month, year, hour, minute = date_parts
+                    date_obj = datetime(year, month, day, hour, minute)
+
+                    # Check if due date is greater than created date
+                    if date_obj <= created_date_main:
+                        self.mprint("Due date must be later than the created date. Please try again.\n", 3)
+                        continue  # Continue loop to prompt again if due date is invalid
+                    else:
+                        due_date = date_obj.strftime(time_format)
+                except ValueError:
+                    self.mprint("Invalid due date format! Please try again.\n", 3)
+                    continue  # Continue loop to prompt again if format is invalid
+            else:
+                break  # Allow skipping if no input is provided
+
         # Print the result with the appropriate message
         self.mprint(f"Due date: {due_date or '>no due date<'} - set\n", 2)
 
@@ -330,8 +353,7 @@ class MyTasks:
                     minutes = remainder // 60
     
                     print(f"Task: {task['description']} - Due in {days} days, {hours} hours, {minutes} minutes")
-                else:
-                    print(f"Task: {task['description']} - No due date set")
+                
 
 
     def get_date_difference(self, task):
