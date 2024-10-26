@@ -339,7 +339,7 @@ class MyTasks:
                 print("No tasks found.")
 
     
-    def calculate_and_display_due_difference(self):
+    def calculate_and_display_due_difference2(self):
         if self.data is not None:
             for task in self.data["tasks"]:
                 created_date = datetime.strptime(task["created_date"], time_format)
@@ -354,7 +354,25 @@ class MyTasks:
     
                     print(f"Task: {task['description']} - Due in {days} days, {hours} hours, {minutes} minutes")
                 
-
+    def calculate_and_display_due_difference(self):
+        if self.data is not None:
+            tasks_with_differences = []
+            # Define the format for parsing dates
+            # Calculate the time difference for each task
+            for task in self.data["tasks"]:
+                created_date = datetime.strptime(task["created_date"], time_format)
+                if task["due_date"]:
+                    due_date = datetime.strptime(task["due_date"], time_format)
+                    difference = due_date - created_date
+                    tasks_with_differences.append((task, difference))
+            # Sort tasks by time left (difference)
+            tasks_with_differences.sort(key=lambda item: item[1])  # Sort by the timedelta (difference)
+            # Display tasks in increasing order of time left
+            for task, difference in tasks_with_differences:
+                days = difference.days
+                hours, remainder = divmod(difference.seconds, 3600)
+                minutes = remainder // 60
+                print(f"Task: {task['description']} - Due in {days} days, {hours} hours, {minutes} minutes")
 
     def get_date_difference(self, task):
         created_date = datetime.strptime(task["created_date"], time_format)
