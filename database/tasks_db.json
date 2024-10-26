@@ -247,8 +247,16 @@
             "category": null,
             "created_date": "26/10/2024 - 08:35",
             "due_date": "11/12/2024 - 05:00"
+        },
+        {
+            "description": "asdpololol fergre4tg4tgt",
+            "status": false,
+            "priority": 1,
+            "category": null,
+            "created_date": "26/10/2024 - 08:46",
+            "due_date": null
         }
     ],
-    "total_no_of_tasks_added": 18,
+    "total_no_of_tasks_added": 19,
     "total_no_of_tasks_completed": 3
 }
