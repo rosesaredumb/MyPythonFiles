@@ -1,5 +1,5 @@
 from datetime import timedelta
-from globals import datetime, json, os, pytz
+from globals import datetime, json, os, pytz, re
 from globals import tasks_db_json_path, time_format, time_zone, clear_console
 from json_functions import json_funcs
 from level_system import get_or_create_player
@@ -166,20 +166,22 @@ class MyTasks:
         #due date
         due_date_input = self.mprint("Type due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
         due_date = None
-        if due_date_input.strip() == "":
-            due_date = None
-        else:
+        if due_date_input.strip() != "":
+            date_parts = [int(part) for part in re.split(r"[-/\\' ;]", due_date_input)]
+            while len(date_parts) < 5:
+                date_parts.append(0)
             try:
-                if " - " in due_date_input:
-                    due_date = datetime.strptime(due_date_input, "%d/%m/%Y - %H:%M")
-                else:
-                    due_date = datetime.strptime(due_date_input, "%d/%m/%Y")  # Default time to 00:00
-                    due_date = due_date.replace(hour=0, minute=0)
-                due_date = due_date.strftime("%d/%m/%Y - %H:%M")
+                # Unpack the list into day, month, year, hour, and minute
+                day, month, year, hour, minute = date_parts
+                date_obj = datetime(year, month, day, hour, minute)
+                # Format the datetime object as "dd/mm/yyyy - hh:mm"
+                due_date = date_obj.strftime("%d/%m/%Y - %H:%M")
             except ValueError:
                 self.mprint("Invalid due date format! Skipping due date.\n", 3)
-        self.mprint(f"Due date: {due_date or ">no due date<"} - set\n", 2)
+        # Print the result with the appropriate message
+        self.mprint(f"Due date: {due_date or '>no due date<'} - set\n", 2)
 
+        
         if self.data is not None:
             self.data["tasks"].append({
                 "description": task_description,
