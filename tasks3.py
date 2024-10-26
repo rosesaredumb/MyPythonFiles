@@ -267,23 +267,34 @@ class MyTasks:
 
     def mark_task_as_completed(self):
         if self.data is not None:
-            if len(self.data["tasks"]) > 0:
+            # Filter out completed tasks
+            incomplete_tasks = [t for t in self.data["tasks"] if not t.get("status", False)]
+
+            if incomplete_tasks:
                 print("Tasks:")
-                for idx, task in enumerate([t for t in self.data["tasks"] if not t["status"]], 1):
+                # Display only incomplete tasks with updated index
+                for idx, task in enumerate(incomplete_tasks, 1):
                     self.task_print_format(idx, task)
+
+                # Prompt for task number input
                 task_index = self.mprint("Type the number of the task you want to mark as completed: ")
                 try:
                     task_index = int(task_index)
-                    if 1 <= task_index <= len(self.data["tasks"]):
-                        task = self.data["tasks"][task_index - 1]
+                    if 1 <= task_index <= len(incomplete_tasks):
+                        # Get the correct task from the original list
+                        task = incomplete_tasks[task_index - 1]
                         task["status"] = True
                         self.data["total_no_of_tasks_completed"] += 1
+
+                        # Save updated data to JSON
                         self.json_helper.write_json(self.data, self.filepath)
-                        self.mprint(f"Task marked as completed: {task['description']}\n",2)
+                        self.mprint(f"Task marked as completed: {task['description']}\n", 2)
                     else:
                         print("Invalid task number. Please try again.")
                 except ValueError:
                     print("Invalid input. Please enter a valid task number.")
+            else:
+                print("All tasks are already completed.")
                     
     def view_pending_tasks(self):
         if self.data is not None:
@@ -330,29 +341,18 @@ class MyTasks:
 
     def view_tasks_by_priority(self):
         if self.data is not None:
-            if len(self.data["tasks"]) > 0:
-                sorted_tasks = sorted(self.data["tasks"], key=lambda x: x["priority"], reverse=True)
+            # Filter to include only incomplete tasks
+            incomplete_tasks = [task for task in self.data["tasks"] if not task.get("status", False)]
+
+            if incomplete_tasks:
+                # Sort incomplete tasks by priority
+                sorted_tasks = sorted(incomplete_tasks, key=lambda x: x["priority"], reverse=True)
                 print("Tasks by Priority:")
                 for idx, task in enumerate(sorted_tasks, 1):
                     self.task_print_format(idx, task)
             else:
-                print("No tasks found.")
+                print("No incomplete tasks found.")
 
-    
-    def calculate_and_display_due_difference2(self):
-        if self.data is not None:
-            for task in self.data["tasks"]:
-                created_date = datetime.strptime(task["created_date"], time_format)
-    
-                if task["due_date"]:
-                    due_date = datetime.strptime(task["due_date"], time_format)
-                    difference = due_date - created_date
-    
-                    days = difference.days
-                    hours, remainder = divmod(difference.seconds, 3600)
-                    minutes = remainder // 60
-    
-                    print(f"Task: {task['description']} - Due in {days} days, {hours} hours, {minutes} minutes")
                 
     def calculate_and_display_due_difference(self):
         if self.data is not None:
@@ -362,6 +362,8 @@ class MyTasks:
             for task in self.data["tasks"]:
                 created_date = datetime.strptime(task["created_date"], time_format)
                 if task["due_date"]:
+                    if task.get("status") is True:
+                        continue
                     due_date = datetime.strptime(task["due_date"], time_format)
                     difference = due_date - created_date
                     tasks_with_differences.append((task, difference))

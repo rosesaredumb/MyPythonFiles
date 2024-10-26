@@ -10,7 +10,7 @@
         },
         {
             "description": "qee",
-            "status": false,
+            "status": true,
             "priority": 3,
             "category": "sd",
             "created_date": "24/10/2024 - 00:41",
@@ -234,7 +234,7 @@
         },
         {
             "description": "w23",
-            "status": false,
+            "status": true,
             "priority": 1,
             "category": "hii",
             "created_date": "26/10/2024 - 08:35",
@@ -282,5 +282,5 @@
         }
     ],
     "total_no_of_tasks_added": 22,
-    "total_no_of_tasks_completed": 3
+    "total_no_of_tasks_completed": 5
 }
