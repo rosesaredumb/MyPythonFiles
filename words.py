@@ -15,7 +15,7 @@ class Words:
             },
             self.t_correct: 0,
             self.t_called: 0,
-            "dict_being_used": "",
+            "dict_being_used": "ungrouped",
         }
         self.json_helper = json_funcs()
         try:
@@ -32,7 +32,7 @@ class Words:
         self.player = get_or_create_player()
         self.xp_for_adding_word = 200
         self.xp_for_correct_ans = 450
-        self.chosen_dict = self.data["dict_being_used"] or "ungrouped"
+        self.chosen_dict = self.data["dict_being_used"]
 
     
     def add_word(self):
@@ -88,12 +88,22 @@ class Words:
             
 
     def set_dict_being_used(self):
-        new_dict = input("Enter the name of the dictionary to use: ").lower()
-        if self.data and new_dict in self.data["dict_albums"]:
+        new_dict = input(f"Dictionary being used is 'f{self.chosen_dict}'Enter the name of the dictionary to use (or press Enter for 'ungrouped'): ").lower()
+
+        # If Enter is pressed without any input, default to "ungrouped"
+        if not new_dict:
+            self.chosen_dict = "ungrouped"
+            self.data["dict_being_used"] = "ungrouped"
+            self.json_helper.write_json(self.data, words_db_json_path)
+            print("The default dictionary 'ungrouped' is now being used.")
+
+        # If a dictionary name is provided, check if it exists in dict_albums
+        elif self.data and new_dict in self.data.get("dict_albums", {}):
             self.chosen_dict = new_dict
             self.data["dict_being_used"] = new_dict
             self.json_helper.write_json(self.data, words_db_json_path)
             print(f"The dictionary '{new_dict}' is now being used.")
+
         else:
             print(f"The dictionary '{new_dict}' does not exist.")
         

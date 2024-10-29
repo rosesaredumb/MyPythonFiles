@@ -4,10 +4,12 @@
             "ded": "df"
         },
         "lol": {
-            "dffff": "tg"
-        }
+            "dffff": "tg",
+            "lop": "pol"
+        },
+        "hh": {}
     },
     "total_no_of_times_correct": 0,
     "total_times_called": 0,
-    "dict_being_used": "lol"
+    "dict_being_used": "hh"
 }
