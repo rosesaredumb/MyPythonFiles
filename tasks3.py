@@ -168,36 +168,44 @@ class MyTasks:
         while due_date is None:
             due_date_input = self.mprint("Type due date (dd/mm/yyyy - hh:mm) or press Enter to skip: ")
 
-            # Check if input is provided
             if due_date_input.strip():
-                date_parts = [int(part) for part in re.split(r"[-/\\' ;]", due_date_input)]
-                while len(date_parts) < 5:
-                    date_parts.append(0)
+                # Extract date and time parts from the input
+                date_parts = [int(part) for part in re.split(r"[-/\\' ;]", due_date_input) if part.isdigit()]
 
-                # Ensure the year has exactly 4 digits
-                year_str = str(date_parts[2])
-                if len(year_str) == 2:
-                    date_parts[2] = int("20" + year_str)  # Convert to 20XX format
-                elif len(year_str) == 1:
-                    date_parts[2] = int("200" + year_str)  # Convert to 200X format
-                elif len(year_str) == 3:
-                    self.mprint("Year format is invalid. Please provide a 4-digit year.")
-                    continue  # Prompt again if the year format is invalid
+                # If only time is provided, assume today's date
+                if len(date_parts) == 2:
+                    hour, minute = date_parts
+                    now = datetime.now(pytz.timezone(time_zone))
+                    date_obj = datetime(now.year, now.month, now.day, hour, minute)
 
-                try:
-                    # Unpack the list into day, month, year, hour, and minute
+                else:
+                    # Pad with zeros if date is partially incomplete
+                    while len(date_parts) < 5:
+                        date_parts.append(0)
+
+                    # Ensure the year has exactly 4 digits
+                    year_str = str(date_parts[2])
+                    if len(year_str) == 2:
+                        date_parts[2] = int("20" + year_str)  # Convert to 20XX format
+                    elif len(year_str) == 1:
+                        date_parts[2] = int("200" + year_str)  # Convert to 200X format
+                    elif len(year_str) == 3:
+                        self.mprint("Year format is invalid. Please provide a 4-digit year.")
+                        continue
+
+                    # Unpack list into day, month, year, hour, and minute
                     day, month, year, hour, minute = date_parts
-                    date_obj = datetime(year, month, day, hour, minute)
+                    try:
+                        date_obj = datetime(year, month, day, hour, minute)
+                    except ValueError:
+                        self.mprint("Invalid due date format! Please try again.\n", 3)
+                        continue
 
-                    # Check if due date is greater than created date
-                    if date_obj <= created_date_main:
-                        self.mprint("Due date must be later than the created date. Please try again.\n", 3)
-                        continue  # Continue loop to prompt again if due date is invalid
-                    else:
-                        due_date = date_obj.strftime(time_format)
-                except ValueError:
-                    self.mprint("Invalid due date format! Please try again.\n", 3)
-                    continue  # Continue loop to prompt again if format is invalid
+                # Check if due date is later than the created date
+                if date_obj <= created_date_main:
+                    self.mprint("Due date must be later than the created date. Please try again.\n", 3)
+                else:
+                    due_date = date_obj.strftime(time_format)
             else:
                 break  # Allow skipping if no input is provided
 
@@ -316,7 +324,7 @@ class MyTasks:
                         if 1 <= selection <= len(categories_list):
                             selected_category = categories_list[selection - 1]
                             
-                            tasks_in_category = [task for task in self.data["tasks"] if task["category"] == selected_category]
+                            tasks_in_category = [task for task in self.incomplete_tasks if task["category"] == selected_category]
                             if tasks_in_category:
                                 self.mprint(f"\nTasks in Category: {selected_category} | Total: {len(tasks_in_category)}",2)
                                 for idx, task in enumerate(tasks_in_category, 1):
@@ -383,10 +391,59 @@ class MyTasks:
         else:
             return None
 
+    def view_tasks_due_today(self):
+        # Get the current date in the configured timezone
+        now = datetime.now(pytz.timezone(time_zone))
+        today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        today_end = today_start + timedelta(days=1)
+
+        tasks_due_today = [
+            task for task in self.incomplete_tasks
+            if task["due_date"] and today_start <= datetime.strptime(task["due_date"], time_format) < today_end
+        ]
+
+        # Display tasks due today, if any
+        if tasks_due_today:
+            print("\nTasks Due Today:")
+            for idx, task in enumerate(tasks_due_today, 1):
+                self.task_print_format(idx, task, status=True, date_difference=True)
+        else:
+            print("\nNo tasks are due today.")
+
+    def check_due_and_overdue_tasks(self):
+        now = datetime.now(pytz.timezone(time_zone))
+        # Separate lists for tasks due today and overdue tasks
+        due_today = []
+        overdue_tasks = []
+        for task in self.incomplete_tasks:
+            if task["due_date"]:
+                due_date = datetime.strptime(task["due_date"], time_format).replace(tzinfo=pytz.timezone(time_zone))
+                # Check if task is due today
+                if now <= due_date <= now + timedelta(days=1):
+                    due_today.append(task)
+                # Check if task is overdue
+                elif due_date < now:
+                    overdue_tasks.append(task)
+        # Display tasks due today
+        if due_today:
+            print("\nTasks Due Today:")
+            for idx, task in enumerate(due_today, 1):
+                self.task_print_format(idx, task, status=True)
+        else:
+            print("\nNo tasks due today.")
+        # Display overdue tasks
+        if overdue_tasks:
+            print("\nOverdue Tasks:")
+            for idx, task in enumerate(overdue_tasks, 1):
+                self.task_print_format(idx, task, status=True)
+        else:
+            print("\nNo overdue tasks.")
+
     
 
 def main():
     manager = MyTasks()
+    manager.check_due_and_overdue_tasks()
 
     while True:
         print("\nOptions:")
