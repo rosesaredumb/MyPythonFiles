@@ -9,6 +9,7 @@ class MyTasks:
     def __init__(self):
         self.player = get_or_create_player()
         self.xp_for_adding_task = 200
+        self.xp_for_completing_task = 350
         self.input_bulletin = ">>>"
         self.response_bulletin = "--"
         self.error_bulletin = "!!"
@@ -293,6 +294,7 @@ class MyTasks:
                         self.json_helper.write_json(self.data, self.filepath)
                         self.mprint(f"Task marked as completed: {task['description']}\n", 2)
                         # Update the self.incomplete_tasks list after marking the task as completed
+                        self.player.gain_xp(self.xp_for_completing_task)
                         self.incomplete_tasks = [t for t in self.data["tasks"] if not t.get("status", False)]
                     else:
                         print("Invalid task number. Please try again.")
