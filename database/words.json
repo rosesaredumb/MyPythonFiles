@@ -1,13 +1,15 @@
 {
     "dict_albums": {
-        "ophthal": {
-            "absolve": "declare free from guilt, punishment, blame, suspicion etc",
-            "abstain": "refrain from doing something"
+        "lol": {
+            "lp": "trf"
         },
         "gojo": {
-            "ample": "more than enough",
-            "aa": "we",
-            "sde": "we"
+            "hi": "mel",
+            "lit": "fire",
+            "hola": "tyuuu"
         }
-    }
+    },
+    "total_no_of_times_correct": 0,
+    "total_times_called": 0,
+    "dict_being_used": "gojo"
 }
