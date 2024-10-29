@@ -7,12 +7,14 @@ from level_system import get_or_create_player
 
 class Words:
     def __init__(self) -> None:
+        self.t_correct = "total_no_of_times_correct"
+        self.t_called = "total_no_of_times_called"
         json_format = {
             "dict_albums": {
                 "ungrouped" : {},
             },
-            "total_no_of_times_correct": 0,
-            "total_times_called": 0,
+            self.t_correct: 0,
+            self.t_called: 0,
             "dict_being_used": "",
         }
         self.json_helper = json_funcs()
@@ -69,6 +71,7 @@ class Words:
             if target_dict:
                 # Select and return a random word from the dictionary
                 print(random.choice(list(target_dict.keys())))
+                self.data
             else:
                 print(f"The dictionary '{self.chosen_dict}' is empty or does not exist.")
 
@@ -77,8 +80,12 @@ class Words:
         if x == "y":
             self.player.gain_xp(self.xp_for_correct_ans)
             print("Remembered the word!")
+            if self.data:
+                self.data[self.t_correct] += 1
+                self.json_helper.write_json(self.data, words_db_json_path)
         elif x == "n":
             print("Forgot the word")
+            
 
     def set_dict_being_used(self):
         new_dict = input("Enter the name of the dictionary to use: ").lower()
@@ -97,21 +104,25 @@ def main():
 
     while True:
         print("\nOptions:")
+        print("0. Quit")
         print("1. Add word")
         print("2. Add dictionary")
-        print("3. Mark Task as Completed")
+        print("3. Get random word")
         print("4. set dict being used")
         print("5. view all ungrouped tasks")
         print("6. view all categories")
         print("7. view tasks by category")
         print("8. view tasks by priority")
         print("9. view tasks by due date")
-        print("10. Quit\n")
-
+        
+        
         choice = input("Choose an option: ")
         clear_console()
 
-        if choice == '1':  
+        if choice == '0':
+            print("Exiting program")
+            break
+        elif choice == '1':  
             manager.add_word()
         elif choice == '2':
             manager.add_dict()
@@ -120,10 +131,6 @@ def main():
             manager.cross_checker()
         elif choice == '4':
             manager.set_dict_being_used()
-        elif choice == '10':
-            print("Exiting task manager.")
-            break
-
         else:
             print("Invalid choice! Please try again.")
 
