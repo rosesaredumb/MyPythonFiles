@@ -13,24 +13,28 @@ class Player:
         self.xp_to_next_level = 50  # Lower starting XP
         self.base_multiplier = 1.2  # Lower base multiplier
 
-    def gain_xp(self, amount):
+    def gain_xp(self, amount, show_lvl_up=False):
         #print(f"{self.name} gains {amount} XP!")
         self.xp += amount
-        self.check_level_up()
+        self.check_level_up(show_lvl_up)
         self.save_to_file()  # Save progress after gaining XP
 
-    def check_level_up(self):
+    def check_level_up(self, show_lvl_up=False):
         while self.xp >= self.xp_to_next_level:
-            self.level_up()
+            self.level_up(show_lvl_up)
 
-    def level_up(self):
+    def level_up(self, show_lvl_up = False):
         self.xp -= self.xp_to_next_level
         self.level += 1
         # Smaller increment in multiplier per level
         self.xp_to_next_level = int(self.xp_to_next_level * (self.base_multiplier + (self.level * 0.05)))
-        if self.level % 10 == 0:
-            print(f"{self.name} leveled up to level {self.level}!")
-            print(f"XP needed for next level: {self.xp_to_next_level}")
+        if show_lvl_up is True:
+            print(f"{self.name} leveled up to lvl {self.level}")
+            print(f"XP needed for next lvl: {self.xp_to_next_level}")
+        elif show_lvl_up is False:
+            if self.level % 10 == 0:
+                print(f"{self.name} leveled up to lvl {self.level}")
+                print(f"XP needed for next lvl: {self.xp_to_next_level}")
 
     def xp_needed_for_next_level(self):
         # Calculate how much more XP is required to reach the next level

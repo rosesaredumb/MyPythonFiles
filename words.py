@@ -65,6 +65,7 @@ class Words:
             self.data["dict_albums"][self.chosen_dict][word] = meaning
             self.json_helper.write_json(self.data, words_db_json_path)
             self.mprint(f"'{word}': '{meaning}' added to |{self.chosen_dict}|.", 2)
+            self.player.gain_xp(self.xp_for_adding_word, show_lvl_up=True)
 
  
     def add_dict(self):
@@ -101,6 +102,7 @@ class Words:
             if self.data:
                 self.data[self.t_correct] += 1
                 self.json_helper.write_json(self.data, words_db_json_path)
+                self.player.gain_xp(self.xp_for_correct_ans)
         elif x == "n":
             self.mprint("Forgot the word", 2)
             
@@ -145,11 +147,6 @@ def main():
         print("2. Add dictionary")
         print("3. Get random word")
         print("4. set dict being used")
-        print("5. view all ungrouped tasks")
-        print("6. view all categories")
-        print("7. view tasks by category")
-        print("8. view tasks by priority")
-        print("9. view tasks by due date")
         
         
         choice = input("Choose an option: ")
