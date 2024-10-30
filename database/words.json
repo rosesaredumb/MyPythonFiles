@@ -1,25 +1,10 @@
 {
     "dict_albums": {
         "ungrouped": {
-            "ded": "df",
-            "drf": "lkjh"
-        },
-        "lol": {
-            "dffff": "tg",
-            "lop": "pol"
-        },
-        "hh": {
-            "asdfg": "tbgs",
-            "deddd": "fg",
-            "dfff": "tf",
-            "lpooo": "redff",
-            "sdcf": "f",
-            "tfghhh": "tr",
-            "tft": "jh",
-            "wer": "thg"
+            "absolve": "l"
         }
     },
-    "total_no_of_times_correct": 1,
-    "total_no_of_times_called": 1,
-    "dict_being_used": "hh"
+    "total_no_of_times_correct": 0,
+    "total_no_of_times_called": 0,
+    "dict_being_used": "ungrouped"
 }
