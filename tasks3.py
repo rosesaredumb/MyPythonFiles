@@ -17,7 +17,7 @@ class MyTasks:
             self.json_helper = json_funcs()
         except Exception as e:
             print(f"Error initializing json_funcs: {e}")
-            return  # You could raise an exception or set it to None, based on your design
+            return  # You hcould raise an exception or set it to None, based on your design
         try:
             self.filepath = tasks_db_json_path
             if not self.filepath:
