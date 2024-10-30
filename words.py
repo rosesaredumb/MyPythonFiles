@@ -63,6 +63,10 @@ class Words:
             meaning = self.mprint("Enter the meaning of the word: ").lower()
             # Add the new word and its meaning
             self.data["dict_albums"][self.chosen_dict][word] = meaning
+            for dict_name, inner_dict in self.data["dict_albums"].items():
+                # Sort the inner dictionary by keys and update the dictionary
+                sorted_inner_dict = dict(sorted(inner_dict.items()))
+                self.data["dict_albums"][dict_name] = sorted_inner_dict
             self.json_helper.write_json(self.data, words_db_json_path)
             self.mprint(f"'{word}': '{meaning}' added to |{self.chosen_dict}|.", 2)
             self.player.gain_xp(self.xp_for_adding_word, show_lvl_up=True)
