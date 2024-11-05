@@ -138,6 +138,51 @@ class Words:
                 self.mprint("Invalid input. Please enter a number corresponding to the index of the dictionary.", 3)
         else:
             self.mprint("No dictionaries found in 'dict_albums'.", 3)
+
+
+    def quiz_country_capital(self):
+        while True:
+            # Select a random country from the dictionary
+            if self.data:
+                country = random.choice(list(self.data["dict_albums"]["countries"].keys()))
+                correct_capital = self.data["dict_albums"]["countries"][country]
+
+                # Prepare a list of wrong options
+                wrong_options = random.sample(
+                    [capital for capital in self.data["dict_albums"]["countries"].values() if capital != correct_capital], 
+                    3
+                )
+
+                # Combine correct answer with wrong options and shuffle them
+                options = [correct_capital] + wrong_options
+                random.shuffle(options)
+
+                # Display the question and options
+                print(f"What is the capital of {country}?")
+                for idx, option in enumerate(options):
+                    print(f"{idx + 1}. {option}")
+
+                # Get the user's answer
+                user_input = input("Choose the correct option (1-4) or press Enter to quit: ")
+
+                # Check if the user pressed Enter
+                if user_input == "":
+                    print("Thanks for playing!")
+                    break  # Exit the loop if Enter is pressed
+
+                try:
+                    user_choice = int(user_input) - 1
+                    # Check if the answer is correct
+                    if options[user_choice] == correct_capital:
+                        print("Correct!")
+
+                    else:
+                        print(f"Wrong! The correct answer is: {correct_capital}")
+
+                    # Increment the call counter
+
+                except (ValueError, IndexError):
+                    print("Invalid input. Please choose a number between 1 and 4 or press Enter to quit.\n")
         
 
 

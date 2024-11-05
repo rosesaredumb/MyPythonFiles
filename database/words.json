@@ -2,6 +2,9 @@
     "dict_albums": {
         "ungrouped": {
             "absolve": "l"
+        },
+        "space":{
+            "earth's axial precession duration":"26000 years",
         }
     },
     "total_no_of_times_correct": 0,
