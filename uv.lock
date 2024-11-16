@@ -519,6 +519,7 @@ dependencies = [
     { name = "matplotlib" },
     { name = "pytz" },
     { name = "requests" },
+    { name = "speedtest" },
 ]
 
 [package.metadata]
@@ -527,6 +528,7 @@ requires-dist = [
     { name = "matplotlib", specifier = ">=3.9.2" },
     { name = "pytz", specifier = ">=2024.2" },
     { name = "requests", specifier = ">=2.32.3" },
+    { name = "speedtest", specifier = ">=0.0.1" },
 ]
 
 [[package]]
@@ -551,6 +553,14 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926", size = 34041 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254", size = 11053 },
+]
+
+[[package]]
+name = "speedtest"
+version = "0.0.1"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3f/d1/ae9f842e818affbec93cc393c0a1beea8c979f921c2c345654e9c7097d24/speedtest-0.0.1-py3-none-any.whl", hash = "sha256:3028e8003931124fef27036295b21290387f488941cce27c53f0c9c5f58d2eed", size = 1270 },
 ]
 
 [[package]]
