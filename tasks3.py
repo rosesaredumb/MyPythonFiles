@@ -60,15 +60,15 @@ class MyTasks:
 
     def task_print_format(self, idx, task, status=False, bulletin="-->", date_difference=False):
         x = (
-            f"{idx}. {task["description"]}\n"
-            f"{bulletin}Priority: {task["priority"]}\n"
-            f"{bulletin}Category: {task["category"] or ">ungrouped<"}\n"
-            f"{bulletin}Created: {task["created_date"]}\n"
-            f"{bulletin}Due: {task["due_date"] or '>no due date<'}\n"
+            f"{idx}. {task['description']}\n"
+            f"{bulletin}Priority: {task['priority']}\n"
+            f"{bulletin}Category: {task['category'] or '>ungrouped<'}\n"
+            f"{bulletin}Created: {task['created_date']}\n"
+            f"{bulletin}Due: {task['due_date'] or '>no due date<'}\n"
         )
-        if status is True:
-            x += f"{bulletin}Status: {"completed" if task["status"] else "pending"}\n"
-        if date_difference is True:
+        if status:
+            x += f"{bulletin}Status: {'completed' if task['status'] else 'pending'}\n"
+        if date_difference:
             y = self.get_date_difference(task)
             if y is not None:
                 x += f"{bulletin}Time left: {y}\n"
@@ -76,19 +76,20 @@ class MyTasks:
 
     def mprint(self, sentence: str, type: Literal[1, 2, 3] = 1) -> str:
         if type not in {1, 2, 3}:
-            raise ValueError("Type must be '1' or '2'")
+            raise ValueError("Type must be '1', '2', or '3'")
         if type == 1:
             x = str(input(f"{self.input_bulletin}{sentence}"))
             return x
         elif type == 2:
             print(f"{self.response_bulletin}{sentence}")
-            return ''
+            return ""
         elif type == 3:
             print(f"{self.error_bulletin}{sentence}")
-            return ''
+            return ""
             
     
     def add_task(self):
+        """Add Task"""
         #description
         task_description = ""
         while not task_description.strip():  # Loop until non-empty input is provided
@@ -449,7 +450,8 @@ def main():
 
     while True:
         print("\nOptions:")
-        print("1. Add Task")
+        print("0. Quit")
+        print(f"1. {manager.add_task.__doc__}")
         print("2. View All Tasks")
         print("3. Mark Task as Completed")
         print("4. View Pending Tasks")
@@ -458,12 +460,13 @@ def main():
         print("7. view tasks by category")
         print("8. view tasks by priority")
         print("9. view tasks by due date")
-        print("10. Quit\n")
-        
-        choice = input("Choose an option: ")
+          
+        choice = input("\nChoose an option: ")
         clear_console()
-        
-        if choice == '1':  
+        if choice == '0':
+            print("Exiting task manager.")
+            break
+        elif choice == '1':  
             manager.add_task()
         elif choice == '2':
             manager.view_tasks()
@@ -484,9 +487,6 @@ def main():
             manager.view_tasks_by_priority()
         elif choice == "9":
             manager.calculate_and_display_due_difference()
-        elif choice == '10':
-            print("Exiting task manager.")
-            break
         
         else:
             print("Invalid choice! Please try again.")
