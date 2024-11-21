@@ -1,32 +1,45 @@
-import PyPDF2
+import cv2
+import numpy as np
+import os
 
-def resize_pdf_to_uniform_width(input_pdf_path, output_pdf_path):
-    # Open the input PDF
-    with open(input_pdf_path, 'rb') as input_pdf:
-        reader = PyPDF2.PdfReader(input_pdf)
-        writer = PyPDF2.PdfWriter()
+def stitch_images(image_paths):
+    # Load images from given paths
+    images = [cv2.imread(image_path) for image_path in image_paths]
 
-        # Determine the largest width in the PDF
-        max_width = max(page.mediabox.width for page in reader.pages)
+    # Initialize the stitcher object
+    stitcher = cv2.Stitcher.create() # Corrected line
+    # Perform image stitching
+    status, stitched_image = stitcher.stitch(images)
 
-        for page in reader.pages:
-            # Get the original dimensions of the page
-            original_width = page.mediabox.width
-            original_height = page.mediabox.height
+    if status == cv2.Stitcher_OK:
+        print("Panorama created successfully!")
+        return stitched_image
+    else:
+        print("Error during stitching")
+        return None
 
-            # Calculate the new height while maintaining the aspect ratio
-            scale_factor = max_width / original_width
-            new_height = original_height * scale_factor
+def save_panorama(stitched_image, output_path):
+    if stitched_image is not None:
+        cv2.imwrite(output_path, stitched_image)
+        print(f"Panorama saved at {output_path}")
+    else:
+        print("No image to save.")
 
-            # Set the new dimensions for the page
-            page.mediabox.lower_right = (max_width, new_height)
-            writer.add_page(page)
+def main():
+    # List of image paths to stitch
+    image_folder = 'imgs'  # Replace with your folder path
+    image_paths = [os.path.join(image_folder, f) for f in sorted(os.listdir(image_folder))]
 
-        # Save the modified PDF
-        with open(output_pdf_path, 'wb') as output_pdf:
-            writer.write(output_pdf)
+    if len(image_paths) < 2:
+        print("Need at least two images to stitch!")
+        return
 
-# Example usage
-input_pdf = "main.pdf"  # Replace with your input PDF file path
-output_pdf = "main2.pdf"  # Replace with the desired output PDF file path
-resize_pdf_to_uniform_width(input_pdf, output_pdf)
+    # Stitch images
+    stitched_image = stitch_images(image_paths)
+
+    # Save the stitched panorama
+    output_path = 'panorama.jpg'  # Replace with desired output path
+    save_panorama(stitched_image, output_path)
+
+if __name__ == "__main__":
+    main()
