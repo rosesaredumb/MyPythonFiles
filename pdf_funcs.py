@@ -2,106 +2,100 @@ import cv2
 import numpy as np
 import os
 
+
 imgs_folder = './imgs'
-output_name = 'panorama.jpg'
+output_name = 'pan.jpg'
 
-def load_images(image_paths):
-    """Load images from paths."""
-    images = [cv2.imread(path) for path in image_paths if cv2.imread(path) is not None]
+def preprocess_images(image_paths):
+    """Preprocess images to improve blending and alignment."""
+    processed_images = []
+    for path in image_paths:
+        image = cv2.imread(path)
+        if image is None:
+            print(f"Error loading image: {path}")
+            continue
+
+        # Resize if the image is too large
+        height, width = image.shape[:2]
+        if height > 1080 or width > 1920:
+            scale = 1080 / height
+            image = cv2.resize(image, (int(width * scale), 1080))
+
+        # Equalize histogram for better exposure matching
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+        l, a, b = cv2.split(image)
+        l = cv2.equalizeHist(l)
+        image = cv2.merge((l, a, b))
+        image = cv2.cvtColor(image, cv2.COLOR_LAB2BGR)
+
+        processed_images.append(image)
+    return processed_images
+
+def stitch_images(image_paths):
+    """Stitch images together with enhanced blending."""
+    images = preprocess_images(image_paths)
+
     if len(images) < 2:
-        raise ValueError("Need at least two images to stitch.")
-    return images
-
-def detect_and_match_features(image1, image2):
-    """Detect and match features between two images."""
-    detector = cv2.AKAZE_create()  # Feature detector
-    keypoints1, descriptors1 = detector.detectAndCompute(image1, None)
-    keypoints2, descriptors2 = detector.detectAndCompute(image2, None)
-
-    # Use BRUTEFORCE_HAMMING for binary descriptors
-    matcher = cv2.DescriptorMatcher_create(cv2.DescriptorMatcher_BRUTEFORCE_HAMMING)
-    matches = matcher.knnMatch(descriptors1, descriptors2, k=2)
-
-    # Apply Lowe's ratio test to filter good matches
-    good_matches = []
-    for m, n in matches:
-        if m.distance < 0.75 * n.distance:
-            good_matches.append(m)
-
-    return keypoints1, keypoints2, good_matches
-
-def stitch_pair(image1, image2):
-    """Stitch two images based on feature matching and homography."""
-    keypoints1, keypoints2, good_matches = detect_and_match_features(image1, image2)
-
-    if len(good_matches) < 10:
-        print("Not enough matches found between images!")
+        print("Need at least two valid images to stitch!")
         return None
 
-    # Extract matched keypoints
-    points1 = np.float32([keypoints1[m.queryIdx].pt for m in good_matches]).reshape(-1, 1, 2)
-    points2 = np.float32([keypoints2[m.trainIdx].pt for m in good_matches]).reshape(-1, 1, 2)
+    # Initialize OpenCV Stitcher
+    stitcher = cv2.Stitcher.create(cv2.Stitcher_PANORAMA)  # Use Panorama mode
 
-    # Calculate homography
-    H, mask = cv2.findHomography(points2, points1, cv2.RANSAC)
+    # Set confidence threshold for better blending
+    stitcher.setPanoConfidenceThresh(0.8)  # Adjust threshold as needed
 
-    # Warp the second image to align with the first
-    height1, width1 = image1.shape[:2]
-    height2, width2 = image2.shape[:2]
-    warped_image2 = cv2.warpPerspective(image2, H, (width1 + width2, max(height1, height2)))
+    # Perform stitching
+    print("Stitching images...")
+    status, stitched_image = stitcher.stitch(images)
 
-    # Combine the images
-    stitched_image = np.zeros_like(warped_image2)
-    stitched_image[0:height1, 0:width1] = image1
-    stitched_image = cv2.addWeighted(stitched_image, 0.5, warped_image2, 0.5, 0)
-
-    return stitched_image
+    if status == cv2.Stitcher_OK:
+        print("Panorama created successfully!")
+        return stitched_image
+    else:
+        print(f"Stitching failed with error code: {status}")
+        return None
 
 def crop_black_borders(image):
-    """Crop black borders from stitched image."""
+    """Crop black borders from the stitched panorama."""
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(gray, 1, 255, cv2.THRESH_BINARY)
+
+    # Find contours to determine the bounding box
     contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     if contours:
         x, y, w, h = cv2.boundingRect(contours[0])
         cropped_image = image[y:y + h, x:x + w]
+        print("Cropped black borders.")
         return cropped_image
     return image
 
-def stitch_images(image_paths):
-    """Stitch multiple images in any alignment."""
-    images = load_images(image_paths)
-
-    # Start with the first image
-    stitched_image = images[0]
-
-    for i in range(1, len(images)):
-        print(f"Stitching image {i + 1}...")
-        stitched_image = stitch_pair(stitched_image, images[i])
-        if stitched_image is None:
-            print("Stitching failed!")
-            return None
-
-    # Crop black borders
-    stitched_image = crop_black_borders(stitched_image)
-    return stitched_image
+def save_panorama(stitched_image, output_path):
+    """Save the stitched panorama to disk."""
+    if stitched_image is not None:
+        cv2.imwrite(output_path, stitched_image)
+        print(f"Panorama saved at {output_path}")
+    else:
+        print("No image to save.")
 
 def main():
-    # Folder containing images
-    image_folder = imgs_folder
+    # Folder containing images to stitch
+    image_folder = imgs_folder  # Replace with your folder path
     image_paths = [os.path.join(image_folder, f) for f in sorted(os.listdir(image_folder)) if f.endswith(('.jpg', '.png', '.jpeg'))]
 
     if len(image_paths) < 2:
         print("Need at least two images to stitch!")
         return
 
-    # Perform stitching
+    # Stitch images
     stitched_image = stitch_images(image_paths)
     if stitched_image is not None:
-        cv2.imwrite(output_name, stitched_image)
-        print(f"Panorama saved as {output_name}")
-    else:
-        print("Failed to create panorama.")
+        # Crop black borders if needed
+        stitched_image = crop_black_borders(stitched_image)
+
+        # Save the final panorama
+        output_path = output_name  # Replace with desired output path
+        save_panorama(stitched_image, output_path)
 
 if __name__ == "__main__":
     main()
