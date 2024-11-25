@@ -2,7 +2,7 @@
 import subprocess
 
 #mylist = ["cue_cards", "mindmap", "tasks"]
-x = 7 #int(input("which script number?"))
+x = 9 #int(input("which script number?"))
 
 var_scripts = {
     "1": "./discord_bot/v2024/disbot3.py",
@@ -13,7 +13,7 @@ var_scripts = {
     "6": "./globals.py",
     "7": "./pdf_funcs.py",
     "8": "./level_system.py",
-    "9": "./words.py",
+    "9": "./tasks2.py",
 }
 
 print(f"About to run {var_scripts[f'{x}']}")
