@@ -22,5 +22,11 @@
         "amount": 2.0,
         "category": "2",
         "reason": "2"
+    },
+    {
+        "date": "20/12/2024",
+        "amount": 2.0,
+        "category": "f",
+        "reason": "w f"
     }
 ]

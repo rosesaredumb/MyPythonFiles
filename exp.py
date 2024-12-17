@@ -110,7 +110,11 @@ class ExpenseTracker:
             print("3. Delete an expense")
             choice = input("Enter your choice: ")
 
-            if choice == "1":
+            if choice == "0":
+                print("Exiting the Expense Tracker. Goodbye!")
+                break
+                
+            elif choice == "1":
                 date_input = input("Enter the date (dd/mm/yyyy) or press Enter for today: ").strip()
                 corrected_date = self.validate_date(date_input)
                 if not corrected_date:
@@ -130,18 +134,9 @@ class ExpenseTracker:
                 index = int(input("Enter the index of the expense to delete: "))
                 self.delete_expense(index)
 
-            elif choice == "4":
-                self.view_expenses()
-                index = int(input("Enter the index of the expense to edit: "))
-                date = input("Enter the new date (dd/mm/yyyy): ")
-                amount = input("Enter the new amount: ")
-                category = input("Enter the new category (e.g., food, phone, etc.): ")
-                reason = input("Enter the new reason: ")
-                self.edit_expense(index, date, amount, category, reason)
+            
 
-            elif choice == "5":
-                print("Exiting the Expense Tracker. Goodbye!")
-                break
+            
 
             else:
                 print("Invalid choice! Please try again.")

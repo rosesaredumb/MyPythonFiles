@@ -13,7 +13,7 @@ var_scripts = {
     "6": "./globals.py",
     "7": "./pdf_funcs.py",
     "8": "./level_system.py",
-    "9": "./exp.py",
+    "9": "./exp2.py",
 }
 
 print(f"About to run {var_scripts[f'{x}']}")
