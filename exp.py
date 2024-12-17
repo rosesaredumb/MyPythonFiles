@@ -74,7 +74,7 @@ class ExpenseTracker:
 
         expense = {
             "date": date,
-            "amount": float(amount),
+            "amount": round(float(amount), 2),
             "category": category,
             "reason": reason
         }

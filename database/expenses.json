@@ -46,5 +46,35 @@
         "amount": 2.0,
         "category": null,
         "reason": "s"
+    },
+    {
+        "date": "17/12/2024",
+        "amount": 21.0,
+        "category": null,
+        "reason": "d"
+    },
+    {
+        "date": "17/12/2024",
+        "amount": 21.0,
+        "category": "2",
+        "reason": "a"
+    },
+    {
+        "date": "17/12/2024",
+        "amount": "987",
+        "category": "f",
+        "reason": "q"
+    },
+    {
+        "date": "17/12/2024",
+        "amount": "144.00",
+        "category": "2",
+        "reason": "a"
+    },
+    {
+        "date": "17/12/2024",
+        "amount": "2.00",
+        "category": "2",
+        "reason": null
     }
 ]
