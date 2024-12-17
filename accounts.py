@@ -49,11 +49,14 @@ organ_systems = {
         },
         "m3": {
             "stimulate": ["sphincter pupillae contracts", 
-                          "ciliary muscle contracts",
+                          "ciliary muscle contracts", 
+                          "suspensory ligaments relax and shorten", 
+                          "anterior curvature of lens increases", 
+                          "vision fixed for near distance", 
                           "vasoconstriction of vessels within ciliary body", 
                           "decreased production of aqueous humour", 
                           "Decreased uveoscleral outflow"],
-            "inhibit": ["sphincter pupillae relaxes", "Increased uveoscleral outflow"]
+            "inhibit": ["sphincter pupillae dilates", "Increased uveoscleral outflow"]
         }
     }
 }

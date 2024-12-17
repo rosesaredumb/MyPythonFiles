@@ -23,6 +23,7 @@ mindmap_db_json_path = "./database/mindmap_db.json"
 player_progress_db_json_path = "./database/player_progress_db.json"
 words_db_json_path = "./database/words.json"
 config_json_path = './config.json'
+expenses_db_json_path = "./database/expenses.json"
 time_format = "%d/%m/%Y - %H:%M"
 time_zone = 'Asia/Calcutta'
 
