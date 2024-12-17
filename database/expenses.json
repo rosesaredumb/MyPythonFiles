@@ -28,5 +28,23 @@
         "amount": 2.0,
         "category": "f",
         "reason": "w f"
+    },
+    {
+        "date": "23/11/2024",
+        "amount": 235.0,
+        "category": null,
+        "reason": "e"
+    },
+    {
+        "date": "17/12/2024",
+        "amount": 9.0,
+        "category": "u",
+        "reason": "o"
+    },
+    {
+        "date": "17/12/2024",
+        "amount": 2.0,
+        "category": null,
+        "reason": "s"
     }
 ]

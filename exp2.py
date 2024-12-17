@@ -19,12 +19,18 @@ class ExpenseTracker:
 
     def save_expenses(self):  
         """Save expenses to the JSON file."""  
-        self.json_handler.write_json(self.expenses, self.file_name)  
+        self.json_handler.write_json(self.expenses, self.file_name)
+        
 
     def validate_date(self, date_input):
         """Validate the date format and auto-correct short formats like '2' to '02/current_month/current_year'."""
         try:
-            if date_input.strip():  # Ensure input is not empty
+            if not date_input.strip():  # If the input is empty, return today's date
+                # Get today's date
+                day = datetime.now().day
+                month = datetime.now().month
+                year = datetime.now().year
+            else:
                 # Extract numeric parts from the input
                 date_parts = [int(part) for part in re.split(r"[-/\\' ;]", date_input) if part.isdigit()]
 
@@ -43,14 +49,13 @@ class ExpenseTracker:
                 else:
                     return None  # Invalid format if more than 3 parts
 
-                # Construct and validate the full date
-                full_date = f"{str(day).zfill(2)}/{str(month).zfill(2)}/{year}"
-                datetime.strptime(full_date, "%d/%m/%Y")  # Ensure it's a valid date
-                return full_date  # Return corrected date
-            else:
-                return None  # Empty input is invalid
+            # Construct and validate the full date
+            full_date = f"{str(day).zfill(2)}/{str(month).zfill(2)}/{year}"
+            datetime.strptime(full_date, "%d/%m/%Y")  # Ensure it's a valid date
+            return full_date  # Return corrected date
         except (ValueError, IndexError):
             return None  # Return None for invalid date inputs
+
 
     def validate_amount(self, amount):  
         """Validate the amount."""  
@@ -111,59 +116,74 @@ class ExpenseTracker:
 
     def select_category(self):
         """Allow the user to select an existing category or create a new one."""
-        if not self.categories:
-            print("No categories available.")
-            print("Enter 0 to create a new category or press Enter to assign 'None'.")
-            category_input = input("Enter your choice: ").strip()
-            if category_input == '0':
-                category = input("Enter the new category: ").strip().lower()
-                if category not in self.categories:
-                    self.categories.append(category)  # Add new category
-                else:
-                    print("Category already exists.")
-            elif category_input == '':
-                category = None
-            else:
-                print("Invalid choice.")
-                category = None
-        else:
-            print("Select a category:")
-            for idx, cat in enumerate(self.categories, 1):
-                print(f"{idx}. {cat}")
-            print("0. Create a new category")
-            category_input = input("Enter your choice: ").strip()
-            if category_input == '0':
-                category = input("Enter the new category: ").strip().lower()
-                if category not in self.categories:
-                    self.categories.append(category)  # Add new category
-                else:
-                    print("Category already exists.")
-            else:
-                try:
-                    category_index = int(category_input)
-                    if 1 <= category_index <= len(self.categories):
-                        category = self.categories[category_index - 1]
+        while True:  # Loop until a valid choice is made
+            if not self.categories:
+                print("\nNo categories available.")
+                print("Enter 0 to create a new category or press Enter to assign no category.")
+                category_input = input("Enter your choice: ").strip()
+                if category_input == '0':
+                    category = input("Enter the new category: ").strip().lower()
+                    if category not in self.categories:
+                        self.categories.append(category)  # Add new category
+                        break  # Exit the loop if a valid category is created
                     else:
-                        print("Invalid choice.")
-                        category = None
-                except ValueError:
-                    print("Invalid input. Assigning 'None' category.")
+                        print("Category already exists.")
+                elif category_input == '':  # If no input is provided
                     category = None
+                    print("No category assigned.")
+                    break  # Exit the loop if 'None' is chosen
+                else:
+                    print("Invalid choice. Please try again.")
+            else:
+                print("\nSelect a category, Enter 0 to create a new category or press Enter to assign no category.")
+                for idx, cat in enumerate(self.categories, 1):
+                    print(f"{idx}. {cat}")
+                category_input = input("Enter your choice: ").strip()
+
+                if category_input == '0':
+                    category = input("Enter the new category: ").strip().lower()
+                    if category == '':
+                        print("Category cannot be empty. Please enter a valid category.")
+                    elif category not in self.categories:
+                        self.categories.append(category)  # Add new category
+                        break  # Exit the loop if a valid category is created
+                    else:
+                        print("Category already exists.")
+                elif category_input == '':  # If no input is provided
+                    category = None
+                    print("No category assigned.")
+                    break  # Exit the loop and assign 'None' category
+                else:
+                    try:
+                        category_index = int(category_input)
+                        if 1 <= category_index <= len(self.categories):
+                            category = self.categories[category_index - 1]
+                            break  # Exit the loop if a valid category is selected
+                        else:
+                            print("Invalid choice. Please try again.")
+                    except ValueError:
+                        print("Invalid input. Assigning 'None' category.")
+                        category = None
+                        break  # Exit the loop if the input is invalid
 
         return category
 
     def run(self):  
         print("Welcome to the Expense Tracker!")  
-        while True:  
-            print("\n1. Add a new expense")  
+        while True:
+            print("\n0. Exit")
+            print("1. Add a new expense")  
             print("2. View all expenses")  
-            print("3. Delete an expense")  
-            print("4. Exit")  
+            print("3. Delete an expense")    
             choice = input("Enter your choice: ")  
 
-            if choice == "1":
+            if choice == "0":  
+                print("Exiting the Expense Tracker. Goodbye!")  
+                break
+                
+            elif choice == "1":
                 while True:
-                    date_input = input("Enter the date (dd/mm/yyyy) or press Enter for today: ").strip()
+                    date_input = input("\nEnter the date (dd/mm/yyyy) or press Enter for today: ").strip()
                     corrected_date = self.validate_date(date_input)
 
                     if not corrected_date:
@@ -174,19 +194,14 @@ class ExpenseTracker:
 
                 # Amount validation loop
                 while True:
-                    amount = input("Enter the amount: ").strip()
+                    amount = input("\nEnter the amount: ").strip()
                     if self.validate_amount(amount):
                         break  # Exit the loop if the amount is valid
                     else:
                         print("Invalid amount! Please enter a valid number.")
 
-                # Category selection
                 category = self.select_category()
-
-                # Reason input
                 reason = input("Enter the reason: ").strip()
-
-                # Call add_expense with the valid inputs
                 self.add_expense(corrected_date, amount, category, reason)
 
             elif choice == "2":  
@@ -196,10 +211,6 @@ class ExpenseTracker:
                 self.view_expenses()  
                 index = int(input("Enter the index of the expense to delete: "))  
                 self.delete_expense(index)  
-
-            elif choice == "4":  
-                print("Exiting the Expense Tracker. Goodbye!")  
-                break  
 
             else:  
                 print("Invalid choice! Please try again.")  
