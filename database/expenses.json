@@ -1,21 +1,15 @@
 [
     {
-        "date": "11/12/2024",
-        "amount": 123.0,
-        "category": "f",
+        "date": "23/11/2024",
+        "amount": 235.0,
+        "category": null,
         "reason": "e"
     },
     {
-        "date": "11/12/2024",
-        "amount": 123.0,
-        "category": "f",
-        "reason": "e"
-    },
-    {
-        "date": "11/12/2024",
-        "amount": 123.0,
-        "category": "f",
-        "reason": "e"
+        "date": "01/12/2024",
+        "amount": "1000000.35",
+        "category": "u",
+        "reason": null
     },
     {
         "date": "02/12/2024",
@@ -24,16 +18,28 @@
         "reason": "2"
     },
     {
-        "date": "20/12/2024",
-        "amount": 2.0,
+        "date": "11/12/2024",
+        "amount": 123.0,
         "category": "f",
-        "reason": "w f"
+        "reason": "e"
     },
     {
-        "date": "23/11/2024",
-        "amount": 235.0,
-        "category": null,
+        "date": "11/12/2024",
+        "amount": 123.0,
+        "category": "f",
         "reason": "e"
+    },
+    {
+        "date": "11/12/2024",
+        "amount": 123.0,
+        "category": "f",
+        "reason": "e"
+    },
+    {
+        "date": "12/12/2024",
+        "amount": "23333331.00",
+        "category": null,
+        "reason": "qweeee"
     },
     {
         "date": "17/12/2024",
@@ -76,5 +82,17 @@
         "amount": "2.00",
         "category": "2",
         "reason": null
+    },
+    {
+        "date": "17/12/2024",
+        "amount": "22.00",
+        "category": "2",
+        "reason": null
+    },
+    {
+        "date": "20/12/2024",
+        "amount": 2.0,
+        "category": "f",
+        "reason": "w f"
     }
 ]

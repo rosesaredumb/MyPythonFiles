@@ -12,6 +12,18 @@ class ExpenseTracker:
         self.categories = self.get_all_categories(
         )  # Initialize categories list
 
+    
+    def sort_expenses_by_date(self):
+        """Sort the expenses from oldest to newest date."""
+        def parse_date(date_str):
+            return datetime.strptime(date_str, "%d/%m/%Y")
+
+        # Sort the expenses list by the 'date' field
+        self.expenses.sort(key=lambda expense: parse_date(expense['date']))
+        print("Expenses sorted by date (oldest to newest).")
+        self.save_expenses()
+
+    
     def load_expenses(self):
         """Load expenses from the JSON file."""
         data = self.json_handler.read_json(self.file_name)
@@ -82,9 +94,6 @@ class ExpenseTracker:
         if not self.validate_date(date):
             print("Invalid date format! Please try again.")
             return
-        if not self.validate_amount(amount):
-            print("Invalid amount! Please enter a number.")
-            return
 
         expense = {
             "date": date,
@@ -93,9 +102,8 @@ class ExpenseTracker:
             "reason": reason
         }
         self.expenses.append(expense)
-        self.save_expenses()
-        self.categories = self.get_all_categories(
-        )  # Refresh categories after adding expense
+        self.sort_expenses_by_date()
+        self.categories = self.get_all_categories()  # Refresh categories after adding expense
         print("Expense added successfully!")
 
     def view_expenses(self):
@@ -110,7 +118,7 @@ class ExpenseTracker:
         """Delete an expense by index."""
         try:
             del self.expenses[index - 1]
-            self.save_expenses()
+            self.sort_expenses_by_date()
             self.categories = self.get_all_categories(
             )  # Refresh categories after deleting expense
             print("Expense deleted successfully!")
@@ -202,7 +210,7 @@ class ExpenseTracker:
             elif choice == "1":
                 while True:
                     date_input = input(
-                        "\nEnter the date (dd/mm/yyyy) or press Enter for today: "
+                        "\nEnter the date (dd/mm/yyyy) / Press Enter for today: "
                     ).strip()
                     corrected_date = self.validate_date(date_input)
 
