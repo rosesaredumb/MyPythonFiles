@@ -80,6 +80,8 @@ class ExpenseTracker:
         self.expenses.append(expense)
         self.save_expenses()
         print("Expense added successfully!")
+        print(f"Date: {date}, Amount: {amount}, "
+              f"Category: {category or '>no category<'}, Reason: {reason or '>no reason<'}")
 
     def view_expenses(self):
         """View all expenses."""
@@ -170,7 +172,7 @@ class ExpenseTracker:
                     date_input = input("Enter the date (dd/mm/yyyy) or press Enter for today: ").strip()
                     corrected_date = self.validate_date(date_input)
                     if corrected_date:
-                        
+                        print(f"Date set as: {corrected_date}")
                         break
                     print("Invalid date format! Please try again.")
 
@@ -178,11 +180,14 @@ class ExpenseTracker:
                     amount = input("Enter the amount: ").strip()
                     formatted_amount = self.validate_amount(amount)
                     if formatted_amount:
+                        print(f"Amount set as: {formatted_amount}")
                         break
                     print("Invalid amount! Please enter a valid number.")
 
                 category = self.select_category()
-                reason = input("Enter the reason: ").strip() or None
+                print(f"Category set as: {category or '>no category<'}")
+                reason = input("\nEnter the reason / Press -Enter- to assign no reason: ").strip() or None
+                print(f"\nReason set as: {reason or '>no reason<'}")
 
                 self.add_expense(corrected_date, formatted_amount, category, reason)
             elif choice == "2":
