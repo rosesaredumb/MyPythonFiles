@@ -7816,5 +7816,11 @@
         "amount": 300.0,
         "category": "fuel",
         "reason": "scooter petrol"
+    },
+    {
+        "date": "20/12/2024",
+        "amount": 125.0,
+        "category": "groceries",
+        "reason": "redbull"
     }
 ]
