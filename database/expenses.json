@@ -18,6 +18,12 @@
         "reason": "2"
     },
     {
+        "date": "02/12/2024",
+        "amount": "23.00",
+        "category": null,
+        "reason": null
+    },
+    {
         "date": "11/12/2024",
         "amount": 123.0,
         "category": "f",
@@ -88,6 +94,12 @@
         "amount": "22.00",
         "category": "2",
         "reason": null
+    },
+    {
+        "date": "19/12/2024",
+        "amount": "12.00",
+        "category": null,
+        "reason": "a"
     },
     {
         "date": "20/12/2024",

@@ -2,6 +2,7 @@ from datetime import datetime
 from json_functions import json_funcs
 import re
 from globals import expenses_db_json_path
+from typing import Literal
 
 
 class ExpenseTracker:
@@ -10,6 +11,22 @@ class ExpenseTracker:
         self.json_handler = json_funcs()
         self.expenses = self.load_expenses()
         self.categories = self.get_all_categories()  # Initialize categories list
+        self.input_bulletin = ">>>"
+        self.response_bulletin = "--"
+        self.error_bulletin = "!!"
+
+    def mprint(self, sentence: str, type: Literal[1, 2, 3] = 1) -> str:
+        if type not in {1, 2, 3}:
+            raise ValueError("Type must be '1', '2', or '3'")
+        if type == 1:
+            x = str(input(f"{self.input_bulletin}{sentence}"))
+            return x
+        elif type == 2:
+            print(f"{self.response_bulletin}{sentence}")
+            return ""
+        elif type == 3:
+            print(f"{self.error_bulletin}{sentence}")
+            return ""
 
     def load_expenses(self):
         """Load expenses from the JSON file."""
@@ -100,32 +117,32 @@ class ExpenseTracker:
             del self.expenses[index - 1]
             self.save_expenses()
             self.categories = self.get_all_categories()  # Refresh categories
-            print("Expense deleted successfully!")
+            self.mprint("Expense deleted successfully!", 2)
         except IndexError:
-            print("Invalid index. Please try again.")
+            self.mprint("Invalid index. Please try again.", 3)
 
     def select_category(self):
         """Allow the user to select an existing category or create a new one."""
         while True:
             if not self.categories:
-                category_input = input(
+                category_input = self.mprint(
                     "\nNo categories available. "
                     "Enter 0 to create a new category / Press -Enter- to assign no category: ").strip()
                 if category_input == '0':
-                    category = input("Enter the new category: ").strip().lower()
+                    category = self.mprint("Enter the new category: ").strip().lower()
                     if category:
                         if category not in self.categories:
                             self.categories.append(category)
-                            print(f"Category '{category}' created!")
+                            self.mprint(f"Category '{category}' created!", 2)
                             return category
                         else:
-                            print("Category already exists.")
+                            self.mprint("Category already exists.", 2)
                     else:
-                        print("Category cannot be empty. Try again.")
+                        self.mprint("Category cannot be empty. Try again.", 3)
                 elif category_input == '':
                     return None
                 else:
-                    print("Invalid choice. Please try again.")
+                    self.mprint("Invalid choice. Please try again.")
             else:
                 category_input = input(
                     f"\nExisting categories:\n{''.join([f'{idx}. {cat}\n' for idx, cat in enumerate(self.categories, 1)])}"
@@ -143,7 +160,7 @@ class ExpenseTracker:
                     else:
                         print("Category cannot be empty. Try again.")
                 elif category_input == '':
-                    return None
+                    return None       
                 else:
                     try:
                         category_index = int(category_input)
