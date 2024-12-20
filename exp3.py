@@ -74,7 +74,7 @@ class ExpenseTracker:
     def validate_amount(self, amount):
         """Validate and format the amount."""
         try:
-            return f"{float(amount):.2f}"
+            return round(float(amount), 2)
         except ValueError:
             return None
 
@@ -120,6 +120,30 @@ class ExpenseTracker:
             self.mprint("Expense deleted successfully!", 2)
         except IndexError:
             self.mprint("Invalid index. Please try again.", 3)
+
+    def get_current_month_expenses_by_category(self):
+        """Calculate the total expenses for the current month and group them by category."""
+        current_month = datetime.now().month
+        current_year = datetime.now().year
+        category_expenses = {}
+
+        # Filter expenses for the current month and group them by category
+        for expense in self.expenses:
+            expense_date = datetime.strptime(expense["date"], "%d/%m/%Y")
+            if expense_date.month == current_month and expense_date.year == current_year:
+                category = expense["category"] or ">no category<"  # Replace None or empty category
+                category_expenses[category] = category_expenses.get(category, 0) + expense["amount"]
+
+        # Calculate the total sum of current month's expenses
+        total_sum = sum(category_expenses.values())
+
+        # Display the results
+        self.mprint(f"Total expenses for the current month: {total_sum}", 2)
+        self.mprint("Expenses by category:", 2)
+        for category, amount in category_expenses.items():
+            self.mprint(f"{category}: {amount}", 2)
+
+        return total_sum, category_expenses
 
     def select_category(self):
         """Allow the user to select an existing category or create a new one."""
@@ -178,6 +202,7 @@ class ExpenseTracker:
             print("1. Add a new expense")
             print("2. View all expenses")
             print("3. Delete an expense")
+            print("4. View total expenses for the current month")
             choice = input("Enter your choice: ").strip()
 
             if choice == "0":
@@ -216,6 +241,10 @@ class ExpenseTracker:
                     self.delete_expense(index)
                 except ValueError:
                     print("Invalid input. Please enter a number.")
+
+            elif choice == "4":
+                self.get_current_month_expenses_by_category()
+            
             else:
                 print("Invalid choice! Please try again.")
 

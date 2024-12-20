@@ -19,7 +19,7 @@ def csv_to_json(csv_file, json_file):
             # Append formatted entry to the list
             data.append({
                 "date": date,
-                "amount": float(f"{amount:.2f}"),  # Ensure 2 decimal places
+                "amount": round(amount, 2),
                 "category": None,
                 "reason": reason
             })
