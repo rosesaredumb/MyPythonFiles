@@ -100,20 +100,24 @@ class ExpenseTracker:
         print(f"Date: {date}, Amount: {amount}, "
               f"Category: {category or '>no category<'}, Reason: {reason or '>no reason<'}")
 
-    def view_expenses(self):
-        """View all expenses."""
+    def view_expenses(self, num_expenses=None):
+        """
+        View the specified number of latest expenses or all expenses if none specified.
+        :param num_expenses: Number of latest expenses to display (default: 10 if not provided).
+        """
         if not self.expenses:
             print("No expenses recorded yet.")
         else:
-            print("Displaying the last 10 expenses:")
-            print(f"{'Date':<12} {'Amount':>10} {'Category':<15} {'Reason':<30}")
-            print("-" * 70)  # Separator line
-            for expense in self.expenses[-10:]:
+            num_expenses = num_expenses or 10  # Default to 10 if no value is provided
+            print(f"Displaying the last {num_expenses} expenses:")
+            print(f"{'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}")
+            print("-" * 80)  # Separator line
+            for expense in self.expenses[-num_expenses:]:
                 date = expense["date"]
                 amount = f"{expense['amount']:.2f}"
                 category = expense["category"] if expense["category"] else ">no category<"
                 reason = expense["reason"] if expense["reason"] else ">no reason<"
-                print(f"{date:<12} {amount:>10} {category:<15} {reason:<30}")
+                print(f"{date:<10} {amount:>10}    {category:<20} {reason:<30}")
 
     def delete_expense(self, index):
         """Delete an expense by index."""
@@ -237,7 +241,17 @@ class ExpenseTracker:
 
                 self.add_expense(corrected_date, formatted_amount, category, reason)
             elif choice == "2":
-                self.view_expenses()
+                while True:
+                    try:
+                        num_expenses = input("Enter the number of latest expenses to view (or press Enter for default 10): ").strip()
+                        num_expenses = int(num_expenses) if num_expenses else 10
+                        if num_expenses > 0:
+                            self.view_expenses(num_expenses)
+                            break
+                        else:
+                            print("Please enter a positive number.")
+                    except ValueError:
+                        print("Invalid input! Please enter a valid number.")
             elif choice == "3":
                 self.view_expenses()
                 try:
