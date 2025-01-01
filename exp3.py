@@ -105,11 +105,15 @@ class ExpenseTracker:
         if not self.expenses:
             print("No expenses recorded yet.")
         else:
-            for index, expense in enumerate(self.expenses):
+            print("Displaying the last 10 expenses:")
+            print(f"{'Date':<12} {'Amount':>10} {'Category':<15} {'Reason':<30}")
+            print("-" * 70)  # Separator line
+            for expense in self.expenses[-10:]:
+                date = expense["date"]
+                amount = f"{expense['amount']:.2f}"
                 category = expense["category"] if expense["category"] else ">no category<"
                 reason = expense["reason"] if expense["reason"] else ">no reason<"
-                print(f"{index+1}. Date: {expense['date']}, Amount: {expense['amount']}, "
-                      f"Category: {category}, Reason: {reason}")
+                print(f"{date:<12} {amount:>10} {category:<15} {reason:<30}")
 
     def delete_expense(self, index):
         """Delete an expense by index."""

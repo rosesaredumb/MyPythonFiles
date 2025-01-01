@@ -7822,5 +7822,59 @@
         "amount": 125.0,
         "category": "groceries",
         "reason": "redbull"
+    },
+    {
+        "date": "22/12/2024",
+        "amount": 1000.0,
+        "category": "transportation",
+        "reason": "saneesh auto - to airport"
+    },
+    {
+        "date": "29/12/2024",
+        "amount": 1.0,
+        "category": "denna's treat",
+        "reason": "donation"
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 30.0,
+        "category": "groceries",
+        "reason": null
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 30.0,
+        "category": "food",
+        "reason": "royal bakers, lime"
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 30.0,
+        "category": "denna's treat",
+        "reason": "royal bakers, lime"
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 60.4,
+        "category": "food",
+        "reason": "chaat"
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 300.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "01/01/2025",
+        "amount": 125.0,
+        "category": "food",
+        "reason": "redbull"
+    },
+    {
+        "date": "01/01/2025",
+        "amount": 30.0,
+        "category": "food",
+        "reason": "royal bakers"
     }
 ]
