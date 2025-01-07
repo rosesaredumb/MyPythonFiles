@@ -7876,5 +7876,35 @@
         "amount": 30.0,
         "category": "food",
         "reason": "royal bakers"
+    },
+    {
+        "date": "02/01/2025",
+        "amount": 120.0,
+        "category": "groceries",
+        "reason": "redbull"
+    },
+    {
+        "date": "02/01/2025",
+        "amount": 164.0,
+        "category": "food",
+        "reason": "club arabia"
+    },
+    {
+        "date": "03/01/2025",
+        "amount": 200.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "03/01/2025",
+        "amount": 3575.0,
+        "category": "medical",
+        "reason": "namitha"
+    },
+    {
+        "date": "04/01/2025",
+        "amount": 65.0,
+        "category": "food",
+        "reason": "chaat"
     }
 ]
