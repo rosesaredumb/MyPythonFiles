@@ -48,18 +48,6 @@
         "reason": "Stationery, tools"
     },
     {
-        "date": "09/02/2021",
-        "amount": 500.0,
-        "category": null,
-        "reason": "Health care, doctor"
-    },
-    {
-        "date": "18/02/2021",
-        "amount": 510.0,
-        "category": null,
-        "reason": "Education"
-    },
-    {
         "date": "19/02/2021",
         "amount": 300.0,
         "category": null,
@@ -7960,5 +7948,11 @@
         "amount": 221.0,
         "category": "transportation",
         "reason": "joel benoy's diesel"
+    },
+    {
+        "date": "12/01/2025",
+        "amount": 235.0,
+        "category": "denna's treat",
+        "reason": null
     }
 ]

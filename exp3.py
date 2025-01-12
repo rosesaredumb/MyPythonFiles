@@ -19,13 +19,13 @@ class ExpenseTracker:
         if type not in {1, 2, 3}:
             raise ValueError("Type must be '1', '2', or '3'")
         if type == 1:
-            x = str(input(f"{self.input_bulletin}{sentence}"))
+            x = str(input(f"\n{self.input_bulletin}{sentence}"))
             return x
         elif type == 2:
-            print(f"{self.response_bulletin}{sentence}")
+            print(f"\n{self.response_bulletin}{sentence}")
             return ""
         elif type == 3:
-            print(f"{self.error_bulletin}{sentence}")
+            print(f"\n{self.error_bulletin}{sentence}")
             return ""
 
     def load_expenses(self):
@@ -96,9 +96,8 @@ class ExpenseTracker:
         }
         self.expenses.append(expense)
         self.save_expenses()
-        print("Expense added successfully!")
-        print(f"Date: {date}, Amount: {amount}, "
-              f"Category: {category or '>no category<'}, Reason: {reason or '>no reason<'}")
+        self.mprint("Expense added successfully!", 2)
+        print(f"Date: {date}\nAmount: {amount}\nCategory: {category or '>no category<'}\nReason: {reason or '>no reason<'}")
 
     def view_expenses(self, num_expenses=None):
         """
@@ -271,6 +270,57 @@ class ExpenseTracker:
             self.mprint("Invalid input format! Please provide 'mm/yyyy', 'mm yy', 'mm,yy', or 'mm'.", 3)
             return 0.0, {}
 
+    def get_total_entries(self):
+        """
+        Display the total number of expense entries stored in the tracker.
+        """
+        total_entries = len(self.expenses)
+        print(f"Total number of expense entries: {total_entries}")
+        return total_entries
+
+    def delete_recent_entry(self):
+        """
+        Delete an expense from the most recent 10 entries.
+        """
+        # Check if there are any expenses
+        if not self.expenses:
+            print("No expenses recorded yet.")
+            return
+
+        # Get the last 10 entries
+        recent_expenses = self.expenses[-10:]
+
+        # Display the recent 10 entries
+        print("\nMost Recent 10 Entries (or fewer):")
+        print(f"{'Index':<6} {'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}")
+        print("-" * 80)
+        for i, expense in enumerate(recent_expenses, start=1):
+            date = expense["date"]
+            amount = f"{expense['amount']:.2f}"
+            category = expense["category"] if expense["category"] else ">no category<"
+            reason = expense["reason"] if expense["reason"] else ">no reason<"
+            print(f"{i:<6} {date:<10} {amount:>10}    {category:<20} {reason:<30}")
+        print("-" * 80)
+
+        # Ask the user to select an entry to delete
+        while True:
+            try:
+                index = int(input("Enter the index of the entry to delete (1-10) or 0 to cancel: ").strip())
+                if index == 0:
+                    print("Deletion canceled.")
+                    return
+                if 1 <= index <= len(recent_expenses):
+                    # Calculate the actual index in the full expenses list
+                    actual_index = len(self.expenses) - len(recent_expenses) + (index - 1)
+                    deleted_expense = self.expenses.pop(actual_index)
+                    self.save_expenses()
+                    print(f"Deleted entry: Date: {deleted_expense['date']}, Amount: {deleted_expense['amount']}")
+                    return
+                else:
+                    print(f"Invalid index! Enter a number between 1 and {len(recent_expenses)}.")
+            except ValueError:
+                print("Invalid input! Please enter a valid number.")
+
     def run(self):
         print("Welcome to the Expense Tracker!")
         while True:
@@ -283,60 +333,62 @@ class ExpenseTracker:
             clear_console()
 
             if choice == "0":
-                print("Exiting the Expense Tracker. Goodbye!")
+                self.mprint("Exiting the Expense Tracker. Goodbye!", 2)
                 break
                 
             elif choice == "1":
                 while True:
-                    date_input = input("Enter the date (dd/mm/yyyy) or press Enter for today: ").strip()
+                    date_input = str(self.mprint("Enter the date (dd/mm/yyyy) or press Enter for today: ")).strip()
                     corrected_date = self.validate_date(date_input)
                     if corrected_date:
-                        print(f"Date set as: {corrected_date}")
+                        self.mprint(f"Date set as: {corrected_date}", 2)
                         break
-                    print("Invalid date format! Please try again.")
+                    self.mprint("Invalid date format! Please try again.", 3)
 
                 while True:
-                    amount = input("Enter the amount: ").strip()
+                    amount = str(self.mprint("Enter the amount: ")).strip()
                     formatted_amount = self.validate_amount(amount)
                     if formatted_amount:
-                        print(f"Amount set as: {formatted_amount}")
+                        self.mprint(f"Amount set as: {formatted_amount}", 2)
                         break
-                    print("Invalid amount! Please enter a valid number.")
+                    self.mprint("Invalid amount! Please enter a valid number.", 3)
 
                 category = self.select_category()
-                print(f"Category set as: {category or '>no category<'}")
-                reason = input("\nEnter the reason / Press -Enter- to assign no reason: ").strip() or None
-                print(f"\nReason set as: {reason or '>no reason<'}")
+                self.mprint(f"Category set as: {category or '>no category<'}", 2)
+                
+                reason = str(self.mprint("Enter the reason / Press -Enter- to assign no reason: ")).strip() or None
+                self.mprint(f"Reason set as: {reason or '>no reason<'}", 2)
 
                 self.add_expense(corrected_date, formatted_amount, category, reason)
                 
             elif choice == "2":
                 while True:
                     try:
-                        num_expenses = input("Enter the number of latest expenses to view (or press Enter for default 10): ").strip()
+                        num_expenses = str(self.mprint("Enter the number of latest expenses to view (or press Enter for default 10): ")).strip()
+                        clear_console()
                         num_expenses = int(num_expenses) if num_expenses else 10
                         if num_expenses > 0:
                             self.view_expenses(num_expenses)
                             break
                         else:
-                            print("Please enter a positive number.")
+                            self.mprint("Please enter a positive number.", 3)
                     except ValueError:
-                        print("Invalid input! Please enter a valid number.")
+                        self.mprint("Invalid input! Please enter a valid number.", 3)
                         
             elif choice == "3":
-                self.view_expenses()
-                try:
-                    index = int(input("Enter the index of the expense to delete: ").strip())
-                    self.delete_expense(index)
-                except ValueError:
-                    print("Invalid input. Please enter a number.")
+                self.delete_recent_entry()
                     
             elif choice == "4":
-                month_year = input("Enter the month and year (e.g., '2', '12-22', '03 2023', '4/2024'): ").strip()
+                month_year = str(self.mprint("Enter the month and year (e.g., '2', '12-22', '03 2023', '4/2024'): ")).strip()
+                clear_console()
                 self.get_monthly_expenses(month_year)
-                    
+
+            elif choice == "5":
+                self.get_total_entries()
+                
+            
             else:
-                print("Invalid choice! Please try again.")
+                self.mprint("Invalid choice! Please try again.", 3)
 
 
 if __name__ == "__main__":
