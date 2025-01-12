@@ -11,7 +11,7 @@ class ExpenseTracker:
         self.json_handler = json_funcs()
         self.expenses = self.load_expenses()
         self.categories = self.get_all_categories()  # Initialize categories list
-        self.input_bulletin = ">>>"
+        self.input_bulletin = ">>"
         self.response_bulletin = "--"
         self.error_bulletin = "!!"
 
@@ -118,15 +118,6 @@ class ExpenseTracker:
                 reason = expense["reason"] if expense["reason"] else ">no reason<"
                 print(f"{date:<10} {amount:>10}    {category:<20} {reason:<30}")
 
-    def delete_expense(self, index):
-        """Delete an expense by index."""
-        try:
-            del self.expenses[index - 1]
-            self.save_expenses()
-            self.categories = self.get_all_categories()  # Refresh categories
-            self.mprint("Expense deleted successfully!", 2)
-        except IndexError:
-            self.mprint("Invalid index. Please try again.", 3)
 
     def get_current_month_expenses_by_category(self):
         """Calculate the total expenses for the current month and group them by category."""
@@ -212,6 +203,7 @@ class ExpenseTracker:
         """
         Get the total expenses and expenses grouped by category for a specific month and year.
         If no input is provided, use the current month and year.
+        Also display the percentage contribution of each category to the total expenses.
         :param month_year_input: Input in formats like 'mm/yyyy', 'mm yy', 'mm,yy', 'mm' (current year assumed).
         :return: Total expenses and a dictionary of expenses grouped by category.
         """
@@ -250,17 +242,16 @@ class ExpenseTracker:
                     total_expenses += expense["amount"]
                     category = expense["category"] or ">no category<"  # Replace None or empty category
                     category_expenses[category] = category_expenses.get(category, 0) + expense["amount"]
-
-            # Round the total expenses to 2 decimal places
             total_expenses = round(total_expenses, 2)
+            sorted_categories = sorted(category_expenses.items(), key=lambda x: x[1], reverse=True)
 
-            sorted_categories = sorted(category_expenses.items())
             # Display results
             print(f"Expense breakdown for {str(month).zfill(2)}/{year}:\n")
-            print(f"{'Category':<20}  {'Amount':>10}")
+            print(f"{'Category':<20}  {'Amount':>10}  {'Percentage':>10}")
             print("-" * 60)
             for category, amount in sorted_categories:
-                print(f"{category:<20}  {amount:>10.2f}")
+                percentage = (amount / total_expenses * 100) if total_expenses > 0 else 0
+                print(f"{category:<20}  {amount:>10.2f}  {percentage:>9.1f}%")
             print("-" * 60)
             print(f"{'Total':<20}  {total_expenses:>10.2f}")
 
@@ -314,6 +305,7 @@ class ExpenseTracker:
                     actual_index = len(self.expenses) - len(recent_expenses) + (index - 1)
                     deleted_expense = self.expenses.pop(actual_index)
                     self.save_expenses()
+                    self.categories = self.get_all_categories()
                     print(f"Deleted entry: Date: {deleted_expense['date']}, Amount: {deleted_expense['amount']}")
                     return
                 else:
