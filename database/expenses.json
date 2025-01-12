@@ -7906,5 +7906,59 @@
         "amount": 65.0,
         "category": "food",
         "reason": "chaat"
+    },
+    {
+        "date": "06/01/2025",
+        "amount": 476.0,
+        "category": null,
+        "reason": "habel's sister wedding gift"
+    },
+    {
+        "date": "07/01/2025",
+        "amount": 1905.0,
+        "category": "college",
+        "reason": "3rd year uni exam fees"
+    },
+    {
+        "date": "07/01/2025",
+        "amount": 40.0,
+        "category": "treat",
+        "reason": "asish"
+    },
+    {
+        "date": "07/01/2025",
+        "amount": 40.0,
+        "category": "food",
+        "reason": "cafeteria lime"
+    },
+    {
+        "date": "08/01/2025",
+        "amount": 50.0,
+        "category": "denna's treat",
+        "reason": null
+    },
+    {
+        "date": "09/01/2025",
+        "amount": 240.0,
+        "category": "food",
+        "reason": "mandhi souk"
+    },
+    {
+        "date": "10/01/2025",
+        "amount": 40.0,
+        "category": "college",
+        "reason": "ophthal elective logbook binding"
+    },
+    {
+        "date": "10/01/2025",
+        "amount": 104.0,
+        "category": "denna's treat",
+        "reason": "anns"
+    },
+    {
+        "date": "11/01/2025",
+        "amount": 221.0,
+        "category": "transportation",
+        "reason": "joel benoy's diesel"
     }
 ]
