@@ -10,7 +10,7 @@ class ExpenseTracker:
         self.file_name = expenses_db_json_path
         self.json_handler = json_funcs()
         self.expenses = self.load_expenses()
-        self.categories = self.get_all_categories()  # Initialize categories list
+        self.categories = self.get_all_categories()
         self.input_bulletin = ">>"
         self.response_bulletin = "--"
         self.error_bulletin = "!!"
