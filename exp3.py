@@ -1,7 +1,7 @@
 from datetime import datetime
 from json_functions import json_funcs
 import re
-from globals import expenses_db_json_path
+from globals import expenses_db_json_path, clear_console
 from typing import Literal
 
 
@@ -145,13 +145,19 @@ class ExpenseTracker:
         # Calculate the total sum of current month's expenses
         total_sum = sum(category_expenses.values())
 
-        # Display the results
-        self.mprint(f"Total expenses for the current month: {total_sum}", 2)
-        self.mprint("Expenses by category:", 2)
-        for category, amount in category_expenses.items():
-            self.mprint(f"{category}: {amount}", 2)
+        # Sort the categories
+        sorted_categories = sorted(category_expenses.items())
 
-        return total_sum, category_expenses
+        # Display the results
+        print("Expense breakdown for the current month:\n")
+        print(f"{'Category':<20}  {'Amount':>10}")
+        print("-" * 60)
+        for category, amount in sorted_categories:
+            print(f"{category:<20}  {amount:>10}")
+        print("-" * 60)
+        print(f"{'Total':<20}  {total_sum:>10}")
+
+        return total_sum, dict(sorted_categories)
 
     def select_category(self):
         """Allow the user to select an existing category or create a new one."""
@@ -203,30 +209,36 @@ class ExpenseTracker:
                     except ValueError:
                         print("Invalid input. Try again.")
 
-    def get_monthly_expenses(self, month_year_input: str):
+    def get_monthly_expenses(self, month_year_input: str = ""):
         """
         Get the total expenses and expenses grouped by category for a specific month and year.
+        If no input is provided, use the current month and year.
         :param month_year_input: Input in formats like 'mm/yyyy', 'mm yy', 'mm,yy', 'mm' (current year assumed).
         :return: Total expenses and a dictionary of expenses grouped by category.
         """
         try:
-            # Split input using any non-digit character as a delimiter
-            parts = [int(part) for part in re.split(r"[^\d]", month_year_input) if part.isdigit()]
-
-            # Determine month and year based on input length
-            if len(parts) == 1:  # Only month provided
-                month = parts[0]
-                year = datetime.now().year  # Default to current year
-            elif len(parts) == 2:  # Month and year provided
-                month, year = parts
-                if year < 100:  # Convert two-digit year to four-digit year
-                    year += 2000
+            # Default to current month and year if no input is provided
+            if not month_year_input.strip():
+                month = datetime.now().month
+                year = datetime.now().year
             else:
-                raise ValueError("Invalid input format. Provide 'mm/yyyy', 'mm yy', 'mm,yy', or 'mm'.")
+                # Split input using any non-digit character as a delimiter
+                parts = [int(part) for part in re.split(r"[^\d]", month_year_input) if part.isdigit()]
 
-            # Validate month
-            if not (1 <= month <= 12):
-                raise ValueError("Invalid month value. Must be between 1 and 12.")
+                # Determine month and year based on input length
+                if len(parts) == 1:  # Only month provided
+                    month = parts[0]
+                    year = datetime.now().year  # Default to current year
+                elif len(parts) == 2:  # Month and year provided
+                    month, year = parts
+                    if year < 100:  # Convert two-digit year to four-digit year
+                        year += 2000
+                else:
+                    raise ValueError("Invalid input format. Provide 'mm/yyyy', 'mm yy', 'mm,yy', or 'mm'.")
+
+                # Validate month
+                if not (1 <= month <= 12):
+                    raise ValueError("Invalid month value. Must be between 1 and 12.")
 
             # Initialize category-wise expenses dictionary
             category_expenses = {}
@@ -243,13 +255,17 @@ class ExpenseTracker:
             # Round the total expenses to 2 decimal places
             total_expenses = round(total_expenses, 2)
 
+            sorted_categories = sorted(category_expenses.items())
             # Display results
-            self.mprint(f"Total expenses for {month}/{year}: {total_expenses}", 2)
-            self.mprint("Expenses by category:", 2)
-            for category, amount in category_expenses.items():
-                self.mprint(f"{category}: {round(amount, 2)}", 2)
+            print(f"Expense breakdown for {str(month).zfill(2)}/{year}:\n")
+            print(f"{'Category':<20}  {'Amount':>10}")
+            print("-" * 60)
+            for category, amount in sorted_categories:
+                print(f"{category:<20}  {amount:>10.2f}")
+            print("-" * 60)
+            print(f"{'Total':<20}  {total_expenses:>10.2f}")
 
-            return total_expenses, category_expenses
+            return total_expenses, dict(sorted_categories)
 
         except (ValueError, IndexError):
             self.mprint("Invalid input format! Please provide 'mm/yyyy', 'mm yy', 'mm,yy', or 'mm'.", 3)
@@ -262,9 +278,9 @@ class ExpenseTracker:
             print("1. Add a new expense")
             print("2. View all expenses")
             print("3. Delete an expense")
-            print("4. View total expenses for the current month")
-            print("5. View total expenses for a specific month")
+            print("4. View total expenses for a specific month")
             choice = input("Enter your choice: ").strip()
+            clear_console()
 
             if choice == "0":
                 print("Exiting the Expense Tracker. Goodbye!")
@@ -293,6 +309,7 @@ class ExpenseTracker:
                 print(f"\nReason set as: {reason or '>no reason<'}")
 
                 self.add_expense(corrected_date, formatted_amount, category, reason)
+                
             elif choice == "2":
                 while True:
                     try:
@@ -305,6 +322,7 @@ class ExpenseTracker:
                             print("Please enter a positive number.")
                     except ValueError:
                         print("Invalid input! Please enter a valid number.")
+                        
             elif choice == "3":
                 self.view_expenses()
                 try:
@@ -312,15 +330,11 @@ class ExpenseTracker:
                     self.delete_expense(index)
                 except ValueError:
                     print("Invalid input. Please enter a number.")
-
+                    
             elif choice == "4":
-                self.get_current_month_expenses_by_category()
-
-            elif choice == "5":
                 month_year = input("Enter the month and year (e.g., '2', '12-22', '03 2023', '4/2024'): ").strip()
-                total = self.get_monthly_expenses(month_year)
-                print(f"Total expenses for {month_year}: {total}")
-                
+                self.get_monthly_expenses(month_year)
+                    
             else:
                 print("Invalid choice! Please try again.")
 
