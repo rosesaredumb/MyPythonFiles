@@ -1,0 +1,7958 @@
+[
+    {
+        "date": "02/02/2021",
+        "amount": 1510.0,
+        "category": null,
+        "reason": "Education"
+    },
+    {
+        "date": "04/02/2021",
+        "amount": 350.0,
+        "category": null,
+        "reason": "Clothes & shoes"
+    },
+    {
+        "date": "04/02/2021",
+        "amount": 400.0,
+        "category": null,
+        "reason": "Clothes & shoes"
+    },
+    {
+        "date": "04/02/2021",
+        "amount": 1746.0,
+        "category": null,
+        "reason": "Education"
+    },
+    {
+        "date": "04/02/2021",
+        "amount": 230.0,
+        "category": null,
+        "reason": "Stationery, tools"
+    },
+    {
+        "date": "08/02/2021",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Stationery, tools"
+    },
+    {
+        "date": "09/02/2021",
+        "amount": 180.0,
+        "category": null,
+        "reason": "Health and beauty"
+    },
+    {
+        "date": "09/02/2021",
+        "amount": 319.0,
+        "category": null,
+        "reason": "Stationery, tools"
+    },
+    {
+        "date": "19/02/2021",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Charity, gifts"
+    },
+    {
+        "date": "30/08/2021",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "Health and beauty"
+    },
+    {
+        "date": "12/09/2021",
+        "amount": 260.0,
+        "category": null,
+        "reason": "Health care, doctor"
+    },
+    {
+        "date": "12/09/2021",
+        "amount": 170.0,
+        "category": null,
+        "reason": "Food & Drinks"
+    },
+    {
+        "date": "15/09/2021",
+        "amount": 280.08,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "16/09/2021",
+        "amount": 161.0,
+        "category": null,
+        "reason": "Food & Drinks"
+    },
+    {
+        "date": "16/09/2021",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Food & Drinks"
+    },
+    {
+        "date": "17/09/2021",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Taxi"
+    },
+    {
+        "date": "17/09/2021",
+        "amount": 85.0,
+        "category": null,
+        "reason": "Health and beauty"
+    },
+    {
+        "date": "17/09/2021",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Food & Drinks"
+    },
+    {
+        "date": "18/09/2021",
+        "amount": 80.0,
+        "category": null,
+        "reason": "Taxi"
+    },
+    {
+        "date": "18/09/2021",
+        "amount": 2702.0,
+        "category": null,
+        "reason": "Education"
+    },
+    {
+        "date": "20/09/2021",
+        "amount": 16.0,
+        "category": null,
+        "reason": "Public transport"
+    },
+    {
+        "date": "21/09/2021",
+        "amount": 316.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "22/09/2021",
+        "amount": 99.0,
+        "category": null,
+        "reason": "Phone, cell phone"
+    },
+    {
+        "date": "22/09/2021",
+        "amount": 199.0,
+        "category": null,
+        "reason": "Phone, cell phone"
+    },
+    {
+        "date": "24/09/2021",
+        "amount": 400.0,
+        "category": null,
+        "reason": "Restaurant, fast-food"
+    },
+    {
+        "date": "24/09/2021",
+        "amount": 574.0,
+        "category": null,
+        "reason": "Health care, doctor"
+    },
+    {
+        "date": "24/09/2021",
+        "amount": 1500.0,
+        "category": null,
+        "reason": "Active sport, fitness"
+    },
+    {
+        "date": "25/09/2021",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Transportation"
+    },
+    {
+        "date": "25/09/2021",
+        "amount": 695.0,
+        "category": null,
+        "reason": "Internet"
+    },
+    {
+        "date": "26/09/2021",
+        "amount": 249.0,
+        "category": null,
+        "reason": "Phone, cell phone"
+    },
+    {
+        "date": "26/09/2021",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Restaurant, fast-food"
+    },
+    {
+        "date": "27/09/2021",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "29/09/2021",
+        "amount": 500.0,
+        "category": null,
+        "reason": "Health care, doctor"
+    },
+    {
+        "date": "29/09/2021",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "30/09/2021",
+        "amount": 309.0,
+        "category": null,
+        "reason": "Wellness, beauty"
+    },
+    {
+        "date": "01/10/2021",
+        "amount": 430.0,
+        "category": null,
+        "reason": "Restaurant, fast-food"
+    },
+    {
+        "date": "05/10/2021",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Restaurant, fast-food"
+    },
+    {
+        "date": "05/10/2021",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Life & Entertainment"
+    },
+    {
+        "date": "06/10/2021",
+        "amount": 2700.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "06/10/2021",
+        "amount": 279.0,
+        "category": null,
+        "reason": "Phone, cell phone"
+    },
+    {
+        "date": "12/10/2021",
+        "amount": 500.0,
+        "category": null,
+        "reason": "Health care, doctor"
+    },
+    {
+        "date": "13/10/2021",
+        "amount": 360.0,
+        "category": null,
+        "reason": "Clothes & shoes"
+    },
+    {
+        "date": "14/10/2021",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "Taxi"
+    },
+    {
+        "date": "14/10/2021",
+        "amount": 2490.0,
+        "category": null,
+        "reason": "Health care, doctor"
+    },
+    {
+        "date": "14/10/2021",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Financial expenses"
+    },
+    {
+        "date": "17/10/2021",
+        "amount": 367.65,
+        "category": null,
+        "reason": "Restaurant, fast-food"
+    },
+    {
+        "date": "19/10/2021",
+        "amount": 408.5,
+        "category": null,
+        "reason": "Restaurant, fast-food"
+    },
+    {
+        "date": "20/10/2021",
+        "amount": 1500.0,
+        "category": null,
+        "reason": "Taxi"
+    },
+    {
+        "date": "20/10/2021",
+        "amount": 3560.0,
+        "category": null,
+        "reason": "Food & Drinks"
+    },
+    {
+        "date": "20/10/2021",
+        "amount": 200.0,
+        "category": null,
+        "reason": "Taxi"
+    },
+    {
+        "date": "20/10/2021",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Health care, doctor"
+    },
+    {
+        "date": "22/10/2021",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Restaurant, fast-food"
+    },
+    {
+        "date": "25/10/2021",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Food & Drinks"
+    },
+    {
+        "date": "25/10/2021",
+        "amount": 33.0,
+        "category": null,
+        "reason": "Food & Drinks"
+    },
+    {
+        "date": "26/10/2021",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Food & Drinks"
+    },
+    {
+        "date": "27/10/2021",
+        "amount": 185.0,
+        "category": null,
+        "reason": "Health and beauty"
+    },
+    {
+        "date": "29/10/2021",
+        "amount": 360.0,
+        "category": null,
+        "reason": "Food & Drinks"
+    },
+    {
+        "date": "29/10/2021",
+        "amount": 80.0,
+        "category": null,
+        "reason": "Transportation"
+    },
+    {
+        "date": "29/10/2021",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Transportation"
+    },
+    {
+        "date": "30/10/2021",
+        "amount": 80.0,
+        "category": null,
+        "reason": "Transportation"
+    },
+    {
+        "date": "30/10/2021",
+        "amount": 709.0,
+        "category": null,
+        "reason": "Internet"
+    },
+    {
+        "date": "03/11/2021",
+        "amount": 290.0,
+        "category": null,
+        "reason": "books"
+    },
+    {
+        "date": "04/11/2021",
+        "amount": 330.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "07/11/2021",
+        "amount": 165.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "25/11/2021",
+        "amount": 40.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "29/11/2021",
+        "amount": 100.0,
+        "category": null,
+        "reason": "snacks"
+    },
+    {
+        "date": "30/11/2021",
+        "amount": 200.0,
+        "category": null,
+        "reason": "college union"
+    },
+    {
+        "date": "30/11/2021",
+        "amount": 330.0,
+        "category": null,
+        "reason": "mfc"
+    },
+    {
+        "date": "30/11/2021",
+        "amount": 479.0,
+        "category": null,
+        "reason": "Vi amma's sim recharge"
+    },
+    {
+        "date": "30/11/2021",
+        "amount": 239.0,
+        "category": null,
+        "reason": "airtel Sara's sim recharge"
+    },
+    {
+        "date": "02/12/2021",
+        "amount": 20.0,
+        "category": null,
+        "reason": "pens"
+    },
+    {
+        "date": "02/12/2021",
+        "amount": 325.0,
+        "category": null,
+        "reason": "hotel breeze"
+    },
+    {
+        "date": "08/12/2021",
+        "amount": 300.0,
+        "category": null,
+        "reason": "mfc"
+    },
+    {
+        "date": "10/12/2021",
+        "amount": 3845.89,
+        "category": null,
+        "reason": "petrol"
+    },
+    {
+        "date": "14/12/2021",
+        "amount": 30.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "14/12/2021",
+        "amount": 290.0,
+        "category": null,
+        "reason": "mandhi souk"
+    },
+    {
+        "date": "21/12/2021",
+        "amount": 3500.0,
+        "category": null,
+        "reason": "transfer to amma"
+    },
+    {
+        "date": "27/12/2021",
+        "amount": 10.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "27/12/2021",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "29/12/2021",
+        "amount": 190.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "29/12/2021",
+        "amount": 3843.0,
+        "category": null,
+        "reason": "mess fees for November"
+    },
+    {
+        "date": "31/12/2021",
+        "amount": 120.0,
+        "category": null,
+        "reason": "haircut"
+    },
+    {
+        "date": "31/12/2021",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "03/01/2022",
+        "amount": 239.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "03/01/2022",
+        "amount": 330.0,
+        "category": null,
+        "reason": "mfc"
+    },
+    {
+        "date": "10/01/2022",
+        "amount": 120.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "10/01/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "charity"
+    },
+    {
+        "date": "11/01/2022",
+        "amount": 76.0,
+        "category": null,
+        "reason": "phone data recharge"
+    },
+    {
+        "date": "12/01/2022",
+        "amount": 415.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "13/01/2022",
+        "amount": 150.0,
+        "category": null,
+        "reason": "grocery"
+    },
+    {
+        "date": "18/01/2022",
+        "amount": 98.0,
+        "category": null,
+        "reason": "sugar"
+    },
+    {
+        "date": "18/01/2022",
+        "amount": 900.0,
+        "category": null,
+        "reason": "lawn mowing"
+    },
+    {
+        "date": "19/01/2022",
+        "amount": 15.0,
+        "category": null,
+        "reason": "data"
+    },
+    {
+        "date": "23/01/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "online shopping"
+    },
+    {
+        "date": "23/01/2022",
+        "amount": 4051.0,
+        "category": null,
+        "reason": "mess fees for december"
+    },
+    {
+        "date": "23/01/2022",
+        "amount": 330.0,
+        "category": null,
+        "reason": "food-mfc"
+    },
+    {
+        "date": "28/01/2022",
+        "amount": 179.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "28/01/2022",
+        "amount": 1311.0,
+        "category": null,
+        "reason": "medical insurance mosc"
+    },
+    {
+        "date": "28/01/2022",
+        "amount": 18.0,
+        "category": null,
+        "reason": "VI international call recharge"
+    },
+    {
+        "date": "05/02/2022",
+        "amount": 330.0,
+        "category": null,
+        "reason": "food-mfc"
+    },
+    {
+        "date": "05/02/2022",
+        "amount": 239.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "07/02/2022",
+        "amount": 40.0,
+        "category": null,
+        "reason": "grocery"
+    },
+    {
+        "date": "17/02/2022",
+        "amount": 110.0,
+        "category": null,
+        "reason": "haircut"
+    },
+    {
+        "date": "24/02/2022",
+        "amount": 150.0,
+        "category": null,
+        "reason": "college union"
+    },
+    {
+        "date": "12/03/2022",
+        "amount": 320.0,
+        "category": null,
+        "reason": "food-mfc"
+    },
+    {
+        "date": "14/03/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "14/03/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "15/03/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "15/03/2022",
+        "amount": 500.0,
+        "category": null,
+        "reason": "pharmacology record"
+    },
+    {
+        "date": "16/03/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "17/03/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "18/03/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "18/03/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "19/03/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "19/03/2022",
+        "amount": 2280.0,
+        "category": null,
+        "reason": "steth and cns kit"
+    },
+    {
+        "date": "21/03/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "22/03/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "auto fare"
+    },
+    {
+        "date": "23/03/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "23/03/2022",
+        "amount": 330.0,
+        "category": null,
+        "reason": "pathology record + log book"
+    },
+    {
+        "date": "24/03/2022",
+        "amount": 60.0,
+        "category": null,
+        "reason": "auto fare"
+    },
+    {
+        "date": "24/03/2022",
+        "amount": 45.0,
+        "category": null,
+        "reason": "2 small blank page notebooks"
+    },
+    {
+        "date": "24/03/2022",
+        "amount": 18.0,
+        "category": null,
+        "reason": "2 photocopies"
+    },
+    {
+        "date": "27/03/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "entry fee to synagogue, fort kochi"
+    },
+    {
+        "date": "27/03/2022",
+        "amount": 175.0,
+        "category": null,
+        "reason": "grand hotel, Kolenchery"
+    },
+    {
+        "date": "28/03/2022",
+        "amount": 637.0,
+        "category": null,
+        "reason": "shanbagh book"
+    },
+    {
+        "date": "30/03/2022",
+        "amount": 25.0,
+        "category": null,
+        "reason": "blank page notebook"
+    },
+    {
+        "date": "31/03/2022",
+        "amount": 15.0,
+        "category": null,
+        "reason": "mask"
+    },
+    {
+        "date": "03/04/2022",
+        "amount": 80.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "03/04/2022",
+        "amount": 174.0,
+        "category": null,
+        "reason": "al faham"
+    },
+    {
+        "date": "03/04/2022",
+        "amount": 500.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "04/04/2022",
+        "amount": 2.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "04/04/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "chocolate"
+    },
+    {
+        "date": "04/04/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "04/04/2022",
+        "amount": 80.0,
+        "category": null,
+        "reason": "grocery"
+    },
+    {
+        "date": "04/04/2022",
+        "amount": 40.0,
+        "category": null,
+        "reason": "cold coffee"
+    },
+    {
+        "date": "05/04/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "cold coffee"
+    },
+    {
+        "date": "07/04/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "chocolate"
+    },
+    {
+        "date": "08/04/2022",
+        "amount": 60.0,
+        "category": null,
+        "reason": "grocery"
+    },
+    {
+        "date": "08/04/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "09/04/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "chocolates"
+    },
+    {
+        "date": "09/04/2022",
+        "amount": 177.5,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "09/04/2022",
+        "amount": 6.5,
+        "category": null,
+        "reason": "parking"
+    },
+    {
+        "date": "09/04/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "milk"
+    },
+    {
+        "date": "09/04/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "10/04/2022",
+        "amount": 257.5,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "10/04/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "tea"
+    },
+    {
+        "date": "10/04/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "milk"
+    },
+    {
+        "date": "11/04/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "parking"
+    },
+    {
+        "date": "13/04/2022",
+        "amount": 80.0,
+        "category": null,
+        "reason": "shawarma"
+    },
+    {
+        "date": "13/04/2022",
+        "amount": 95.0,
+        "category": null,
+        "reason": "grocery"
+    },
+    {
+        "date": "13/04/2022",
+        "amount": 330.0,
+        "category": null,
+        "reason": "mandhi souk"
+    },
+    {
+        "date": "15/04/2022",
+        "amount": 1296.16,
+        "category": null,
+        "reason": "reliance jio shopping"
+    },
+    {
+        "date": "15/04/2022",
+        "amount": 180.0,
+        "category": null,
+        "reason": "alfaham mandhi - hotel grand"
+    },
+    {
+        "date": "16/04/2022",
+        "amount": 95.0,
+        "category": null,
+        "reason": "handwash"
+    },
+    {
+        "date": "16/04/2022",
+        "amount": 400.0,
+        "category": null,
+        "reason": "mobile accessories"
+    },
+    {
+        "date": "16/04/2022",
+        "amount": 90.0,
+        "category": null,
+        "reason": "shawarma"
+    },
+    {
+        "date": "16/04/2022",
+        "amount": 80.0,
+        "category": null,
+        "reason": "grocery"
+    },
+    {
+        "date": "18/04/2022",
+        "amount": 540.0,
+        "category": null,
+        "reason": "alfaham mandhi - mandhi souk"
+    },
+    {
+        "date": "18/04/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "water"
+    },
+    {
+        "date": "19/04/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "19/04/2022",
+        "amount": 70.0,
+        "category": null,
+        "reason": "1 kg banana for habel"
+    },
+    {
+        "date": "20/04/2022",
+        "amount": 18.0,
+        "category": null,
+        "reason": "photocopy"
+    },
+    {
+        "date": "20/04/2022",
+        "amount": 120.0,
+        "category": null,
+        "reason": "hair cut"
+    },
+    {
+        "date": "21/04/2022",
+        "amount": 2.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "23/04/2022",
+        "amount": 60.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "24/04/2022",
+        "amount": 3275.0,
+        "category": null,
+        "reason": "SAY exam registration"
+    },
+    {
+        "date": "24/04/2022",
+        "amount": 210.0,
+        "category": null,
+        "reason": "Food - shawarmashi"
+    },
+    {
+        "date": "27/04/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "2 blank books"
+    },
+    {
+        "date": "27/04/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "3 cello gripper pens"
+    },
+    {
+        "date": "28/04/2022",
+        "amount": 340.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "29/04/2022",
+        "amount": 500.0,
+        "category": null,
+        "reason": "aster appointment fee"
+    },
+    {
+        "date": "29/04/2022",
+        "amount": 40.0,
+        "category": null,
+        "reason": "aster parking"
+    },
+    {
+        "date": "02/05/2022",
+        "amount": 170.0,
+        "category": null,
+        "reason": "food- khedaram"
+    },
+    {
+        "date": "03/05/2022",
+        "amount": 1299.0,
+        "category": null,
+        "reason": "app - diagrams notepad"
+    },
+    {
+        "date": "03/05/2022",
+        "amount": 1299.0,
+        "category": null,
+        "reason": "app - diagrams 2"
+    },
+    {
+        "date": "06/05/2022",
+        "amount": 40.0,
+        "category": null,
+        "reason": "4 cello gripper pens"
+    },
+    {
+        "date": "08/05/2022",
+        "amount": 3100.0,
+        "category": null,
+        "reason": "ipad accessories - ihub"
+    },
+    {
+        "date": "08/05/2022",
+        "amount": 167.75,
+        "category": null,
+        "reason": "food - dominos"
+    },
+    {
+        "date": "09/05/2022",
+        "amount": 549.0,
+        "category": null,
+        "reason": "mouse"
+    },
+    {
+        "date": "10/05/2022",
+        "amount": 2.0,
+        "category": null,
+        "reason": "Bus fare"
+    },
+    {
+        "date": "10/05/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Bus fare"
+    },
+    {
+        "date": "11/05/2022",
+        "amount": 599.0,
+        "category": null,
+        "reason": "App - moblo (ipad)"
+    },
+    {
+        "date": "13/05/2022",
+        "amount": 359.0,
+        "category": null,
+        "reason": "sim recharge - VI"
+    },
+    {
+        "date": "13/05/2022",
+        "amount": 245.0,
+        "category": null,
+        "reason": "food - wild ginger"
+    },
+    {
+        "date": "17/05/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "5 unimax pens"
+    },
+    {
+        "date": "19/05/2022",
+        "amount": 260.0,
+        "category": null,
+        "reason": "food - kedaram"
+    },
+    {
+        "date": "20/05/2022",
+        "amount": 300.0,
+        "category": null,
+        "reason": "new Jio sim"
+    },
+    {
+        "date": "20/05/2022",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - shawarma shi"
+    },
+    {
+        "date": "21/05/2022",
+        "amount": 175.0,
+        "category": null,
+        "reason": "slippers"
+    },
+    {
+        "date": "22/05/2022",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - shawarmashi"
+    },
+    {
+        "date": "24/05/2022",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - hospital cafeteria"
+    },
+    {
+        "date": "24/05/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "5 unomax pens"
+    },
+    {
+        "date": "24/05/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "3 cello gripper pens"
+    },
+    {
+        "date": "25/05/2022",
+        "amount": 205.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "26/05/2022",
+        "amount": 287.0,
+        "category": null,
+        "reason": "groceries - reliance"
+    },
+    {
+        "date": "26/05/2022",
+        "amount": 380.0,
+        "category": null,
+        "reason": "jersey money"
+    },
+    {
+        "date": "27/05/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "food - cold coffee"
+    },
+    {
+        "date": "28/05/2022",
+        "amount": 190.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "29/05/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "30/05/2022",
+        "amount": 297.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "01/06/2022",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "02/06/2022",
+        "amount": 190.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "03/06/2022",
+        "amount": 150.0,
+        "category": null,
+        "reason": "food - kedaram"
+    },
+    {
+        "date": "03/06/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "3 cello gripper pens"
+    },
+    {
+        "date": "07/06/2022",
+        "amount": 300.0,
+        "category": null,
+        "reason": "haircut"
+    },
+    {
+        "date": "07/06/2022",
+        "amount": 40.0,
+        "category": null,
+        "reason": "2 labanup"
+    },
+    {
+        "date": "10/06/2022",
+        "amount": 320.0,
+        "category": null,
+        "reason": "2 shawarma"
+    },
+    {
+        "date": "12/06/2022",
+        "amount": 220.0,
+        "category": null,
+        "reason": "food - kfc twister"
+    },
+    {
+        "date": "12/06/2022",
+        "amount": 60.0,
+        "category": null,
+        "reason": "2 water"
+    },
+    {
+        "date": "12/06/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "boat ride"
+    },
+    {
+        "date": "13/06/2022",
+        "amount": 23.0,
+        "category": null,
+        "reason": "food - pizza hut"
+    },
+    {
+        "date": "13/06/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "diesel - afra's scooter"
+    },
+    {
+        "date": "14/06/2022",
+        "amount": 1300.0,
+        "category": null,
+        "reason": "taxi fare"
+    },
+    {
+        "date": "14/06/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "auto fare"
+    },
+    {
+        "date": "14/06/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "recharge - VI sim"
+    },
+    {
+        "date": "19/06/2022",
+        "amount": 238.0,
+        "category": null,
+        "reason": "food - chiang"
+    },
+    {
+        "date": "19/06/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food - peni ice cream"
+    },
+    {
+        "date": "19/06/2022",
+        "amount": 189.0,
+        "category": null,
+        "reason": "food - aaryas"
+    },
+    {
+        "date": "19/06/2022",
+        "amount": 3.3,
+        "category": null,
+        "reason": "kochi pay and park"
+    },
+    {
+        "date": "19/06/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "20/06/2022",
+        "amount": 125.0,
+        "category": null,
+        "reason": "diesel - sonu"
+    },
+    {
+        "date": "20/06/2022",
+        "amount": 57.5,
+        "category": null,
+        "reason": "paniyeli entry + car parking"
+    },
+    {
+        "date": "21/06/2022",
+        "amount": 190.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "21/06/2022",
+        "amount": 165.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "22/06/2022",
+        "amount": 6.0,
+        "category": null,
+        "reason": "milk peda"
+    },
+    {
+        "date": "22/06/2022",
+        "amount": 99.0,
+        "category": null,
+        "reason": "decathlon - water bottle"
+    },
+    {
+        "date": "22/06/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "drinks"
+    },
+    {
+        "date": "22/06/2022",
+        "amount": 140.0,
+        "category": null,
+        "reason": "food - al faham"
+    },
+    {
+        "date": "23/06/2022",
+        "amount": 58.3,
+        "category": null,
+        "reason": "athirapally falls entry"
+    },
+    {
+        "date": "23/06/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "juice"
+    },
+    {
+        "date": "23/06/2022",
+        "amount": 243.3,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "23/06/2022",
+        "amount": 332.5,
+        "category": null,
+        "reason": "diesel  - sonu"
+    },
+    {
+        "date": "25/06/2022",
+        "amount": 2220.0,
+        "category": null,
+        "reason": "reevaluation fees"
+    },
+    {
+        "date": "25/06/2022",
+        "amount": 2.0,
+        "category": null,
+        "reason": "photocopy"
+    },
+    {
+        "date": "25/06/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "27/06/2022",
+        "amount": 296.3,
+        "category": null,
+        "reason": "diesel - sonu"
+    },
+    {
+        "date": "27/06/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "27/06/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "tea"
+    },
+    {
+        "date": "27/06/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "coffee"
+    },
+    {
+        "date": "27/06/2022",
+        "amount": 2.0,
+        "category": null,
+        "reason": "lolipop"
+    },
+    {
+        "date": "27/06/2022",
+        "amount": 80.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "28/06/2022",
+        "amount": 185.0,
+        "category": null,
+        "reason": "food - al baan"
+    },
+    {
+        "date": "30/06/2022",
+        "amount": 56.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "30/06/2022",
+        "amount": 196.0,
+        "category": null,
+        "reason": "diesel - sonu"
+    },
+    {
+        "date": "30/06/2022",
+        "amount": 206.0,
+        "category": null,
+        "reason": "food - al baan"
+    },
+    {
+        "date": "30/06/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "coffee"
+    },
+    {
+        "date": "01/07/2022",
+        "amount": 19.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "02/07/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "03/07/2022",
+        "amount": 247.0,
+        "category": null,
+        "reason": "food - qureshi"
+    },
+    {
+        "date": "04/07/2022",
+        "amount": 2000.0,
+        "category": null,
+        "reason": "transferred to bindu"
+    },
+    {
+        "date": "06/07/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "07/07/2022",
+        "amount": 19.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "09/07/2022",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - hospital cafeteria"
+    },
+    {
+        "date": "09/07/2022",
+        "amount": 150.0,
+        "category": null,
+        "reason": "union arts"
+    },
+    {
+        "date": "10/07/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "12/07/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "12/07/2022",
+        "amount": 19.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "12/07/2022",
+        "amount": 230.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "12/07/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "14/07/2022",
+        "amount": 239.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "15/07/2022",
+        "amount": 25.0,
+        "category": null,
+        "reason": "spotify"
+    },
+    {
+        "date": "15/07/2022",
+        "amount": 150.0,
+        "category": null,
+        "reason": "food - crunchyz spot + Alen's gift"
+    },
+    {
+        "date": "15/07/2022",
+        "amount": 104.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "16/07/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "chocolates"
+    },
+    {
+        "date": "24/07/2022",
+        "amount": 129.0,
+        "category": null,
+        "reason": "Spotify premium"
+    },
+    {
+        "date": "26/07/2022",
+        "amount": 45.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "30/07/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "30/07/2022",
+        "amount": 95.0,
+        "category": null,
+        "reason": "food - crunchyz spot"
+    },
+    {
+        "date": "30/07/2022",
+        "amount": 141.71,
+        "category": null,
+        "reason": "food - kurtoosh"
+    },
+    {
+        "date": "30/07/2022",
+        "amount": 94.0,
+        "category": null,
+        "reason": "food - awany bakery"
+    },
+    {
+        "date": "04/08/2022",
+        "amount": 189.0,
+        "category": null,
+        "reason": "willingdon island"
+    },
+    {
+        "date": "05/08/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "05/08/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "06/08/2022",
+        "amount": 92.0,
+        "category": null,
+        "reason": "photocopy"
+    },
+    {
+        "date": "06/08/2022",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "06/08/2022",
+        "amount": 5.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "06/08/2022",
+        "amount": 35.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "07/08/2022",
+        "amount": 23.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "07/08/2022",
+        "amount": 15.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "07/08/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "metro fare"
+    },
+    {
+        "date": "07/08/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "metro fare"
+    },
+    {
+        "date": "07/08/2022",
+        "amount": 100.75,
+        "category": null,
+        "reason": "food - taco bell"
+    },
+    {
+        "date": "07/08/2022",
+        "amount": 97.0,
+        "category": null,
+        "reason": "food - burger king"
+    },
+    {
+        "date": "07/08/2022",
+        "amount": 28.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "07/08/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food - ice cream"
+    },
+    {
+        "date": "07/08/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "bet with habel"
+    },
+    {
+        "date": "08/08/2022",
+        "amount": 80.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "08/08/2022",
+        "amount": 120.0,
+        "category": null,
+        "reason": "haircut"
+    },
+    {
+        "date": "09/08/2022",
+        "amount": 60.0,
+        "category": null,
+        "reason": "courier service dtdc"
+    },
+    {
+        "date": "09/08/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "food - ice cream"
+    },
+    {
+        "date": "10/08/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "11/08/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "18/08/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "18/08/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "food - ice cream"
+    },
+    {
+        "date": "20/08/2022",
+        "amount": 140.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "23/08/2022",
+        "amount": 55.0,
+        "category": null,
+        "reason": "grocery"
+    },
+    {
+        "date": "23/08/2022",
+        "amount": 15.0,
+        "category": null,
+        "reason": "Jio recharge"
+    },
+    {
+        "date": "23/08/2022",
+        "amount": 110.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "24/08/2022",
+        "amount": 5.0,
+        "category": null,
+        "reason": "food - ice cream"
+    },
+    {
+        "date": "24/08/2022",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "26/08/2022",
+        "amount": 129.0,
+        "category": null,
+        "reason": "Spotify premium"
+    },
+    {
+        "date": "27/08/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "coffee"
+    },
+    {
+        "date": "27/08/2022",
+        "amount": 192.0,
+        "category": null,
+        "reason": "food - al reem"
+    },
+    {
+        "date": "29/08/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "30/08/2022",
+        "amount": 90.0,
+        "category": null,
+        "reason": "onam fund"
+    },
+    {
+        "date": "31/08/2022",
+        "amount": 185.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "01/09/2022",
+        "amount": 65.0,
+        "category": null,
+        "reason": "Google drive monthly subscription"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 150.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "ilikil kallu entry fee"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "water"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 182.0,
+        "category": null,
+        "reason": "diesel - sonu"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 168.0,
+        "category": null,
+        "reason": "food - mullapandhal"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 72.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "04/09/2022",
+        "amount": 70.0,
+        "category": null,
+        "reason": "auto fare"
+    },
+    {
+        "date": "15/09/2022",
+        "amount": 1200.0,
+        "category": null,
+        "reason": "taxi fare"
+    },
+    {
+        "date": "15/09/2022",
+        "amount": 239.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "15/09/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "vi recharge"
+    },
+    {
+        "date": "16/09/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "16/09/2022",
+        "amount": 5.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "16/09/2022",
+        "amount": 270.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "17/09/2022",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "17/09/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "17/09/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "finoy's bike petrol"
+    },
+    {
+        "date": "18/09/2022",
+        "amount": 120.0,
+        "category": null,
+        "reason": "football"
+    },
+    {
+        "date": "19/09/2022",
+        "amount": 500.0,
+        "category": null,
+        "reason": "to chandran chettan"
+    },
+    {
+        "date": "20/09/2022",
+        "amount": 72.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "21/09/2022",
+        "amount": 200.0,
+        "category": null,
+        "reason": "diesel - sonu"
+    },
+    {
+        "date": "21/09/2022",
+        "amount": 450.0,
+        "category": null,
+        "reason": "medicine op"
+    },
+    {
+        "date": "21/09/2022",
+        "amount": 165.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "21/09/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "22/09/2022",
+        "amount": 215.0,
+        "category": null,
+        "reason": "pharmacy"
+    },
+    {
+        "date": "22/09/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "mess fees"
+    },
+    {
+        "date": "23/09/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "23/09/2022",
+        "amount": 132.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "23/09/2022",
+        "amount": 21.25,
+        "category": null,
+        "reason": "shuttlecock"
+    },
+    {
+        "date": "24/09/2022",
+        "amount": 357.8,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "24/09/2022",
+        "amount": 105.0,
+        "category": null,
+        "reason": "food - bismy"
+    },
+    {
+        "date": "25/09/2022",
+        "amount": 114.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "25/09/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "tea"
+    },
+    {
+        "date": "26/09/2022",
+        "amount": 65.0,
+        "category": null,
+        "reason": "google drive monthly subscription"
+    },
+    {
+        "date": "27/09/2022",
+        "amount": 83.0,
+        "category": null,
+        "reason": "diesel - sonu's car"
+    },
+    {
+        "date": "27/09/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "food - uncle shake"
+    },
+    {
+        "date": "27/09/2022",
+        "amount": 60.0,
+        "category": null,
+        "reason": "diesel - sonu's car"
+    },
+    {
+        "date": "27/09/2022",
+        "amount": 206.0,
+        "category": null,
+        "reason": "food - al baan"
+    },
+    {
+        "date": "29/09/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "food - chips"
+    },
+    {
+        "date": "29/09/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "29/09/2022",
+        "amount": 500.0,
+        "category": null,
+        "reason": "aster"
+    },
+    {
+        "date": "29/09/2022",
+        "amount": 1600.0,
+        "category": null,
+        "reason": "taxi"
+    },
+    {
+        "date": "29/09/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "tea"
+    },
+    {
+        "date": "29/09/2022",
+        "amount": 42.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "01/10/2022",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "01/10/2022",
+        "amount": 200.0,
+        "category": null,
+        "reason": "diesel - noel's bike"
+    },
+    {
+        "date": "02/10/2022",
+        "amount": 19.0,
+        "category": null,
+        "reason": "VI - data recharge"
+    },
+    {
+        "date": "02/10/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "food - uncle shake"
+    },
+    {
+        "date": "02/10/2022",
+        "amount": 190.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "03/10/2022",
+        "amount": 298.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "03/10/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "04/10/2022",
+        "amount": 8990.0,
+        "category": null,
+        "reason": "apple pencil purchase"
+    },
+    {
+        "date": "04/10/2022",
+        "amount": 300.0,
+        "category": null,
+        "reason": "fasttag application via federal Bank"
+    },
+    {
+        "date": "04/10/2022",
+        "amount": 190.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "04/10/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food - kedaram"
+    },
+    {
+        "date": "04/10/2022",
+        "amount": 219.0,
+        "category": null,
+        "reason": "pan card application"
+    },
+    {
+        "date": "05/10/2022",
+        "amount": 500.0,
+        "category": null,
+        "reason": "aster appointment"
+    },
+    {
+        "date": "05/10/2022",
+        "amount": 1320.0,
+        "category": null,
+        "reason": "aster"
+    },
+    {
+        "date": "05/10/2022",
+        "amount": 1300.0,
+        "category": null,
+        "reason": "aster"
+    },
+    {
+        "date": "05/10/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "06/10/2022",
+        "amount": 5.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "07/10/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "07/10/2022",
+        "amount": 120.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "08/10/2022",
+        "amount": 160.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "08/10/2022",
+        "amount": 1710.0,
+        "category": null,
+        "reason": "internet bill"
+    },
+    {
+        "date": "09/10/2022",
+        "amount": 65.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "10/10/2022",
+        "amount": 185.0,
+        "category": null,
+        "reason": "shawarmer"
+    },
+    {
+        "date": "10/10/2022",
+        "amount": 140.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "11/10/2022",
+        "amount": 65.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "12/10/2022",
+        "amount": 12.0,
+        "category": null,
+        "reason": "tea"
+    },
+    {
+        "date": "12/10/2022",
+        "amount": 162.87,
+        "category": null,
+        "reason": "Sara's tuition payment"
+    },
+    {
+        "date": "12/10/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "12/10/2022",
+        "amount": 1300.0,
+        "category": null,
+        "reason": "taxi"
+    },
+    {
+        "date": "12/10/2022",
+        "amount": 500.0,
+        "category": null,
+        "reason": "aster appointment fee"
+    },
+    {
+        "date": "12/10/2022",
+        "amount": 851.0,
+        "category": null,
+        "reason": "aster pharmacy"
+    },
+    {
+        "date": "13/10/2022",
+        "amount": 150.0,
+        "category": null,
+        "reason": "diesel - finoy's bike"
+    },
+    {
+        "date": "13/10/2022",
+        "amount": 147.0,
+        "category": null,
+        "reason": "food - voyager's diner"
+    },
+    {
+        "date": "13/10/2022",
+        "amount": 65.0,
+        "category": null,
+        "reason": "shuttlecock"
+    },
+    {
+        "date": "13/10/2022",
+        "amount": 5.0,
+        "category": null,
+        "reason": "food - BR"
+    },
+    {
+        "date": "13/10/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "10 pens"
+    },
+    {
+        "date": "13/10/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "10 bandaids"
+    },
+    {
+        "date": "13/10/2022",
+        "amount": 239.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "14/10/2022",
+        "amount": 127.0,
+        "category": null,
+        "reason": "uber"
+    },
+    {
+        "date": "14/10/2022",
+        "amount": 118.0,
+        "category": null,
+        "reason": "food - Malabar grills"
+    },
+    {
+        "date": "14/10/2022",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "14/10/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "14/10/2022",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food - BR"
+    },
+    {
+        "date": "15/10/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "food - BR"
+    },
+    {
+        "date": "15/10/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - swad"
+    },
+    {
+        "date": "15/10/2022",
+        "amount": 69.0,
+        "category": null,
+        "reason": "groceries (for party)"
+    },
+    {
+        "date": "17/10/2022",
+        "amount": 60.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "18/10/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "19/10/2022",
+        "amount": 60.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "19/10/2022",
+        "amount": 44.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "19/10/2022",
+        "amount": 19.0,
+        "category": null,
+        "reason": "Vi data recharge"
+    },
+    {
+        "date": "20/10/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "food - uncle shake"
+    },
+    {
+        "date": "20/10/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "food - BR"
+    },
+    {
+        "date": "21/10/2022",
+        "amount": 40.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "23/10/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "VI recharge - amma's phone"
+    },
+    {
+        "date": "23/10/2022",
+        "amount": 415.0,
+        "category": null,
+        "reason": "food - khadeeja's"
+    },
+    {
+        "date": "24/10/2022",
+        "amount": 162.6,
+        "category": null,
+        "reason": "food - the burger junction"
+    },
+    {
+        "date": "24/10/2022",
+        "amount": 108.0,
+        "category": null,
+        "reason": "food - shack bistro"
+    },
+    {
+        "date": "25/10/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "25/10/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "25/10/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "26/10/2022",
+        "amount": 39.0,
+        "category": null,
+        "reason": "Vi recharge -amma's phone"
+    },
+    {
+        "date": "26/10/2022",
+        "amount": 436.0,
+        "category": null,
+        "reason": "crypto investment"
+    },
+    {
+        "date": "27/10/2022",
+        "amount": 35.0,
+        "category": null,
+        "reason": "food - BR"
+    },
+    {
+        "date": "27/10/2022",
+        "amount": 65.0,
+        "category": null,
+        "reason": "Google drive"
+    },
+    {
+        "date": "28/10/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "BSNL recharge"
+    },
+    {
+        "date": "31/10/2022",
+        "amount": 70.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "31/10/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "01/11/2022",
+        "amount": 260.0,
+        "category": null,
+        "reason": "food - wild ginger"
+    },
+    {
+        "date": "01/11/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "food - uncle shake"
+    },
+    {
+        "date": "01/11/2022",
+        "amount": 33.0,
+        "category": null,
+        "reason": "diesel - Sonu's car"
+    },
+    {
+        "date": "01/11/2022",
+        "amount": 60.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "02/11/2022",
+        "amount": 500.0,
+        "category": null,
+        "reason": "aster - Dr namitha"
+    },
+    {
+        "date": "02/11/2022",
+        "amount": 1820.0,
+        "category": null,
+        "reason": "aster - Dr Gana"
+    },
+    {
+        "date": "02/11/2022",
+        "amount": 1518.0,
+        "category": null,
+        "reason": "aster medicines"
+    },
+    {
+        "date": "02/11/2022",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "02/11/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "03/11/2022",
+        "amount": 185.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "03/11/2022",
+        "amount": 19.0,
+        "category": null,
+        "reason": "VI data recharge"
+    },
+    {
+        "date": "04/11/2022",
+        "amount": 38.0,
+        "category": null,
+        "reason": "VI data recharge"
+    },
+    {
+        "date": "04/11/2022",
+        "amount": 160.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "04/11/2022",
+        "amount": 15.0,
+        "category": null,
+        "reason": "food - ice cream"
+    },
+    {
+        "date": "05/11/2022",
+        "amount": 8.0,
+        "category": null,
+        "reason": "food - night shop"
+    },
+    {
+        "date": "05/11/2022",
+        "amount": 15.0,
+        "category": null,
+        "reason": "food - ice cream"
+    },
+    {
+        "date": "05/11/2022",
+        "amount": 122.0,
+        "category": null,
+        "reason": "food - Malabar grills"
+    },
+    {
+        "date": "05/11/2022",
+        "amount": 19.0,
+        "category": null,
+        "reason": "VI data recharge"
+    },
+    {
+        "date": "06/11/2022",
+        "amount": 150.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "07/11/2022",
+        "amount": 15.0,
+        "category": null,
+        "reason": "food - ice cream"
+    },
+    {
+        "date": "08/11/2022",
+        "amount": 65.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "09/11/2022",
+        "amount": 420.0,
+        "category": null,
+        "reason": "spent on bystanders"
+    },
+    {
+        "date": "09/11/2022",
+        "amount": 50.0,
+        "category": null,
+        "reason": "MOSC - plastic surgery"
+    },
+    {
+        "date": "09/11/2022",
+        "amount": 515.0,
+        "category": null,
+        "reason": "medicines"
+    },
+    {
+        "date": "10/11/2022",
+        "amount": 39.0,
+        "category": null,
+        "reason": "VI data recharge"
+    },
+    {
+        "date": "10/11/2022",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "10/11/2022",
+        "amount": 170.0,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "11/11/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "11/11/2022",
+        "amount": 189.0,
+        "category": null,
+        "reason": "mosc - removal of sutures"
+    },
+    {
+        "date": "11/11/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "11/11/2022",
+        "amount": 1089.0,
+        "category": null,
+        "reason": "reliance groceries"
+    },
+    {
+        "date": "12/11/2022",
+        "amount": 1200.0,
+        "category": null,
+        "reason": "taxi fare"
+    },
+    {
+        "date": "15/11/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "social service"
+    },
+    {
+        "date": "15/11/2022",
+        "amount": 176.0,
+        "category": null,
+        "reason": "food - shawarma"
+    },
+    {
+        "date": "15/11/2022",
+        "amount": 576.0,
+        "category": null,
+        "reason": "groceries - west zone"
+    },
+    {
+        "date": "17/11/2022",
+        "amount": 144.5,
+        "category": null,
+        "reason": "food - shawarma"
+    },
+    {
+        "date": "20/11/2022",
+        "amount": 300.0,
+        "category": null,
+        "reason": "food - shawarma"
+    },
+    {
+        "date": "25/11/2022",
+        "amount": 173.0,
+        "category": null,
+        "reason": "mess fees"
+    },
+    {
+        "date": "27/11/2022",
+        "amount": 375.0,
+        "category": null,
+        "reason": "Amazon - key chain stand"
+    },
+    {
+        "date": "27/11/2022",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "27/11/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Jio topup"
+    },
+    {
+        "date": "30/11/2022",
+        "amount": 308.0,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "03/12/2022",
+        "amount": 120.0,
+        "category": null,
+        "reason": "haircut"
+    },
+    {
+        "date": "03/12/2022",
+        "amount": 45.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "03/12/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "05/12/2022",
+        "amount": 310.0,
+        "category": null,
+        "reason": "food - swad"
+    },
+    {
+        "date": "06/12/2022",
+        "amount": 80.0,
+        "category": null,
+        "reason": "groceries - amma"
+    },
+    {
+        "date": "06/12/2022",
+        "amount": 250.0,
+        "category": null,
+        "reason": "food - kedaram"
+    },
+    {
+        "date": "07/12/2022",
+        "amount": 250.0,
+        "category": null,
+        "reason": "painter's wage"
+    },
+    {
+        "date": "11/12/2022",
+        "amount": 530.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "11/12/2022",
+        "amount": 1150.0,
+        "category": null,
+        "reason": "printer repair - creative computech"
+    },
+    {
+        "date": "14/12/2022",
+        "amount": 899.0,
+        "category": null,
+        "reason": "appstore app - pythonista"
+    },
+    {
+        "date": "16/12/2022",
+        "amount": 25.0,
+        "category": null,
+        "reason": "college Christmas fund"
+    },
+    {
+        "date": "16/12/2022",
+        "amount": 1253.0,
+        "category": null,
+        "reason": "food - kumarakom trip"
+    },
+    {
+        "date": "17/12/2022",
+        "amount": 14497.0,
+        "category": null,
+        "reason": "Toyota car service"
+    },
+    {
+        "date": "19/12/2022",
+        "amount": 2000.0,
+        "category": null,
+        "reason": "transferred to amma"
+    },
+    {
+        "date": "21/12/2022",
+        "amount": 20.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "21/12/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "21/12/2022",
+        "amount": 199.0,
+        "category": null,
+        "reason": "jio recharge - appa's number"
+    },
+    {
+        "date": "22/12/2022",
+        "amount": 23.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "22/12/2022",
+        "amount": 208.0,
+        "category": null,
+        "reason": "movie ticket - avatar"
+    },
+    {
+        "date": "22/12/2022",
+        "amount": 25.0,
+        "category": null,
+        "reason": "food - uncle shake"
+    },
+    {
+        "date": "22/12/2022",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "22/12/2022",
+        "amount": 14.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "22/12/2022",
+        "amount": 125.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "24/12/2022",
+        "amount": 8350.0,
+        "category": null,
+        "reason": "car repair"
+    },
+    {
+        "date": "24/12/2022",
+        "amount": 1084.44,
+        "category": null,
+        "reason": "food - chicking"
+    },
+    {
+        "date": "28/12/2022",
+        "amount": 278.0,
+        "category": null,
+        "reason": "diesel - sonu"
+    },
+    {
+        "date": "28/12/2022",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - like kitchen"
+    },
+    {
+        "date": "28/12/2022",
+        "amount": 75.0,
+        "category": null,
+        "reason": "food - big falooda"
+    },
+    {
+        "date": "30/12/2022",
+        "amount": 226.0,
+        "category": null,
+        "reason": "mess fees"
+    },
+    {
+        "date": "02/01/2023",
+        "amount": 400.0,
+        "category": null,
+        "reason": "Mosc union jersey"
+    },
+    {
+        "date": "18/01/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "VI recharge - amma's phone"
+    },
+    {
+        "date": "01/02/2023",
+        "amount": 1300.0,
+        "category": null,
+        "reason": "taxi"
+    },
+    {
+        "date": "01/02/2023",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "01/02/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "01/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "02/02/2023",
+        "amount": 441.0,
+        "category": null,
+        "reason": "mess fees"
+    },
+    {
+        "date": "03/02/2023",
+        "amount": 172.0,
+        "category": null,
+        "reason": "food - Malabar grills"
+    },
+    {
+        "date": "03/02/2023",
+        "amount": 25.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "04/02/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "food - uncle shake"
+    },
+    {
+        "date": "04/02/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "diesel - sonu's bike"
+    },
+    {
+        "date": "04/02/2023",
+        "amount": 150.0,
+        "category": null,
+        "reason": "bike fine"
+    },
+    {
+        "date": "04/02/2023",
+        "amount": 149.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "05/02/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "06/02/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "07/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "grocery"
+    },
+    {
+        "date": "08/02/2023",
+        "amount": 161.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "08/02/2023",
+        "amount": 98.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "09/02/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "10/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "grocery"
+    },
+    {
+        "date": "10/02/2023",
+        "amount": 195.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "12/02/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "12/02/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "13/02/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "15/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "15/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "16/02/2023",
+        "amount": 43.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "16/02/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "17/02/2023",
+        "amount": 236.0,
+        "category": null,
+        "reason": "ATM fee"
+    },
+    {
+        "date": "17/02/2023",
+        "amount": 170.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "17/02/2023",
+        "amount": 280.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "18/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "19/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "20/02/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "20/02/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "20/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "21/02/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "biriyani"
+    },
+    {
+        "date": "21/02/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "22/02/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "22/02/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "23/02/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - swad"
+    },
+    {
+        "date": "24/02/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "25/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "26/02/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "food - Kannie kada"
+    },
+    {
+        "date": "26/02/2023",
+        "amount": 15.0,
+        "category": null,
+        "reason": "water"
+    },
+    {
+        "date": "27/02/2023",
+        "amount": 160.0,
+        "category": null,
+        "reason": "diesel - munnar"
+    },
+    {
+        "date": "27/02/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "towel"
+    },
+    {
+        "date": "27/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lighter"
+    },
+    {
+        "date": "27/02/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "coffee x 3"
+    },
+    {
+        "date": "27/02/2023",
+        "amount": 93.0,
+        "category": null,
+        "reason": "food - idly shop"
+    },
+    {
+        "date": "27/02/2023",
+        "amount": 95.0,
+        "category": null,
+        "reason": "mess fee"
+    },
+    {
+        "date": "27/02/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "28/02/2023",
+        "amount": 5.0,
+        "category": null,
+        "reason": "sip up"
+    },
+    {
+        "date": "28/02/2023",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "01/03/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "auto fare"
+    },
+    {
+        "date": "01/03/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Google play account"
+    },
+    {
+        "date": "05/03/2023",
+        "amount": 184.0,
+        "category": null,
+        "reason": "food - persian table"
+    },
+    {
+        "date": "07/03/2023",
+        "amount": 200.0,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "13/03/2023",
+        "amount": 262.0,
+        "category": null,
+        "reason": "food - ming's wok"
+    },
+    {
+        "date": "13/03/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food - peni ice candy"
+    },
+    {
+        "date": "13/03/2023",
+        "amount": 13.3,
+        "category": null,
+        "reason": "parking fare"
+    },
+    {
+        "date": "16/03/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "16/03/2023",
+        "amount": 12.0,
+        "category": null,
+        "reason": "coffee"
+    },
+    {
+        "date": "16/03/2023",
+        "amount": 15.0,
+        "category": null,
+        "reason": "coffee"
+    },
+    {
+        "date": "16/03/2023",
+        "amount": 80.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "16/03/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "16/03/2023",
+        "amount": 2000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "17/03/2023",
+        "amount": 110.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "17/03/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "17/03/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food - peni ice candy"
+    },
+    {
+        "date": "17/03/2023",
+        "amount": 215.0,
+        "category": null,
+        "reason": "food - arippa"
+    },
+    {
+        "date": "17/03/2023",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "18/03/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "18/03/2023",
+        "amount": 119.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "19/03/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "19/03/2023",
+        "amount": 11.0,
+        "category": null,
+        "reason": "kuluki"
+    },
+    {
+        "date": "19/03/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "kayaking"
+    },
+    {
+        "date": "19/03/2023",
+        "amount": 201.6,
+        "category": null,
+        "reason": "food - burqasa kitchen"
+    },
+    {
+        "date": "19/03/2023",
+        "amount": 1050.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "20/03/2023",
+        "amount": 120.0,
+        "category": null,
+        "reason": "hair cut"
+    },
+    {
+        "date": "20/03/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "2 lime (treat)"
+    },
+    {
+        "date": "20/03/2023",
+        "amount": 15.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "20/03/2023",
+        "amount": 1.0,
+        "category": null,
+        "reason": "candle money"
+    },
+    {
+        "date": "22/03/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "22/03/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "22/03/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "food - night shop"
+    },
+    {
+        "date": "23/03/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "food - kanniy kada"
+    },
+    {
+        "date": "24/03/2023",
+        "amount": 149.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "24/03/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "24/03/2023",
+        "amount": 150.0,
+        "category": null,
+        "reason": "food - lime kitchen"
+    },
+    {
+        "date": "24/03/2023",
+        "amount": 102.5,
+        "category": null,
+        "reason": "birthday gift - asish"
+    },
+    {
+        "date": "24/03/2023",
+        "amount": 86.0,
+        "category": null,
+        "reason": "birthday gift - habel"
+    },
+    {
+        "date": "25/03/2023",
+        "amount": 500.0,
+        "category": null,
+        "reason": "aster - Dr namitha"
+    },
+    {
+        "date": "25/03/2023",
+        "amount": 185.0,
+        "category": null,
+        "reason": "aster - medicines"
+    },
+    {
+        "date": "25/03/2023",
+        "amount": 160.0,
+        "category": null,
+        "reason": "banana chips"
+    },
+    {
+        "date": "25/03/2023",
+        "amount": 1400.0,
+        "category": null,
+        "reason": "taxi fare"
+    },
+    {
+        "date": "25/03/2023",
+        "amount": 190.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "27/03/2023",
+        "amount": 291.04,
+        "category": null,
+        "reason": "food - 2 shawarma"
+    },
+    {
+        "date": "28/03/2023",
+        "amount": 278.0,
+        "category": null,
+        "reason": "mess fees"
+    },
+    {
+        "date": "29/03/2023",
+        "amount": 336.25,
+        "category": null,
+        "reason": "food - al saj (dubai)"
+    },
+    {
+        "date": "30/03/2023",
+        "amount": 246.07,
+        "category": null,
+        "reason": "food - kfc"
+    },
+    {
+        "date": "30/03/2023",
+        "amount": 201.28,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "30/03/2023",
+        "amount": 223.64,
+        "category": null,
+        "reason": "transport fare"
+    },
+    {
+        "date": "02/04/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "Google drive storage"
+    },
+    {
+        "date": "02/04/2023",
+        "amount": 403.96,
+        "category": null,
+        "reason": "volleyball"
+    },
+    {
+        "date": "03/04/2023",
+        "amount": 403.96,
+        "category": null,
+        "reason": "volleyball"
+    },
+    {
+        "date": "04/04/2023",
+        "amount": 178.69,
+        "category": null,
+        "reason": "food - bhel puri"
+    },
+    {
+        "date": "05/04/2023",
+        "amount": 500.0,
+        "category": null,
+        "reason": "apple pencil nibs"
+    },
+    {
+        "date": "05/04/2023",
+        "amount": 222.84,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "06/04/2023",
+        "amount": 178.27,
+        "category": null,
+        "reason": "food - bhel puri"
+    },
+    {
+        "date": "06/04/2023",
+        "amount": 200.55,
+        "category": null,
+        "reason": "food - ikea"
+    },
+    {
+        "date": "09/04/2023",
+        "amount": 998.0,
+        "category": null,
+        "reason": "amazon - chains and bracelet"
+    },
+    {
+        "date": "10/04/2023",
+        "amount": 1300.0,
+        "category": null,
+        "reason": "taxi fare"
+    },
+    {
+        "date": "10/04/2023",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "10/04/2023",
+        "amount": 4911.19,
+        "category": null,
+        "reason": "flight fare"
+    },
+    {
+        "date": "10/04/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "auto fare"
+    },
+    {
+        "date": "11/04/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "food - kanji kada"
+    },
+    {
+        "date": "11/04/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "14/04/2023",
+        "amount": 75.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "15/04/2023",
+        "amount": 4000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "15/04/2023",
+        "amount": 219.0,
+        "category": null,
+        "reason": "food - munnar trip"
+    },
+    {
+        "date": "16/04/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "16/04/2023",
+        "amount": 4600.0,
+        "category": null,
+        "reason": "mess fees - march"
+    },
+    {
+        "date": "16/04/2023",
+        "amount": 141.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "17/04/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "diesel - blessen's scooter"
+    },
+    {
+        "date": "17/04/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "17/04/2023",
+        "amount": 219.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "18/04/2023",
+        "amount": 35.5,
+        "category": null,
+        "reason": "vineyard gift"
+    },
+    {
+        "date": "18/04/2023",
+        "amount": 500.0,
+        "category": null,
+        "reason": "birthday treat"
+    },
+    {
+        "date": "18/04/2023",
+        "amount": 120.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "18/04/2023",
+        "amount": 239.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "19/04/2023",
+        "amount": 6700.0,
+        "category": null,
+        "reason": "new apollo tire"
+    },
+    {
+        "date": "19/04/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "br bakers"
+    },
+    {
+        "date": "20/04/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "20/04/2023",
+        "amount": 120.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "21/04/2023",
+        "amount": 250.0,
+        "category": null,
+        "reason": "food - mfc"
+    },
+    {
+        "date": "21/04/2023",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "21/04/2023",
+        "amount": 115.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "22/04/2023",
+        "amount": 170.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "22/04/2023",
+        "amount": 271.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "23/04/2023",
+        "amount": 110.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "24/04/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "25/04/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "25/04/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "food - kanji kada"
+    },
+    {
+        "date": "25/04/2023",
+        "amount": 41.0,
+        "category": null,
+        "reason": "medicines"
+    },
+    {
+        "date": "26/04/2023",
+        "amount": 410.0,
+        "category": null,
+        "reason": "food - hotel saj"
+    },
+    {
+        "date": "27/04/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "28/04/2023",
+        "amount": 800.0,
+        "category": null,
+        "reason": "microbiology record"
+    },
+    {
+        "date": "28/04/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "29/04/2023",
+        "amount": 22.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "29/04/2023",
+        "amount": 11.0,
+        "category": null,
+        "reason": "photocopy"
+    },
+    {
+        "date": "29/04/2023",
+        "amount": 200.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "29/04/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "30/04/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "30/04/2023",
+        "amount": 1500.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "30/04/2023",
+        "amount": 163.75,
+        "category": null,
+        "reason": "food - mings wok"
+    },
+    {
+        "date": "30/04/2023",
+        "amount": 220.0,
+        "category": null,
+        "reason": "food - ming's wok"
+    },
+    {
+        "date": "03/05/2023",
+        "amount": 157.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "04/05/2023",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "05/05/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "gift - joel benoy"
+    },
+    {
+        "date": "06/05/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "07/05/2023",
+        "amount": 156.0,
+        "category": null,
+        "reason": "food - kfc"
+    },
+    {
+        "date": "09/05/2023",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "10/05/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "food - kanji kada"
+    },
+    {
+        "date": "11/05/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "sem tag (3rd sem)"
+    },
+    {
+        "date": "11/05/2023",
+        "amount": 36.0,
+        "category": null,
+        "reason": "petrol - moses"
+    },
+    {
+        "date": "11/05/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - uncle shake"
+    },
+    {
+        "date": "12/05/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "12/05/2023",
+        "amount": 270.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "14/05/2023",
+        "amount": 840.0,
+        "category": null,
+        "reason": "food - hotel aryaas"
+    },
+    {
+        "date": "16/05/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "16/05/2023",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "16/05/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "food - kanji kada"
+    },
+    {
+        "date": "16/05/2023",
+        "amount": 80.0,
+        "category": null,
+        "reason": "food - club arabia"
+    },
+    {
+        "date": "16/05/2023",
+        "amount": 80.0,
+        "category": null,
+        "reason": "shopping"
+    },
+    {
+        "date": "16/05/2023",
+        "amount": 15.0,
+        "category": null,
+        "reason": "petrol"
+    },
+    {
+        "date": "18/05/2023",
+        "amount": 120.0,
+        "category": null,
+        "reason": "hair cut"
+    },
+    {
+        "date": "18/05/2023",
+        "amount": 633.0,
+        "category": null,
+        "reason": "mess fees"
+    },
+    {
+        "date": "18/05/2023",
+        "amount": 2500.0,
+        "category": null,
+        "reason": "badminton racket"
+    },
+    {
+        "date": "19/05/2023",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "20/05/2023",
+        "amount": 477.0,
+        "category": null,
+        "reason": "unknown expense"
+    },
+    {
+        "date": "22/05/2023",
+        "amount": 36.0,
+        "category": null,
+        "reason": "unknown expense"
+    },
+    {
+        "date": "23/05/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "23/05/2023",
+        "amount": 7.6,
+        "category": null,
+        "reason": "food - oh my cake"
+    },
+    {
+        "date": "23/05/2023",
+        "amount": 66.0,
+        "category": null,
+        "reason": "food - ambady"
+    },
+    {
+        "date": "23/05/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "bus fare"
+    },
+    {
+        "date": "23/05/2023",
+        "amount": 15.0,
+        "category": null,
+        "reason": "petrol - moses"
+    },
+    {
+        "date": "23/05/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "food - ice cream"
+    },
+    {
+        "date": "23/05/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "birthday"
+    },
+    {
+        "date": "24/05/2023",
+        "amount": 55.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "25/05/2023",
+        "amount": 16.0,
+        "category": null,
+        "reason": "community store"
+    },
+    {
+        "date": "25/05/2023",
+        "amount": 83.3,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "25/05/2023",
+        "amount": 43.0,
+        "category": null,
+        "reason": "food - oh my cake"
+    },
+    {
+        "date": "25/05/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "unknown expense"
+    },
+    {
+        "date": "26/05/2023",
+        "amount": 277.0,
+        "category": null,
+        "reason": "food - kakkanad"
+    },
+    {
+        "date": "26/05/2023",
+        "amount": 350.0,
+        "category": null,
+        "reason": "jersey"
+    },
+    {
+        "date": "26/05/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "27/05/2023",
+        "amount": 27.0,
+        "category": null,
+        "reason": "food - oh my cake"
+    },
+    {
+        "date": "29/05/2023",
+        "amount": 200.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "29/05/2023",
+        "amount": 12.5,
+        "category": null,
+        "reason": "groceries - anns"
+    },
+    {
+        "date": "29/05/2023",
+        "amount": 35.0,
+        "category": null,
+        "reason": "food - desi cuppa"
+    },
+    {
+        "date": "29/05/2023",
+        "amount": 22.5,
+        "category": null,
+        "reason": "food - sarvana bhavan"
+    },
+    {
+        "date": "29/05/2023",
+        "amount": 84.0,
+        "category": null,
+        "reason": "milk"
+    },
+    {
+        "date": "30/05/2023",
+        "amount": 4250.0,
+        "category": null,
+        "reason": "books"
+    },
+    {
+        "date": "30/05/2023",
+        "amount": 280.0,
+        "category": null,
+        "reason": "food - barkaas"
+    },
+    {
+        "date": "30/05/2023",
+        "amount": 500.0,
+        "category": null,
+        "reason": "scooter advance payment"
+    },
+    {
+        "date": "30/05/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "pens"
+    },
+    {
+        "date": "31/05/2023",
+        "amount": 80.0,
+        "category": null,
+        "reason": "food - uncles"
+    },
+    {
+        "date": "31/05/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "31/05/2023",
+        "amount": 124000.0,
+        "category": null,
+        "reason": "avenis 125 scooter"
+    },
+    {
+        "date": "01/06/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "02/06/2023",
+        "amount": 17.5,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "02/06/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "03/06/2023",
+        "amount": 200.0,
+        "category": null,
+        "reason": "Google account balance"
+    },
+    {
+        "date": "03/06/2023",
+        "amount": 300.67,
+        "category": null,
+        "reason": "food - sijis pizza"
+    },
+    {
+        "date": "03/06/2023",
+        "amount": 200.0,
+        "category": null,
+        "reason": "diesel - scooter"
+    },
+    {
+        "date": "03/06/2023",
+        "amount": 850.0,
+        "category": null,
+        "reason": "scooter helmet"
+    },
+    {
+        "date": "03/06/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "scooter delivery man tip"
+    },
+    {
+        "date": "04/06/2023",
+        "amount": 15.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "04/06/2023",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "06/06/2023",
+        "amount": 3000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "06/06/2023",
+        "amount": 212.6,
+        "category": null,
+        "reason": "food - kaasa kitchen"
+    },
+    {
+        "date": "06/06/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "ice cream"
+    },
+    {
+        "date": "07/06/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "08/06/2023",
+        "amount": 400.0,
+        "category": null,
+        "reason": "banana chips"
+    },
+    {
+        "date": "12/06/2023",
+        "amount": 220.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "12/06/2023",
+        "amount": 231.6,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "13/06/2023",
+        "amount": 239.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "23/06/2023",
+        "amount": 160.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "27/06/2023",
+        "amount": 75.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "29/06/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Treat"
+    },
+    {
+        "date": "29/06/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Food - uncles"
+    },
+    {
+        "date": "29/06/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "04/07/2023",
+        "amount": 140.0,
+        "category": null,
+        "reason": "Movies"
+    },
+    {
+        "date": "04/07/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Parking ticket - lulu"
+    },
+    {
+        "date": "04/07/2023",
+        "amount": 104.5,
+        "category": null,
+        "reason": "Food - Burger King"
+    },
+    {
+        "date": "04/07/2023",
+        "amount": 85.0,
+        "category": null,
+        "reason": "Food - hotel aaryas"
+    },
+    {
+        "date": "06/07/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "To amma"
+    },
+    {
+        "date": "07/07/2023",
+        "amount": 175.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "08/07/2023",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "08/07/2023",
+        "amount": 55.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "08/07/2023",
+        "amount": 80.0,
+        "category": null,
+        "reason": "Ashna bday gift"
+    },
+    {
+        "date": "08/07/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Food - meet and eat"
+    },
+    {
+        "date": "08/07/2023",
+        "amount": 1250.0,
+        "category": null,
+        "reason": "Amma's specs"
+    },
+    {
+        "date": "10/07/2023",
+        "amount": 205.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "11/07/2023",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "11/07/2023",
+        "amount": 55.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "11/07/2023",
+        "amount": 371.0,
+        "category": null,
+        "reason": "Scooter - 1st service"
+    },
+    {
+        "date": "11/07/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "12/07/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "Food - cafeteria"
+    },
+    {
+        "date": "12/07/2023",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Petrol - scooter"
+    },
+    {
+        "date": "12/07/2023",
+        "amount": 25.0,
+        "category": null,
+        "reason": "Food - church"
+    },
+    {
+        "date": "13/07/2023",
+        "amount": 209.0,
+        "category": null,
+        "reason": "Jio recharge"
+    },
+    {
+        "date": "13/07/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Food"
+    },
+    {
+        "date": "13/07/2023",
+        "amount": 45.0,
+        "category": null,
+        "reason": "Food - royal bakery"
+    },
+    {
+        "date": "13/07/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Ice cream"
+    },
+    {
+        "date": "14/07/2023",
+        "amount": 380.0,
+        "category": null,
+        "reason": "Food - malabar grills"
+    },
+    {
+        "date": "15/07/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Lime"
+    },
+    {
+        "date": "15/07/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Food"
+    },
+    {
+        "date": "15/07/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Areekal entry ticket"
+    },
+    {
+        "date": "17/07/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Ice cream"
+    },
+    {
+        "date": "17/07/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "17/07/2023",
+        "amount": 46.0,
+        "category": null,
+        "reason": "Pharmacy"
+    },
+    {
+        "date": "18/07/2023",
+        "amount": 780.0,
+        "category": null,
+        "reason": "Books"
+    },
+    {
+        "date": "18/07/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Lime"
+    },
+    {
+        "date": "18/07/2023",
+        "amount": 25.0,
+        "category": null,
+        "reason": "Fish for asish"
+    },
+    {
+        "date": "18/07/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Food - meet n eat"
+    },
+    {
+        "date": "20/07/2023",
+        "amount": 9.0,
+        "category": null,
+        "reason": "Photostat"
+    },
+    {
+        "date": "20/07/2023",
+        "amount": 67.0,
+        "category": null,
+        "reason": "Football"
+    },
+    {
+        "date": "20/07/2023",
+        "amount": 61.0,
+        "category": null,
+        "reason": "Jio recharge"
+    },
+    {
+        "date": "21/07/2023",
+        "amount": 160.0,
+        "category": null,
+        "reason": "Food - mandi souk"
+    },
+    {
+        "date": "21/07/2023",
+        "amount": 32.5,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "22/07/2023",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Petrol - scooter"
+    },
+    {
+        "date": "26/07/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "26/07/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "chips"
+    },
+    {
+        "date": "26/07/2023",
+        "amount": 22.0,
+        "category": null,
+        "reason": "photostat"
+    },
+    {
+        "date": "29/07/2023",
+        "amount": 251.0,
+        "category": null,
+        "reason": "Food - Subway"
+    },
+    {
+        "date": "29/07/2023",
+        "amount": 80.0,
+        "category": null,
+        "reason": "Food - seetha shake"
+    },
+    {
+        "date": "29/07/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Petrol - moses"
+    },
+    {
+        "date": "29/07/2023",
+        "amount": 67.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "30/07/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "30/07/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Food - kedaram"
+    },
+    {
+        "date": "31/07/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Courier"
+    },
+    {
+        "date": "01/08/2023",
+        "amount": 433.0,
+        "category": null,
+        "reason": "reliance shopping"
+    },
+    {
+        "date": "01/08/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "shake"
+    },
+    {
+        "date": "01/08/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "petrol - asish"
+    },
+    {
+        "date": "01/08/2023",
+        "amount": 80.0,
+        "category": null,
+        "reason": "food - seetha devi"
+    },
+    {
+        "date": "02/08/2023",
+        "amount": 150.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "02/08/2023",
+        "amount": 150.0,
+        "category": null,
+        "reason": "shoe fixing"
+    },
+    {
+        "date": "02/08/2023",
+        "amount": 115.0,
+        "category": null,
+        "reason": "Google drive storage"
+    },
+    {
+        "date": "03/08/2023",
+        "amount": 222.5,
+        "category": null,
+        "reason": "food - taquitos"
+    },
+    {
+        "date": "03/08/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food - street shop"
+    },
+    {
+        "date": "03/08/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "chocolate"
+    },
+    {
+        "date": "04/08/2023",
+        "amount": 45.0,
+        "category": null,
+        "reason": "Food - royal bakers"
+    },
+    {
+        "date": "04/08/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "04/08/2023",
+        "amount": 5.0,
+        "category": null,
+        "reason": "sambharam"
+    },
+    {
+        "date": "04/08/2023",
+        "amount": 700.0,
+        "category": null,
+        "reason": "new uniform stitching"
+    },
+    {
+        "date": "04/08/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "04/08/2023",
+        "amount": 105.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "06/08/2023",
+        "amount": 421.98,
+        "category": null,
+        "reason": "petrol - scooter"
+    },
+    {
+        "date": "07/08/2023",
+        "amount": 303.5,
+        "category": null,
+        "reason": "food - taqitos"
+    },
+    {
+        "date": "08/08/2023",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "09/08/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Food"
+    },
+    {
+        "date": "09/08/2023",
+        "amount": 570.0,
+        "category": null,
+        "reason": "hospital"
+    },
+    {
+        "date": "09/08/2023",
+        "amount": 509.0,
+        "category": null,
+        "reason": "food - malabar grills"
+    },
+    {
+        "date": "10/08/2023",
+        "amount": 270.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "11/08/2023",
+        "amount": 116.0,
+        "category": null,
+        "reason": "food - pai dosa"
+    },
+    {
+        "date": "11/08/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "food - seetha devi"
+    },
+    {
+        "date": "11/08/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "12/08/2023",
+        "amount": 235.0,
+        "category": null,
+        "reason": "Food - chopstix"
+    },
+    {
+        "date": "12/08/2023",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Food - night shop"
+    },
+    {
+        "date": "12/08/2023",
+        "amount": 441.36,
+        "category": null,
+        "reason": "Petrol - scooter"
+    },
+    {
+        "date": "13/08/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "food - kedaram"
+    },
+    {
+        "date": "14/08/2023",
+        "amount": 383.16,
+        "category": null,
+        "reason": "Petrol - scooter"
+    },
+    {
+        "date": "14/08/2023",
+        "amount": 65.0,
+        "category": null,
+        "reason": "Food - alkapuri"
+    },
+    {
+        "date": "14/08/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "Food - alkapuri"
+    },
+    {
+        "date": "14/08/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Food - seetha devi"
+    },
+    {
+        "date": "14/08/2023",
+        "amount": 5.0,
+        "category": null,
+        "reason": "Parking fee - lulu"
+    },
+    {
+        "date": "14/08/2023",
+        "amount": 200.0,
+        "category": null,
+        "reason": "Groceries - lulu"
+    },
+    {
+        "date": "16/08/2023",
+        "amount": 173.6,
+        "category": null,
+        "reason": "Movie"
+    },
+    {
+        "date": "16/08/2023",
+        "amount": 65.0,
+        "category": null,
+        "reason": "Snacks"
+    },
+    {
+        "date": "16/08/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Food - meet n eat"
+    },
+    {
+        "date": "17/08/2023",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "17/08/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "Food - meet n eat"
+    },
+    {
+        "date": "18/08/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "18/08/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Lime"
+    },
+    {
+        "date": "19/08/2023",
+        "amount": 113.0,
+        "category": null,
+        "reason": "food - mings wok"
+    },
+    {
+        "date": "19/08/2023",
+        "amount": 282.0,
+        "category": null,
+        "reason": "food - subway"
+    },
+    {
+        "date": "19/08/2023",
+        "amount": 55.0,
+        "category": null,
+        "reason": "food - seetha devi"
+    },
+    {
+        "date": "20/08/2023",
+        "amount": 1199.0,
+        "category": null,
+        "reason": "Blood test"
+    },
+    {
+        "date": "20/08/2023",
+        "amount": 80.0,
+        "category": null,
+        "reason": "pens"
+    },
+    {
+        "date": "20/08/2023",
+        "amount": 25.0,
+        "category": null,
+        "reason": "milk"
+    },
+    {
+        "date": "20/08/2023",
+        "amount": 418.75,
+        "category": null,
+        "reason": "petrol - scooter"
+    },
+    {
+        "date": "20/08/2023",
+        "amount": 160.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "21/08/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Gift"
+    },
+    {
+        "date": "22/08/2023",
+        "amount": 190.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "22/08/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Food - oh my cake"
+    },
+    {
+        "date": "22/08/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Lime"
+    },
+    {
+        "date": "22/08/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "Sara's collections"
+    },
+    {
+        "date": "22/08/2023",
+        "amount": 197.6,
+        "category": null,
+        "reason": "Reliance groceries"
+    },
+    {
+        "date": "23/08/2023",
+        "amount": 25.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "24/08/2023",
+        "amount": 1395.0,
+        "category": null,
+        "reason": "Pharmacy"
+    },
+    {
+        "date": "24/08/2023",
+        "amount": 330.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "25/08/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Food - meet n eat"
+    },
+    {
+        "date": "25/08/2023",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Banana chips"
+    },
+    {
+        "date": "25/08/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "Lemon"
+    },
+    {
+        "date": "25/08/2023",
+        "amount": 1198.0,
+        "category": null,
+        "reason": "Taxi fare"
+    },
+    {
+        "date": "02/09/2023",
+        "amount": 550.0,
+        "category": null,
+        "reason": "onam shirt"
+    },
+    {
+        "date": "03/09/2023",
+        "amount": 260.0,
+        "category": null,
+        "reason": "Google drive"
+    },
+    {
+        "date": "03/09/2023",
+        "amount": 1200.0,
+        "category": null,
+        "reason": "Taxi"
+    },
+    {
+        "date": "03/09/2023",
+        "amount": 35.0,
+        "category": null,
+        "reason": "Yoghurt"
+    },
+    {
+        "date": "05/09/2023",
+        "amount": 750.0,
+        "category": null,
+        "reason": "mundu - kennedy"
+    },
+    {
+        "date": "06/09/2023",
+        "amount": 1500.0,
+        "category": null,
+        "reason": "union fund"
+    },
+    {
+        "date": "07/09/2023",
+        "amount": 239.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "07/09/2023",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "08/09/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "09/09/2023",
+        "amount": 178.0,
+        "category": null,
+        "reason": "Food - thaal"
+    },
+    {
+        "date": "09/09/2023",
+        "amount": 1500.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "09/09/2023",
+        "amount": 140.0,
+        "category": null,
+        "reason": "movie ticket"
+    },
+    {
+        "date": "10/09/2023",
+        "amount": 80.0,
+        "category": null,
+        "reason": "snacks"
+    },
+    {
+        "date": "10/09/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "10/09/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "Food - meet n eat"
+    },
+    {
+        "date": "11/09/2023",
+        "amount": 23.0,
+        "category": null,
+        "reason": "habel movie ticket"
+    },
+    {
+        "date": "11/09/2023",
+        "amount": 12.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "13/09/2023",
+        "amount": 360.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "14/09/2023",
+        "amount": 184.74,
+        "category": null,
+        "reason": "reliance jio mart"
+    },
+    {
+        "date": "15/09/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Food - meet n eat"
+    },
+    {
+        "date": "17/09/2023",
+        "amount": 279.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "18/09/2023",
+        "amount": 58.58,
+        "category": null,
+        "reason": "reliance jio mart"
+    },
+    {
+        "date": "19/09/2023",
+        "amount": 150.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "19/09/2023",
+        "amount": 482.27,
+        "category": null,
+        "reason": "petrol"
+    },
+    {
+        "date": "20/09/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "20/09/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "21/09/2023",
+        "amount": 60.0,
+        "category": null,
+        "reason": "food - madurai veg"
+    },
+    {
+        "date": "25/09/2023",
+        "amount": 320.0,
+        "category": null,
+        "reason": "record"
+    },
+    {
+        "date": "25/09/2023",
+        "amount": 371.0,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "26/09/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "26/09/2023",
+        "amount": 204.1,
+        "category": null,
+        "reason": "reliance jio mart"
+    },
+    {
+        "date": "26/09/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "food - snoosh"
+    },
+    {
+        "date": "27/09/2023",
+        "amount": 1046.0,
+        "category": null,
+        "reason": "mess fees - august"
+    },
+    {
+        "date": "28/09/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "28/09/2023",
+        "amount": 220.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "29/09/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "30/09/2023",
+        "amount": 125.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "30/09/2023",
+        "amount": 190.89,
+        "category": null,
+        "reason": "reliance jio mart"
+    },
+    {
+        "date": "01/10/2023",
+        "amount": 2000.0,
+        "category": null,
+        "reason": "diesel"
+    },
+    {
+        "date": "04/10/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "04/10/2023",
+        "amount": 239.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "05/10/2023",
+        "amount": 286.0,
+        "category": null,
+        "reason": "Food - grand hotel"
+    },
+    {
+        "date": "05/10/2023",
+        "amount": 500.0,
+        "category": null,
+        "reason": "To security cletus"
+    },
+    {
+        "date": "06/10/2023",
+        "amount": 239.0,
+        "category": null,
+        "reason": "Jio recharge"
+    },
+    {
+        "date": "06/10/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "07/10/2023",
+        "amount": 348.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "07/10/2023",
+        "amount": 190.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "07/10/2023",
+        "amount": 424.14,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "07/10/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "08/10/2023",
+        "amount": 35.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "08/10/2023",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Food - kedaram"
+    },
+    {
+        "date": "09/10/2023",
+        "amount": 213.0,
+        "category": null,
+        "reason": "MOSC hospital medicine"
+    },
+    {
+        "date": "09/10/2023",
+        "amount": 328.0,
+        "category": null,
+        "reason": "Blood test"
+    },
+    {
+        "date": "09/10/2023",
+        "amount": 193.34,
+        "category": null,
+        "reason": "reliance jio mart"
+    },
+    {
+        "date": "09/10/2023",
+        "amount": 15.0,
+        "category": null,
+        "reason": "banana"
+    },
+    {
+        "date": "09/10/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "09/10/2023",
+        "amount": 147.0,
+        "category": null,
+        "reason": "food - malabar grills"
+    },
+    {
+        "date": "09/10/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "BR bakers"
+    },
+    {
+        "date": "11/10/2023",
+        "amount": 42.0,
+        "category": null,
+        "reason": "BR bakers"
+    },
+    {
+        "date": "12/10/2023",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "12/10/2023",
+        "amount": 28.0,
+        "category": null,
+        "reason": "Banana"
+    },
+    {
+        "date": "12/10/2023",
+        "amount": 83.44,
+        "category": null,
+        "reason": "Birthday cake"
+    },
+    {
+        "date": "13/10/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Food - kedaram"
+    },
+    {
+        "date": "13/10/2023",
+        "amount": 285.0,
+        "category": null,
+        "reason": "Food - hotel grand"
+    },
+    {
+        "date": "13/10/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "14/10/2023",
+        "amount": 45.0,
+        "category": null,
+        "reason": "Bread"
+    },
+    {
+        "date": "15/10/2023",
+        "amount": 190.0,
+        "category": null,
+        "reason": "Food - chacko"
+    },
+    {
+        "date": "15/10/2023",
+        "amount": 188.0,
+        "category": null,
+        "reason": "Food - hotel grand"
+    },
+    {
+        "date": "16/10/2023",
+        "amount": 55.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "18/10/2023",
+        "amount": 94.0,
+        "category": null,
+        "reason": "Kadayiruppu groceries"
+    },
+    {
+        "date": "19/10/2023",
+        "amount": 66.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "20/10/2023",
+        "amount": 57.5,
+        "category": null,
+        "reason": "Food - shawarmer"
+    },
+    {
+        "date": "20/10/2023",
+        "amount": 431.0,
+        "category": null,
+        "reason": "Food - pai dosa"
+    },
+    {
+        "date": "20/10/2023",
+        "amount": 376.71,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "20/10/2023",
+        "amount": 78.75,
+        "category": null,
+        "reason": "Food - momo rumbucha"
+    },
+    {
+        "date": "20/10/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Food - seetha devi"
+    },
+    {
+        "date": "20/10/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "BR bakers"
+    },
+    {
+        "date": "21/10/2023",
+        "amount": 500.0,
+        "category": null,
+        "reason": "Go kart and paint ball"
+    },
+    {
+        "date": "21/10/2023",
+        "amount": 110.0,
+        "category": null,
+        "reason": "Food - kedaram"
+    },
+    {
+        "date": "21/10/2023",
+        "amount": 349.0,
+        "category": null,
+        "reason": "Mess fees"
+    },
+    {
+        "date": "21/10/2023",
+        "amount": 188.0,
+        "category": null,
+        "reason": "Food - flaming hot"
+    },
+    {
+        "date": "22/10/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Unknown purchase"
+    },
+    {
+        "date": "24/10/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Unknown purchase"
+    },
+    {
+        "date": "25/10/2023",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Unknown purchase"
+    },
+    {
+        "date": "27/10/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "27/10/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "BR"
+    },
+    {
+        "date": "28/10/2023",
+        "amount": 690.0,
+        "category": null,
+        "reason": "scooter phone holder"
+    },
+    {
+        "date": "31/10/2023",
+        "amount": 239.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "31/10/2023",
+        "amount": 459.5,
+        "category": null,
+        "reason": "Date - kochi"
+    },
+    {
+        "date": "31/10/2023",
+        "amount": 415.52,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "01/11/2023",
+        "amount": 200.0,
+        "category": null,
+        "reason": "Appa's plants"
+    },
+    {
+        "date": "01/11/2023",
+        "amount": 25.0,
+        "category": null,
+        "reason": "Sting"
+    },
+    {
+        "date": "02/11/2023",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "02/11/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Anns - treat"
+    },
+    {
+        "date": "02/11/2023",
+        "amount": 39.0,
+        "category": null,
+        "reason": "Food - BR"
+    },
+    {
+        "date": "03/11/2023",
+        "amount": 260.0,
+        "category": null,
+        "reason": "ENT log book"
+    },
+    {
+        "date": "03/11/2023",
+        "amount": 185.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "03/11/2023",
+        "amount": 239.0,
+        "category": null,
+        "reason": "Jio recharge"
+    },
+    {
+        "date": "04/11/2023",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "04/11/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Ice cream"
+    },
+    {
+        "date": "04/11/2023",
+        "amount": 837.49,
+        "category": null,
+        "reason": "Lulu shopping"
+    },
+    {
+        "date": "05/11/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "aster - parking"
+    },
+    {
+        "date": "05/11/2023",
+        "amount": 155.0,
+        "category": null,
+        "reason": "Food - aster"
+    },
+    {
+        "date": "05/11/2023",
+        "amount": 61.0,
+        "category": null,
+        "reason": "Jio recharge for appa"
+    },
+    {
+        "date": "05/11/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "Food - seetha devi"
+    },
+    {
+        "date": "06/11/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "07/11/2023",
+        "amount": 2000.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "07/11/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "aster - parking"
+    },
+    {
+        "date": "08/11/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "08/11/2023",
+        "amount": 1575.0,
+        "category": null,
+        "reason": "mess fees - november"
+    },
+    {
+        "date": "08/11/2023",
+        "amount": 12.0,
+        "category": null,
+        "reason": "pencils"
+    },
+    {
+        "date": "11/11/2023",
+        "amount": 360.0,
+        "category": null,
+        "reason": "Food - mandhi souk, for denna too"
+    },
+    {
+        "date": "12/11/2023",
+        "amount": 462.0,
+        "category": null,
+        "reason": "food - mings wok"
+    },
+    {
+        "date": "12/11/2023",
+        "amount": 659.0,
+        "category": null,
+        "reason": "food - kfc"
+    },
+    {
+        "date": "12/11/2023",
+        "amount": 7.0,
+        "category": null,
+        "reason": "chart"
+    },
+    {
+        "date": "12/11/2023",
+        "amount": 125.0,
+        "category": null,
+        "reason": "ointment"
+    },
+    {
+        "date": "13/11/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "unknown purchase"
+    },
+    {
+        "date": "13/11/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "ramsis book shop"
+    },
+    {
+        "date": "14/11/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "cafeteria"
+    },
+    {
+        "date": "15/11/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "15/11/2023",
+        "amount": 85.0,
+        "category": null,
+        "reason": "bandaid"
+    },
+    {
+        "date": "16/11/2023",
+        "amount": 22.0,
+        "category": null,
+        "reason": "lime"
+    },
+    {
+        "date": "16/11/2023",
+        "amount": 15.0,
+        "category": null,
+        "reason": "jio recharge - for denna"
+    },
+    {
+        "date": "17/11/2023",
+        "amount": 22.0,
+        "category": null,
+        "reason": "br bakers"
+    },
+    {
+        "date": "17/11/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "anns - for denna too"
+    },
+    {
+        "date": "17/11/2023",
+        "amount": 370.0,
+        "category": null,
+        "reason": "food - mandhi souk, for denna too"
+    },
+    {
+        "date": "17/11/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "anns"
+    },
+    {
+        "date": "18/11/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "anns"
+    },
+    {
+        "date": "18/11/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "cafeteria"
+    },
+    {
+        "date": "18/11/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "rose  - for denna"
+    },
+    {
+        "date": "18/11/2023",
+        "amount": 605.6,
+        "category": null,
+        "reason": "reliance"
+    },
+    {
+        "date": "18/11/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "anns"
+    },
+    {
+        "date": "19/11/2023",
+        "amount": 1189.0,
+        "category": null,
+        "reason": "Birthday gift for Denna"
+    },
+    {
+        "date": "19/11/2023",
+        "amount": 70.0,
+        "category": null,
+        "reason": "Eggs"
+    },
+    {
+        "date": "20/11/2023",
+        "amount": 81.29,
+        "category": null,
+        "reason": "Reliance"
+    },
+    {
+        "date": "20/11/2023",
+        "amount": 415.53,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "20/11/2023",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Pharmac log book"
+    },
+    {
+        "date": "21/11/2023",
+        "amount": 27.0,
+        "category": null,
+        "reason": "treat for friends"
+    },
+    {
+        "date": "21/11/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "Food - seetha devi"
+    },
+    {
+        "date": "21/11/2023",
+        "amount": 10.0,
+        "category": null,
+        "reason": "anns"
+    },
+    {
+        "date": "22/11/2023",
+        "amount": 375.0,
+        "category": null,
+        "reason": "food - mandhi souk, for denna too"
+    },
+    {
+        "date": "23/11/2023",
+        "amount": 22.0,
+        "category": null,
+        "reason": "cafeteria"
+    },
+    {
+        "date": "23/11/2023",
+        "amount": 113.0,
+        "category": null,
+        "reason": "anns"
+    },
+    {
+        "date": "23/11/2023",
+        "amount": 239.0,
+        "category": null,
+        "reason": "VI recharge"
+    },
+    {
+        "date": "24/11/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "24/11/2023",
+        "amount": 120.0,
+        "category": null,
+        "reason": "unknown purchase"
+    },
+    {
+        "date": "27/11/2023",
+        "amount": 157.15,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "27/11/2023",
+        "amount": 32.0,
+        "category": null,
+        "reason": "BR"
+    },
+    {
+        "date": "29/11/2023",
+        "amount": 425.49,
+        "category": null,
+        "reason": "food"
+    },
+    {
+        "date": "01/12/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "01/12/2023",
+        "amount": 239.0,
+        "category": null,
+        "reason": "jio recharge"
+    },
+    {
+        "date": "01/12/2023",
+        "amount": 22.0,
+        "category": null,
+        "reason": "BR"
+    },
+    {
+        "date": "01/12/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "anns"
+    },
+    {
+        "date": "01/12/2023",
+        "amount": 160.0,
+        "category": null,
+        "reason": "treat for denna, club arabia"
+    },
+    {
+        "date": "02/12/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "anns"
+    },
+    {
+        "date": "03/12/2023",
+        "amount": 900.0,
+        "category": null,
+        "reason": "namitha appointment"
+    },
+    {
+        "date": "04/12/2023",
+        "amount": 185.0,
+        "category": null,
+        "reason": "Psychiatry log book"
+    },
+    {
+        "date": "04/12/2023",
+        "amount": 730.0,
+        "category": null,
+        "reason": "food - grand hotel"
+    },
+    {
+        "date": "04/12/2023",
+        "amount": 160.0,
+        "category": null,
+        "reason": "fruits"
+    },
+    {
+        "date": "05/12/2023",
+        "amount": 220.0,
+        "category": null,
+        "reason": "food - mandhi souk"
+    },
+    {
+        "date": "06/12/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "anns"
+    },
+    {
+        "date": "06/12/2023",
+        "amount": 429.52,
+        "category": null,
+        "reason": "petrol"
+    },
+    {
+        "date": "06/12/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "07/12/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food - breakfast"
+    },
+    {
+        "date": "07/12/2023",
+        "amount": 110.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "08/12/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "food - breakfast"
+    },
+    {
+        "date": "08/12/2023",
+        "amount": 208.0,
+        "category": null,
+        "reason": "food - hotel grand"
+    },
+    {
+        "date": "08/12/2023",
+        "amount": 318.34,
+        "category": null,
+        "reason": "food - reliance jio"
+    },
+    {
+        "date": "09/12/2023",
+        "amount": 130.0,
+        "category": null,
+        "reason": "food - meet n eat"
+    },
+    {
+        "date": "09/12/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "BR"
+    },
+    {
+        "date": "10/12/2023",
+        "amount": 196.0,
+        "category": null,
+        "reason": "food - grand hotel"
+    },
+    {
+        "date": "11/12/2023",
+        "amount": 40.0,
+        "category": null,
+        "reason": "groceries"
+    },
+    {
+        "date": "11/12/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "tailor"
+    },
+    {
+        "date": "11/12/2023",
+        "amount": 340.0,
+        "category": null,
+        "reason": "food - mandhi souk, along with treat for denna"
+    },
+    {
+        "date": "12/12/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "BR"
+    },
+    {
+        "date": "12/12/2023",
+        "amount": 220.0,
+        "category": null,
+        "reason": "food - cafeteria"
+    },
+    {
+        "date": "12/12/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "anns"
+    },
+    {
+        "date": "13/12/2023",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Food - breakfast"
+    },
+    {
+        "date": "13/12/2023",
+        "amount": 130.84,
+        "category": null,
+        "reason": "reliance jio mart"
+    },
+    {
+        "date": "13/12/2023",
+        "amount": 126.0,
+        "category": null,
+        "reason": "groceries - coffee powder"
+    },
+    {
+        "date": "14/12/2023",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "14/12/2023",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Food - meet n eat"
+    },
+    {
+        "date": "15/12/2023",
+        "amount": 44.0,
+        "category": null,
+        "reason": "BR"
+    },
+    {
+        "date": "15/12/2023",
+        "amount": 90.0,
+        "category": null,
+        "reason": "Food - meet n eat"
+    },
+    {
+        "date": "15/12/2023",
+        "amount": 43.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "16/12/2023",
+        "amount": 22.0,
+        "category": null,
+        "reason": "BR"
+    },
+    {
+        "date": "17/12/2023",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Lime"
+    },
+    {
+        "date": "17/12/2023",
+        "amount": 410.0,
+        "category": null,
+        "reason": "Food - hotel grand"
+    },
+    {
+        "date": "17/12/2023",
+        "amount": 6.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "18/12/2023",
+        "amount": 22.0,
+        "category": null,
+        "reason": "BR"
+    },
+    {
+        "date": "18/12/2023",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "19/12/2023",
+        "amount": 1575.0,
+        "category": null,
+        "reason": "Mess fees of December"
+    },
+    {
+        "date": "03/01/2024",
+        "amount": 26744.5,
+        "category": null,
+        "reason": "Prepladder subscription"
+    },
+    {
+        "date": "03/01/2024",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "04/01/2024",
+        "amount": 110.0,
+        "category": null,
+        "reason": "Breakfast - to cletus"
+    },
+    {
+        "date": "08/01/2024",
+        "amount": 322.34,
+        "category": null,
+        "reason": "Reliance shopping"
+    },
+    {
+        "date": "16/01/2024",
+        "amount": 413.37,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "16/01/2024",
+        "amount": 629.0,
+        "category": null,
+        "reason": "Food - sijis pizza"
+    },
+    {
+        "date": "16/01/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "17/01/2024",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Micro log book"
+    },
+    {
+        "date": "17/01/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Banana"
+    },
+    {
+        "date": "18/01/2024",
+        "amount": 24.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "19/01/2024",
+        "amount": 236.0,
+        "category": null,
+        "reason": "Food - mings wok"
+    },
+    {
+        "date": "19/01/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "VI recharge for amma"
+    },
+    {
+        "date": "19/01/2024",
+        "amount": 240.75,
+        "category": null,
+        "reason": "Food - mcdonalds"
+    },
+    {
+        "date": "19/01/2024",
+        "amount": 167.5,
+        "category": null,
+        "reason": "Food - choco lick"
+    },
+    {
+        "date": "20/01/2024",
+        "amount": 2000.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "20/01/2024",
+        "amount": 313.23,
+        "category": null,
+        "reason": "Food - king's crust"
+    },
+    {
+        "date": "21/01/2024",
+        "amount": 343.3,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "21/01/2024",
+        "amount": 303.0,
+        "category": null,
+        "reason": "Food - tacquitos"
+    },
+    {
+        "date": "21/01/2024",
+        "amount": 480.0,
+        "category": null,
+        "reason": "Food - mcdonalds"
+    },
+    {
+        "date": "21/01/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "22/01/2024",
+        "amount": 267.5,
+        "category": null,
+        "reason": "Food - 12 to 12 barbecue"
+    },
+    {
+        "date": "22/01/2024",
+        "amount": 140.0,
+        "category": null,
+        "reason": "PVR cinemas"
+    },
+    {
+        "date": "22/01/2024",
+        "amount": 480.0,
+        "category": null,
+        "reason": "Lulu"
+    },
+    {
+        "date": "22/01/2024",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Lulu parking"
+    },
+    {
+        "date": "22/01/2024",
+        "amount": 125.0,
+        "category": null,
+        "reason": "Parking fine"
+    },
+    {
+        "date": "24/01/2024",
+        "amount": 15.0,
+        "category": null,
+        "reason": "Jio recharge - denna"
+    },
+    {
+        "date": "24/01/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Banana"
+    },
+    {
+        "date": "24/01/2024",
+        "amount": 80.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "24/01/2024",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "24/01/2024",
+        "amount": 202.0,
+        "category": null,
+        "reason": "Reliance jio"
+    },
+    {
+        "date": "25/01/2024",
+        "amount": 28.0,
+        "category": null,
+        "reason": "Yoghurt"
+    },
+    {
+        "date": "25/01/2024",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Breakfast"
+    },
+    {
+        "date": "25/01/2024",
+        "amount": 110.0,
+        "category": null,
+        "reason": "Treat for denna"
+    },
+    {
+        "date": "27/01/2024",
+        "amount": 239.0,
+        "category": null,
+        "reason": "Jio recharge"
+    },
+    {
+        "date": "19/03/2024",
+        "amount": 160.0,
+        "category": null,
+        "reason": "Movie ticket"
+    },
+    {
+        "date": "19/03/2024",
+        "amount": 130.0,
+        "category": null,
+        "reason": "Popcorn"
+    },
+    {
+        "date": "19/03/2024",
+        "amount": 156.0,
+        "category": null,
+        "reason": "Food - chicking"
+    },
+    {
+        "date": "16/04/2024",
+        "amount": 55.0,
+        "category": null,
+        "reason": "Yoghurt"
+    },
+    {
+        "date": "17/04/2024",
+        "amount": 310.0,
+        "category": null,
+        "reason": "Food - baby cafe"
+    },
+    {
+        "date": "18/04/2024",
+        "amount": 90.0,
+        "category": null,
+        "reason": "Food for denna as My birthday treat"
+    },
+    {
+        "date": "18/04/2024",
+        "amount": 924.0,
+        "category": null,
+        "reason": "Food - Voyager"
+    },
+    {
+        "date": "19/04/2024",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "19/04/2024",
+        "amount": 126.0,
+        "category": null,
+        "reason": "Food - Hungry plates"
+    },
+    {
+        "date": "19/04/2024",
+        "amount": 65.0,
+        "category": null,
+        "reason": "Food - choco brown"
+    },
+    {
+        "date": "19/04/2024",
+        "amount": 80.0,
+        "category": null,
+        "reason": "Food - seetha devi"
+    },
+    {
+        "date": "19/04/2024",
+        "amount": 324.0,
+        "category": null,
+        "reason": "Food - Taquitos"
+    },
+    {
+        "date": "19/04/2024",
+        "amount": 413.2,
+        "category": null,
+        "reason": "Petrol - Scooter"
+    },
+    {
+        "date": "20/04/2024",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Ice cream for denna"
+    },
+    {
+        "date": "21/04/2024",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "22/04/2024",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Oh my cake - Treat for Denna"
+    },
+    {
+        "date": "22/04/2024",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "22/04/2024",
+        "amount": 135.0,
+        "category": null,
+        "reason": "Dermatology log book"
+    },
+    {
+        "date": "22/04/2024",
+        "amount": 80.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "23/04/2024",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "23/04/2024",
+        "amount": 175.96,
+        "category": null,
+        "reason": "Movie ticket - aavesham"
+    },
+    {
+        "date": "23/04/2024",
+        "amount": 25.0,
+        "category": null,
+        "reason": "Popcorn"
+    },
+    {
+        "date": "23/04/2024",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Food - uncles"
+    },
+    {
+        "date": "23/04/2024",
+        "amount": 61.8,
+        "category": null,
+        "reason": "Muvattupuzha fest ticket"
+    },
+    {
+        "date": "23/04/2024",
+        "amount": 190.0,
+        "category": null,
+        "reason": "Food - cafe brownie"
+    },
+    {
+        "date": "24/04/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Chips"
+    },
+    {
+        "date": "24/04/2024",
+        "amount": 35.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "24/04/2024",
+        "amount": 239.0,
+        "category": null,
+        "reason": "Jio recharge"
+    },
+    {
+        "date": "24/04/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Food - snoosh"
+    },
+    {
+        "date": "25/04/2024",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "25/04/2024",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "25/04/2024",
+        "amount": 199.0,
+        "category": null,
+        "reason": "Vi recharge"
+    },
+    {
+        "date": "25/04/2024",
+        "amount": 497.0,
+        "category": null,
+        "reason": "Fruits for dubai"
+    },
+    {
+        "date": "25/04/2024",
+        "amount": 110.0,
+        "category": null,
+        "reason": "Bakery items for dubai"
+    },
+    {
+        "date": "26/04/2024",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Banana chips"
+    },
+    {
+        "date": "26/04/2024",
+        "amount": 349.0,
+        "category": null,
+        "reason": "Food - burger king"
+    },
+    {
+        "date": "29/04/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Union jersey price"
+    },
+    {
+        "date": "01/05/2024",
+        "amount": 180.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "01/05/2024",
+        "amount": 2000.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "01/05/2024",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Biscuits"
+    },
+    {
+        "date": "02/05/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Sting"
+    },
+    {
+        "date": "02/05/2024",
+        "amount": 310.0,
+        "category": null,
+        "reason": "Food - baby cafe"
+    },
+    {
+        "date": "03/05/2024",
+        "amount": 65.0,
+        "category": null,
+        "reason": "Food - seetha devi"
+    },
+    {
+        "date": "06/05/2024",
+        "amount": 3325.0,
+        "category": null,
+        "reason": "Namitha"
+    },
+    {
+        "date": "10/05/2024",
+        "amount": 747.0,
+        "category": null,
+        "reason": "Food - persian table"
+    },
+    {
+        "date": "11/05/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Food - ohmycake"
+    },
+    {
+        "date": "12/05/2024",
+        "amount": 379.72,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "15/05/2024",
+        "amount": 820.0,
+        "category": null,
+        "reason": "Kennedy textiles"
+    },
+    {
+        "date": "16/05/2024",
+        "amount": 1276.0,
+        "category": null,
+        "reason": "Suzuki insurance renewal"
+    },
+    {
+        "date": "17/05/2024",
+        "amount": 600.0,
+        "category": null,
+        "reason": "Tailor - pants stitching"
+    },
+    {
+        "date": "24/05/2024",
+        "amount": 1099.0,
+        "category": null,
+        "reason": "Scrubs"
+    },
+    {
+        "date": "24/05/2024",
+        "amount": 55.0,
+        "category": null,
+        "reason": "Chapatti for appa"
+    },
+    {
+        "date": "25/05/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Sting"
+    },
+    {
+        "date": "26/05/2024",
+        "amount": 2.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "26/05/2024",
+        "amount": 250.0,
+        "category": null,
+        "reason": "Food - Grand"
+    },
+    {
+        "date": "27/05/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Sting"
+    },
+    {
+        "date": "27/05/2024",
+        "amount": 12.0,
+        "category": null,
+        "reason": "Bru coffee"
+    },
+    {
+        "date": "28/05/2024",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Reliance"
+    },
+    {
+        "date": "28/05/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Food - Kedaram"
+    },
+    {
+        "date": "29/05/2024",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Cream bun"
+    },
+    {
+        "date": "29/05/2024",
+        "amount": 100.0,
+        "category": null,
+        "reason": "Appstore purchase"
+    },
+    {
+        "date": "30/05/2024",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Cream bun"
+    },
+    {
+        "date": "30/05/2024",
+        "amount": 240.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "30/05/2024",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Tang"
+    },
+    {
+        "date": "31/05/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Sting"
+    },
+    {
+        "date": "01/06/2024",
+        "amount": 120.0,
+        "category": null,
+        "reason": "6th sem - sem tag"
+    },
+    {
+        "date": "01/06/2024",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "01/06/2024",
+        "amount": 22.0,
+        "category": null,
+        "reason": "BR bakery"
+    },
+    {
+        "date": "01/06/2024",
+        "amount": 45.0,
+        "category": null,
+        "reason": "Food - snoosh"
+    },
+    {
+        "date": "01/06/2024",
+        "amount": 189.0,
+        "category": null,
+        "reason": "Food - club arabia"
+    },
+    {
+        "date": "02/06/2024",
+        "amount": 409.26,
+        "category": null,
+        "reason": "Petrol - scooter"
+    },
+    {
+        "date": "02/06/2024",
+        "amount": 358.0,
+        "category": null,
+        "reason": "Food - Mcdonalds"
+    },
+    {
+        "date": "03/06/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "03/06/2024",
+        "amount": 22.0,
+        "category": null,
+        "reason": "BR bakery"
+    },
+    {
+        "date": "03/06/2024",
+        "amount": 637.0,
+        "category": null,
+        "reason": "Food - Taquitos"
+    },
+    {
+        "date": "03/06/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Tang"
+    },
+    {
+        "date": "04/06/2024",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "05/06/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "05/06/2024",
+        "amount": 286.0,
+        "category": null,
+        "reason": "Food - grand"
+    },
+    {
+        "date": "06/06/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Food - curry tree"
+    },
+    {
+        "date": "06/06/2024",
+        "amount": 18.0,
+        "category": null,
+        "reason": "Food - memorice"
+    },
+    {
+        "date": "06/06/2024",
+        "amount": 36.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "06/06/2024",
+        "amount": 35.0,
+        "category": null,
+        "reason": "Banana"
+    },
+    {
+        "date": "06/06/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Food - kedaram"
+    },
+    {
+        "date": "07/06/2024",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Bus ticket"
+    },
+    {
+        "date": "07/06/2024",
+        "amount": 70.0,
+        "category": null,
+        "reason": "Autorickshaw"
+    },
+    {
+        "date": "07/06/2024",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "07/06/2024",
+        "amount": 8000.0,
+        "category": null,
+        "reason": "Car repair Pattimatom"
+    },
+    {
+        "date": "08/06/2024",
+        "amount": 200.0,
+        "category": null,
+        "reason": "Petrol - scooter"
+    },
+    {
+        "date": "08/06/2024",
+        "amount": 693.0,
+        "category": null,
+        "reason": "Food - burger junction"
+    },
+    {
+        "date": "09/06/2024",
+        "amount": 170.0,
+        "category": null,
+        "reason": "Ohmycake treat for Denna's family"
+    },
+    {
+        "date": "09/06/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Tang"
+    },
+    {
+        "date": "09/06/2024",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "09/06/2024",
+        "amount": 25999.5,
+        "category": null,
+        "reason": "Marrow"
+    },
+    {
+        "date": "10/06/2024",
+        "amount": 620.0,
+        "category": null,
+        "reason": "Clothes for amma"
+    },
+    {
+        "date": "10/06/2024",
+        "amount": 44.0,
+        "category": null,
+        "reason": "BR bakery"
+    },
+    {
+        "date": "10/06/2024",
+        "amount": 110.0,
+        "category": null,
+        "reason": "Food - cafeteria"
+    },
+    {
+        "date": "10/06/2024",
+        "amount": 24.0,
+        "category": null,
+        "reason": "Anns - coffee"
+    },
+    {
+        "date": "11/06/2024",
+        "amount": 226.0,
+        "category": null,
+        "reason": "Food - chicky wok"
+    },
+    {
+        "date": "12/06/2024",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "12/06/2024",
+        "amount": 595.0,
+        "category": null,
+        "reason": "Groceries for amma"
+    },
+    {
+        "date": "12/06/2024",
+        "amount": 225.0,
+        "category": null,
+        "reason": "Sugar machine strips"
+    },
+    {
+        "date": "13/06/2024",
+        "amount": 220.0,
+        "category": null,
+        "reason": "Banana chips for appa"
+    },
+    {
+        "date": "13/06/2024",
+        "amount": 349.0,
+        "category": null,
+        "reason": "Food - burger king"
+    },
+    {
+        "date": "19/06/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "19/06/2024",
+        "amount": 730.0,
+        "category": null,
+        "reason": "Food - burger junction"
+    },
+    {
+        "date": "20/06/2024",
+        "amount": 700.0,
+        "category": null,
+        "reason": "Namitha appointment"
+    },
+    {
+        "date": "20/06/2024",
+        "amount": 2195.0,
+        "category": null,
+        "reason": "Medicines"
+    },
+    {
+        "date": "20/06/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Petrol - scooter"
+    },
+    {
+        "date": "20/06/2024",
+        "amount": 239.0,
+        "category": null,
+        "reason": "Jio recharge"
+    },
+    {
+        "date": "21/06/2024",
+        "amount": 2000.0,
+        "category": null,
+        "reason": "Diesel - car"
+    },
+    {
+        "date": "21/06/2024",
+        "amount": 293.5,
+        "category": null,
+        "reason": "Food - paragon"
+    },
+    {
+        "date": "21/06/2024",
+        "amount": 9.28,
+        "category": null,
+        "reason": "Jengar fee"
+    },
+    {
+        "date": "23/06/2024",
+        "amount": 23.0,
+        "category": null,
+        "reason": "Bus ticket"
+    },
+    {
+        "date": "23/06/2024",
+        "amount": 346.0,
+        "category": null,
+        "reason": "Food - club arabia"
+    },
+    {
+        "date": "24/06/2024",
+        "amount": 32.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "25/06/2024",
+        "amount": 17.0,
+        "category": null,
+        "reason": "Medicines"
+    },
+    {
+        "date": "25/06/2024",
+        "amount": 109.0,
+        "category": null,
+        "reason": "Food - grand"
+    },
+    {
+        "date": "26/06/2024",
+        "amount": 240.9,
+        "category": null,
+        "reason": "Vi recharge"
+    },
+    {
+        "date": "27/06/2024",
+        "amount": 24.0,
+        "category": null,
+        "reason": "Bru coffee"
+    },
+    {
+        "date": "27/06/2024",
+        "amount": 110.0,
+        "category": null,
+        "reason": "Food - cafeteria"
+    },
+    {
+        "date": "28/06/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Lost"
+    },
+    {
+        "date": "28/06/2024",
+        "amount": 125.0,
+        "category": null,
+        "reason": "Redbull"
+    },
+    {
+        "date": "28/06/2024",
+        "amount": 336.0,
+        "category": null,
+        "reason": "Food - Grand"
+    },
+    {
+        "date": "28/06/2024",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "29/06/2024",
+        "amount": 35.0,
+        "category": null,
+        "reason": "Food for habel"
+    },
+    {
+        "date": "29/06/2024",
+        "amount": 240.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "30/06/2024",
+        "amount": 145.0,
+        "category": null,
+        "reason": "Train ticket - to kozhikode"
+    },
+    {
+        "date": "30/06/2024",
+        "amount": 142.8,
+        "category": null,
+        "reason": "Train ticket - from kozhikode"
+    },
+    {
+        "date": "30/06/2024",
+        "amount": 731.25,
+        "category": null,
+        "reason": "Kozhikode Rental car fee"
+    },
+    {
+        "date": "30/06/2024",
+        "amount": 28.0,
+        "category": null,
+        "reason": "Bru coffee"
+    },
+    {
+        "date": "30/06/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Zomato gold renewal"
+    },
+    {
+        "date": "01/07/2024",
+        "amount": 135.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "01/07/2024",
+        "amount": 155.0,
+        "category": null,
+        "reason": "Food - baby cafe"
+    },
+    {
+        "date": "02/07/2024",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "02/07/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "03/07/2024",
+        "amount": 69.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "04/07/2024",
+        "amount": 606.55,
+        "category": null,
+        "reason": "Groceries for amma"
+    },
+    {
+        "date": "04/07/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Breakfast for amma"
+    },
+    {
+        "date": "04/07/2024",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Anna"
+    },
+    {
+        "date": "04/07/2024",
+        "amount": 108.9,
+        "category": null,
+        "reason": "BSNL recharge for amma"
+    },
+    {
+        "date": "05/07/2024",
+        "amount": 18.0,
+        "category": null,
+        "reason": "Food - Royal bakery"
+    },
+    {
+        "date": "05/07/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Water"
+    },
+    {
+        "date": "05/07/2024",
+        "amount": 18.0,
+        "category": null,
+        "reason": "Food - royal bakers"
+    },
+    {
+        "date": "05/07/2024",
+        "amount": 299.0,
+        "category": null,
+        "reason": "VI sim bought and recharge for amma"
+    },
+    {
+        "date": "05/07/2024",
+        "amount": 200.0,
+        "category": null,
+        "reason": "Sara photos print"
+    },
+    {
+        "date": "05/07/2024",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Batteries for home"
+    },
+    {
+        "date": "06/07/2024",
+        "amount": 200.0,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "08/07/2024",
+        "amount": 24.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "08/07/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "09/07/2024",
+        "amount": 450.0,
+        "category": null,
+        "reason": "OBG record and log book"
+    },
+    {
+        "date": "09/07/2024",
+        "amount": 312.5,
+        "category": null,
+        "reason": "Food - mings wok"
+    },
+    {
+        "date": "09/07/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Lime"
+    },
+    {
+        "date": "10/07/2024",
+        "amount": 800.0,
+        "category": null,
+        "reason": "Jio porting"
+    },
+    {
+        "date": "11/07/2024",
+        "amount": 200.0,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "11/07/2024",
+        "amount": 65.0,
+        "category": null,
+        "reason": "Notebook"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 33.0,
+        "category": null,
+        "reason": "Bus ticket to ernakulam south"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 90.0,
+        "category": null,
+        "reason": "Kozhikode train station ac room charge"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Tea"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 3.75,
+        "category": null,
+        "reason": "Kozhikode pay and park"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 18.75,
+        "category": null,
+        "reason": "Kozhikode auto"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 110.0,
+        "category": null,
+        "reason": "Food - mozon broast"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 93.0,
+        "category": null,
+        "reason": "Food - hotel aryas"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 7.5,
+        "category": null,
+        "reason": "Water"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 225.0,
+        "category": null,
+        "reason": "Rental car diesel"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Metro ticket"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 155.0,
+        "category": null,
+        "reason": "Sweets - kozhikode"
+    },
+    {
+        "date": "13/07/2024",
+        "amount": 47.5,
+        "category": null,
+        "reason": "Food - pink caffe"
+    },
+    {
+        "date": "16/07/2024",
+        "amount": 240.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "16/07/2024",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Chips"
+    },
+    {
+        "date": "23/07/2024",
+        "amount": 305.0,
+        "category": null,
+        "reason": "Food - malabar grills"
+    },
+    {
+        "date": "23/07/2024",
+        "amount": 305.5,
+        "category": null,
+        "reason": "Dark kiss perfume gift for denna"
+    },
+    {
+        "date": "25/07/2024",
+        "amount": 16.0,
+        "category": null,
+        "reason": "Eggs"
+    },
+    {
+        "date": "25/07/2024",
+        "amount": 1100.0,
+        "category": null,
+        "reason": "Bodyzone gym - 1 month fees"
+    },
+    {
+        "date": "25/07/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "26/07/2024",
+        "amount": 439.0,
+        "category": null,
+        "reason": "Food - malabar grills"
+    },
+    {
+        "date": "26/07/2024",
+        "amount": 120.0,
+        "category": null,
+        "reason": "Royal bakery food for denna"
+    },
+    {
+        "date": "27/07/2024",
+        "amount": 240.0,
+        "category": null,
+        "reason": "Food - mandhi souk"
+    },
+    {
+        "date": "27/07/2024",
+        "amount": 37.5,
+        "category": null,
+        "reason": "Food - oh my cake"
+    },
+    {
+        "date": "27/07/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "02/08/2024",
+        "amount": 157.0,
+        "category": null,
+        "reason": "Soup for amma"
+    },
+    {
+        "date": "05/08/2024",
+        "amount": 1229.0,
+        "category": null,
+        "reason": "Food for guests"
+    },
+    {
+        "date": "06/08/2024",
+        "amount": 16.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "07/08/2024",
+        "amount": 1500.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "07/08/2024",
+        "amount": 399.0,
+        "category": null,
+        "reason": "Food - ali baba and the 51 dishes"
+    },
+    {
+        "date": "13/08/2024",
+        "amount": 535.0,
+        "category": null,
+        "reason": "Medicines for amma"
+    },
+    {
+        "date": "21/08/2024",
+        "amount": 380.0,
+        "category": null,
+        "reason": "Community medicine record"
+    },
+    {
+        "date": "27/08/2024",
+        "amount": 115.0,
+        "category": null,
+        "reason": "Food - royal bakers"
+    },
+    {
+        "date": "27/08/2024",
+        "amount": 85.0,
+        "category": null,
+        "reason": "Food - oh my cake"
+    },
+    {
+        "date": "27/08/2024",
+        "amount": 570.0,
+        "category": null,
+        "reason": "Photocopy and scan for amma"
+    },
+    {
+        "date": "29/08/2024",
+        "amount": 2000.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "29/08/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Jio porting for Amma"
+    },
+    {
+        "date": "29/08/2024",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Vi recharge for amma"
+    },
+    {
+        "date": "29/08/2024",
+        "amount": 90.0,
+        "category": null,
+        "reason": "Food - royal bakers"
+    },
+    {
+        "date": "29/08/2024",
+        "amount": 12.0,
+        "category": null,
+        "reason": "Tea"
+    },
+    {
+        "date": "30/08/2024",
+        "amount": 209.0,
+        "category": null,
+        "reason": "Food - mexican golden chicken"
+    },
+    {
+        "date": "30/08/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Food - scandy"
+    },
+    {
+        "date": "01/09/2024",
+        "amount": 500.0,
+        "category": null,
+        "reason": "Aster econsult for amma"
+    },
+    {
+        "date": "01/09/2024",
+        "amount": 210.0,
+        "category": null,
+        "reason": "Breakfast for amma"
+    },
+    {
+        "date": "01/09/2024",
+        "amount": 207.9,
+        "category": null,
+        "reason": "Food - KFC"
+    },
+    {
+        "date": "02/09/2024",
+        "amount": 270.0,
+        "category": null,
+        "reason": "Food - Pitaworks"
+    },
+    {
+        "date": "04/09/2024",
+        "amount": 14.0,
+        "category": null,
+        "reason": "Food - Seetha devi"
+    },
+    {
+        "date": "05/09/2024",
+        "amount": 10.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "05/09/2024",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Food - Royal bakers"
+    },
+    {
+        "date": "05/09/2024",
+        "amount": 371.7,
+        "category": null,
+        "reason": "Reliance shopping"
+    },
+    {
+        "date": "07/09/2024",
+        "amount": 65.0,
+        "category": null,
+        "reason": "Food - Malabar Grills"
+    },
+    {
+        "date": "10/09/2024",
+        "amount": 252.0,
+        "category": null,
+        "reason": "Food - District 7"
+    },
+    {
+        "date": "10/09/2024",
+        "amount": 60.0,
+        "category": null,
+        "reason": "Stationary items - coloured paper"
+    },
+    {
+        "date": "10/09/2024",
+        "amount": 241.55,
+        "category": null,
+        "reason": "Reliance shopping"
+    },
+    {
+        "date": "11/09/2024",
+        "amount": 25.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "22/09/2024",
+        "amount": 882.0,
+        "category": null,
+        "reason": "Yatri taxi"
+    },
+    {
+        "date": "22/09/2024",
+        "amount": 80.0,
+        "category": null,
+        "reason": "Groceries"
+    },
+    {
+        "date": "24/09/2024",
+        "amount": 50.0,
+        "category": null,
+        "reason": "Plastic disposal from panchayat"
+    },
+    {
+        "date": "25/09/2024",
+        "amount": 2900.0,
+        "category": null,
+        "reason": "Bodyzone new gym membership + 2 months (till December included)"
+    },
+    {
+        "date": "02/10/2024",
+        "amount": 1000.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "03/10/2024",
+        "amount": 1500.0,
+        "category": null,
+        "reason": "Diesel"
+    },
+    {
+        "date": "08/10/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "16/10/2024",
+        "amount": 125.0,
+        "category": null,
+        "reason": "Monster drink"
+    },
+    {
+        "date": "19/10/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "22/10/2024",
+        "amount": 200.0,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "30/10/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "31/10/2024",
+        "amount": 110.0,
+        "category": null,
+        "reason": "Anns"
+    },
+    {
+        "date": "31/10/2024",
+        "amount": 52.25,
+        "category": null,
+        "reason": "Food - chocobae"
+    },
+    {
+        "date": "31/10/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "31/10/2024",
+        "amount": 341.0,
+        "category": null,
+        "reason": "Food - burger junction"
+    },
+    {
+        "date": "01/11/2024",
+        "amount": 350.9,
+        "category": null,
+        "reason": "Jio recharge"
+    },
+    {
+        "date": "03/11/2024",
+        "amount": 362.36,
+        "category": null,
+        "reason": "Train ticket"
+    },
+    {
+        "date": "04/11/2024",
+        "amount": 20.0,
+        "category": null,
+        "reason": "Water"
+    },
+    {
+        "date": "04/11/2024",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Amma's shopping"
+    },
+    {
+        "date": "05/11/2024",
+        "amount": 4000.0,
+        "category": null,
+        "reason": "Mess bill paid"
+    },
+    {
+        "date": "05/11/2024",
+        "amount": 30.0,
+        "category": null,
+        "reason": "Food - scandy"
+    },
+    {
+        "date": "05/11/2024",
+        "amount": 40.0,
+        "category": null,
+        "reason": "Food - royal bakers"
+    },
+    {
+        "date": "09/11/2024",
+        "amount": 390.0,
+        "category": null,
+        "reason": "Food - shawarma daddy"
+    },
+    {
+        "date": "09/11/2024",
+        "amount": 300.0,
+        "category": null,
+        "reason": "Petrol"
+    },
+    {
+        "date": "19/12/2024",
+        "amount": 10.0,
+        "category": "groceries",
+        "reason": "chips"
+    },
+    {
+        "date": "19/12/2024",
+        "amount": 300.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "20/12/2024",
+        "amount": 125.0,
+        "category": "groceries",
+        "reason": "redbull"
+    },
+    {
+        "date": "22/12/2024",
+        "amount": 1000.0,
+        "category": "transportation",
+        "reason": "saneesh auto - to airport"
+    },
+    {
+        "date": "29/12/2024",
+        "amount": 1.0,
+        "category": "denna's treat",
+        "reason": "donation"
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 30.0,
+        "category": "groceries",
+        "reason": null
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 30.0,
+        "category": "food",
+        "reason": "royal bakers, lime"
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 30.0,
+        "category": "denna's treat",
+        "reason": "royal bakers, lime"
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 60.4,
+        "category": "food",
+        "reason": "chaat"
+    },
+    {
+        "date": "31/12/2024",
+        "amount": 300.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "01/01/2025",
+        "amount": 125.0,
+        "category": "food",
+        "reason": "redbull"
+    },
+    {
+        "date": "01/01/2025",
+        "amount": 30.0,
+        "category": "food",
+        "reason": "royal bakers"
+    },
+    {
+        "date": "02/01/2025",
+        "amount": 120.0,
+        "category": "groceries",
+        "reason": "redbull"
+    },
+    {
+        "date": "02/01/2025",
+        "amount": 164.0,
+        "category": "food",
+        "reason": "club arabia"
+    },
+    {
+        "date": "03/01/2025",
+        "amount": 200.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "03/01/2025",
+        "amount": 3575.0,
+        "category": "medical",
+        "reason": "namitha"
+    },
+    {
+        "date": "04/01/2025",
+        "amount": 65.0,
+        "category": "food",
+        "reason": "chaat"
+    },
+    {
+        "date": "06/01/2025",
+        "amount": 476.0,
+        "category": null,
+        "reason": "habel's sister wedding gift"
+    },
+    {
+        "date": "07/01/2025",
+        "amount": 1905.0,
+        "category": "college",
+        "reason": "3rd year uni exam fees"
+    },
+    {
+        "date": "07/01/2025",
+        "amount": 40.0,
+        "category": "treat",
+        "reason": "asish"
+    },
+    {
+        "date": "07/01/2025",
+        "amount": 40.0,
+        "category": "food",
+        "reason": "cafeteria lime"
+    },
+    {
+        "date": "08/01/2025",
+        "amount": 50.0,
+        "category": "denna's treat",
+        "reason": null
+    },
+    {
+        "date": "09/01/2025",
+        "amount": 240.0,
+        "category": "food",
+        "reason": "mandhi souk"
+    },
+    {
+        "date": "10/01/2025",
+        "amount": 40.0,
+        "category": "college",
+        "reason": "ophthal elective logbook binding"
+    },
+    {
+        "date": "10/01/2025",
+        "amount": 104.0,
+        "category": "denna's treat",
+        "reason": "anns"
+    },
+    {
+        "date": "11/01/2025",
+        "amount": 221.0,
+        "category": "transportation",
+        "reason": "joel benoy's diesel"
+    },
+    {
+        "date": "12/01/2025",
+        "amount": 235.0,
+        "category": "denna's treat",
+        "reason": null
+    }
+]
