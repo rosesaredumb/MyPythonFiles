@@ -97,7 +97,7 @@ class ExpenseTracker:
         self.expenses.append(expense)
         self.save_expenses()
         self.mprint("Expense added successfully!", 2)
-        print(f"Date: {date}\nAmount: {amount}\nCategory: {category or '>no category<'}\nReason: {reason or '>no reason<'}")
+        print(f"Date: {date}\nAmount: {amount:.2f}\nCategory: {category or '>no category<'}\nReason: {reason or '>no reason<'}")
 
     def view_expenses(self, num_expenses: int):
         """
@@ -276,7 +276,7 @@ class ExpenseTracker:
                     deleted_expense = self.expenses.pop(actual_index)
                     self.save_expenses()
                     self.categories = self.get_all_categories()
-                    print(f"Deleted entry: Date: {deleted_expense['date']}, Amount: {deleted_expense['amount']}")
+                    print(f"Deleted entry: Date: {deleted_expense['date']}, Amount: {deleted_expense['amount']:.2f}")
                     return
                 else:
                     print(f"Invalid index! Enter a number between 1 and {len(recent_expenses)}.")
@@ -403,6 +403,9 @@ class ExpenseTracker:
                             self.mprint("Please enter a positive number.", 3)
                     except ValueError:
                         self.mprint("Invalid input! Please enter a valid number.", 3)
+
+            elif choice == "6":
+                self.get_total_entries()
                 
             else:
                 self.mprint("Invalid choice! Please try again.", 3)
