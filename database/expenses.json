@@ -7957,12 +7957,6 @@
     },
     {
         "date": "13/01/2025",
-        "amount": 392.0,
-        "category": "food",
-        "reason": "malabar grills"
-    },
-    {
-        "date": "13/01/2025",
         "amount": 80.0,
         "category": "denna's treat",
         "reason": "anns"
@@ -7972,6 +7966,18 @@
         "amount": 20.0,
         "category": "groceries",
         "reason": "juice"
+    },
+    {
+        "date": "13/01/2025",
+        "amount": 150.0,
+        "category": "denna's treat",
+        "reason": "malabar grills, romantic replay"
+    },
+    {
+        "date": "13/01/2025",
+        "amount": 387.0,
+        "category": "food",
+        "reason": "malabar grills, along with amma's parcel"
     },
     {
         "date": "14/01/2025",
@@ -8050,5 +8056,11 @@
         "amount": 194.34,
         "category": "food",
         "reason": "burger junction"
+    },
+    {
+        "date": "17/01/2025",
+        "amount": 83.28,
+        "category": "denna's treat",
+        "reason": "diesel refund"
     }
 ]

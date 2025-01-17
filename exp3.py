@@ -171,11 +171,11 @@ class ExpenseTracker:
 
     def get_specific_month_expenses(self, month_year_input: str = ""):
         """
-        Get the total expenses and expenses grouped by category for a specific month and year.
+        Get the total expenses, number of entries, and expenses grouped by category for a specific month and year.
         If no input is provided, use the current month and year.
         Also display the percentage contribution of each category to the total expenses.
         :param month_year_input: Input in formats like 'mm/yyyy', 'mm yy', 'mm,yy', 'mm' (current year assumed).
-        :return: Total expenses and a dictionary of expenses grouped by category.
+        :return: Total expenses, number of entries, and a dictionary of expenses grouped by category.
         """
         try:
             # Default to current month and year if no input is provided
@@ -203,6 +203,7 @@ class ExpenseTracker:
 
             # Initialize category-wise expenses dictionary
             category_expenses = {}
+            num_entries = 0  # Initialize entry counter
 
             # Calculate total and category-wise expenses
             total_expenses = 0.0
@@ -212,11 +213,13 @@ class ExpenseTracker:
                     total_expenses += expense["amount"]
                     category = expense["category"] or ">no category<"  # Replace None or empty category
                     category_expenses[category] = category_expenses.get(category, 0) + expense["amount"]
+                    num_entries += 1  # Increment entry counter
+
             total_expenses = round(total_expenses, 2)
             sorted_categories = sorted(category_expenses.items(), key=lambda x: x[1], reverse=True)
 
             # Display results
-            print(f"Expense breakdown for {str(month).zfill(2)}/{year}:\n")
+            print(f"Expense breakdown for {str(month).zfill(2)}/{year} (entries: {num_entries}):\n")
             print(f"{'Category':<20}  {'Amount':>10}  {'Percentage':>10}")
             print("-" * 60)
             for category, amount in sorted_categories:
@@ -225,11 +228,11 @@ class ExpenseTracker:
             print("-" * 60)
             print(f"{'Total':<20}  {total_expenses:>10.2f}")
 
-            return total_expenses, dict(sorted_categories)
+            return total_expenses, num_entries, dict(sorted_categories)
 
         except (ValueError, IndexError):
             self.mprint("Invalid input format! Please provide 'mm/yyyy', 'mm yy', 'mm,yy', or 'mm'.", 3)
-            return 0.0, {}
+            return 0.0, 0, {}
 
     def get_total_entries(self):
         """
@@ -241,7 +244,7 @@ class ExpenseTracker:
 
     def delete_recent_entry(self):
         """
-        Delete an expense from the most recent 10 entries.
+        Delete an expense from the most recent 20 entries.
         """
         # Check if there are any expenses
         if not self.expenses:
@@ -249,7 +252,7 @@ class ExpenseTracker:
             return
 
         # Get the last 10 entries
-        recent_expenses = self.expenses[-10:]
+        recent_expenses = self.expenses[-20:]
 
         # Display the recent 10 entries
         print("\nMost Recent 10 Entries (or fewer):")
@@ -266,7 +269,7 @@ class ExpenseTracker:
         # Ask the user to select an entry to delete
         while True:
             try:
-                index = int(input("Enter the index of the entry to delete (1-10) or 0 to cancel: ").strip())
+                index = int(input("Enter the index of the entry to delete (1-20) or 0 to cancel: ").strip())
                 if index == 0:
                     print("Deletion canceled.")
                     return
