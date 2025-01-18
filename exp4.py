@@ -4,7 +4,7 @@ import re
 from globals import expenses_db_json_path, clear_console
 from typing import Literal
 from dateutil.relativedelta import relativedelta
-
+import inspect
 
 class ExpenseTracker:
 
@@ -90,7 +90,7 @@ class ExpenseTracker:
         return sorted(categories)
 
     def add_expense(self):
-        """Add a new expense entry."""
+        """Add a new expense entry"""
         while True:
             date_input = str(
                 self.mprint(
@@ -136,6 +136,8 @@ class ExpenseTracker:
 
     def view_expenses(self):
         """
+        View expenses
+        
         View the specified number of latest expenses or all expenses if none specified.
         Prompts the user to enter the number of latest expenses to display.
         """
@@ -229,6 +231,8 @@ class ExpenseTracker:
 
     def get_specific_month_expenses(self):
         """
+        Get expenses for a specific month
+        
         Get the total expenses, number of entries, and expenses grouped by category for a specific month and year.
         If no input is provided, use the current month and year.
         Also display the percentage contribution of each category to the total expenses.
@@ -446,41 +450,46 @@ class ExpenseTracker:
             return {}, 0, {}
 
     def run(self):
+        """Main menu to run the Expense Tracker."""
         print("Welcome to the Expense Tracker!")
         while True:
+            # Display the menu
             print("\n0. Exit")
-            print("1. Add a new expense")
-            print("2. View all expenses")
-            print("3. Delete an expense")
-            print("4. View total expenses for a specific month")
-            print("5. View total expense for the specified number of months")
+            specific_functions = self.get_specific_functions()
+            for index, (_, _, doc) in enumerate(specific_functions, start=1):
+                print(f"{index}. {doc}")
+
+            # Get user choice
             choice = input("Enter your choice: ").strip()
             clear_console()
-
+            
             if choice == "0":
-                self.mprint("Exiting the Expense Tracker. Goodbye!", 2)
+                print("Exiting the Expense Tracker. Goodbye!")
                 break
 
-            elif choice == "1":
-                self.add_expense()
+            # Handle valid function choices
+            try:
+                choice = int(choice) - 1
+                if 0 <= choice < len(specific_functions):
+                    func = specific_functions[choice][1]
+                    getattr(self, func)()  # Call the selected function
+                else:
+                    self.mprint("Invalid choice! Please try again.", 3)
+            except ValueError:
+                self.mprint("Invalid input! Please type a valid number.", 3)
 
-            elif choice == "2":
-                self.view_expenses()
+    def get_specific_functions(self):
+        """Retrieve a list of specific functions with docstrings."""
+        # Define a list of the specific functions to show in the menu
+        function_names = ['add_expense', 'view_expenses', 'get_specific_month_expenses']  # Adjust as needed
 
-            elif choice == "3":
-                self.delete_recent_entry()
-
-            elif choice == "4":
-                self.get_specific_month_expenses()
-
-            elif choice == "5":
-                self.get_monthly_expenses()
-
-            elif choice == "6":
-                self.get_total_entries()
-
-            else:
-                self.mprint("Invalid choice! Please try again.", 3)
+        functions = inspect.getmembers(self, predicate=inspect.ismethod)
+        # Filter and return only the specified functions
+        return [
+            (i, func.__name__, func.__doc__.strip().splitlines()[0] if func.__doc__ else "No description available")
+            for i, (name, func) in enumerate(functions)
+            if name in function_names  # Only include functions in the list
+        ]
 
 
 if __name__ == "__main__":

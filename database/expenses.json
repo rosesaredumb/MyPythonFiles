@@ -8068,5 +8068,11 @@
         "amount": 200.0,
         "category": null,
         "reason": "amma's expenses"
+    },
+    {
+        "date": "18/01/2025",
+        "amount": 230.0,
+        "category": "denna's treat",
+        "reason": "h"
     }
 ]
