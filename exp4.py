@@ -90,7 +90,7 @@ class ExpenseTracker:
         return sorted(categories)
 
     def add_expense(self):
-        """Add a new expense entry"""
+        """Add a new expense"""
         while True:
             date_input = str(
                 self.mprint(
@@ -103,12 +103,12 @@ class ExpenseTracker:
             self.mprint("Invalid date format! Please try again.", 3)
 
         while True:
-            amount = str(self.mprint("Enter the amount: ")).strip()
+            amount = str(self.mprint("Type the amount: ")).strip()
             formatted_amount = self.validate_amount(amount)
             if formatted_amount:
                 self.mprint(f"Amount set as: {formatted_amount:.2f}", 2)
                 break
-            self.mprint("Invalid amount! Please enter a valid number.",
+            self.mprint("Invalid amount! Please type a valid number.",
                         3)
 
         category = self.select_category()
@@ -136,7 +136,7 @@ class ExpenseTracker:
 
     def view_expenses(self):
         """
-        View expenses
+        View recent expenses
         
         View the specified number of latest expenses or all expenses if none specified.
         Prompts the user to enter the number of latest expenses to display.
@@ -231,7 +231,7 @@ class ExpenseTracker:
 
     def get_specific_month_expenses(self):
         """
-        Get expenses for a specific month
+        View total expenses for a specific month
         
         Get the total expenses, number of entries, and expenses grouped by category for a specific month and year.
         If no input is provided, use the current month and year.
@@ -318,15 +318,15 @@ class ExpenseTracker:
 
     def get_total_entries(self):
         """
-        Display the total number of expense entries stored in the tracker.
+        Display the total number of expense entries
         """
         total_entries = len(self.expenses)
-        print(f"Total number of expense entries: {total_entries}")
+        self.mprint(f"Total no.of expense entries: {total_entries}", 2)
         return total_entries
 
     def delete_recent_entry(self):
         """
-        Delete an expense from the most recent 20 entries.
+        Delete an expense from the recent 20 entries
         """
         # Check if there are any expenses
         if not self.expenses:
@@ -383,6 +383,8 @@ class ExpenseTracker:
 
     def get_monthly_expenses(self):
         """
+        View total expense for the specified number of months
+        
         Display the total expenses and the number of entries for each of the last 'num_months' months.
         Returns:
             - expenses_by_month: Dictionary with keys as (month, year) and values as total expense.
@@ -451,7 +453,7 @@ class ExpenseTracker:
 
     def run(self):
         """Main menu to run the Expense Tracker."""
-        print("Welcome to the Expense Tracker!")
+        self.mprint("Welcome to the Expense Tracker!", 2)
         while True:
             # Display the menu
             print("\n0. Exit")
@@ -464,7 +466,7 @@ class ExpenseTracker:
             clear_console()
             
             if choice == "0":
-                print("Exiting the Expense Tracker. Goodbye!")
+                self.mprint("Exiting the Expense Tracker. Goodbye!", 2)
                 break
 
             # Handle valid function choices
@@ -479,17 +481,39 @@ class ExpenseTracker:
                 self.mprint("Invalid input! Please type a valid number.", 3)
 
     def get_specific_functions(self):
-        """Retrieve a list of specific functions with docstrings."""
-        # Define a list of the specific functions to show in the menu
-        function_names = ['add_expense', 'view_expenses', 'get_specific_month_expenses']  # Adjust as needed
+        """
+        Retrieve a list of specific functions with their indices, names, and a brief description.
 
+        Returns:
+            list of tuple: A list where each tuple contains:
+                - Index (int): The position of the function in the predefined list.
+                - Function Name (str): The name of the function.
+                - Description (str): The first line of the function's docstring or a default message.
+        """
+        # Define the specific functions to retrieve
+        function_names = [
+            'add_expense', 'view_expenses', 'delete_recent_entry',
+            'get_specific_month_expenses', 'get_monthly_expenses', 'get_total_entries'
+        ]  # Adjust as needed
+
+        # Retrieve all methods of the class
         functions = inspect.getmembers(self, predicate=inspect.ismethod)
-        # Filter and return only the specified functions
-        return [
-            (i, func.__name__, func.__doc__.strip().splitlines()[0] if func.__doc__ else "No description available")
-            for i, (name, func) in enumerate(functions)
-            if name in function_names  # Only include functions in the list
-        ]
+
+        # Map function names to their objects
+        function_dict = {name: func for name, func in functions}
+
+        # Retrieve only the specific functions, maintaining the desired order
+        result = []
+        for i, name in enumerate(function_names):
+            if name in function_dict:
+                docstring = function_dict[name].__doc__
+                description = docstring.strip().splitlines()[0] if docstring else "No description available"
+                result.append((i, name, description))
+            else:
+                # Optional: Log or handle missing functions
+                pass
+
+        return result
 
 
 if __name__ == "__main__":
