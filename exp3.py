@@ -3,6 +3,7 @@ from json_functions import json_funcs
 import re
 from globals import expenses_db_json_path, clear_console
 from typing import Literal
+from dateutil.relativedelta import relativedelta
 
 
 class ExpenseTracker:
@@ -99,7 +100,7 @@ class ExpenseTracker:
         self.mprint("Expense added successfully!", 2)
         print(f"Date: {date}\nAmount: {amount:.2f}\nCategory: {category or '>no category<'}\nReason: {reason or '>no reason<'}")
 
-    def view_expenses(self, num_expenses: int):
+    def view_expenses(self):
         """
         View the specified number of latest expenses or all expenses if none specified.
         :param num_expenses: Number of latest expenses to display (default: 10 if not provided).
@@ -107,15 +108,26 @@ class ExpenseTracker:
         if not self.expenses:
             print("No expenses recorded yet.")
         else:
-            print(f"Displaying the last {num_expenses} expenses:")
-            print(f"{'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}")
-            print("-" * 80)  # Separator line
-            for expense in self.expenses[-num_expenses:]:
-                date = expense["date"]
-                amount = f"{expense['amount']:.2f}"
-                category = expense["category"] if expense["category"] else ">no category<"
-                reason = expense["reason"] if expense["reason"] else ">no reason<"
-                print(f"{date:<10} {amount:>10}    {category:<20} {reason:<30}")
+            while True:
+                try:
+                    num_expenses = str(self.mprint("Enter the number of latest expenses to view (or press Enter for default 10): ")).strip()
+                    clear_console()
+                    num_expenses = int(num_expenses) if num_expenses else 10
+                    if num_expenses > 0:
+                        print(f"Displaying the last {num_expenses} expenses:")
+                        print(f"{'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}")
+                        print("-" * 80)  # Separator line
+                        for expense in self.expenses[-num_expenses:]:
+                            date = expense["date"]
+                            amount = f"{expense['amount']:.2f}"
+                            category = expense["category"] if expense["category"] else ">no category<"
+                            reason = expense["reason"] if expense["reason"] else ">no reason<"
+                            print(f"{date:<10} {amount:>10}    {category:<20} {reason:<30}")
+                        break
+                    else:
+                        self.mprint("Please enter a positive number.", 3)
+                except ValueError:
+                    self.mprint("Invalid input! Please enter a valid number.", 3)
 
 
 
@@ -169,7 +181,7 @@ class ExpenseTracker:
                     except ValueError:
                         print("Invalid input. Try again.")
 
-    def get_specific_month_expenses(self, month_year_input: str = ""):
+    def get_specific_month_expenses(self):
         """
         Get the total expenses, number of entries, and expenses grouped by category for a specific month and year.
         If no input is provided, use the current month and year.
@@ -178,6 +190,8 @@ class ExpenseTracker:
         :return: Total expenses, number of entries, and a dictionary of expenses grouped by category.
         """
         try:
+            month_year_input = str(self.mprint("Enter the month and year (e.g., '2', '12-22', '03 2023', '4/2024'): ")).strip()
+            clear_console()
             # Default to current month and year if no input is provided
             if not month_year_input.strip():
                 month = datetime.now().month
@@ -286,47 +300,68 @@ class ExpenseTracker:
             except ValueError:
                 print("Invalid input! Please enter a valid number.")
 
-    def get_monthly_expenses(self, num_months: int):
+    def get_monthly_expenses(self):
         """
-        Display the total expenses for each of the last 'num_months' months.
-        :param num_months: Number of past months to show. Defaults to 12.
+        Display the total expenses and the number of entries for each of the last 'num_months' months.
+        Returns:
+            - expenses_by_month: Dictionary with keys as (month, year) and values as total expense.
+            - total_sum: Total of all expenses in the last 'num_months' months.
+            - entries_by_month: Dictionary with keys as (month, year) and values as the count of entries.
         """
         if not self.expenses:
             print("No expenses recorded yet.")
-        else:
-            current_date = datetime.now()
-            expenses_by_month = {}
+            return {}, 0, {}
 
-            # Calculate the previous months and initialize their totals
-            for i in range(num_months):
-                previous_date = current_date - timedelta(days=i * 30)  # Approximate 1 month as 30 days
-                month = previous_date.month
-                year = previous_date.year
-                expenses_by_month[(month, year)] = 0.0
+        while True:
+            try:
+                # Get the number of months from the user
+                num_months_input = input("Enter the number of months to view (or press Enter for default 12): ").strip()
+                num_months = int(num_months_input) if num_months_input else 12
 
-            # Calculate total expenses for each month
-            for expense in self.expenses:
-                expense_date = datetime.strptime(expense["date"], "%d/%m/%Y")
-                month_year = (expense_date.month, expense_date.year)
-                if month_year in expenses_by_month:
-                    expenses_by_month[month_year] += expense["amount"]
+                if num_months <= 0:
+                    print("Please enter a positive number.")
+                    continue
 
-            # Calculate the total sum of expenses
-            total_sum = sum(expenses_by_month.values())
+                current_date = datetime.now()
+                expenses_by_month = {}
+                entries_by_month = {}
 
-            # Prepare a sorted list of months for display (sorted in reverse chronological order)
-            sorted_months = sorted(expenses_by_month.items(), key=lambda x: (x[0][1], x[0][0]), reverse=True)
+                # Initialize months and calculate totals
+                for i in range(num_months):
+                    month_date = current_date - relativedelta(months=i)
+                    month_year = (month_date.month, month_date.year)
+                    expenses_by_month[month_year] = 0.0
+                    entries_by_month[month_year] = 0
 
-            print(f"Total expenses for the last {num_months} month(s):\n")
-            print(f"{'Month/Year':<15}  {'Amount':>10}")
-            print("-" * 30)
-            for (month, year), amount in sorted_months:
-                month_year_str = f"{str(month).zfill(2)}/{year}"
-                print(f"{month_year_str:<15}  {amount:>10.2f}")
-            print("-" * 30)
-            print(f"{'Total':<15}  {total_sum:>10.2f}")
+                # Aggregate expenses and entry counts
+                for expense in self.expenses:
+                    expense_date = datetime.strptime(expense["date"], "%d/%m/%Y")
+                    month_year = (expense_date.month, expense_date.year)
+                    if month_year in expenses_by_month:
+                        expenses_by_month[month_year] += expense["amount"]
+                        entries_by_month[month_year] += 1
 
-            return expenses_by_month, total_sum
+                # Calculate the total sum
+                total_sum = sum(expenses_by_month.values())
+
+                # Sort and display results
+                sorted_months = sorted(expenses_by_month.items(), key=lambda x: (x[0][1], x[0][0]), reverse=True)
+                print(f"Total expenses and entries for the last {num_months} month(s):\n")
+                print(f"{'Month/Year':<15}  {'Amount':>10}  {'Entries':>8}")
+                print("-" * 40)
+                for (month, year), amount in sorted_months:
+                    month_year_str = f"{str(month).zfill(2)}/{year}"
+                    num_entries = entries_by_month.get((month, year), 0)
+                    print(f"{month_year_str:<15}  {amount:>10.2f}  {num_entries:>8}")
+                print("-" * 40)
+                print(f"{'Total':<15}  {total_sum:>10.2f}")
+
+                return expenses_by_month, total_sum, entries_by_month
+            except ValueError:
+                print("Invalid input. Please enter a positive integer for the number of months.")
+            except Exception as e:
+                print(f"An unexpected error occurred: {e}")
+                return {}, 0, {}
 
 
     
@@ -372,40 +407,16 @@ class ExpenseTracker:
                 self.add_expense(corrected_date, formatted_amount, category, reason)
                 
             elif choice == "2":
-                while True:
-                    try:
-                        num_expenses = str(self.mprint("Enter the number of latest expenses to view (or press Enter for default 10): ")).strip()
-                        clear_console()
-                        num_expenses = int(num_expenses) if num_expenses else 10
-                        if num_expenses > 0:
-                            self.view_expenses(num_expenses)
-                            break
-                        else:
-                            self.mprint("Please enter a positive number.", 3)
-                    except ValueError:
-                        self.mprint("Invalid input! Please enter a valid number.", 3)
+                self.view_expenses()
                         
             elif choice == "3":
                 self.delete_recent_entry()
                     
             elif choice == "4":
-                month_year = str(self.mprint("Enter the month and year (e.g., '2', '12-22', '03 2023', '4/2024'): ")).strip()
-                clear_console()
-                self.get_specific_month_expenses(month_year)
+                self.get_specific_month_expenses()
 
             elif choice == "5":
-                while True:
-                    try:
-                        num_of_months = str(self.mprint("Enter the number of months to view (or press Enter for default 12): ")).strip()
-                        clear_console()
-                        num_expenses = int(num_of_months) if num_of_months else 12
-                        if num_expenses > 0:
-                            self.get_monthly_expenses(num_expenses)
-                            break
-                        else:
-                            self.mprint("Please enter a positive number.", 3)
-                    except ValueError:
-                        self.mprint("Invalid input! Please enter a valid number.", 3)
+                self.get_monthly_expenses()
 
             elif choice == "6":
                 self.get_total_entries()

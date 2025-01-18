@@ -7954,5 +7954,119 @@
         "amount": 235.0,
         "category": "denna's treat",
         "reason": null
+    },
+    {
+        "date": "13/01/2025",
+        "amount": 80.0,
+        "category": "denna's treat",
+        "reason": "anns"
+    },
+    {
+        "date": "13/01/2025",
+        "amount": 20.0,
+        "category": "groceries",
+        "reason": "juice"
+    },
+    {
+        "date": "13/01/2025",
+        "amount": 150.0,
+        "category": "denna's treat",
+        "reason": "malabar grills, romantic replay"
+    },
+    {
+        "date": "13/01/2025",
+        "amount": 387.0,
+        "category": "food",
+        "reason": "malabar grills, along with amma's parcel"
+    },
+    {
+        "date": "14/01/2025",
+        "amount": 75.0,
+        "category": "food",
+        "reason": "cafeteria, orange juice"
+    },
+    {
+        "date": "14/01/2025",
+        "amount": 12.0,
+        "category": "food",
+        "reason": "br, tea"
+    },
+    {
+        "date": "14/01/2025",
+        "amount": 20.0,
+        "category": "groceries",
+        "reason": "anns, chips"
+    },
+    {
+        "date": "14/01/2025",
+        "amount": 50.0,
+        "category": "denna's treat",
+        "reason": "anns"
+    },
+    {
+        "date": "14/01/2025",
+        "amount": 16.84,
+        "category": "food",
+        "reason": "mings wok, adi's bday treat"
+    },
+    {
+        "date": "14/01/2025",
+        "amount": 15.0,
+        "category": "food",
+        "reason": "lime"
+    },
+    {
+        "date": "15/01/2025",
+        "amount": 300.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "15/01/2025",
+        "amount": 60.0,
+        "category": "denna's treat",
+        "reason": "roses"
+    },
+    {
+        "date": "15/01/2025",
+        "amount": 30.0,
+        "category": "denna's treat",
+        "reason": "grapes"
+    },
+    {
+        "date": "15/01/2025",
+        "amount": 280.0,
+        "category": "food",
+        "reason": "malabar grills, chopsuey"
+    },
+    {
+        "date": "16/01/2025",
+        "amount": 120.84,
+        "category": "food",
+        "reason": "caravan"
+    },
+    {
+        "date": "16/01/2025",
+        "amount": 283.0,
+        "category": "food",
+        "reason": "malabar grills"
+    },
+    {
+        "date": "17/01/2025",
+        "amount": 194.34,
+        "category": "food",
+        "reason": "burger junction"
+    },
+    {
+        "date": "17/01/2025",
+        "amount": 83.28,
+        "category": "denna's treat",
+        "reason": "diesel refund"
+    },
+    {
+        "date": "18/01/2025",
+        "amount": 200.0,
+        "category": null,
+        "reason": "amma's expenses"
     }
 ]

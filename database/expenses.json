@@ -8062,5 +8062,11 @@
         "amount": 83.28,
         "category": "denna's treat",
         "reason": "diesel refund"
+    },
+    {
+        "date": "18/01/2025",
+        "amount": 200.0,
+        "category": null,
+        "reason": "amma's expenses"
     }
 ]
