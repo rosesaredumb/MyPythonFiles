@@ -16,6 +16,8 @@ class ExpenseTracker:
         self.input_bulletin = ">>"
         self.response_bulletin = "--"
         self.error_bulletin = "!!"
+        self.expense_entry_format = "Date: {}\nAmount: {:.2f}\nCategory: {}\nReason: {}"
+        
 
     def mprint(self, sentence: str, type: Literal[1, 2, 3] = 1) -> str:
         if type not in {1, 2, 3}:
@@ -94,7 +96,7 @@ class ExpenseTracker:
         while True:
             date_input = str(
                 self.mprint(
-                    "Type the date (dd/mm/yyyy) / press -Enter- for today: "
+                    "Type the date (dd/mm/yyyy) / Press -Enter- for today: "
                 )).strip()
             date = self.validate_date(date_input)
             if date:
@@ -129,10 +131,8 @@ class ExpenseTracker:
         }
         self.expenses.append(expense)
         self.save_expenses()
-        self.mprint("Expense added successfully!", 2)
-        print(
-            f"Date: {date}\nAmount: {formatted_amount:.2f}\nCategory: {category or '>no category<'}\nReason: {reason or '>no reason<'}"
-        )
+        self.mprint("Entry added successfully!", 2)
+        print(self.expense_entry_format.format(date, formatted_amount, category or '>no category<', reason or '>no reason<'))
 
     def view_expenses(self):
         """
@@ -202,12 +202,12 @@ class ExpenseTracker:
             else:
                 category_input = input(
                     f"\nExisting categories:\n{''.join([f'{idx}. {cat}\n' for idx, cat in enumerate(self.categories, 1)])}"
-                    f"Select category by entering number (1 - {len(self.categories)}) / "
-                    "Enter 0 to create a new category / Press -Enter- to assign no category: "
+                    f"Select category by typing number (1 - {len(self.categories)}) / "
+                    "Type 0 to create a new category / Press -Enter- to assign no category: "
                 ).strip()
                 if category_input == '0':
                     category = input(
-                        "Enter the new category: ").strip().lower()
+                        "Type the new category: ").strip().lower()
                     if category:
                         if category not in self.categories:
                             self.categories.append(category)
@@ -228,6 +228,87 @@ class ExpenseTracker:
                             print("Invalid choice. Try again.")
                     except ValueError:
                         print("Invalid input. Try again.")
+
+    def change_expense_category(self):
+        """
+        Change the category of an expense
+
+        Allows the user to select an expense from the recent 20 entries
+        and change its category to an existing category or create a new one.
+        """
+        if not self.expenses:
+            self.mprint("No expenses recorded yet.", 3)
+            return
+        
+        while True:
+            # Prompt user for the number of recent expenses to display
+            num_expenses_input = self.mprint(
+                "Type the number of latest expenses to view / press -Enter- for default 20: "
+            ).strip()
+            clear_console()
+
+            if not num_expenses_input:
+                num_expenses = 20  # Default to 20 if input is empty
+                break
+            elif num_expenses_input.isdigit():  # Check if input is a positive integer
+                num_expenses = int(num_expenses_input)
+                if num_expenses > 0:
+                    break
+                else:
+                    self.mprint("Please type a positive number.", 3)
+            else:
+                self.mprint("Invalid input! Please type a valid positive number.", 3)
+        
+        recent_expenses = self.expenses[-num_expenses:]
+        print(f"\nMost Recent {num_expenses} Entries (or fewer):")
+        print(
+            f"{'Index':<6} {'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}"
+        )
+        print("-" * 80)
+        for i, expense in enumerate(recent_expenses, start=1):
+            date = expense["date"]
+            amount = f"{expense['amount']:.2f}"
+            category = expense["category"] or ">no category<"
+            reason = expense["reason"] or ">no reason<"
+            print(
+                f"{i:<6} {date:<10} {amount:>10}    {category:<20} {reason:<30}"
+            )
+        print("-" * 80)
+
+        # Prompt user to select an expense by index
+        while True:
+            try:
+                index = int(
+                    self.mprint(
+                        f"Type the index of the entry to change category (1-{num_expenses}) / Type 0 to cancel: "
+                    ).strip())
+                if index == 0:
+                    self.mprint("Operation canceled.", 2)
+                    return
+                if 1 <= index <= len(recent_expenses):
+                    # Calculate actual index in the full expense list
+                    actual_index = len(
+                        self.expenses) - len(recent_expenses) + (index - 1)
+                    break
+                else:
+                    self.mprint(
+                        f"Invalid index! Type a number between 1-{len(recent_expenses)}.",
+                        3)
+            except ValueError:
+                self.mprint("Invalid input! Please type a valid number.", 3)
+
+        # Allow user to select a new category
+        current_category = self.expenses[actual_index]["category"]
+        self.mprint(f"Current category: {current_category or '>no category<'}", 2)
+        new_category = self.select_category()
+        if new_category != current_category:
+            self.expenses[actual_index]["category"] = new_category
+            self.save_expenses()
+            self.mprint(
+                f"Category changed successfully to: {new_category or '>no category<'}",
+                2)
+        else:
+            self.mprint("No changes were made to the category.", 2)
 
     def get_specific_month_expenses(self):
         """
@@ -326,60 +407,68 @@ class ExpenseTracker:
 
     def delete_recent_entry(self):
         """
-        Delete an expense from the recent 20 entries
+        Delete an expense from the recent entries.
         """
-        # Check if there are any expenses
         if not self.expenses:
-            print("No expenses recorded yet.")
-            return
+            self.mprint("No expenses recorded yet.", 3)
+            return False  # Indicate no deletion
 
-        # Get the last 10 entries
-        recent_expenses = self.expenses[-20:]
+        while True:
+            num_expenses_input = self.mprint(
+                "Type the number of latest expenses to view / press -Enter- for default 20: "
+            ).strip()
+            clear_console()
 
-        # Display the recent 10 entries
-        print("\nMost Recent 10 Entries (or fewer):")
-        print(
-            f"{'Index':<6} {'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}"
-        )
+            if not num_expenses_input:
+                num_expenses = 20
+                break
+            elif num_expenses_input.isdigit() and int(num_expenses_input) > 0:
+                num_expenses = int(num_expenses_input)
+                break
+            else:
+                self.mprint("Invalid input! Type a valid positive number.", 3)
+
+        recent_expenses = self.expenses[-num_expenses:]
+
+        self.mprint(f"Most Recent {min(num_expenses, len(recent_expenses))} Entries:", 2)
+        print(f"{'Index':<6} {'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}")
         print("-" * 80)
         for i, expense in enumerate(recent_expenses, start=1):
             date = expense["date"]
             amount = f"{expense['amount']:.2f}"
-            category = expense["category"] if expense[
-                "category"] else ">no category<"
-            reason = expense["reason"] if expense["reason"] else ">no reason<"
-            print(
-                f"{i:<6} {date:<10} {amount:>10}    {category:<20} {reason:<30}"
-            )
+            category = expense["category"] or ">no category<"
+            reason = expense["reason"] or ">no reason<"
+            print(f"{i:<6} {date:<10} {amount:>10}    {category:<20} {reason:<30}")
         print("-" * 80)
 
-        # Ask the user to select an entry to delete
         while True:
-            try:
-                index = int(
-                    input(
-                        "Enter the index of the entry to delete (1-20) or 0 to cancel: "
-                    ).strip())
-                if index == 0:
-                    print("Deletion canceled.")
-                    return
-                if 1 <= index <= len(recent_expenses):
-                    # Calculate the actual index in the full expenses list
-                    actual_index = len(
-                        self.expenses) - len(recent_expenses) + (index - 1)
-                    deleted_expense = self.expenses.pop(actual_index)
+            index_input = input(
+                f"Type the index of the entry to delete (1-{len(recent_expenses)}) / Type 0 to cancel: "
+            ).strip()
+            if not index_input.isdigit():
+                self.mprint("Invalid input! Type a valid number.", 3)
+                continue
+
+            index = int(index_input)
+            if index == 0:
+                self.mprint("Deletion canceled.", 2)
+                return False  # Indicate cancellation
+            elif 1 <= index <= len(recent_expenses):
+                actual_index = len(self.expenses) - len(recent_expenses) + (index - 1)
+                deleted_expense = self.expenses.pop(actual_index)
+                try:
                     self.save_expenses()
-                    self.categories = self.get_all_categories()
-                    print(
-                        f"Deleted entry: Date: {deleted_expense['date']}, Amount: {deleted_expense['amount']:.2f}"
-                    )
-                    return
-                else:
-                    print(
-                        f"Invalid index! Enter a number between 1 and {len(recent_expenses)}."
-                    )
-            except ValueError:
-                print("Invalid input! Please enter a valid number.")
+                except Exception as e:
+                    self.mprint(f"Error saving expenses: {e}", 3)
+                    return False  # Indicate failure to save
+                # Only if you don't update self.categories when removing an expense
+                self.categories = self.get_all_categories()
+                self.mprint(
+                    f"Deleted entry: Date: {deleted_expense['date']}, Amount: {deleted_expense['amount']:.2f}", 2
+                )
+                return True  # Indicate successful deletion
+            else:
+                self.mprint(f"Invalid index! Type a number between 1-{len(recent_expenses)}.", 3)
 
     def get_monthly_expenses(self):
         """
@@ -493,7 +582,7 @@ class ExpenseTracker:
         # Define the specific functions to retrieve
         function_names = [
             'add_expense', 'view_expenses', 'delete_recent_entry',
-            'get_specific_month_expenses', 'get_monthly_expenses', 'get_total_entries'
+            'get_specific_month_expenses', 'get_monthly_expenses', 'get_total_entries', 'change_expense_category'
         ]  # Adjust as needed
 
         # Retrieve all methods of the class

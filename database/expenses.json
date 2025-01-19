@@ -7824,6 +7824,12 @@
         "reason": "donation"
     },
     {
+        "date": "29/12/2024",
+        "amount": 349.0,
+        "category": "phone",
+        "reason": "jio recharge"
+    },
+    {
         "date": "31/12/2024",
         "amount": 30.0,
         "category": "groceries",
@@ -8065,8 +8071,14 @@
     },
     {
         "date": "18/01/2025",
+        "amount": 95.0,
+        "category": "medical",
+        "reason": "stitch removal"
+    },
+    {
+        "date": "18/01/2025",
         "amount": 200.0,
-        "category": null,
+        "category": "family",
         "reason": "amma's expenses"
     },
     {
@@ -8074,5 +8086,11 @@
         "amount": 230.0,
         "category": "denna's treat",
         "reason": "h"
+    },
+    {
+        "date": "19/01/2025",
+        "amount": 128.0,
+        "category": "food",
+        "reason": "meet n eat, bfast"
     }
 ]
