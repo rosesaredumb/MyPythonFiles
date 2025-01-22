@@ -463,9 +463,10 @@ class ExpenseTracker:
                     return False  # Indicate failure to save
                 # Only if you don't update self.categories when removing an expense
                 self.categories = self.get_all_categories()
-                self.mprint(
-                    f"Deleted entry: Date: {deleted_expense['date']}, Amount: {deleted_expense['amount']:.2f}", 2
-                )
+                self.mprint("Deleted entry!", 2)
+                print(self.expense_entry_format.format(deleted_expense['date'], deleted_expense['amount'], 
+                                                       deleted_expense['category'], deleted_expense['reason']))
+                
                 return True  # Indicate successful deletion
             else:
                 self.mprint(f"Invalid index! Type a number between 1-{len(recent_expenses)}.", 3)

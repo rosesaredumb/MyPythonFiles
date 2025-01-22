@@ -8092,5 +8092,47 @@
         "amount": 128.0,
         "category": "food",
         "reason": "meet n eat, bfast"
+    },
+    {
+        "date": "20/01/2025",
+        "amount": 200.0,
+        "category": "denna's treat",
+        "reason": "h"
+    },
+    {
+        "date": "20/01/2025",
+        "amount": 239.5,
+        "category": "food",
+        "reason": "malabar grills"
+    },
+    {
+        "date": "20/01/2025",
+        "amount": 239.5,
+        "category": "denna's treat",
+        "reason": "malabar grills"
+    },
+    {
+        "date": "21/01/2025",
+        "amount": 230.0,
+        "category": "food",
+        "reason": "mandhi souk"
+    },
+    {
+        "date": "21/01/2025",
+        "amount": 42.5,
+        "category": "food",
+        "reason": "oh my cake"
+    },
+    {
+        "date": "21/01/2025",
+        "amount": 30.0,
+        "category": "food",
+        "reason": "royal bakers"
+    },
+    {
+        "date": "21/01/2025",
+        "amount": 131.0,
+        "category": "family",
+        "reason": "amma's expenses"
     }
 ]
