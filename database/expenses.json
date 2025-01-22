@@ -7794,6 +7794,12 @@
         "reason": "Petrol"
     },
     {
+        "date": "08/12/2024",
+        "amount": 950.0,
+        "category": "transportation",
+        "reason": "yatri taxi from airport to home"
+    },
+    {
         "date": "10/12/2024",
         "amount": 45.0,
         "category": "food",
