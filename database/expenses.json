@@ -8212,5 +8212,11 @@
         "amount": 131.0,
         "category": "family",
         "reason": "amma's expenses"
+    },
+    {
+        "date": "23/01/2025",
+        "amount": 115.76,
+        "category": "denna's treat",
+        "reason": "17/01/25 trip diesel"
     }
 ]

@@ -6,6 +6,7 @@ from typing import Literal
 from dateutil.relativedelta import relativedelta
 import inspect
 
+
 class ExpenseTracker:
 
     def __init__(self):
@@ -17,7 +18,6 @@ class ExpenseTracker:
         self.response_bulletin = "--"
         self.error_bulletin = "!!"
         self.expense_entry_format = "Date: {}\nAmount: {:.2f}\nCategory: {}\nReason: {}"
-        
 
     def mprint(self, sentence: str, type: Literal[1, 2, 3] = 1) -> str:
         if type not in {1, 2, 3}:
@@ -76,11 +76,19 @@ class ExpenseTracker:
         except (ValueError, IndexError):
             return None
 
-    def validate_amount(self, amount):
+    def validate_amount(self, amount=None):
         """Validate and format the amount."""
+        if amount is None:  # Check if no input is provided
+            self.mprint("No input provided!", 3)
+            return None
         try:
-            return round(float(amount), 2)
+            checked_amount = round(float(amount), 2)
+            if checked_amount < 0:
+                self.mprint("Invalid input! Type a positive number.", 3)
+                return None
+            return checked_amount
         except ValueError:
+            self.mprint("Invalid input! Type a valid number.", 3)
             return None
 
     def get_all_categories(self):
@@ -96,8 +104,8 @@ class ExpenseTracker:
         while True:
             date_input = str(
                 self.mprint(
-                    "Type the date (dd/mm/yyyy) / Press -Enter- for today: "
-                )).strip()
+                    "Type the date (dd/mm/yyyy) / Press -Enter- for today: ")
+            ).strip()
             date = self.validate_date(date_input)
             if date:
                 self.mprint(f"Date set as: {date}", 2)
@@ -105,24 +113,20 @@ class ExpenseTracker:
             self.mprint("Invalid date format! Please try again.", 3)
 
         while True:
-            amount = str(self.mprint("Type the amount: ")).strip()
+            amount = self.mprint("Type the amount: ").strip()
             formatted_amount = self.validate_amount(amount)
             if formatted_amount:
                 self.mprint(f"Amount set as: {formatted_amount:.2f}", 2)
-                break
-            self.mprint("Invalid amount! Please type a valid number.",
-                        3)
+                break     
 
         category = self.select_category()
-        self.mprint(f"Category set as: {category or '>no category<'}",
-                    2)
+        self.mprint(f"Category set as: {category or '>no category<'}", 2)
 
         reason = str(
-            self.mprint(
-                "Type the reason / Press -Enter- to assign no reason: "
-            )).strip() or None
+            self.mprint("Type the reason / Press -Enter- to assign no reason: "
+                        )).strip() or None
         clear_console()
-        
+
         expense = {
             "date": date,  # Validated date passed as argument
             "amount": formatted_amount,  # Validated amount passed as argument
@@ -132,7 +136,10 @@ class ExpenseTracker:
         self.expenses.append(expense)
         self.save_expenses()
         self.mprint("Entry added successfully!", 2)
-        print(self.expense_entry_format.format(date, formatted_amount, category or '>no category<', reason or '>no reason<'))
+        print(
+            self.expense_entry_format.format(date, formatted_amount, category
+                                             or '>no category<', reason
+                                             or '>no reason<'))
 
     def view_expenses(self):
         """
@@ -147,14 +154,17 @@ class ExpenseTracker:
 
         try:
             # Prompt user for the number of expenses to display
-            num_expenses_input = str(self.mprint(
-                "Type the number of latest expenses to view / press -Enter- for default 10: ")).strip()
+            num_expenses_input = str(
+                self.mprint(
+                    "Type the number of latest expenses to view / press -Enter- for default 10: "
+                )).strip()
             clear_console()
             num_expenses = int(
                 num_expenses_input) if num_expenses_input else 10
 
             if num_expenses > 0:
-                self.mprint(f"Displaying the last {num_expenses} expenses:\n", 2)
+                self.mprint(f"Displaying the last {num_expenses} expenses:\n",
+                            2)
                 print(
                     f"{'Date':<12} {'Amount':>10}    {'Category':<20} {'Reason':<30}"
                 )
@@ -206,8 +216,7 @@ class ExpenseTracker:
                     "Type 0 to create a new category / Press -Enter- to assign no category: "
                 ).strip()
                 if category_input == '0':
-                    category = input(
-                        "Type the new category: ").strip().lower()
+                    category = input("Type the new category: ").strip().lower()
                     if category:
                         if category not in self.categories:
                             self.categories.append(category)
@@ -239,7 +248,7 @@ class ExpenseTracker:
         if not self.expenses:
             self.mprint("No expenses recorded yet.", 3)
             return
-        
+
         while True:
             # Prompt user for the number of recent expenses to display
             num_expenses_input = self.mprint(
@@ -250,15 +259,17 @@ class ExpenseTracker:
             if not num_expenses_input:
                 num_expenses = 20  # Default to 20 if input is empty
                 break
-            elif num_expenses_input.isdigit():  # Check if input is a positive integer
+            elif num_expenses_input.isdigit(
+            ):  # Check if input is a positive integer
                 num_expenses = int(num_expenses_input)
                 if num_expenses > 0:
                     break
                 else:
                     self.mprint("Please type a positive number.", 3)
             else:
-                self.mprint("Invalid input! Please type a valid positive number.", 3)
-        
+                self.mprint(
+                    "Invalid input! Please type a valid positive number.", 3)
+
         recent_expenses = self.expenses[-num_expenses:]
         print(f"\nMost Recent {num_expenses} Entries (or fewer):")
         print(
@@ -299,7 +310,8 @@ class ExpenseTracker:
 
         # Allow user to select a new category
         current_category = self.expenses[actual_index]["category"]
-        self.mprint(f"Current category: {current_category or '>no category<'}", 2)
+        self.mprint(f"Current category: {current_category or '>no category<'}",
+                    2)
         new_category = self.select_category()
         if new_category != current_category:
             self.expenses[actual_index]["category"] = new_category
@@ -378,8 +390,8 @@ class ExpenseTracker:
 
             # Display results
             self.mprint(
-                f"Expense breakdown for {str(month).zfill(2)}/{year} (entries: {num_entries}):\n", 2
-            )
+                f"Expense breakdown for {str(month).zfill(2)}/{year} (entries: {num_entries}):\n",
+                2)
             print(f"{'Category':<20}  {'Amount':>10}  {'Percentage':>10}")
             print("-" * 60)
             for category, amount in sorted_categories:
@@ -430,15 +442,21 @@ class ExpenseTracker:
 
         recent_expenses = self.expenses[-num_expenses:]
 
-        self.mprint(f"Most Recent {min(num_expenses, len(recent_expenses))} Entries:", 2)
-        print(f"{'Index':<6} {'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}")
+        self.mprint(
+            f"Most Recent {min(num_expenses, len(recent_expenses))} Entries:",
+            2)
+        print(
+            f"{'Index':<6} {'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}"
+        )
         print("-" * 80)
         for i, expense in enumerate(recent_expenses, start=1):
             date = expense["date"]
             amount = f"{expense['amount']:.2f}"
             category = expense["category"] or ">no category<"
             reason = expense["reason"] or ">no reason<"
-            print(f"{i:<6} {date:<10} {amount:>10}    {category:<20} {reason:<30}")
+            print(
+                f"{i:<6} {date:<10} {amount:>10}    {category:<20} {reason:<30}"
+            )
         print("-" * 80)
 
         while True:
@@ -454,7 +472,8 @@ class ExpenseTracker:
                 self.mprint("Deletion canceled.", 2)
                 return False  # Indicate cancellation
             elif 1 <= index <= len(recent_expenses):
-                actual_index = len(self.expenses) - len(recent_expenses) + (index - 1)
+                actual_index = len(
+                    self.expenses) - len(recent_expenses) + (index - 1)
                 deleted_expense = self.expenses.pop(actual_index)
                 try:
                     self.save_expenses()
@@ -464,12 +483,17 @@ class ExpenseTracker:
                 # Only if you don't update self.categories when removing an expense
                 self.categories = self.get_all_categories()
                 self.mprint("Deleted entry!", 2)
-                print(self.expense_entry_format.format(deleted_expense['date'], deleted_expense['amount'], 
-                                                       deleted_expense['category'], deleted_expense['reason']))
-                
+                print(
+                    self.expense_entry_format.format(
+                        deleted_expense['date'], deleted_expense['amount'],
+                        deleted_expense['category'],
+                        deleted_expense['reason']))
+
                 return True  # Indicate successful deletion
             else:
-                self.mprint(f"Invalid index! Type a number between 1-{len(recent_expenses)}.", 3)
+                self.mprint(
+                    f"Invalid index! Type a number between 1-{len(recent_expenses)}.",
+                    3)
 
     def get_monthly_expenses(self):
         """
@@ -485,9 +509,10 @@ class ExpenseTracker:
             self.mprint("No expenses recorded yet.", 3)
             return {}, 0, {}
         try:
-            num_months_input = str(self.mprint(
-                "Type the number of months to view / press -Enter- for default 12: "
-            )).strip()
+            num_months_input = str(
+                self.mprint(
+                    "Type the number of months to view / press -Enter- for default 12: "
+                )).strip()
             clear_console()
             num_months = int(num_months_input) if num_months_input else 12
 
@@ -535,11 +560,131 @@ class ExpenseTracker:
             return expenses_by_month, total_sum, entries_by_month
         except ValueError:
             self.mprint(
-                "Invalid input. Please type a positive integer for the number of months.", 3
-            )
+                "Invalid input. Please type a positive integer for the number of months.",
+                3)
         except Exception as e:
             self.mprint(f"An unexpected error occurred: {e}", 3)
             return {}, 0, {}
+
+    def modify_expense(self):
+        """
+        Modify an expense's category, amount, or reason.
+
+        Allows the user to select an expense from the recent entries and choose 
+        which field to modify (category, amount, or reason).
+        """
+        if not self.expenses:
+            self.mprint("No expenses recorded yet.", 3)
+            return
+
+        while True:
+            # Prompt user for the number of recent expenses to display
+            num_expenses_input = self.mprint(
+                "Type the number of latest expenses to view / Press -Enter- for default 20: "
+            ).strip()
+            clear_console()
+
+            if not num_expenses_input:
+                num_expenses = 20  # Default to 20 if input is empty
+                break
+            elif num_expenses_input.isdigit() and int(num_expenses_input) > 0:
+                num_expenses = int(num_expenses_input)
+                break
+            else:
+                self.mprint(
+                    "Invalid input! Please type a valid positive number.", 3)
+
+        recent_expenses = self.expenses[-num_expenses:]
+        print(f"\nMost Recent {num_expenses} Entries (or fewer):")
+        print(
+            f"{'Index':<6} {'Date':<10} {'Amount':>10}    {'Category':<20} {'Reason':<30}"
+        )
+        print("-" * 80)
+        for i, expense in enumerate(recent_expenses, start=1):
+            date = expense["date"]
+            amount = f"{expense['amount']:.2f}"
+            category = expense["category"] or ">no category<"
+            reason = expense["reason"] or ">no reason<"
+            print(
+                f"{i:<6} {date:<10} {amount:>10}    {category:<20} {reason:<30}"
+            )
+        print("-" * 80)
+
+        # Prompt user to select an expense by index
+        while True:
+            try:
+                index = int(
+                    self.mprint(
+                        f"Type the index of the entry to modify (1-{num_expenses}) / Type 0 to cancel: "
+                    ).strip())
+                if index == 0:
+                    self.mprint("Operation canceled.", 2)
+                    return
+                if 1 <= index <= len(recent_expenses):
+                    # Calculate actual index in the full expense list
+                    actual_index = len(
+                        self.expenses) - len(recent_expenses) + (index - 1)
+                    break
+                else:
+                    self.mprint(
+                        f"Invalid index! Type a number between 1-{len(recent_expenses)}.",
+                        3)
+            except ValueError:
+                self.mprint("Invalid input! Please type a valid number.", 3)
+
+        # Allow user to choose which field to modify
+        while True:
+            field_choice = self.mprint(
+                "What do you want to modify?\n0. ~To cancel operation\n1. Amount\n2. Category\n3. Reason\nType the index of the option: "
+            ).strip()
+            if field_choice == "0":
+                self.mprint("Operation canceled.", 2)
+                return
+            elif field_choice == "1":  # Modify amount
+                current_amount = self.expenses[actual_index]["amount"]
+                self.mprint(f"Current amount: {current_amount:.2f}", 2)
+                new_amount = self.mprint("Enter the new amount: ").strip()
+                formatted_amount = self.validate_amount(new_amount)
+                if formatted_amount:
+                    self.expenses[actual_index][
+                            "amount"] = formatted_amount
+                    self.mprint(
+                            f"Amount updated to: {formatted_amount:.2f}", 2)
+                    break
+            elif field_choice == "2":  # Modify category
+                current_category = self.expenses[actual_index]["category"]
+                self.mprint(
+                    f"Current category: {current_category or '>no category<'}",
+                    2)
+                new_category = self.select_category()
+                if new_category != current_category:
+                    self.expenses[actual_index]["category"] = new_category
+                    self.mprint(f"Category updated to: {new_category}", 2)
+                    break
+                else:
+                    self.mprint("No changes were made to the category.", 2)
+                    return
+            elif field_choice == "3":  # Modify reason
+                current_reason = self.expenses[actual_index]["reason"]
+                self.mprint(
+                    f"Current reason: {current_reason or '>no reason<'}", 2)
+                new_reason = self.mprint("Type the new reason: ").strip()
+                if new_reason:
+                    self.expenses[actual_index]["reason"] = new_reason
+                    self.mprint(f"Reason updated to: {new_reason}", 2)
+                    break
+                else:
+                    self.mprint("Reason cannot be empty.", 3)
+            else:
+                self.mprint("Invalid choice! Type a valid index.", 3)
+        self.save_expenses()
+        self.mprint("Expense updated successfully.", 2)
+        updated_expense = self.expenses[actual_index]
+        print(
+            self.expense_entry_format.format(updated_expense['date'],
+                                             updated_expense['amount'],
+                                             updated_expense['category'],
+                                             updated_expense['reason']))
 
     def run(self):
         """Main menu to run the Expense Tracker."""
@@ -554,7 +699,7 @@ class ExpenseTracker:
             # Get user choice
             choice = input("Enter your choice: ").strip()
             clear_console()
-            
+
             if choice == "0":
                 self.mprint("Exiting the Expense Tracker. Goodbye!", 2)
                 break
@@ -583,7 +728,8 @@ class ExpenseTracker:
         # Define the specific functions to retrieve
         function_names = [
             'add_expense', 'view_expenses', 'delete_recent_entry',
-            'get_specific_month_expenses', 'get_monthly_expenses', 'get_total_entries', 'change_expense_category'
+            'get_specific_month_expenses', 'get_monthly_expenses',
+            'get_total_entries', 'modify_expense'
         ]  # Adjust as needed
 
         # Retrieve all methods of the class
@@ -597,7 +743,8 @@ class ExpenseTracker:
         for i, name in enumerate(function_names):
             if name in function_dict:
                 docstring = function_dict[name].__doc__
-                description = docstring.strip().splitlines()[0] if docstring else "No description available"
+                description = docstring.strip().splitlines(
+                )[0] if docstring else "No description available"
                 result.append((i, name, description))
             else:
                 # Optional: Log or handle missing functions
