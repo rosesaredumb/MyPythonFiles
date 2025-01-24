@@ -7794,6 +7794,78 @@
         "reason": "Petrol"
     },
     {
+        "date": "08/12/2024",
+        "amount": 950.0,
+        "category": "transportation",
+        "reason": "yatri taxi from airport to home"
+    },
+    {
+        "date": "10/12/2024",
+        "amount": 45.0,
+        "category": "food",
+        "reason": "royal bakers"
+    },
+    {
+        "date": "10/12/2024",
+        "amount": 150.0,
+        "category": "groceries",
+        "reason": "a1 store, coffee"
+    },
+    {
+        "date": "11/12/2024",
+        "amount": 700.0,
+        "category": "medical",
+        "reason": "namitha consultation fee"
+    },
+    {
+        "date": "11/12/2024",
+        "amount": 1762.0,
+        "category": "medical",
+        "reason": "namitha medicines"
+    },
+    {
+        "date": "11/12/2024",
+        "amount": 300.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "11/12/2024",
+        "amount": 360.0,
+        "category": "food",
+        "reason": "burgeria"
+    },
+    {
+        "date": "11/12/2024",
+        "amount": 50.0,
+        "category": "food",
+        "reason": "royal bakers"
+    },
+    {
+        "date": "11/12/2024",
+        "amount": 567.33,
+        "category": "groceries",
+        "reason": "reliance"
+    },
+    {
+        "date": "16/12/2024",
+        "amount": 125.0,
+        "category": "groceries",
+        "reason": "anns"
+    },
+    {
+        "date": "17/12/2024",
+        "amount": 165.0,
+        "category": "groceries",
+        "reason": "anns"
+    },
+    {
+        "date": "18/12/2024",
+        "amount": 216.0,
+        "category": "food",
+        "reason": "hotel grand"
+    },
+    {
         "date": "19/12/2024",
         "amount": 10.0,
         "category": "groceries",
@@ -7822,6 +7894,12 @@
         "amount": 1.0,
         "category": "denna's treat",
         "reason": "donation"
+    },
+    {
+        "date": "29/12/2024",
+        "amount": 349.0,
+        "category": "phone",
+        "reason": "jio recharge"
     },
     {
         "date": "31/12/2024",
@@ -7885,9 +7963,15 @@
     },
     {
         "date": "03/01/2025",
-        "amount": 3575.0,
+        "amount": 700.0,
         "category": "medical",
-        "reason": "namitha"
+        "reason": "namitha consultation fee"
+    },
+    {
+        "date": "03/01/2025",
+        "amount": 2875.0,
+        "category": "medical",
+        "reason": "namitha medicines"
     },
     {
         "date": "04/01/2025",
@@ -7898,7 +7982,7 @@
     {
         "date": "06/01/2025",
         "amount": 476.0,
-        "category": null,
+        "category": "treat",
         "reason": "habel's sister wedding gift"
     },
     {
@@ -8065,8 +8149,74 @@
     },
     {
         "date": "18/01/2025",
+        "amount": 95.0,
+        "category": "medical",
+        "reason": "stitch removal"
+    },
+    {
+        "date": "18/01/2025",
         "amount": 200.0,
-        "category": null,
+        "category": "family",
         "reason": "amma's expenses"
+    },
+    {
+        "date": "18/01/2025",
+        "amount": 230.0,
+        "category": "denna's treat",
+        "reason": "h"
+    },
+    {
+        "date": "19/01/2025",
+        "amount": 128.0,
+        "category": "food",
+        "reason": "meet n eat, bfast"
+    },
+    {
+        "date": "20/01/2025",
+        "amount": 200.0,
+        "category": "denna's treat",
+        "reason": "h"
+    },
+    {
+        "date": "20/01/2025",
+        "amount": 239.5,
+        "category": "food",
+        "reason": "malabar grills"
+    },
+    {
+        "date": "20/01/2025",
+        "amount": 239.5,
+        "category": "denna's treat",
+        "reason": "malabar grills"
+    },
+    {
+        "date": "21/01/2025",
+        "amount": 230.0,
+        "category": "food",
+        "reason": "mandhi souk"
+    },
+    {
+        "date": "21/01/2025",
+        "amount": 42.5,
+        "category": "food",
+        "reason": "oh my cake"
+    },
+    {
+        "date": "21/01/2025",
+        "amount": 30.0,
+        "category": "food",
+        "reason": "royal bakers"
+    },
+    {
+        "date": "21/01/2025",
+        "amount": 131.0,
+        "category": "family",
+        "reason": "amma's expenses"
+    },
+    {
+        "date": "23/01/2025",
+        "amount": 115.76,
+        "category": "denna's treat",
+        "reason": "17/01/25 trip diesel"
     }
 ]
