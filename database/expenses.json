@@ -8218,5 +8218,35 @@
         "amount": 115.76,
         "category": "denna's treat",
         "reason": "17/01/25 trip diesel"
+    },
+    {
+        "date": "23/01/2025",
+        "amount": 130.0,
+        "category": "denna's treat",
+        "reason": "food"
+    },
+    {
+        "date": "24/01/2025",
+        "amount": 30.0,
+        "category": "denna's treat",
+        "reason": "h"
+    },
+    {
+        "date": "25/01/2025",
+        "amount": 137.0,
+        "category": "denna's treat",
+        "reason": "food"
+    },
+    {
+        "date": "25/01/2025",
+        "amount": 100.0,
+        "category": "denna's treat",
+        "reason": "h"
+    },
+    {
+        "date": "26/01/2025",
+        "amount": 349.0,
+        "category": "phone",
+        "reason": "jio recharge"
     }
 ]
