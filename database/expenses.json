@@ -8248,5 +8248,275 @@
         "amount": 349.0,
         "category": "phone",
         "reason": "jio recharge"
+    },
+    {
+        "date": "29/03/2025",
+        "amount": 355.0,
+        "category": "denna's treat",
+        "reason": "dairy milk silk valentine's edition"
+    },
+    {
+        "date": "29/03/2025",
+        "amount": 290.0,
+        "category": "denna's treat",
+        "reason": "oh my cake pastries to denna's home"
+    },
+    {
+        "date": "29/03/2025",
+        "amount": 1979.0,
+        "category": "college",
+        "reason": "sheila obs textbook and sheila gyn textbook"
+    },
+    {
+        "date": "31/03/2025",
+        "amount": 483.0,
+        "category": "food",
+        "reason": "beyondburg inc"
+    },
+    {
+        "date": "31/03/2025",
+        "amount": 700.0,
+        "category": "medical",
+        "reason": "namitha consultation fee"
+    },
+    {
+        "date": "31/03/2025",
+        "amount": 3090.0,
+        "category": "medical",
+        "reason": "namitha medicines"
+    },
+    {
+        "date": "31/03/2025",
+        "amount": 300.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "02/04/2025",
+        "amount": 75.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "03/04/2025",
+        "amount": 259.5,
+        "category": "food",
+        "reason": "trip with habel"
+    },
+    {
+        "date": "03/04/2025",
+        "amount": 20.0,
+        "category": "groceries",
+        "reason": null
+    },
+    {
+        "date": "04/04/2025",
+        "amount": 142.0,
+        "category": "food",
+        "reason": "lovedons"
+    },
+    {
+        "date": "04/04/2025",
+        "amount": 30.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "04/04/2025",
+        "amount": 199.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "04/04/2025",
+        "amount": 15.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "05/04/2025",
+        "amount": 150.0,
+        "category": "denna's treat",
+        "reason": "h"
+    },
+    {
+        "date": "06/04/2025",
+        "amount": 84.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "06/04/2025",
+        "amount": 289.0,
+        "category": "food",
+        "reason": "smoke culture by steve"
+    },
+    {
+        "date": "06/04/2025",
+        "amount": 40.0,
+        "category": "denna's treat",
+        "reason": "4 kitkat as promised"
+    },
+    {
+        "date": "06/04/2025",
+        "amount": 30.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "07/04/2025",
+        "amount": 100.0,
+        "category": "denna's treat",
+        "reason": "h"
+    },
+    {
+        "date": "07/04/2025",
+        "amount": 140.0,
+        "category": "food",
+        "reason": "malabar grills"
+    },
+    {
+        "date": "07/04/2025",
+        "amount": 140.0,
+        "category": "denna's treat",
+        "reason": "malabar grills"
+    },
+    {
+        "date": "07/04/2025",
+        "amount": 45.0,
+        "category": "food",
+        "reason": "scandy"
+    },
+    {
+        "date": "08/04/2025",
+        "amount": 20.0,
+        "category": "food",
+        "reason": "cafeteria"
+    },
+    {
+        "date": "08/04/2025",
+        "amount": 100.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "08/04/2025",
+        "amount": 110.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "08/04/2025",
+        "amount": 20.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "08/04/2025",
+        "amount": 142.0,
+        "category": "food",
+        "reason": "lovedons"
+    },
+    {
+        "date": "09/04/2025",
+        "amount": 50.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "09/04/2025",
+        "amount": 45.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "09/04/2025",
+        "amount": 75.0,
+        "category": "food",
+        "reason": "oh my cake"
+    },
+    {
+        "date": "09/04/2025",
+        "amount": 300.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "09/04/2025",
+        "amount": 100.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "10/04/2025",
+        "amount": 135.0,
+        "category": "food",
+        "reason": null
+    },
+    {
+        "date": "11/04/2025",
+        "amount": 182.28,
+        "category": "groceries",
+        "reason": "reliance"
+    },
+    {
+        "date": "11/04/2025",
+        "amount": 610.0,
+        "category": "family",
+        "reason": null
+    },
+    {
+        "date": "19/04/2025",
+        "amount": 150.0,
+        "category": "denna's treat",
+        "reason": "h"
+    },
+    {
+        "date": "21/04/2025",
+        "amount": 40.0,
+        "category": "groceries",
+        "reason": "anns"
+    },
+    {
+        "date": "21/04/2025",
+        "amount": 10.0,
+        "category": "food",
+        "reason": "tea"
+    },
+    {
+        "date": "21/04/2025",
+        "amount": 182.0,
+        "category": "food",
+        "reason": "district 7 restro"
+    },
+    {
+        "date": "21/04/2025",
+        "amount": 113.34,
+        "category": "food",
+        "reason": "shawarma daddy"
+    },
+    {
+        "date": "21/04/2025",
+        "amount": 100.0,
+        "category": "food",
+        "reason": "seetha devi"
+    },
+    {
+        "date": "21/04/2025",
+        "amount": 166.67,
+        "category": "transportation",
+        "reason": "habel car petrol"
+    },
+    {
+        "date": "22/04/2025",
+        "amount": 30.0,
+        "category": "food",
+        "reason": "north indian bakery"
+    },
+    {
+        "date": "22/04/2025",
+        "amount": 350.0,
+        "category": "college",
+        "reason": "medicine log book"
     }
 ]
