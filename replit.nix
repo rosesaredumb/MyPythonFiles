@@ -1,5 +1,6 @@
 {pkgs}: {
   deps = [
+    pkgs.haskellPackages.debian-binary
     pkgs.libGLU
     pkgs.libGL
     pkgs.tk
