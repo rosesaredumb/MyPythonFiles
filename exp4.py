@@ -598,7 +598,7 @@ class ExpenseTracker:
             print("\n0. Exit")
             specific_functions = self.get_specific_functions()
             for index, (_, _, doc) in enumerate(specific_functions, start=1):
-                print(f"{index}. {doc}")
+                print(f"{index}) {doc}")
 
             # Get user choice
             choice = input("Enter your choice: ").strip()
