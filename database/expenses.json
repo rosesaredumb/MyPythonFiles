@@ -8518,5 +8518,23 @@
         "amount": 350.0,
         "category": "college",
         "reason": "medicine log book"
+    },
+    {
+        "date": "23/04/2025",
+        "amount": 100.0,
+        "category": "denna's treat",
+        "reason": "h"
+    },
+    {
+        "date": "24/04/2025",
+        "amount": 80.0,
+        "category": "denna's treat",
+        "reason": "cold boost from cafeteria"
+    },
+    {
+        "date": "24/04/2025",
+        "amount": 90.0,
+        "category": "college",
+        "reason": "pens"
     }
 ]
