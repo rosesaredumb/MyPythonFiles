@@ -8536,5 +8536,47 @@
         "amount": 90.0,
         "category": "college",
         "reason": "pens"
+    },
+    {
+        "date": "25/04/2025",
+        "amount": 2070.0,
+        "category": "vehicle",
+        "reason": "scooter insurance renewal"
+    },
+    {
+        "date": "25/04/2025",
+        "amount": 714.0,
+        "category": "treat",
+        "reason": "my birthday treat"
+    },
+    {
+        "date": "26/04/2025",
+        "amount": 20.0,
+        "category": "food",
+        "reason": "north indian bakery"
+    },
+    {
+        "date": "26/04/2025",
+        "amount": 875.0,
+        "category": "family",
+        "reason": "amma's medicines"
+    },
+    {
+        "date": "28/04/2025",
+        "amount": 20.0,
+        "category": "food",
+        "reason": "north indian bakery"
+    },
+    {
+        "date": "29/04/2025",
+        "amount": 30.0,
+        "category": "family",
+        "reason": "groceries"
+    },
+    {
+        "date": "29/04/2025",
+        "amount": 380.0,
+        "category": "family",
+        "reason": "fruits for dxb"
     }
 ]
