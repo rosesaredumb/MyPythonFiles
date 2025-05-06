@@ -8578,5 +8578,29 @@
         "amount": 380.0,
         "category": "family",
         "reason": "fruits for dxb"
+    },
+    {
+        "date": "30/04/2025",
+        "amount": 10.0,
+        "category": "food",
+        "reason": "bakery"
+    },
+    {
+        "date": "30/04/2025",
+        "amount": 65.0,
+        "category": "college",
+        "reason": "notebook"
+    },
+    {
+        "date": "30/04/2025",
+        "amount": 300.0,
+        "category": "fuel",
+        "reason": "scooter petrol"
+    },
+    {
+        "date": "02/05/2025",
+        "amount": 121.0,
+        "category": "college",
+        "reason": "ladoos for teachers"
     }
 ]
